@@ -1,1 +1,1 @@
-# Discover JavaScript
+# The JavaScript Way
