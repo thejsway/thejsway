@@ -1,154 +1,144 @@
-# Introduction à la programmation
+# Introduction to programming
 
 ## TL;DR
 
-* Un **ordinateur** n'est qu'une machine qui se contente d'exécuter automatiquement, très vite et sans erreur, les opérations qu'on lui demande d'effectuer.
-* Un **programme** est une liste d'ordres indiquant à un ordinateur ce qu'il doit faire. Il se présente sous la forme d'un ensemble de commandes textuelles appelées des **instructions**.
-* Le rôle du **programmeur** est de créer ces programmes. Pour cela, il peut utiliser différents langages de programmation.
-* Avant d'écrire un programme, il faut réfléchir et décomposer le problème à résoudre en opérations élémentaires afin d'aboutir à un **algorithme**.
+* A **computer** is a machine whose role is to execute quickly and flawlessly a series of actions given to it.
+* A **program** is a list of actions given to a computer. These actions take the form of textual commands called **instructions**. A program's instructions are calle its **source code**.
+* The **programmer**'s task is to create programs. To accomplish this goal, he can use  different programming languages.
+* Before writing code, one must think ahead and decompose the problem to be addressed in a series of elementary operations forming an **algorithm**.
 
-## Un programme, c'est quoi ?
+## What's a program?
 
-![L'Evolution (?)](images/intro02-01.jpg)
+![Evolution (?)](images/intro02-01.jpg)
 
-Depuis son invention dans les années 1950, l'informatique a révolutionné bien des domaines de notre vie quotidienne. Le calcul d'un itinéraire depuis un site Internet ou un GPS, la réservation à distance d'un billet de train ou d'avion ou encore la possibilité de voir et de parler avec des amis à l'autre bout du monde : tous ces actes courants sont possibles grâce aux **ordinateurs**.
+Since their invention in the 1950s, **computers** have revolutionized our daily lives. Calculating a route from a website or a GPS, booking a train or plane ticket, or seeing and chatting with friends on the other side of the world: all these actions are possible thanks to computers.
 
-I> Le terme "ordinateur" est à prendre dans son sens le plus général, celui d'une "machine électronique capable d'exécuter des opérations arithmétiques et logiques" ([Wikipedia](https://fr.wikipedia.org/wiki/Ordinateur)). Il peut désigner aussi bien un ordinateur de bureau ou portable (PC, Mac), un serveur de calcul ou encore un terminal mobile de type tablette ou smartphone. 
+I> Let's take the term "computer" in its broadest sense, meaning a machine that can perform arithmetic and logical operations. It could mean either a desktop or laptop computer (PC, Mac), a computing server, or a mobile device like a tablet or smartphone.
 
-Cependant un ordinateur, même très performant, n'est qu'une **machine** capable d'exécuter automatiquement une série d'opérations simples qu'on lui a demandées. Il ne dispose par lui-même d'aucune capacité d'apprentissage, de jugement, d'improvisation, bref d'aucune "intelligence". Il se contente de faire ce qu'on lui dit de faire. L'intérêt des ordinateurs est de savoir manipuler très rapidement et sans erreur d'énormes quantités d'informations. 
+Nonetheless, a computer can only perform a series of simple operations when instructed to do so. They normally have no ability to learn, judge, or improvise. They simple do what they're told to do! Their value comes from how they can quickly handle and process huge amounts of information.
 
-Une intervention humaine est nécessaire pour qu'un ordinateur puisse accomplir des tâches utiles. C'est le rôle du **programmeur** (appelé également développeur). Il va fournir les ordres que la machine doit exécuter en écrivant des **programmes**.
+A computer often requires human intervention. That's where programmers and developers come in! They write programs that result in instructions to a computer.
 
-Un programme informatique (également appelé application ou logiciel) est "**une liste d'ordres indiquant à un ordinateur ce qu'il doit faire**" ([Wikipedia](https://fr.wikipedia.org/wiki/Programme_informatique)). Il se présente concrètement sous la forme d'un ou (le plus souvent) plusieurs fichiers contenant des commandes textuelles : ce sont les ordres données à la machine, qu'on appelle également des **instructions**. L'ensemble des fichiers contenant les instructions du programme constitue son code source. Programmer, c'est donc écrire le code source d'un programme, d'où l'emploi du terme synonyme de **coder**.
+A **computer program** (also called an application or software) is usually comprised of one or more text files containing commands in the form of code. This is why developers are also called coders.
 
-Cependant, on ne peut pas écrire tout et n'importe quoi dans le code source d'un programme. Imaginons que vous souhaitiez dialoguer avec une personne anglophone. Vous ne vous ferez pas comprendre si vous utilisez des mots qui ne sont pas anglais, ou bien si vous les placez n'importe où dans vos phrases. C'est la même chose lorsqu'on écrit des programmes : pour être compris par un ordinateur, un programme doit respecter les règles du langage de programmation utilisé.
+A **programming language** is a way to give orders to a computer. It's a bit like a human language! Each programming language has vocabulary (keywords that each play a specific role) and grammar (rules defining how to write programs in that language).
 
-Un **langage de programmation** définit une manière de donner des ordres à un ordinateur. Un peu comme une langue vivante, tout langage a son vocabulaire (un ensemble de mots-clés, chacun jouant un rôle spécifique) et sa grammaire (un ensemble de règles définissant la manière d'écrire des programmes dans ce langage).
+## How do you create programs?
 
-## Comment créer des programmes ?
+### Closest to the hardware: assembly language
 
-### Au plus près de la machine : l'assembleur
+The only programming language directly understandable by a computer is machine language, also known as **assembly language**. It is a set of very primitive operations linked to a specific family of processors (the computer's "brain") and manipulating its memory.
 
-Le seul langage de programmation directement compréhensible par un ordinateur est le langage machine, également appelé [assembleur](https://fr.wikipedia.org/wiki/Assembleur). Il s'agit d'instructions élémentaires liées à un type de processeur (le "cerveau" de l'ordinateur) et qui permettent de manipuler directement la mémoire de la machine.
+Here's an example of a basic program written in assembly language. It displays `"Hello"` to the user.
 
-Voici un exemple de programme écrit en assembleur, tiré de [Wikipedia](https://fr.wikipedia.org/wiki/Assembleur#Afficher_Bonjour). Son rôle est d'afficher le message "Bonjour" à l'utilisateur.
+```assembly
+str:
+    .ascii "Hello\n"
+    .global _start
 
-{lang="assembly"}
-    str:
-     .ascii "Bonjour\n"
-     .global _start
- 
-    _start:
-    movl $4, %eax
-    movl $1, %ebx
-    movl $str, %ecx
-    movl $8, %edx
-    int $0x80
-    movl $1, %eax
-    movl $0, %ebx
-    int $0x80
+_start:
+movl $4, %eax
+movl $1, %ebx
+movl $str, %ecx
+movl $8, %edx
+int $0x80
+movl $1, %eax
+movl $0, %ebx
+int $0x80
+```
 
-Plutôt intimidant, non ? Rassurez-vous, il est heureusement possible de coder de manière bien plus simple et conviviale en utilisant d'autres langages que l'assembleur. 
+Pretty scary, isn't it? Fortunately, other programming languages are much more simpler and convenient to use than assembly language.
 
-### La grande famille des langages de programmation
+### Programming languages
 
-Il existe un grand nombre de langages de programmation, adaptés à des usages variés. Chaque langage de programmation dispose de sa propre syntaxe et d'instructions spécifiques. On peut faire une analogie avec les langues étrangères : avant de pouvoir parler telle ou telle langue, il faut l'étudier afin de connaître ses spécificités.
+There are a large number of programming languages, each adapted to different uses and with its own syntax. However, there are similarities between the most popular programming languages. For example, here's a simple program written in Python:
 
-Cela dit, on peut dégager des similitudes entre les langages de programmation les plus courants. Par exemple, voici le programme précédent écrit en utilisant le langage Python.
+```python
+print("Hello")
+```
 
-{lang="python"}
-    print("Bonjour")
+You can also write the same thing in PHP:
 
-On peut écrire le même programme en utilisant le langage PHP.
+```php
+<?php
+    echo("Hello\n");
+?>
+```
 
-{lang="php"}
-    <?php
-    echo("Bonjour\n");
-    ?>
+Or even C#!
 
-Même exemple avec le langage C#.
-
-{lang="csharp"}
-    class Program {
-        static void Main(string[] args) {
-            Console.WriteLine("Bonjour");
-        }
+```csharp
+class Program {
+    static void Main(string[] args) {
+        Console.WriteLine("Hello");
     }
+}
+```
 
-Et voici le même programme, écrit cette fois en langage Java.
+What about Java?
 
-{lang="java"}
-    public class Program {
-        public static void main(String[] args) {
-            System.out.println("Bonjour");
-        }
+```java
+public class Program {
+    public static void main(String[] args) {
+        System.out.println("Hello");
     }
+}
+```
 
-Tous ces programmes affichent le message "Bonjour", mais chacun d'eux le fait à sa manière.
+All these programs display `"Hello"` through a different set of instructions.
 
-### L'exécution d'un programme
+### Program execution
 
-On nomme **exécution** le fait de demander à un ordinateur de réaliser les ordres contenus dans un programme. Quel que soit le langage avec lequel il est écrit, un programme doit être traduit en assembleur pour pouvoir être exécuté. Ce processus de traduction dépend du langage choisi.
+The fact of asking a computer to process the orders contained in a program is called **execution**. Regardless of which programming language is used, a program must be translated into assembly code in order to be executed. The translation process depends on the language used.
 
-Avec certains langages, les lignes du code source sont traduites en assembleur puis exécutées ligne après ligne par un programme spécifique appelé interpréteur. On dit alors que le langage est **interprété**. Python et PHP sont des exemples de langages interprétés.
+With some languages, the translation into assembly code happens line by line in real time. These languages are said to be **interpreted**. Python and PHP are examples of interpreted languages.
 
-Une autre possibilité consiste à créer à partir de l'ensemble du code source un fichier directement exécutable (sous Windows, il portera l'extension `.exe`) en utilisant un programme intermédiaire appelé compilateur. On parle alors de langage **compilé**. Les langages C sont C++ sont des exemples de langages compilés.
+Another possibility is to read and translate every line of source code before execution. The result will be an executable program targeting one specific hardware platform. This intermediate step is called **compilation**, and the programming language which use it are said to be **compiled**.
 
-Enfin, une troisième option consiste à utiliser un pseudo-compilateur pour générer à partir du code source un ensemble de fichiers pouvant être exécutés sur n'importe quelle plate-forme supportant
-l'environnement. C'est le cas du langage Java et des langages de la plate-forme Microsoft .NET (VB.NET, C#, etc).
+Lastly, some languages are pseudo-compiled in order to be executed on different hardware platforms. This is the case for the Java language and also for those of the Microsoft .NET family (VB.NET, C#, etc).
 
-## Apprendre à programmer
+## Learn to code
 
-### Introduction aux algorithmes
+### Introduction to algorithms
 
-Sauf dans des cas très simples, on ne crée pas un programme en se lançant directement dans l'écriture du code source. Il est d'abord nécessaire d'analyser le problème pour trouver la suite d'opérations à réaliser pour le résoudre. 
+Except in very simple cases, you don't create programs by writing source code directly. You'll first need to think about the instructions you'll want to convey.
 
-Prenons un exemple concret tiré de la vie courante (l'idée originale est d'Alain Tarlowski) : je souhaite me préparer un plat de pâtes. Quelles sont les étapes qui vont me permettre d'atteindre mon objectif ?
+Take a concrete example from everyday life: I want to make a burrito. What are the steps that will enable me to achieve my goal?
 
-On peut imaginer la solution ci-dessous.
+```text
+Begin
+    Get out the rice cooker
+    Fill it with rice
+    Fill it with water
+    Cook the rice
+    Chop the vegetables
+    Stir-fry the vegetables
+    Taste-test the vegetables
+        If the veggies are good
+            Remove them from the stove
+        If the veggies aren't good
+            Add more pepper and spices
+        If the veggies aren't cooked enough
+            Keep stir-frying the veggies
+    Heat the tortilla
+    Add rice to tortilla
+    Add vegetables to tortilla
+    Roll tortilla
+End
+```
 
-{lang="text"}
-    Début
-        Sortir une casserole
-        Mettre de l'eau dans la casserole
-        Ajouter du sel
-        Mettre la casserole sur le feu
-        Tant que l'eau ne bout pas
-        Attendre
-        Sortir les pâtes du placard
-        Verser les pâtes dans la casserole
-        Tant que les pâtes ne sont pas cuites
-            Attendre
-        Verser les pâtes dans une passoire
-        Egoutter les pâtes
-        Verser les pâtes dans un plat
-        Goûter
-        Tant que les pâtes sont trop fades
-            Ajouter du sel
-            Goûter
-        Si on préfère le beurre à l'huile
-            Ajouter du beurre
-        Sinon
-            Ajouter de l'huile
-    Fin
+![Mmmmmm!](images/intro02-02.jpg)
 
-![C'est prêt !](images/pates.jpg)
+You reach your goal by combining a set of actions in a specific order. There are different types of actions:
 
-On constate qu'on arrive à l'objectif visé en combinant un ensemble d'actions dans un ordre précis.
-On peut distinguer différents types d'actions :
+* Simple actions ("get out the rice cooker")
+* Conditional actions ("if the veggies are good")
+* Actions that are repeated ("keep stir-frying the veggies")
 
-* des actions simples ("Sortir une casserole") ;
-* des actions conditionnelles ("Si on préfère le beurre à l'huile...") ;
-* des actions qui se répètent ("Tant que les pâtes sont trop fades...").
+We used a simple writing style, not a specific programming language. In fact, we just wrote what is called an **algorithm**. We can define an algorithm as an ordered sequence of operations for solving a given problem. An algorithm breaks down a complex problem into a series of simple operations.
 
-Nous avons employé une notation simple, compréhensible et indépendante de tout langage de programmation. En fait, nous venons d'écrire ce qu'on appelle un **algorithme**.
+### The role of the programmer
 
-On peut définir un algorithme comme **une suite ordonnée d'opérations permettant de résoudre un problème donné**. Un algorithme décompose un problème complexe en une suite d'opérations simples.
+Writing programs that can reliable perform expected tasks is a programmer's goal. A beginner can learn to quickly create simple programs. Things get more complicated when the program evolves and becomes more complex. It takes experience and a lot of practice before you feel like you'll control this complexity! Once you have the foundation, the only limit is your imagination!
 
-### Le rôle du programmeur
-
-Ecrire des programmes qui réalisent de manière fiable les tâches attendues est la première mission du programmeur. Un débutant arrivera vite à créer des programmes simples. La difficulté apparaît lorsque que le programme évolue et se complexifie. Il faut de l'expérience et beaucoup de pratique avant d'arriver à maîtriser cette complexité.
-
-C'est aussi ce qui fait de la programmation un art subtil et stimulant. Une fois les bases acquises, vos seules limites seront celles de votre imagination !
-
-> "Le programmeur est un créateur d'univers dont il est seul responsable. Des univers d'une complexité virtuellement infinie peuvent être créés sous la forme de programmes informatiques." (Joseph Weizenbaum)
+> "“The computer programmer is a creator of universes for which he alone is the lawgiver. No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or field of battle and to command such unswervingly dutiful actors or troops.” (Joseph Weizenbaum)
