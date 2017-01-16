@@ -1,4 +1,4 @@
-# Introduction to JavaScript
+# Introducing JavaScript
 
 ## TL;DR
 
