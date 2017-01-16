@@ -2,30 +2,39 @@
 
 ## TL;DR
 
-* Historiquement créé pour animer les pages web, le langage JavaScript peut maintenant être utilisé pour créer dans de très nombreux environnements : serveurs, applications mobiles, objets connectés...
-* Il a été standardisé sous le nom d'**ECMAScript** et subit des améliorations régulières.
-* La version de JavaScript utilisée dans ce livre est **ES2015**, anciennement appelée **ES6**. Bien que récente, elle est maintenant bien supportée.
+* Originally created to animate web pages, the JavaScript language can now bu used almost everywhere, from servers to mobile apps and connected devices.
+* JavaScript is becoming essential for many software developers. It's an excellent choice as a first language for learning programming.
+* It's been standardized under the name **ECMAScript** and is continuously improved ever since.
+* The JavaScript version used in this book is **ES2015**, otherwise known as **ES6**. Albeit recent, it is now well supported by most environments.
 
-## Histoire de JavaScript
+## History of JavaScript
 
-JavaScript est avant tout le langage de programmation du Web. Il a été inventé en 1995 par [Brendan Eich](https://fr.wikipedia.org/wiki/Brendan_Eich), qui travaillait à l'époque pour la société [Netscape](https://fr.wikipedia.org/wiki/Netscape_Communications), créatrice du premier navigateur Web populaire (l'ancêtre de Firefox). 
+JavaScript is first and foremost the programming language of the web. It was invented in 1995 by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich), who at the time worked for [Netscape](https://en.wikipedia.org/wiki/Netscape_Communications), which created the first popular web browser (Firefox's ancestor).
 
-W> JavaScript ne doit pas être confondu avec le langage Java inventé à la même époque. Leurs syntaxes sont proches, mais leurs usages et leurs "philosophies" sont très éloignés. Consultez [cet article](http://www.js-attitude.fr/2012/09/17/javascript-n-a-rien-a-voir-avec-java/) pour plus de précisions à ce sujet.
+W> JavaScript should not be confused with Java, another language invented at the same time! Both share a similar syntax, but their use cases and "philosophies" are very different.
 
-L'idée de départ était de créer un langage simple pour rendre dynamiques et interactives les pages Web, qui étaient très simplistes à l'époque.
+The idea behind JavaScript was to create a simple language to make web pages dynamic and interactive, since back then, pages were very simple.
 
-![La page d'accueil de Yahoo en 1994](images/yahoo_home_page_1994.jpg)
+![Yahoo's home page circa 1994](images/intro03-01.jpg)
 
-Petit à petit, les créateurs de sites Web ont enrichi leurs pages en y ajoutant du code écrit en JavaScript. Pour que le résultat fonctionne, il fallait que le navigateur Web (le logiciel qui sert à surfer sur la Toile en affichant les pages Web) comprenne le JavaScript. Ce langage a donc été progressivement intégré à l'ensemble des navigateurs. N'importe quel navigateur Web est aujourd'hui capable d'exécuter du code écrit en JavaScript. 
+Web builders starting gradually enriching their pages by adding JavaScript code. For this code to work, the recipient web browser (the software used to surf the web) had to be able to process JavaScript. This language has been progressively integrated into browsers, and now all browsers are able to handle it!
 
-L'explosion du Web puis l'avènement du Web 2.0, basé sur des pages riches et interactives, ont rendu JavaScript de plus en plus populaire. Les concepteurs de navigateurs Web ont optimisé la rapidité d'exécution du code JavaScript, jusqu'à en faire un langage très performant. Cela a conduit à l'apparition en 2009 de la plate-forme [Node.js](https://fr.wikipedia.org/wiki/Node.js), qui permet d'écrire en JavaScript des applications Web très performantes ([plus de détails](https://openclassrooms.com/courses/des-applications-ultra-rapides-avec-node-js/node-js-mais-a-quoi-ca-sert)). Par l'intermédiaire de [MongoDB](https://fr.wikipedia.org/wiki/MongoDB), JavaScript a même pénétré le monde des bases de données (les logiciels qui ont pour rôle de stocker des informations de manière fiable et durable).
+Because of the explosion of the Web and the advent of the web 2.0 (based on rich, interactive pages), JavaScript has become increasingly popular. Web browser designers have optimized the execution speed of JavaScript, which means it's now a very fast language.
 
-Enfin, l'arrivée des smartphones et autres tablettes dotés de systèmes différents et incompatibles (iOS, Android ou Windows Phone) a conduit à l'apparition d'outils de développement dits multi-plateformes. Ils permettent d'écrire en une seule fois des applications mobiles compatibles avec l'ensemble des terminaux du marché. Ces outils sont presque toujours basés sur... JavaScript !
+This led to the 2009 emergence of the [Node.js](https://nodejs.org) platform, which allows you to create JavaScript web applications very quickly. Thanks to a service called [MongoDB](https://www.mongodb.com), JavaScript has even entered the database world (software whose role is to store information).
 
-Bref, JavaScript est partout. Sa connaissance vous ouvrira les portes de la programmation côté navigateur Web (on parle de développement *front-end*), côté serveur (*back-end*) ou côté mobile. Plutôt pas mal pour un langage qui se veut malgré tout simple et facile d'accès.
+Finally, the popularity of smartphones and tablets with different systems (iOS, Android, Windows Phone) has led to the emergence of so-called cross-platform development tools. They allow you to write a single mobile application that's compatible with these systems. These tools are almost always based on... JavaScript!
 
-## Version utilisée dans ce livre
+## JavaScript: an essential language
 
-JavaScript a été standardisé en 1997 sous le nom d'[ECMAScript](https://fr.wikipedia.org/wiki/ECMAScript). Depuis, le langage a subi plusieurs séries d'améliorations pour corriger certaines maladresses initiales et supporter de nouvelles fonctionnalités. Ce processus se poursuit à l'heure actuelle.
+In short, JavaScript is everywhere. It sits on top of a rich ecosystem of **components** (small software *bricks* that you can easily plug into your project) and a vibrant developer community. Knowing it will open the doors of the web browser-side programming (known as front-end development), server side development (backend), and mobile development. A growing number of people see JavaScript as the most important technology in software development nowadays.
 
-Ce livre utilise une version récente du langage appelée ES2015 (anciennement ES6). Elle apporte des évolutions très intéressantes et est maintenant bien supportée par les principaux environnements JavaScript du marché, comme le montre cette [table de compatibilité](http://kangax.github.io/compat-table/es6/).
+Both ubiquitous and still relatively easy to learn, JavaScript is also a [great choice](https://medium.freecodecamp.com/what-programming-language-should-i-learn-first-%CA%87d%C4%B1%C9%B9%C9%94s%C9%90%CA%8C%C9%90%C9%BE-%C9%B9%C7%9D%CA%8Dsu%C9%90-19a33b0a467d#.3yu73z1px) as a first language for learning programming.
+
+## Version used in this book
+
+JavaScript was standardized in 1997 under the name [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript). Since then, the language has undergone several rounds of improvements to fix some awkwardness and support new features.
+
+![ECMAScript/JavaScript versions timeline](images/intro03-02.png)
+
+This book uses the most recently standardized version of JavaScript, called **ES2015** or sometimes **ES6**. This version brings a lot of interesting novelties to the table. It is now well supported by most environments and platforms, starting with web browsers (more details in this [compatibility table](http://kangax.github.io/compat-table/es6/)).

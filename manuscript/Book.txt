@@ -7,4 +7,3 @@ intro04.md
 mainmatter.txt
 part1.txt
 chapter01.md
-part2.txt
