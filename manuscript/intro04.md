@@ -1,20 +1,12 @@
-# Book overview
+# What you'll need
 
 ## TL;DR
 
-* This book is divided into three main parts to be read in sequential order: the first teaching the language basics, the second about using JavaScript in web pages and the third dealing with more advanced topics.
-* A series of **exercises** associated to each chapter can be purchased separatly. Searching them might greatly improve your learning outcome.
-* The easiest way to try the code samples (and search the exercises) is to use a JavaScript playground like [CodePen](http://codepen.io).
+* The easiest way to get your feet wet and try the code samples is to use a JavaScript playground like [CodePen](http://codepen.io).
 * If you don't have access to a reliable Internet connection, an alternative is to set up a development machine with a code editor and a appropriate folder structure.
 * In all cases, you'll need the most recent version of a modern web browser.
 
-## Structure and organization
-
-This book is divided into three main parts. The first one teaches the basics of programming with JavaScript. The second one explains how to use JavaScript to create interactive web pages. The third one deals with more advanced concepts of the language. Each part depends on the previous ones, but there's no other prerequisite to reading.
-
-Additionally, each chapter is associated with a series of exercises, sold separatly, in which you'll have to apply the chapter concepts. These exercises are as simple and to the point as possible. Since real learning comes with practicing, not just reading, searching these exercises might greatly improve the outcome you'll get as a learner.
-
-## What you'll need
+## Environment setup
 
 Few things are more frustrating than starting to learn something new and then having to spend hours trying to set up a proper work environment. Fortunately, one of the beauties of JavaScript code is that it can run on almost any browser. We'll be using this to our advantage throughout this book. No complex setup requiring administrative rights on your machine: all you'll need is a modern browser and an active Internet connection (see below if you don't have access to a reliable connection or must work offline).
 
@@ -28,7 +20,7 @@ I> A **JavaScript playground** is an online service where you can type some Java
 
 ![The JSFiddle, CodePen and JS Bin logos](images/intro04-01.png)
 
-### CodePen 101
+## CodePen 101
 
 If you choose to use CodePen along with this book, you *really* should start by visiting [Welcome to CodePen](https://codepen.io/hello/). It introduces the platform in a very friendly way and gives you everything you need to get started.
 
@@ -38,7 +30,7 @@ T> I advise you to enable autosave and disable auto-update for all your book-rel
 
 You should use a pen (not necessarily saved) to try every code sample this book contains. You should also dedicate a specific and saved pen to each exercise you'll search.
 
-### Working offline
+## Working offline
 
 Using CodePen or another JavaScript playground requires a reliable Internet connection. If that's not your case (or if you prefer/have to work offline), you'll need to use a code editor on your machine. Here are some of them:
 
