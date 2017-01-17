@@ -3,8 +3,8 @@
 ## TL;DR
 
 * This book is divided into three main parts to be read in sequential order: the first teaching the language basics, the second about using JavaScript in web pages and the third dealing with more advanced topics.
-* Each chapter is associated with a series of exercises. Searching them seriously is very important.
-* The easiest way to try the code samples and search the exercises is to use a JavaScript playground like [CodePen](http://codepen.io).
+* A series of **exercises** associated to each chapter can be purchased separatly. Searching them might greatly improve your learning outcome.
+* The easiest way to try the code samples (and search the exercises) is to use a JavaScript playground like [CodePen](http://codepen.io).
 * If you don't have access to a reliable Internet connection, an alternative is to set up a development machine with a code editor and a appropriate folder structure.
 * In all cases, you'll need the most recent version of a modern web browser.
 
@@ -12,11 +12,7 @@
 
 This book is divided into three main parts. The first one teaches the basics of programming with JavaScript. The second one explains how to use JavaScript to create interactive web pages. The third one deals with more advanced concepts of the language. Each part depends on the previous ones, but there's no other prerequisite to reading.
 
-Each chapter is associated with a series of exercises in which you'll have to apply the chapter concepts. These exercises are as simple and to the point as possible. Searching them is **absolutely essential**: real learning comes with practicing, not just reading.
-
-TODO Add exercises URL
-
-W> Resist the urge to look at the exercises solutions too quickly!
+Additionally, each chapter is associated with a series of exercises, sold separatly, in which you'll have to apply the chapter concepts. These exercises are as simple and to the point as possible. Since real learning comes with practicing, not just reading, searching these exercises might greatly improve the outcome you'll get as a learner.
 
 ## What you'll need
 
@@ -26,11 +22,11 @@ I> A **browser** is the software you use to visit webpages and use web applicati
 
 This book targets a recent version of the JavaScript language. Whatever browser you choose to use (or have access to), it's important that you upgrade it to its most recent version.
 
-Once your browser is updated, the quickest and easiest way to follow along is to use an online JavaScript playground. My personal favourite is [CodePen](http://codepen.io), but there are alternatives like [JSFiddle](https://jsfiddle.net/) and [JS Bin](http://jsbin.com/).
-
-![The JSFiddle, CodePen and JS Bin logos](images/intro04-01.png)
+Once your browser is updated, the quickest and easiest way to follow along is to use an online JavaScript playground. My personal favorite is [CodePen](http://codepen.io), but there are alternatives like [JSFiddle](https://jsfiddle.net/) and [JS Bin](http://jsbin.com/).
 
 I> A **JavaScript playground** is an online service where you can type some JavaScript code and immediatly visualize its result without any environment setup.
+
+![The JSFiddle, CodePen and JS Bin logos](images/intro04-01.png)
 
 ### CodePen 101
 
@@ -46,7 +42,7 @@ You should use a pen (not necessarily saved) to try every code sample this book 
 
 Using CodePen or another JavaScript playground requires a reliable Internet connection. If that's not your case (or if you prefer/have to work offline), you'll need to use a code editor on your machine. Here are some of them:
 
-* [Visual Studio Code](https://code.visualstudio.com/) (my personal favourite).
+* [Visual Studio Code](https://code.visualstudio.com/) (my personal favorite).
 * [Brackets](http://brackets.io/).
 * [Atom](https://atom.io/).
 * [Sublime Text](https://www.sublimetext.com/).
