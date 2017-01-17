@@ -45,7 +45,7 @@ Numbers are mainly used for counting. The main operations you'll see are summari
 
 ### String
 
-A **string** in JavaScript is text surrounded by quotation marks, such as `"This is a string"`. 
+A **string** in JavaScript is text surrounded by quotation marks, such as `"This is a string"`.
 
 I> You can also define strings with a pair of single quotes: `'This is another string'`. The best practice for single or double quotes is a whole political thing. Use whichever you like, but don't mix the two in the same program!
 
@@ -83,32 +83,34 @@ console.log("Goodbye!");
 
 ![Execution result](images/chapter01-01.png)
 
-I> On remarque au passage qu'une division par zéro (ici `12/0`) produit, comme attendu, un résultat infini (`Infinity`).
+I> As expected, a division by zero (`12/0`) results in an `Infinity` value.
 
-### Commentaires
+### Comments
 
-Par défaut, chaque ligne de texte dans les fichiers source d'un programme est considérée comme une instruction à exécuter. Il est possible d'exclure certaines lignes de l'exécution en les préfixant par une double barre oblique `//`. Ce faisant, on transforme ces lignes en **commentaires**.
+By default, each line of text in the source files of a program is considered a statement that should be executed. You can prevent certain lines from executing by putting a double slash before them: `//`. This turns the code into a **comment**.
 
 ```js
-console.log("Bonjour en JavaScript !");
-//console.log("Faisons quelques calculs.");
+console.log("Hello from JavaScript!");
+//console.log("Let's do some math");
 console.log(4 + 7);
 //console.log(12 / 0);
-console.log("Au revoir !");
+console.log("Goodbye!");
 ```
 
-Lors de l'exécution, les lignes commentées ne produisent plus de résultat.
+During execution, the commented-out lines no longer produce results. As we hoped, they weren't executed.
 
-![Résultat de l'exécution](images/chapter01-03.png)
+![Execution result](images/chapter01-02.png)
 
-Les commentaires servent à donner des informations sur le programme et sont destinées au programmeur, non à la machine.
+Comments are great for developers so you can write comments to yourself, explanations about your code, and more, without the computer actually executing any of it.
 
-I> Il existe une autre manière de créer des commentaires en entourant une ou plusieurs lignes par les caractères `/*` et `*/`.
-I>
-I>     /* Un commentaire
-I>     sur plusieurs
-I>     lignes */
-I>
-I>     // Un commentaire sur une seule ligne
+You can also write comments by typing `/*  */` around the code you want commented out.
 
-Les commentaires fournissent une aide précieuse pour comprendre le code source d'un programme. Il est important de décrire les parties importantes ou compliquées d'un programme grâce à des commentaires. Prenez cette bonne habitude dès maintenant !
+```js
+/* A comment
+written on
+several lines */
+
+// A one line comment
+```
+
+Comments are a great source of info about a program's purpose or structure. Adding comments to complicated or critical parts is a good habit you should build right now!
