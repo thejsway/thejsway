@@ -2,6 +2,8 @@
 
 A modern introduction to an essential language.
 
+By Baptiste Pesquet
+
 ![CC BY-NC-SA](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
 
 ## Overview
