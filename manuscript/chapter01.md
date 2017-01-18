@@ -115,9 +115,9 @@ several lines */
 
 Comments are a great source of info about a program's purpose or structure. Adding comments to complicated or critical parts is a good habit you should build right now!
 
-## Exercises
+## Coding time!
 
-Let's check your understanding of this chapter by doing a few simple exercises!
+Let's put your brand new coding skills into practice.
 
 ## Presentation
 
