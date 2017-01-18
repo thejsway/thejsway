@@ -2,7 +2,7 @@
 
 A modern introduction to an essential language.
 
-A book by [Baptiste Pesquet](http://bpesquet.com)
+By [Baptiste Pesquet](http://bpesquet.com)
 
 ![CC BY-NC-SA](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
 
@@ -29,4 +29,4 @@ This book is built upon two online courses I wrote for the French EdTech startup
 
 Thanks to [Jessica Mautref](https://www.linkedin.com/in/jessicamautref) for her watchful eye during the writing process, and to [Emily Reese](https://www.linkedin.com/in/eclairereese) for the initial English translation. Both also contributed many good ideas.
 
-I've been inspired by other authors that decided to publish their books in an open way before me: [Kyle Simpson](https://github.com/getify), [Nicholas C. Zakas](https://www.nczonline.net/), [Axel Rauschmayer](http://dr-axel.de/) and [Marijn Haverbeke](http://marijnhaverbeke.nl/).
+I've been inspired by other authors who decided to publish their books in an open way: [Kyle Simpson](https://github.com/getify), [Nicholas C. Zakas](https://www.nczonline.net/), [Axel Rauschmayer](http://dr-axel.de/) and [Marijn Haverbeke](http://marijnhaverbeke.nl/).
