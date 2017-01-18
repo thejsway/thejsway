@@ -39,7 +39,7 @@ Numbers are mainly used for counting. The main operations you'll see are summari
 |Operator|Role|
 |---------|----|
 |`+`|Addition|
-|`-`|Soustraction|
+|`-`|Substraction|
 |`*`|Multiplication|
 |`/`|Division|
 
@@ -114,3 +114,29 @@ several lines */
 ```
 
 Comments are a great source of info about a program's purpose or structure. Adding comments to complicated or critical parts is a good habit you should build right now!
+
+## Exercises
+
+Let's check your understanding of this chapter by doing a few simple exercises!
+
+## Presentation
+
+Write a program that displays your name and age. Here's the result for mine.
+
+![](images/chapter01-03.png)
+
+## Minimalistic calculator
+
+Writea a program that displays the results of adding, substracting, multiplicating and dividing 6 by 3.
+
+## Values prediction
+
+Observe the following program and try to predict the values it displays.
+
+```js
+console.log(4 + 5);
+console.log("4 + 5");
+console.log("4" + "5");
+```
+
+Check your prediction by executing it.

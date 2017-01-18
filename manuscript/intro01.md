@@ -14,4 +14,6 @@ This book is divided into three main parts. The first one teaches the basics of 
 
 Each chapter starts with a **TL;DR** paragraph which summarizes it, so you'll be able to skip ahead if you already know a chapter's content.
 
+At the end of each chapter, a series of short and focused exercises will make you put your newly acquired skills into practice. Searching them seriously is *essential*: real learning comes with practicing, not just reading.
+
 Complete beginner or already experienced in programming, I wish you a great journey in the wonderful world of JavaScript!
