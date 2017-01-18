@@ -10,6 +10,18 @@ By [Baptiste Pesquet](http://bpesquet.com)
 
 This repository contains the book source files. Your contributions are most welcome.
 
+## Table of contents
+
+* Introduction
+    * [About this book](manuscript/intro01.md)
+    * [Welcome to programming](manuscript/intro02.md)
+    * [Introducing JavaScript](manuscript/intro03.md)
+    * [What you'll need](manuscript/intro04.md)
+* Part I : Language basics
+    * [3, 2, 1... Code!](manuscript/chapter01.md)
+
+More to come!
+
 ## Published version
 
 A published version will soon be available on [Leanpub](https://leanpub.com). 
