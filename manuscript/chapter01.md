@@ -20,7 +20,7 @@ Here's our very first JavaScript program.
 console.log("Hello from JavaScript!");
 ```
 
-This program displays the text `"Hello from JavaScript!"` in the **console**. To achieve that, its uses a JavaScript order named `console.log()`, which role is to display a piece of information. The displayed text is placed between parenthesis and followed by a semicolon, which mark the end of the line.
+This program displays the text `"Hello from JavaScript!"` in the console. To achieve this, its uses a JavaScript order named `console.log()`, which role is to display a piece of information. The displayed text is placed between parenthesis and followed by a semicolon, which mark the end of the line.
 
 Displaying a text on the screen (the famous [Hello World](https://en.wikipedia.org/wiki/Hello_world) all programmers know) is often the first thing you'll do when you learn a new programming language. It's the classic example. You've already taken that first step!
 
