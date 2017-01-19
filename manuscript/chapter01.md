@@ -4,13 +4,13 @@ Let's get started! This chapter will introduce you to the fundamentals of progra
 
 ## TL;DR
 
-* The JavaScript instruction `console.log()` displays a message.
 * A **value** is a piece of information. The **type** of a value defines its role and the operations applicable to it.
 * The JavaScript language uses the **number** type to represent a numerical value (with or without decimals) and the **string** type to represent text.
 * A string value is surrounded by a pair of single quotes (`'...'`) or a pair of quotation marks (`"..."`).
 * Arithmetic operations between numbers are provided by the `+`, `-`, `*` and `/` operators. Applied to two strings, the `+` operators joins them together. This operation is called **concatenation**.
 * A computer program is made of several **lines of code** read sequentially during execution.
 * **Comments** (`// ...` or `/* ... */`) are non-executed parts of code. They form a useful program documentation.
+* The JavaScript instruction `console.log()` displays a message.
 
 ## Your first program
 
