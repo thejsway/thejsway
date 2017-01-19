@@ -47,7 +47,7 @@ Numbers are mainly used for counting. The main operations you'll see are summari
 
 A **string** in JavaScript is text surrounded by quotation marks, such as `"This is a string"`.
 
-I> You can also define strings with a pair of single quotes: `'This is another string'`. The best practice for single or double quotes is a whole political thing. Use whichever you like, but don't mix the two in the same program!
+You can also define strings with a pair of single quotes: `'This is another string'`. The best practice for single or double quotes is a whole political thing. Use whichever you like, but don't mix the two in the same program!
 
 W> Always remember to close a string with the same type of quotation marks you started it with.
 
@@ -59,7 +59,7 @@ You can not add or remove string values like you'd do with numbers. However, the
 
 We already defined a computer program as a list of commands telling a computer what to do. These orders are written as text files and make up what's called the "source code" of the program. The lines of text in a source code file are called **lines of code**.
 
-I> The source code may include empty lines: these will be ignored when the program executes.
+The source code may include empty lines: these will be ignored when the program executes.
 
 ### Statements
 
