@@ -24,7 +24,7 @@ More to come!
 
 ## Published version
 
-A published version will soon be available on [Leanpub](https://leanpub.com). 
+A published version is available on [Leanpub](https://leanpub.com/thejsway) on a pay-as-you-want pricing model. If you like what you see so far, your financial contribution to this effort would be much appreciated.
 
 ## Markdown flavor
 
