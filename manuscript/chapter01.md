@@ -119,17 +119,17 @@ Comments are a great source of info about a program's purpose or structure. Addi
 
 Let's put your brand new coding skills into practice.
 
-## Presentation
+### Presentation
 
 Write a program that displays your name and age. Here's the result for mine.
 
 ![](images/chapter01-03.png)
 
-## Minimalistic calculator
+### Minimalistic calculator
 
 Writea a program that displays the results of adding, substracting, multiplicating and dividing 6 by 3.
 
-## Values prediction
+### Values prediction
 
 Observe the following program and try to predict the values it displays.
 

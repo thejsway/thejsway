@@ -91,9 +91,9 @@ All these programs display `"Hello"` through a different set of instructions.
 
 The fact of asking a computer to process the orders contained in a program is called **execution**. Regardless of which programming language is used, a program must be translated into assembly code in order to be executed. The translation process depends on the language used.
 
-With some languages, the translation into assembly code happens line by line in real time. These languages are said to be **interpreted**. Python and PHP are examples of interpreted languages.
+With some languages, the translation into assembly code happens line by line in real time. In this case, the program is executed like a human reads a book, starting at the top and working down line-by-line. These languages are said to be **interpreted**. Python and PHP are examples of interpreted languages.
 
-Another possibility is to read and translate every line of source code before execution. The result will be an executable program targeting one specific hardware platform. This intermediate step is called **compilation**, and the programming language which use it are said to be **compiled**.
+Another possibility is to read and check for errors the whole source code before execution. If no errors are detected, an executable targeting one specific hardware platform is generated. The intermediate step is called **compilation**, and the programming language which use it are said to be **compiled**.
 
 Lastly, some languages are pseudo-compiled in order to be executed on different hardware platforms. This is the case for the Java language and also for those of the Microsoft .NET family (VB.NET, C#, etc).
 
