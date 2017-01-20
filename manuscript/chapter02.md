@@ -81,7 +81,7 @@ console.log(a);
 If the initial value of a variable won't ever change during the rest of program execution, this variable is called a **constant**. This constantness can be enforced by using the keyword `const` instead of `let` to declare it. Thus, the program is more expressive and further attempts to modify the variable can be detected as errors.
 
 ```js
-const a = 3.14; // The value of a can't be modified
+const a = 3.14; // The value of a cannot be modified
 a = 6.28;       // Impossible!
 ```
 
@@ -102,91 +102,91 @@ console.log(b); // Shows 2
 
 ### Variable scope
 
-On appelle **portée** (*scope*) d'une variable la portion du code source dans laquelle cette variable est visible et donc utilisable. Les variables déclarées avec `let` et `const` ont une portée de type bloc : elles ne sont visibles qu'au sein du bloc de code dans lequel elles sont déclarées (ainsi que dans tous les sous-blocs éventuels). En JavaScript et dans de nombreux autres langages, un **bloc de code** est délimité par une paire d'accolades ouvrante et fermante. Un programme JavaScript correspond par défaut à un unique bloc de code.
+The **scope** of a variable is the part of the program where the variable is visible and usable. Variables declared with `let` or `const` are **block-scoped**: their visibility is limited to the block where they are declared (and every sub-block, if any). In JavaScript and many other programming languages, a **code block** is a portion of a program delimited by a pair of opening and closing braces. By default, a JavaScript program forms one block of code.
 
 ```js
-let var1 = 0;
+let nb1 = 0;
 {
-    var1 = 1; // OK : var1 est déclarée dans le bloc parent
-    const var2 = 0;
+    nb1 = 1; // OK : nb1 is declared in the parent block
+    const nb2 = 0;
 }
-console.log(var1); // OK : var1 est déclarée dans le bloc courant
-console.log(var2); // Erreur : var2 n'est pas visible ici
+console.log(nb1); // OK : nb1 is declared in the current block
+console.log(nb2); // Error! nb2 is not visible here
 ```
 
-## La notion d'expression
+## Expressions
 
-Une **expression** est un morceau de code qui produit une valeur. On crée une expression en combinant des variables, des valeurs et des opérateurs. Toute expression produit une valeur et correspond à un certain type. Le calcul de la valeur d'une expression s'appelle **l'évaluation**. Lors de l'évaluation d'une expression, les variables sont remplacées par leur valeur.
+An **expression** is a piece of code that produces a value. An expression is created by combining variables, values and operators. Every expression has a value and thus a type. Calculating an expression's value is called **evaluation**. During evaluation, variables are replaced by their values.
 
 ```js
-// 3 est une expression dont la valeur est le nombre 3
+// 3 is an expression whose value is 3
 const c = 3;
-// c est une expression dont la valeur est celle de c (ici 3)
+// c is an expression whose value is the value of c (3 here)
 let d = c;
-// (d + 1) est une expression. Sa valeur est celle de d augmentée de 1 (ici 4)
-d = d + 1; // d contient la valeur 4
-console.log(d); // Affiche 4
+// (d + 1) is an expression whose value is d's + 1 (4 here)
+d = d + 1; // d now contains the value 4
+console.log(d); // Show 4
 ```
 
-Une expression peut comporter des parenthèses qui modifient la priorité des opérations lors de l'évaluation. En l'absence de parenthèses, la priorité des opérateurs est la même qu'en mathématiques.
+Operator priority inside an expression is the same as in math. However, an expression can integrate **parenthesis** that modify these priorities.
 
 ```js
-let e = 3 + 2 * 4; // e contient la valeur 11
-e = (3 + 2) * 4; // e contient la valeur 20
+let e = 3 + 2 * 4; // e contains 11 (3 + 8)
+e = (3 + 2) * 4;   // e contains 20 (5 * 4)
 ```
 
-Le langage JavaScript permet d'inclure des expressions dans une chaîne de caractères lorsque cette chaîne est délimitée par une paire d'accents graves seuls ou *backticks* (\`). Une telle chaîne est appelée un *template literal* ou littéral de gabarit. A l'intérieur, les expressions sont indiquées par la syntaxe `${expression}`.
+It is possible to include expressions in a string by using **backticks** (\`) to delimitate the string. Such a string is called a **template literal**. Inside a template literal, expressions are identified by the `${expression}` syntax.
 
-On utilise souvent cette possibilité pour créer des chaînes intégrant des valeurs de variables.
+This is often used to create strings containing the values of some variables.
 
 ```js
-const pays = "France";
-console.log(`J'habite en ${pays}`); // Affiche "J'habite en France"
+const country = "France";
+console.log(`I live in ${country}`); // Show "I live in France"
 const x = 3;
 const y = 7;
-console.log(`${x} + ${y} = ${x + y}`); // Affiche "3 + 7 = 10"
+console.log(`${x} + ${y} = ${x + y}`); // Show "3 + 7 = 10"
 ```
 
-## Conversions de types
+## Type conversions
 
-L'évaluation d'une expression peut entraîner des conversions de type. Ces conversions sont dites **implicites** : elles sont faites automatiquement, sans intervention du programmeur. Par exemple, l'utilisation de l'opérateur `+` entre une valeur de type chaîne et une valeur de type nombre provoque la concaténation des deux valeurs dans un résultat de type chaîne.
+An expression's evaluation can result in type conversions. These are called **implicit** conversions, as they happen automatically without the programmer's intervention. For example, using the `+` operator between a string and a number causes the concatenation of the two values into a string result.
 
 ```js
 const f = 100;
-// Affiche "La variable f contient la valeur 100"
-console.log("La variable f contient la valeur " + f);
+// Show "Variable f contains the value 100"
+console.log("Variable f contains the value " + f);
 ```
 
-Le langage JavaScript est extrêmement tolérant au niveau des conversions de type. Cependant, il se peut qu'aucune conversion ne soit possible. En cas d'échec de la conversion d'un nombre, la valeur du résultat est `NaN` (*Not a Number*).
+JavaScript is extremely tolerant in terms of type conversion. However, sometimes conversion isn't possible. If a number fails to convert, you'll get the result `NaN`  (*Not a Number*).
 
 ```js
-const g = "cinq" * 2;
-console.log(g); // Affiche NaN
+const g = "five" * 2;
+console.log(g); // Show NaN
 ```
 
-Il arrive parfois que l'on souhaite forcer la conversion d'une valeur dans un autre type. On parle alors de conversion **explicite**. Pour cela, JavaScript dispose des instructions `Number()` et `String()` qui convertissent respectivement en un nombre et une chaîne la valeur placée entre parenthèses.
+Sometimes you'll wish to convert the value of another type. This is called **explicit** conversion. JavaScript has the `Number()`  and `String()` instructions that convert the value between the parenthesis to a number or a string.
 
 ```js
 const h = "5";
-console.log(h + 1); // Concaténation : affiche la chaîne "51"
+console.log(h + 1); // Concatenation: show the string "51"
 const i = Number("5");
-console.log(i + 1); // Addition numérique : affiche le nombre 6
+console.log(i + 1); // Numerical addition: show the number 6
 ```
 
-## Interactions avec l'utilisateur
+## User interactions
 
-### Saisie et affichage à l'écran
+### Entering and displaying information
 
-Maintenant que nous savons utiliser des variables, nous pouvons écrire des programmes qui échangent des informations avec l'utilisateur.
+Once you start using variables, you can write programs that exchange information with the user.
 
 ```js
-const prenom = prompt("Entrez votre prénom :");
-alert(`Bonjour, ${prenom}`);
+const name = prompt("Enter your first name:");
+alert(`Hello, ${name}`);
 ```
 
-A l'exécution, une première boîte de dialogue apparaît pour demander la saisie du prénom.
+During execution, an alert box pops up, asking for your name.
 
-![Résultat de l'exécution](images/chapter02-04.png)
+![Execution resultn](images/chapter02-04.png)
 
 Cette boîte est le résultat de l'exécution de l'instruction JavaScript `prompt("Entrez votre prénom :")`.
 
