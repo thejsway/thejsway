@@ -4,15 +4,15 @@ You know how to use JavaScript to display values. However, for a program to be t
 
 ## TL;DR
 
-* Une **variable** est une zone de stockage d'information. Chaque variable possède un **nom**, une **valeur** et un **type**. En JavaScript, le type d'une variable est déduit implicitement de sa valeur, et non pas défini explicitement. Il s'agit d'un langage à typage **dynamique**.
-* On déclare une variable JavaScript avec le mot-clé `let` suivi du nom de la variable. Si la valeur initiale d'une variable n'est pas destinée à changer, on utilise de préférence le mot-clé `const` pour déclarer une variable **constante**.
-* L'opérateur d'affectation `=` permet de donner une valeur à une variable. Dans le cas d'une variable de type nombre, on peut utiliser les opérateurs `+=` et `++` pour incrémenter (augmenter de 1) sa valeur.
-* La **portée** (*scope*) d'une variable représente la portion du code source dans laquelle cette variable est utilisable. Les variables définies avec `let` et `const` ont une portée de type bloc : elles ne sont utilisables qu'à l'intérieur du **bloc de code** dans lequel elles sont définies. Un bloc de code est délimité par une paire d'accolades ouvrante et fermante.
-* Une **expression** est un morceau de code combinant des variables, des valeurs et des opérateurs. L'évaluation d'une expression produit une valeur et correspond à un certain type.
-* On peut inclure des expressions dans une chaîne de caractères délimitée par une paire d'accents graves seuls (\`) et appelée *template literal*.
-* Des **conversions de types** peuvent avoir lieu implicitement lors de l'évaluation d'une expression, ou bien explicitement avec les instructions `Number()` et `String()` qui convertissement respectivement une expression en un nombre et en une chaîne.
-* Les instructions `prompt()` et `alert()` permettent respectivement de faire saisir et d'afficher une information sous la forme d'une boîte de dialogue.
-* Il est essentiel de bien nommer ses variables et d'adopter une convention de nommage, comme par exemple *camelCase*.
+* A **variable** is an information storage area. Every variable has a **name**, a **value** and a **type**. In JavaScript, the type of a variable is deduced from the value stored in it: JavaScript is a **dynamically typed** language.
+* A variable is declared using the `let` keyword followed by the variable name. To declare a **constant** (a variable whose initial value must never change), it's better to use the `const` keyword instead.
+* To give a value to a variable, we use the **assignment operator** `=`. For number variables, the operators `+=` and `++` can **increment** (increase by 1) their value.
+* The **scope** of a variable is the part of the program where the variable is visible. Variables declared with `let` or `const` are **block-scoped**. A **code block** is a portion of a program delimited by a pair of opening and closing braces.
+* An **expression** is a piece of code that combines variables, values and operators. Evaluating an expression produces a value, which has a type.
+* Expressions may be included in strings delimited by a pair of backticks (\`). Sucha a string is called a **template literal**.
+* **Type conversions** may happen implicitely during the evaluation of an expression, or explicitely when using the `Number()` and `String()` commands, to obtain a respectively a number or a string.
+* The `prompt()` and `alert()` commands deal with information input and display under the form of dialog boxes.
+* Variable naming is essential to program lisibility. Following a naming convention like [camelCase](https://en.wikipedia.org/wiki/Camel_case) is good practice.
 
 ## Variables
 
@@ -53,7 +53,7 @@ Note that the result is `undefined`. This is a special JavaScript type indicatin
 
 ### Assign values to variables
 
-While a program is running, the value stored in a variable can change. To give new value to a variable, use the `=` operator called the **assignment operator**.
+While a program is running, the value stored in a variable can change. To give a new value to a variable, use the `=` operator called the **assignment operator**.
 
 Check out the example below:
 
@@ -164,7 +164,7 @@ const g = "five" * 2;
 console.log(g); // Show NaN
 ```
 
-Sometimes you'll wish to convert the value of another type. This is called **explicit** conversion. JavaScript has the `Number()`  and `String()` instructions that convert the value between the parenthesis to a number or a string.
+Sometimes you'll wish to convert the value of another type. This is called **explicit** conversion. JavaScript has the `Number()`  and `String()` commands that convert the value between the parenthesis to a number or a string.
 
 ```js
 const h = "5";
@@ -175,7 +175,7 @@ console.log(i + 1); // Numerical addition: show the number 6
 
 ## User interactions
 
-### Entering and displaying information
+### Entering information
 
 Once you start using variables, you can write programs that exchange information with the user.
 
@@ -184,57 +184,53 @@ const name = prompt("Enter your first name:");
 alert(`Hello, ${name}`);
 ```
 
-During execution, an alert box pops up, asking for your name.
+During execution, an dialog box pops up, asking for your name.
 
-![Execution resultn](images/chapter02-04.png)
+![Execution result](images/chapter02-04.png)
 
-Cette boîte est le résultat de l'exécution de l'instruction JavaScript `prompt("Entrez votre prénom :")`.
+This is the result of the JavaScript command `prompt("Enter your first name:")`.
 
-Après saisie du prénom, une seconde boîte affiche un "bonjour" personnalisé.
+Type your name and click **OK**. You'll then get a personalized greeting.
 
-![Résultat de l'exécution](images/chapter02-05.png)
+![Execution result](images/chapter02-05.png)
 
-La valeur saisie dans la première boîte de dialogue a été stockée dans une variable de type chaîne nommée `prenom`. Ensuite, l'instruction JavaScript `alert()` a déclenché l'affichage de la seconde boîte, contenant le message d'accueil.
+The value you entered in the first dialog box has been stored as a string in the variable `name`. The JavaScript command `alert()`  then triggered the display of the second box, containing the result of the concatenation of the string `"Hello, "`  with the value of the `name` variable.
 
-### Affichege dans la console
+### Displaying information
 
-Nous avons vu dans le précédent chapitre que l'instruction JavaScript `console.log()` permettait d'afficher une information.
+Both `console.log()` (encountered in the previous chapter) and `alert()` can be used to display information to the user. Unlike `alert()`, `console.log()` does not stop program execution and is often a better choice.
 
-I> On désigne par "console" une zone d'informations textuelles. L'instruction `console.log()` ne fait pas à proprement parler partie de la spécification du langage JavaScript. Cependant, la très grande majorité des environnements JavaScript, et notamment les navigateurs web, disposent d'une console dans laquelle il est possible d'afficher des informations.
-
-On peut donc utiliser soit `console.log()`, soit `alert()` pour afficher des informations à l'utilisateur. Contrairement à `alert()`, `console.log()` ne bloque pas l'exécution du programme, ce qui en fait parfois un meilleur choix.
-
-Il est possible d'utiliser `console.log()` pour afficher plusieurs valeurs simultanément, en les séparant par des virgules.
+`console.log()` can also display several comma-separated values at once.
 
 ```js
 const temp1 = 36.9;
 const temp2 = 37.6;
 const temp3 = 37.1;
-console.log(temp1, temp2, temp3); // Affiche "36.9 37.6 37.1"
+console.log(temp1, temp2, temp3); // Show "36.9 37.6 37.1"
 ```
 
-### Saisie d'un nombre
+### Entering a number
 
-Quel que soit le texte saisi, l'instruction `prompt()` renvoie toujours une valeur de type chaîne. Il faudra penser à convertir cette valeur avec l'instruction `Number()` si vous souhaitez ensuite la comparer à d'autres nombres ou l'utiliser dans des expressions mathématiques.
+Regardless of the entered data, the `prompt()` command always return a string value. If this value is to be used in numerical expressions, it *must* be converted into a number with the `Number()` command.
 
 ```js
-const saisie = prompt("Entrez un nombre : "); // saisie est de type chaîne
-const nb = Number(saisie); // nb est de type nombre
+const input = prompt("Enter a number:"); // input's type is string
+const nb = Number(input); // nb's type is number
 ```
 
-Il est possible de combiner les deux opérations (saisie et conversion) en une seule ligne de code, pour un résultat identique :
+Both operations can be combined in one line for the same result.
 
 ```js
-const nb = Number(prompt("Entrez un nombre : ")); // nb est de type nombre
+const nb = Number(prompt("Enter a number:")); // nb's type is number
 ```
 
-Ici, le résultat de la saisie utilisateur est directement converti en une valeur de type nombre par l'instruction `Number()` et affecté à la variable `nb`.
+In this example, the user input is directly converted in a number value by the `Number()` command and stored in the `nb` variable.
 
-## Importance du nommage des variables
+## Variable naming
 
-Pour clore ce chapitre, j'aimerais insister sur un aspect parfois négligé par les développeurs débutants : le nommage des variables. Le nom choisi pour une variable n'a pour la machine aucune importance, et le programme fonctionnera de manière identique. Rien n'empêche de nommer toutes ses variables `a`, `b`, `c`...,  voire de choisir des noms absurdes comme `steackhache` ou `jesuisuncodeurfou`.
+To close this chapter, let's discuss variable naming. The computer doesn't care about variable names. You could name your variables using the classic example of a single letter (`a`, `b`, `c`...) or choose absurd names like `burrito`  or `puppieskittens90210`.
 
-Et pourtant, la manière dont sont nommées les variables affecte grandement la facilité de compréhension d'un programme. Observez ces deux versions du même exemple.
+Nonetheless, naming variables well can make your code much easier to read. Check out these two examples:
 
 ```js
 const nb1 = 5.5;
@@ -244,35 +240,85 @@ console.log(nb3);
 ```
 
 ```js
-const rayon = 5.5;
+const radius = 5.5;
 const pi = 3.14;
-const perimetre = 2 * pi * rayon;
-console.log(perimetre);
+const perimeter = 2 * pi * radius;
+console.log(perimeter);
 ```
 
-Leur fonctionnement est strictement identique, et pourtant la compréhension du second est beaucoup plus rapide grâce aux noms choisis pour ses variables.
+They function in the same way, but the second version is much easier to understand.
 
-Comment faire pour bien nommer les variables de ses programmes ?
+How are some good ways to name variables?
 
-### Choisir des noms significatifs
+### Choose meaningful names
 
-La règle la plus importante est de donner à toute variable un nom qui reflète son rôle. C'est bien le cas dans le second exemple ci-dessus : les variables `rayon`, `pi` et `perimetre` stockent respectivement le rayon d'un cercle, la valeur du nombre PI et le périmètre calculé.‌
+The most important rule is to give each variable a name that reflects its role. This is the case in the second example above, where you use the word `radius` to actually indicate...well, a radius.
 
-### Bannir les caractères accentués
+### Don't use reserved words
 
-Les caractères accentués comme `é` ou `à` sont mal supportés dans certains environnements et sont inconnus du monde anglophone. Mieux vaut les éviter : on nommera une variable `perimetre` plutôt que `périmètre`.
+The keywords of JavaScript are reserved names. They should not be used as variable names. Here's the [list of reserved words in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords).
 
-### Ne pas utiliser les noms réservés du langage
+### Follow a naming convention
 
-Les mots-clés du langage JavaScript sont des noms réservés. Ils ne doivent pas être utilisés comme noms de variables. Vous trouverez sur [cette page](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Mots_r%C3%A9serv%C3%A9s) la liste des noms réservés de JavaScript.
+It can take several words to describe the roles of certain variables. The most common way to account for these variables is to use the [camelCase](https://en.wikipedia.org/wiki/Camel_case) naming convention, based on two main principles:
 
-### Adopter une convention de nommage
+* All variable names begin with a **lowercase** letter.
+* If the name of a variable consists of several words, the first letter of each word (except the first word) is **uppercase**.
 
-Il faut parfois plusieurs mots pour décrire le rôle de certaines variables. Dans ce cas, on a intérêt à adopter une **convention de nommage**, c'est-à-dire une manière uniforme d'écrire les noms de toutes les variables. Il en existe plusieurs. Dans ce cours, nous allons adopter la plus fréquemment utilisée : la norme [camelCase](https://fr.wikipedia.org/wiki/CamelCase) (appelée parfois *lowerCamelCase*). Elle repose sur deux grands principes :
+W> Like many other languages, JavaScript is **case sensitive**. For example, `myVariable` and `myvariable` are two different variable names. Be careful!
 
-* Tout nom de variable commence par une **lettre minuscule**.
-* Si le nom d'une variable se compose de plusieurs mots, la première lettre de chaque mot (sauf le premier) s'écrit en **majuscule**.
+## Coding time!
 
-Par exemple, les noms `montantTravauxMaison` et `codeClientSuivant` respectent la norme *camelCase*.
+Build a habit of choosing good variables name in all exercises, starting with these ones.
 
-W> Comme de nombreux langages, JavaScript fait la distinction entre majuscules et minuscules. On dit qu'il est **sensible à la casse** (*case sensitive*). Par exemple, `mavariable` et `maVariable` seront considérées comme deux variables différentes. Attention aux étourderies !
+### Improved hello
+
+Write a program that asks the user for his first name and his last name. Th program then displays them in one sentence.
+
+### Final values
+
+Observe the following program and try to predict the final values of its variables.
+
+```js
+let a = 2;
+a = a - 1;
+a++;
+let b = 8;
+b += 2;
+const c = a + b * b;
+const d = a * b + b;
+const e = a * (b + b);
+const f = a * b / a;
+const g = b / a * a;
+console.log(a, b, c, d, e, f, g);
+```
+
+Check your prediction by executing it.
+
+### VAT calculation
+
+Write a program that asks the user for a raw price. After that, its calculates the corresponding final price using a VAT rate of 20.6%.
+
+### From Celsius to Fahrenheit degrees
+
+Write a program that asks for a temperature in Celsius degrees, then displays it in Fahrenheit degrees.
+
+> The conversion between scales is given by the formula: [°F] = [°C] x 9/5 + 32.
+
+### Variable swapping
+
+Observe the following program.
+
+```js
+let number1 = 5;
+let number2 = 3;
+
+// Type your code here (and nowhere else!)
+
+console.log(number1); // Should show 3
+console.log(number2); // Should show 5
+```
+
+Add the necessary code to swap the values of variables `number1` and `number2`.
+
+T> This exercise has several valid solutions. You may use more than two variables to solve it.
