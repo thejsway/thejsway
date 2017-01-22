@@ -1,3 +1,7 @@
+[![License][license-badge]][LICENSE]
+[![PRs Welcome][prs-badge]][prs]
+[![Donate][donate-badge]][donate]
+
 # The JavaScript Way
 
 A modern introduction to an essential language.
