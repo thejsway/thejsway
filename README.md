@@ -19,6 +19,7 @@ This repository contains the book source files. Your contributions are most welc
     * [What you'll need](manuscript/intro04.md)
 * Part I : Language basics
     * [3, 2, 1... Code!](manuscript/chapter01.md)
+    * [Play with variables](manuscript/chapter02.md)
 
 More to come!
 
