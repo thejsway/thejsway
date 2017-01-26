@@ -14,13 +14,13 @@ This repository contains the book source files. Your contributions are most welc
 ## Table of contents
 
 * Introduction
-    * [About this book](manuscript/intro01.md)
-    * [Welcome to programming](manuscript/intro02.md)
-    * [Introducing JavaScript](manuscript/intro03.md)
-    * [What you'll need](manuscript/intro04.md)
-* Part I : Language basics
-    * [3, 2, 1... Code!](manuscript/chapter01.md)
-    * [Play with variables](manuscript/chapter02.md)
+  * [About this book](manuscript/intro01.md)
+  * [Welcome to programming](manuscript/intro02.md)
+  * [Introducing JavaScript](manuscript/intro03.md)
+  * [What you'll need](manuscript/intro04.md)
+* Part I : Learn to code programs
+  * [3, 2, 1... Code!](manuscript/chapter01.md)
+  * [Play with variables](manuscript/chapter02.md)
 
 More to come!
 
@@ -30,7 +30,7 @@ A published version is available on [Leanpub](https://leanpub.com/thejsway) on a
 
 ## Markdown flavor
 
-Leanpub uses a specific flavor of Markdown. As much as possible, this book is written using GitHub-Flavored Markdown to improve rendering on GitHub and elsewhere, while staying compatible with Leanpub. 
+Leanpub uses a specific flavor of Markdown. As much as possible, this book is written using GitHub-Flavored Markdown to improve rendering on GitHub and elsewhere, while staying compatible with Leanpub.
 
 The only exceptions are info, tip, warning and error text boxes defined with `I>`, `T>`, `W>` and `E>` instead of the classic `>` syntax. Read the [Leanpub documentation](https://leanpub.com/help/manual#leanpub-auto-more-text-block-types) for more details.
 
@@ -38,7 +38,7 @@ The only exceptions are info, tip, warning and error text boxes defined with `I>
 
 This book is built upon two online courses I wrote for the French EdTech startup [OpenClassrooms](https://openclassrooms.com):
 
-* [Learn to code with JavaScript](https://openclassrooms.com/courses/learn-the-basics-of-javascript) ([Apprenez à coder avec JavaScript](https://openclassrooms.com/courses/apprenez-a-coder-avec-javascript)) 
+* [Learn to code with JavaScript](https://openclassrooms.com/courses/learn-the-basics-of-javascript) ([Apprenez à coder avec JavaScript](https://openclassrooms.com/courses/apprenez-a-coder-avec-javascript))
 * [Use JavaScript in your web projects](https://openclassrooms.com/courses/use-javascript-on-the-web) ([Créez des pages web interactives avec JavaScript](https://openclassrooms.com/courses/creez-des-pages-web-interactives-avec-javascript))
 
 Thanks to [Jessica Mautref](https://www.linkedin.com/in/jessicamautref) for her watchful eye during the writing process, and to [Emily Reese](https://www.linkedin.com/in/eclairereese) for the initial English translation. Both also contributed many good ideas.
