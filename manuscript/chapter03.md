@@ -45,7 +45,7 @@ Conditional syntax looks like this:
 
 ```js
 if (condition) {
-    // Statements executed when the condition is true
+    // Code to run when the condition is true
 }
 ```
 
@@ -66,11 +66,11 @@ Any expression producing a boolean value (either `true` or `false`) can be used 
 ```js
 if (true) {
     // The condition for this if is always true
-    // This block's instructions will always be executed
+    // This block of code will always be executed
 }
 if (false) {
     // The condition for this if is always false
-    // This block's instructions will never be executed
+    // This block of code will never be executed
 }
 ```
 
@@ -106,74 +106,70 @@ You'll often want to have your code execute one way when something's true and an
 
 ### The `else` statement
 
-Enrichissons notre programme d'exemple pour qu'il affiche un message adapté au nombre saisi par l'utilisateur.
+Let's enrich our sample with different messages depending if the number's positive or not.
 
 ```js
-const nombre = Number(prompt("Entrez un nombre :"));
-if (nombre > 0) {
-    console.log(`${nombre} est positif`);
+const number = Number(prompt("Enter a number:"));
+if (number > 0) {
+    console.log(`${number} is positive`);
 }
 else {
-    console.log(`${nombre} est négatif ou nul`);
+    console.log(`${number} is negative or zero`);
 }
 ```
 
-Selon le nombre saisi, un message adapté est toujours affiché dans la console. Notre programme agit différemment selon que la condition `(nombre > 0)` soit vraie ou fausse : c'est ce que l'on appelle une **alternative**.
+Test this code with a positive number, negative number, and zero, while watching the result in the console. The code executes differently depending if the condition `(number > 0)` is true or false.
 
-Une alternative s'exprime en JavaScript grâce à l'instruction `else` associée à un `if`. Voici sa syntaxe.
+The syntax for creating an alternative is to add an `else` keyword after an initial `if`.
 
 ```js
 if (condition) {
-    // instructions exécutées quand la condition est vraie
+    // Code to run when the condition is true
 }
 else {
-    // instructions exécutées quand la condition est fausse
+    // Code to run when the condition is false
 }
 ```
 
-On peut traduire une instruction `if/else` comme ceci : "Si la condition est vraie, alors exécute les instructions du bloc de code associé au `if`, sinon exécute celles du bloc de code associé au `else`".
+You can translate an `if`/`else` statement like this: "If the condition is true, then execute this first set of code; otherwise, execute this next set of code". Only one of the two code blocks will be executed.
 
-L'instruction `if/else` permet de créer un **branchement logique** à l'intérieur d'un programme. Pendant l'exécution, les instructions exécutées seront différentes selon la valeur de la condition. Un seul des deux blocs de code sera pris en compte.
+### Nesting conditions
 
-### Imbriquer des conditions
-
-Notre programme d'exemple peut encore être enrichi pour afficher un message spécifique si le nombre saisi est nul. Pour cela, le code doit être modifié de la manière suivante.
+Let's go next level and display a specific message if the entered number is zero. See this example, which has a positive test case, negative test case, and a last resort of the number being zero.
 
 ```js
-const nombre = Number(prompt("Entrez un nombre :"));
-if (nombre > 0) {
-    console.log(`${nombre} est positif`);
-} else { // nombre <= 0
-    if (nombre < 0) {
-        console.log(`${nombre} est négatif`);
-    } else { // nombre === 0
-        console.log(`${nombre} est nul`);
+const number = Number(prompt("Enter a number:"));
+if (number > 0) {
+    console.log(`${number} is positive`);
+} else { // number <= 0
+    if (number < 0) {
+        console.log(`${number} is nagative`);
+    } else { // number === 0
+        console.log(`${number} is zero`);
     }
 }
 ```
 
-Ce programme affiche bien un message adapté au nombre saisi, y compris lorsque ce nombre est 0.
+Let's wrap our heads around it. If the code block associated to the first `else` is run, then the number has to be either strictly negative or zero. Inside this block, a second `if` statement checks if the number is negative. If it's not, we know for sure that it's zero.
 
-C'est maintenant qu'il faut faire appel à votre sens logique pour le comprendre. Si le premier bloc `else` est exécuté, c'est que le nombre saisi est soit négatif, soit nul, puisque la condition`(nombre > 0)` du premier `if` n'a dans ce cas pas été vérifiée. A l'intérieur de ce bloc `else`, on vérifie si le nombre est strictement négatif avec la condition `(nombre < 0)`. Si cette condition est fausse, alors le nombre est forcément égal à 0.
+I> When learning to write nested conditions, you should add descriptive comments to each condition, just like in the previous example.
 
-I> Les commentaires présents sur les lignes de chaque instruction else donnent des précisions sur la condition lorsque ce blocelse est exécuté. Ils sont optionnels mais aident à comprendre le code. Je vous conseille de vous entraîner à écrire ce genre de commentaires lorsque vous imbriquez des conditions.
+The execution flow for the previous program can be expressed graphically using a **flow diagram**.
 
-Il est possible de représenter graphiquement l'exécution du programme précédent au moyen d'un **diagramme de flux** qui montre les différents cheminements possibles selon la valeur du nombre saisi.
+![Example flow diagram](images/chapter03-01.png)
 
-![Diagramme de flux du programme d'exemple](images/chapter03-01.png)
+This example shows how essential indentation is for understanding a program's flow. There is no limit to the possible depth of condition nesting, but too many will affect program lisibility.
 
-Cet exemple nous montre que l'indentation permet de bien visualiser les différents blocs crées par les instructions `if/else`. Il n'y a pas de limite (si ce n'est la lisibilité du programme) au niveau de profondeur des imbrications.
-
-On rencontre fréquemment le cas particulier où la seule instruction d'un bloc `else` est un `if` (le `else` éventuellement associé à ce `if` ne compte pas comme une seconde instruction). Dans ce cas, il est possible d'écrire ce `if`  sur la même ligne que le premier `else`, sans accolades ni indentation. Ainsi, notre programme d'exemple peut être réécrit de la manière suivante.
+A particular case happens when the only statement in a `else` block is an `if`. In that case, you can write this `else` on the same line as the `if` and without braces. Here's a more concise way to write our example program.
 
 ```js
-const nombre = Number(prompt("Entrez un nombre :"));
-if (nombre > 0) {
-    console.log(`${nombre} est positif`);
-} else if (nombre < 0) {
-    console.log(`${nombre} est négatif`);
+const number = Number(prompt("Enter a number:"));
+if (number > 0) {
+    console.log(`${number} is positive`);
+} else if (number < 0) {
+    console.log(`${number} is negative`);
 } else {
-    console.log(`${nombre} est nul`);
+    console.log(`${number} is zero`);
 }
 ```
 
