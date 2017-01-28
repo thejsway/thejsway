@@ -3,7 +3,9 @@
 ## TL;DR
 
 * The easiest way to get your feet wet and code along is to use a JavaScript playground like [CodePen](http://codepen.io).
+
 * If you don't have access to a reliable Internet connection, an alternative is to set up a development machine with a code editor and a appropriate folder structure.
+
 * In all cases, you'll need the most recent version of a modern web browser.
 
 ## Environment setup

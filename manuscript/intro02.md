@@ -3,8 +3,11 @@
 ## TL;DR
 
 * A **computer** is a machine whose role is to execute quickly and flawlessly a series of actions given to it.
+
 * A **program** is a list of actions given to a computer. These actions take the form of textual commands. All these commands form the program's **source code**.
+
 * The **programmer**'s task is to create programs. To accomplish this goal, he can use  different programming languages.
+
 * Before writing code, one must think ahead and decompose the problem to be addressed in a series of elementary operations forming an **algorithm**.
 
 ## What's a program?

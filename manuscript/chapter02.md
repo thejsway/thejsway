@@ -5,13 +5,21 @@ You know how to use JavaScript to display values. However, for a program to be t
 ## TL;DR
 
 * A **variable** is an information storage area. Every variable has a **name**, a **value** and a **type**. In JavaScript, the type of a variable is deduced from the value stored in it: JavaScript is a **dynamically typed** language.
+
 * A variable is declared using the `let` keyword followed by the variable name. To declare a **constant** (a variable whose initial value must never change), it's better to use the `const` keyword instead.
+
 * To give a value to a variable, we use the **assignment operator** `=`. For number variables, the operators `+=` and `++` can **increment** (increase by 1) their value.
+
 * The **scope** of a variable is the part of the program where the variable is visible. Variables declared with `let` or `const` are **block-scoped**. A **code block** is a portion of a program delimited by a pair of opening and closing braces.
+
 * An **expression** is a piece of code that combines variables, values and operators. Evaluating an expression produces a value, which has a type.
+
 * Expressions may be included in strings delimited by a pair of backticks (\`). Sucha a string is called a **template literal**.
+
 * **Type conversions** may happen implicitely during the evaluation of an expression, or explicitely when using the `Number()` and `String()` commands, to obtain a respectively a number or a string.
+
 * The `prompt()` and `alert()` commands deal with information input and display under the form of dialog boxes.
+
 * Variable naming is essential to program lisibility. Following a naming convention like [camelCase](https://en.wikipedia.org/wiki/Camel_case) is good practice.
 
 ## Variables

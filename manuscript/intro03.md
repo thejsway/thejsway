@@ -3,8 +3,11 @@
 ## TL;DR
 
 * Originally created to animate web pages, the JavaScript language can now bu used almost everywhere, from servers to mobile apps and connected devices.
+
 * JavaScript is becoming essential for many software developers. It's an excellent choice as a first language for learning programming.
+
 * It's been standardized under the name **ECMAScript** and is continuously improved ever since.
+
 * The JavaScript version used in this book is **ES2015**, otherwise known as **ES6**. Albeit recent, it is now well supported by most environments.
 
 ## History of JavaScript
