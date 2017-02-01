@@ -4,7 +4,7 @@ A modern introduction to an essential language.
 
 By [Baptiste Pesquet](http://bpesquet.com)
 
-![Completion](https://img.shields.io/badge/Completion-15%25-red.svg)
+[![Completion](https://img.shields.io/badge/Completion-15%25-red.svg)](https://leanpub.com/thejsway)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
