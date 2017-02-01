@@ -4,17 +4,17 @@ Up until now, all the code in our programs has been executed chronologically. Le
 
 ## TL;DR
 
-* L'instruction `if` permet d'exprimer une **condition**. Les instructions associées au `if` n'est exécuté que si la condition est vérifiée (vraie). Une **condition** est une expression dont l'évaluation produit une valeur **booléenne** (`true` ou `false`).
+* The `if` statement defines a **test** linked to a **condition**. The associated code block is only run if the condition is satisfied (its value is `true`). Thus, a condition is an expression whose evaluation always produces a boolean result (`true` or `false`).
 
-* Les instructions associées à une instruction `if` sont regroupées dans un **bloc de code** délimité par une paire d'accolades ouvrante et fermante. Pour plus de lisibilité, le contenu d'un bloc de code être **indenté** (décalé vers la droite) par rapport à l'instruction `if` à laquelle il est associé.
+* The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve lisibility, its statements are generally **indented** (shifted to the right).
 
-* Les opérateurs `===`, `!==`, `<`, `<=`, `>` et `>=` peuvent être utilisés pour comparer des nombres au sein d'une condition. Ils renvoient tous un résultat booléen.
+* The **comparison operators** `===`, `!==`, `<`, `<=`, `>` et `>=` are used to compare numbers inside a condition. All of them return a boolean result.
 
-* Associée à un `if`, l'instruction `else` permet d'exprimer une **alternative**. Selon la valeur de la condition, le bloc de code associé au `if` ou celui associé au `else` sera exécuté, mais jamais les deux. On peut imbriquer sans limite des instructions `if/else` à l'intérieur d'autres instructions `if/else`.
+* An `else` statement can be associated to an `if` to express an **alternative**. Depending on the condition value, either the code block associated to the `if` or the one associated to the `else` will be run, but never both. Thre is no limit to the depth of condition nesting.
 
-* Les opérateurs logiques `&&` (ET), `||` (OU) et `!` (NON) permettent de créer des conditions composées.
+* Complex conditions can be created using the **logical operators** `&&` ("and"), `||` ("or") et `!` ("not").
 
-* L'instruction `switch` permet d'exécuter un bloc de code parmi plusieurs selon la valeur d'une expression.
+* The `switch` statement is used to kick off the execution of one code block among many, depending on the value of an expression.
 
 ## What's a condition?
 
@@ -173,144 +173,211 @@ if (number > 0) {
 }
 ```
 
-## Créer des conditions composées
+## Add additional logic
 
-### L'opérateur logique ET
+### "And" operator
 
-Supposons qu'on souhaite vérifier qu'un nombre est compris entre 0 et 100. Cela signifie que le nombre doit être à la fois supérieur à 0 et inférieur à 100. La condition "nombre compris entre 0 et 100" peut s'exprimer sous la forme de deux sous-conditions "nombre supérieur ou égal à 0" et "nombre inférieur ou égal à 100". Il faut que l'une ET l'autre de ces sous-conditions soient vérifiées.
+Suppose you want to check if a number is between 0 and 100. You're essentially checking if it's "greater than or equal to 0" and "less than or equal to 100". Both sub-conditions must be satisfied at the same time.
 
-I> L'expression `0 <= nombre <= 100` est mathématiquement exacte mais ne peut pas s'écrire de cette manière en JavaScript (ni dans la plupart des autres langages de programmation).
+I> The expression `0 <= nombre <= 100` is correct from a mathematical point of view but cannot be written in JavaScript (neither in most other programming languages).
 
-La traduction en JavaScript de cette condition donne le résultat suivant.
+Here's how you'd translate that same check into JS.
 
 ```js
-if ((nombre >= 0) && (nombre <= 100)) {
-    console.log(`${nombre} est compris entre 0 et 100`);
+if ((number >= 0) && (number <= 100)) {
+    console.log(`${number} is between 0 and 100, both included`);
 }
 ```
 
-I> Les parenthèses entre les sous-conditions ne sont pas obligatoires. Cependant, je vous conseille de les ajouter systématiquement dans un premier temps pour mieux visualiser la structure des conditions et éviter d'éventuelles mauvaises surprises liées aux priorités des opérateurs.
+I> Parentheses between sub-conditions are not mandatory but I advise you to add them anyway, to avoir nasty bugs in some special cases.
 
-L'opérateur `&&` (ET logique) s'applique à deux valeurs de type booléen. Son résultat est la valeur `true` uniquement si les deux valeurs auxquelles il s'applique valent `true`.
+The `&&` operator ("logical and") can apply to both types of boolean values. `true` will only be the result of the statement if both conditions are true.
 
 ```js
-console.log(true && true);   // Affiche true
-console.log(true && false);  // Affiche false
-console.log(false && true);  // Affiche false
-console.log(false && false); // Affiche false
+console.log(true && true);   // true
+console.log(true && false);  // false
+console.log(false && true);  // false
+console.log(false && false); // false
 ```
 
-Le résultat ci-dessus constitue ce qu'on appelle la **table de vérité** de l'opérateur `&&`.
+The previous result is the **truth table** of the `&&` operator.
 
-### L'opérateur logique OU
+### "Or" operator
 
-Imaginons maintenant qu'on souhaite vérifier qu'un nombre est en dehors de l'intervalle [0, 100]. Pour satisfaire à cette condition, ce nombre doit être inférieur à 0 OU supérieur à 100.
+Now imagine you want to check that a number is outside the range of 0 and 100. To meet this requirement, the number should be less than 0 or greater than 100.
 
-Traduit en JavaScript, cet exemple donne le résultat suivant.
+Here it is, translated into JavaScript:
 
 ```js
-if ((nombre < 0) || (nombre > 100)) {
-    console.log(`${nombre} est en dehors de l'intervalle [0, 100]`);
+if ((number < 0) || (number > 100)) {
+    console.log(`${number} is not in between 0 and 100`);
 }
 ```
 
-L'opérateur `||` (OU logique) s'applique à deux valeurs de type booléen. Son résultat est la valeur true si au moins une des deux valeurs auxquelles il s'applique vaut `true`. Voici la table de vérité de l'opérateur `||`.
+The `||` operator ("logical or") makes statements `true` if at least one of the statements is true. Here's its truth table:
 
 ```js
-console.log(true || true);   // Affiche true
-console.log(true || false);  // Affiche true
-console.log(false || true);  // Affiche true
-console.log(false || false); // Affiche false
+console.log(true || true);   // true
+console.log(true || false);  // true
+console.log(false || true);  // true
+console.log(false || false); // false
 ```
 
-### L'opérateur logique NON
+### "Not" operator
 
-Il existe un troisième opérateur logique qui permet d'inverser la valeur d'une condition : l'opérateur NON. Il s'écrit en JavaScript sous la forme d'un point d'exclamation `!`.
+There's another operator for when you know what you don't want: the not operator! You'll use a `!` for this.
 
 ```js
-if (!(nombre > 100)) {
-    console.log(`${nombre} est inférieur ou égal à 100`);
+if (!(number > 100)) {
+    console.log(`${number} is less than or equal to 100`);
 }
 ```
 
-Voici la table de vérité de cet opérateur.
+Here's the truth table of the `!` operator.
 
 ```js
-console.log(!true);  // Affiche false
-console.log(!false); // Affiche true
+console.log(!true);  // false
+console.log(!false); // true
 ```
 
-## Exprimer un choix
+## Multiple choices
 
-Essayons d'écrire un programme qui conseille l'utilisateur sur la tenue à porter en fonction de la météo actuelle. Une première solution consiste à utiliser des instructions `if/else`.
+Let's write some code that helps people decide what to wear based on the weather using `if`/`else`.
 
 ```js
-const meteo = prompt("Quel temps fait-il dehors ?");
-if (meteo === "soleil") {
-    console.log("Sortez en t-shirt");
-} else if (meteo === "vent") {
-    console.log("Sortez en pull");
-} else if (meteo === "pluie") {
-    console.log("Sortez en blouson");
-} else if (meteo === "neige") {
-    console.log("Restez au chaud à la maison");
+const weather = prompt("What's the weather like?");
+if (weather === "sunny") {
+    console.log("T-shirt time!");
+} else if (weather === "windy") {
+    console.log("Windbreaker life.");
+} else if (weather === "rainy") {
+    console.log("Bring that umbrella!");
+} else if (weather === "snowy") {
+    console.log("Just stay inside!");
 } else {
-    console.log("Je n'ai pas compris !");
+    console.log("Not a valid weather type");
 }
 ```
 
-Lorsqu'un programme consiste à déclencher un bloc d'opérations parmi plusieurs selon la valeur d'une expression, on peut l'écrire en utilisant l'instruction JavaScript `switch`.
+When a program should trigger a block from several operations depending on the value of an expression, you can write it using the JavaScript statement `switch` to do the same thing.
 
 ```js
-const meteo = prompt("Quel temps fait-il dehors ?");
-switch (meteo) {
-case "soleil":
-    console.log("Sortez en t-shirt");
+const weather = prompt("What's the weather like?");
+switch (weather) {
+case "sunny":
+    console.log("T-shirt time!");
     break;
-case "vent":
-    console.log("Sortez en pull");
+case "windy":
+    console.log("Windbreaker life.");
     break;
-case "pluie":
-    console.log("Sortez en blouson");
+case "rainy":
+    console.log("Bring that umbrella!");
     break;
-case "neige":
-    console.log("Restez au chaud à la maison");
+case "snowy":
+    console.log("Just stay inside!");
     break;
 default:
-    console.log("Je n'ai pas compris !");
+    console.log("Not a valid weather type");
 }
 ```
 
-Le comportement de ce programme est strictement identique à celui de la version précédente.
+If you test it out, the result will be the same as the previous version.
 
-L'instruction `switch` déclenche l'exécution d'un bloc d'instructions parmi plusieurs possibles. Seul le bloc correspondant à la valeur de l'expression testée sera pris en compte. Sa syntaxe est la suivante.
+The `switch` statement kicks off the execution of one code block among many. Only the code block that matches the relevant situation will be executed.
 
 ```js
 switch (expression) {
-case valeur1:
-    // instructions exécutées quand expression vaut valeur1
+case value1:
+    // code run when the expression matches value1
     break;
-case valeur2:
-    // instructions exécutées quand expression vaut valeur2
+case value2:
+    // code run when the expression matches value2
     break;
 ...
 default:
-    // instructions exécutées quand aucune des valeurs ne correspond
+    // code run for when neither case matches
 }
 ```
 
-Il n'y a pas de limite au nombre de cas possibles. Le mot-clé `default`, à placer en fin de `switch`, est optionnel. Il sert souvent à gérer les cas d'erreurs, comme dans l'exemple ci-dessus.
+You can set as many cases as you want! The word `default`, which is put at the end of `switch`, is optional. It can let you handle errors or unexpected values.
 
-E> Les instructions `break;` dans les blocs `case` sont indispensables pour sortir du `switch` et éviter de passer d'un bloc à un autre.
-E>
-E>     const x = "abc";
-E>     switch (x) {
-E>     case "abc":
-E>         console.log("x vaut abc");
-E>         // pas de break : on passe au bloc suivant !
-E>     case "def":
-E>         console.log("x vaut def");
-E>         break;
-E>     }
+Adding a `break;` in each block is important so you get out of the switch statement!
 
-L'exécution de cet exemple affiche deux messages : `"x vaut abc"` (résultat attendu) mais aussi `"x vaut def"`.
+```js
+const x = "abc";
+switch (x) {
+case "abc":
+    console.log("x = abc");
+    // break omitted: the next block is also run!
+case "def":
+    console.log("x = def");
+    break;
+}
+```
+
+The previous example show `"x = abc"` (the correct result) but also `"x = def"`.
+
+## Coding time!
+
+Here are a few advice about these exercises:
+
+* Keep on choosing your variable names wisely, and respect indentation when creating code blocks associated to `if`, `else` and `switch` statements.
+
+* Try to find alternative solutions. For example, one using an `if` and another using a `switch`.
+
+* Test your programs thoroughly, without fear of finding mistakes. It's a very important skill.
+
+### Following day
+
+Write a program that accepts a day name from the user, then shows the name of the following day. Incorrect inputs must be taken into account.
+
+### Number comparison
+
+Write a program that accepts two numbers, then compare their values and displays an appropriate message in all cases.
+
+### Final values
+
+Take a look at the following program.
+
+```js
+let nb1 = Number(prompt("Enter nb1 :"));
+let nb2 = Number(prompt("Enter nb2 :"));
+let nb3 = Number(prompt("Enter nb3 :"));
+
+if (nb1 > nb2) {
+    nb1 = nb3 * 2;
+} else {
+    nb1++;
+    if (nb2 > nb3) {
+        nb1 = nb1 + nb3 * 3;
+    } else {
+        nb1 = 0;
+        nb3 = nb3 * 2 + nb2;
+    }
+}
+console.log(nb1, nb2, nb3);
+```
+
+Before executing it, try to guess the final values of variables `nb1`, `nb2` and `nb3` depeding on their initial values. Complete the following table.
+
+|Initial values       |`nb1` final value |`nb2` final value|`nb3` final value|
+|---------------------|------------------|-----------------|-----------------|
+|`nb1=nb2=nb3=4`      |                  |                 |                 |
+|`nb1=4,nb2=3,nb3=2`  |                  |                 |                 |
+|`nb1=2,nb2=4,nb3=0`  |                  |                 |                 |
+
+Check your predictions by executing the program.
+
+### Number of days in a month
+
+Write a program that accepts a month number (between 1 and 12), then shows the number of days of that month. Leap years are excluded. Incorrect inputs must be taken into account.
+
+### Following second
+
+Write a program that asks for a time under the form of three informations (hours, minutes, seconds). The program calculates and shows the time one second after. Incorrect inputs must be taken into account.
+
+> This is not as simple as it seems... Look at the following results to see for yourself:
+>
+> * 14h17m59s => 14h18m0s
+> * 6h59m59s => 7h0m0s
+> * 23h59m59s => 0h0m0s (midnight)
