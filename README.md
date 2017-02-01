@@ -4,10 +4,18 @@ A modern introduction to an essential language.
 
 By [Baptiste Pesquet](http://bpesquet.com)
 
+![Completion](https://img.shields.io/badge/Completion-15%25-red.svg)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 ## Overview
+
+"The JavaScript Way" is a book to help you get off to a good start in the JavaScript universe or catch up with its newest evolutions. Here are some highlights:
+
+* Designed to be as beginner-friendly as possible, while covering some advanced concepts and good practices.
+* No complex setup needed: start working immediately from your browser.
+* Written from scratch with the latest language version (ES6/ES2015), avoiding awkwardnesses from the past and giving you future-proof knowledge.
+* Each chapter is accompanied by a series of exercises to put your newly acquired skills into practice.
 
 This repository contains the book source files. Your contributions are most welcome.
 
@@ -21,6 +29,7 @@ This repository contains the book source files. Your contributions are most welc
 * Part I : Learn to code programs
   * [3, 2, 1... Code!](manuscript/chapter01.md)
   * [Play with variables](manuscript/chapter02.md)
+  * [Add conditions](manuscript/chapter03.md)
 
 More to come!
 
