@@ -8,3 +8,4 @@ mainmatter.txt
 part1.txt
 chapter01.md
 chapter02.md
+chapter03.md
