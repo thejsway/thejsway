@@ -30,6 +30,7 @@ This repository contains the book source files. Your contributions are most welc
   * [3, 2, 1... Code!](manuscript/chapter01.md)
   * [Play with variables](manuscript/chapter02.md)
   * [Add conditions](manuscript/chapter03.md)
+  * [Repeat statements](manuscript/chapter04.md)
 
 More to come!
 
