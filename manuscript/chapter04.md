@@ -1,6 +1,6 @@
 # Repeat statements
 
-In this chapter, we'll look at how to execute code on a repeating basis!
+In this chapter, we'll look at how to execute code on a repeating basis.
 
 ## TL;DR
 
@@ -105,7 +105,7 @@ This is a little more complicated than the `while` loop syntax:
 
 * The **condition** is evaluated once before the loop runs each time. If it's true, the code runs. If not, the code doesn't run.
 
-* The **final expression** is evaluated after the loop runs each time. It's often used to update the value of the variable associated to the loop condition, as we saw in the `while` loop example.
+* The **final expression** is evaluated after the loop runs each time. It's often used to update the value of the variable associated to the loop condition, as we saw in the previous example.
 
 ### The loop counter
 
@@ -178,7 +178,7 @@ When it's done, improve it so that the number of turns is given by the user.
 
 ### Parity
 
-Check the following program that qui shows even number (divisibles by 2) betwen 1 and 10.
+Check the following program that shows even number (divisibles by 2) betwen 1 and 10.
 
 ```js
 for (let i = 1; i <= 10; i++) {
