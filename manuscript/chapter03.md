@@ -4,7 +4,7 @@ Up until now, all the code in our programs has been executed chronologically. Le
 
 ## TL;DR
 
-* The `if` statement defines a **test** linked to a **condition**. The associated code block is only run if the condition is satisfied (its value is `true`). Thus, a condition is an expression whose evaluation always produces a boolean result (`true` or `false`).
+* The `if` keyword defines a **conditional statement**, also called a **test**. The associated code block is only run if the **condition** is satisfied (its value is `true`). Thus, a condition is an expression whose evaluation always produces a boolean result (`true` or `false`).
 
 * The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve lisibility, its statements are generally **indented** (shifted to the right).
 
@@ -340,9 +340,9 @@ Write a program that accepts two numbers, then compare their values and displays
 Take a look at the following program.
 
 ```js
-let nb1 = Number(prompt("Enter nb1 :"));
-let nb2 = Number(prompt("Enter nb2 :"));
-let nb3 = Number(prompt("Enter nb3 :"));
+let nb1 = Number(prompt("Enter nb1:"));
+let nb2 = Number(prompt("Enter nb2:"));
+let nb3 = Number(prompt("Enter nb3:"));
 
 if (nb1 > nb2) {
     nb1 = nb3 * 2;

@@ -10,11 +10,11 @@ You know how to use JavaScript to display values. However, for a program to be t
 
 * To give a value to a variable, we use the **assignment operator** `=`. For number variables, the operators `+=` and `++` can **increment** (increase by 1) their value.
 
-* The **scope** of a variable is the part of the program where the variable is visible. Variables declared with `let` or `const` are **block-scoped**. A **code block** is a portion of a program delimited by a pair of opening and closing braces.
+* The **scope** of a variable is the part of the program where the variable is visible. Variables declared with `let` or `const` are **block-scoped**. A **code block** is a portion of a program delimited by a pair of opening and closing curly braces `{ ... }`.
 
 * An **expression** is a piece of code that combines variables, values and operators. Evaluating an expression produces a value, which has a type.
 
-* Expressions may be included in strings delimited by a pair of backticks (\`). Sucha a string is called a **template literal**.
+* Expressions may be included in strings delimited by a pair of backticks (\`). Such a string is called a **template literal**.
 
 * **Type conversions** may happen implicitely during the evaluation of an expression, or explicitely when using the `Number()` and `String()` commands, to obtain a respectively a number or a string.
 
