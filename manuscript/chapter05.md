@@ -4,7 +4,21 @@ In this chapter, you'll learn how to break down a program into subparts called f
 
 ## TL;DR
 
-TODO
+* A **function** is a group of instructions that performs a particular task. JavaScript functions are created using the `function` keyword.
+
+* Writen as a combinaison of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolitic one.
+
+* A **function call** triggers the execution of the function code. After it's done, execution resumes at the place where the call was made.
+
+* Variables declared inside a function are limited in scope to the function body. They are called **local variables**.
+
+* A `return` keyword inside the function body defines the **return value** of the function. A function can accept zeor, one or several **parameters** in order to work. For a particular call, supplied parameters values are called **arguments**.
+
+* There are two ways to create a function in JavaScript: **declaring** it or using a **function expression**, which can be assigned to a variable. A variable's value can be a function.
+
+* **Anonymous functions** are (obviously) functions without a name. They can be created using a classical function expression or with the more consise **fat arrow syntax**.
+
+* Each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lots a **predefined functions**. covering various needs.
 
 ## Introduction: the role of functions
 
@@ -32,15 +46,15 @@ Begin
 End
 ```
 
-Here's the same general idea written in a different way.
+Here's the same general idea, written in a different way.
 
 ```text
-Début
+Begin
     Cook rice
     Stir-fry vegetables
     Add fillings
     Roll together
-Fin
+End
 ```
 
 The first version details all the individual actions that make up the cooking process. The second breaks down the recipe into **broader steps** and introduces concepts that could be re-used for other dishes as well like *cook*, *stir-fry*, *add* and *roll*.
@@ -116,7 +130,7 @@ Calling a function triggers the execution of actions listed therein (the code in
 
 ### Usefulness of functions
 
-A complex problem is generally more manageable when broken down in simpler subproblems. Computer programs are no exception to this rule. Writen as a combinaison of several short and task-focused functions, a program will be easier to understand and to update than a monolitic one. As an added bonus, some functions could be reused in other programs!
+A complex problem is generally more manageable when broken down in simpler subproblems. Computer programs are no exception to this rule. Writen as a combinaison of several short and focused functions, a program will be easier to understand and to update than a monolitic one. As an added bonus, some functions could be reused in other programs!
 
 Creating functions can also be a solution to the problem of [code duplication](https://en.wikipedia.org/wiki/Duplicate_code): instead of being duplicated at several places, a piece of code is centralized in a function and called from anywhere when needed.
 
@@ -245,12 +259,28 @@ Here's the general syntax of a function declaration with parameters. The number 
 ```js
 // Declare a function myFunction with parameters
 function myFunction(param1, param2, ...) {
-    // Statement using param1, param2, ...
+    // Statements using param1, param2, ...
 }
 
 // Function call
 // param1 value is set to arg1, param2 to arg2, ...
 myFunction(arg1, arg2, ...);
+```
+
+Just like with local variables, parameter scope is limited to the function body. Thus, an external variable used as an argument in a function call may have the same name as a function parameter. The following example is perfectly valid.
+
+```js
+function sayHello(name) {
+    // Here, "name" is the function parameter
+    const message = `Hello, ${name}!`;
+    return message;
+}
+
+// Here, "name" is a variable used as an argument
+let name = "Baptiste";
+console.log(sayHello(name)); // "Hello, Baptiste!"
+name = "Thomas";
+console.log(sayHello(name)); // "Hello, Thomas!"
 ```
 
 When calling a function, respecting the number and order of parameters is paramount! Check out the following example.
@@ -266,7 +296,7 @@ presentation(5, "Prosper"); // "Your name is 5 and you're Prosper years old"
 
 The second call arguments are given in reverse order, so `name` gets the value `5` and `age` gets `"Prosper"` for that call.
 
-## Function expressions
+## Anonymous functions
 
 Declaration is not the only way to create functions in JavaScript. Check out this example.
 
@@ -279,9 +309,7 @@ const hello = function(name) {
 console.log(hello("Richard")); // "Hello, Richard!"
 ```
 
-In this example, the function is assigned to the `hello` variable. The value of this variable is a function. We call the function using that variable.
-
-This is an example of a function expression. A **function expression** defines a function as part of a larger expression, typically a variable assignment.
+In this example, the function is assigned to the `hello` variable. The value of this variable is a function. We call the function using that variable. This is an example of a **function expression**. A function expression defines a function as part of a larger expression, typically a variable assignment.
 
 The function created in this example has no name: it is **anonymous**. As you'll soon discover, anonymous functions are heavily used in JavaScript.
 
@@ -295,7 +323,7 @@ const myVar = function(param1, param2, ...) {
 
 // Anonymous function call
 // param1 value is set to arg1, param2 to arg2, ...
-maVariable(arg1, arg2, ...);
+myVar(arg1, arg2, ...);
 ```
 
 Recent language evolutions have introduced a more concise way to create anonymous functions:
@@ -324,7 +352,7 @@ myVar(arg1, arg2, ...);
 
 Fat arrow function syntax can be further simplified in some particular cases:
 
-* When there's only one statement in the function body, everything can be written on the same line without curly braces. The `return` statement is then implicit.
+* When there's only one statement in the function body, everything can be written on the same line without curly braces. The `return` statement is omitted and implicit.
 * When the function accepts only one parameter, parentheses around it can be omitted.
 
 ```js
@@ -332,7 +360,6 @@ Fat arrow function syntax can be further simplified in some particular cases:
 const hello = name => `Hello, ${name}!`;
 
 console.log(hello("Kate")); // "Hello, Kate!"
-}
 ```
 
 Functions are a core part of the JavaScript toolset. You'll use them non-stop in your programs.
@@ -341,20 +368,113 @@ Functions are a core part of the JavaScript toolset. You'll use them non-stop in
 
 ### Creating functions wisely
 
-TODO
+Functions can include everything you can use in a regular program: variables, conditionals, loops, etc. Functions can call one another, giving the programmer an enormous amount of freedom for building programs.
+
+However, not everything deserves to be in its own function. it's better to write short and focused ones, in order to limit dependencies and improve program understanding.
 
 ### Leveraging JavaScript predefined functions
 
-TODO
+We have already used several predefined JavaScript functions like `prompt()` and `alert()`. They are many others in the language specification. Get to know them instead of reinventing the wheel!
+
+Here' an example demonstrating two of the JavaScript mathematical functions.
+
+```js
+console.log(Math.min(4.5, 5)); // 4.5
+console.log(Math.min(19, 9));  // 9
+console.log(Math.min(1, 1));   // 1
+console.log(Math.random());    // A random number between 0 and 1
+```
+
+The function `Math.min()` return the minimum number among its arguments. The function `Math.random()` generates a random number betwen 0 and 1.
+
+This book will introduce many other JavaScript functions.
 
 ### Limiting function complexity
 
-TODO
+A function body must be kept simple, or otherwise split into several sub-functions. A a rule of thumb, 30 lines of code should be a max for non-specific cases.
 
 ### Naming functions and parameters
 
-TODO
+Function naming is just as important as variable naming. You should choose names that express clearly the function purpose and follow a naming convention like [camelCase](https://en.wikipedia.org/wiki/Camel_case).
+
+A popular practice is to include in the name an **action verb** like *calculate*, *show*, *find*, etc.
+
+T> If you have difficulties coming up with a right name for a function, then maybe its purpose is not that clear and you should ask yourself if this function deserves to exist.
 
 ## Coding time!
 
-TODO
+### Improved hello
+
+Complete the following program so that it asks the user for his first and last names, then show the result of the `sayHello()` function.
+
+```js
+// Say hello to the user
+function sayHello(firstName, lastName) {
+    const message = `Hello, ${firstName} ${lastName}!`;
+    return message;
+}
+
+// TODO: ask user for first and last name
+// TODO: call sayHello() and show its result
+```
+
+### Number squaring
+
+Complete the following program so that the `square1()` and `square2()` functions work properly.
+
+```js
+// Square the given number x
+function square1(x) {
+  // TODO: complete the function code
+}
+
+// Square the given number x
+const square2 = (x) => {
+  // TODO: complete the function code
+}
+
+console.log(square1(0)); // Must show 0
+console.log(square1(2)); // Must show 4
+console.log(square1(5)); // Must show 25
+
+console.log(square2(0)); // Must show 0
+console.log(square2(2)); // Must show 4
+console.log(square2(5)); // Must show 25
+```
+
+When it's done, update the program so that it shows the square of every number between 0 en 10.
+
+> Writing 10 dumb calls to `square()` is forbidden! You know how to repeat statements, don't you ? ;)
+
+### Minimum of two numbers
+
+Let's pretend the JavaScript `Math.min()` function doesn't exist. Complete the following program so that the `min()` function returns the minimum of its two received numbers.
+
+```js
+// TODO: write the min() function
+
+console.log(min(4.5, 5)); // Must show 4.5
+console.log(min(19, 9));  // Must show 9
+console.log(min(1, 1));   // Must show 1
+```
+
+### Calculator
+
+Complete the following program so that it offers the four basic arithmetical operations: addition, substration, multiplication and division. You can use either a function declaration or a function expression.
+
+```js
+// TODO: complete program
+
+console.log(calculate(4, "+", 6));  // Must show 10
+console.log(calculate(4, "-", 6));  // Must show -2
+console.log(calculate(2, "*", 0));  // Must show 0
+console.log(calculate(12, "/", 0)); // Must show Infinity
+``` 
+
+### Circumference and area of a circle
+
+Write a program containing two functions to calculate the circumference and area of a square defined by its radius. Test it using user input.
+
+> Circumference and area calculation formulas should be part of your school years memories... Or a Google click away :)
+
+> The value of number π (Pi) is obtained with `Math.PI` en JavaScript.
