@@ -4,7 +4,7 @@ In this chapter, you'll learn how to break down a program into subparts called f
 
 ## TL;DR
 
-* A **function** is a group of instructions that performs a particular task. JavaScript functions are created using the `function` keyword.
+* A **function** is a group of statements that performs a particular task. JavaScript functions are created using the `function` keyword.
 
 * Written as a combinaison of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolitic one.
 
@@ -12,13 +12,13 @@ In this chapter, you'll learn how to break down a program into subparts called f
 
 * Variables declared inside a function are limited in scope to the function body. They are called **local variables**.
 
-* A `return` keyword inside the function body defines the **return value** of the function. A function can accept zeor, one or several **parameters** in order to work. For a particular call, supplied parameters values are called **arguments**.
+* A `return` statement inside the function body defines the **return value** of the function. A function can accept zero, one or several **parameters** in order to work. For a particular call, supplied parameter values are called **arguments**.
 
 * There are two ways to create a function in JavaScript: **declaring** it or using a **function expression**, which can be assigned to a variable. A variable's value can be a function.
 
-* **Anonymous functions** are (obviously) functions without a name. They can be created using a classical function expression or with the more consise **fat arrow syntax**.
+* **Anonymous functions** are (obviously) functions without a name. They can be created using a classical function expression or with the more concise **fat arrow** syntax.
 
-* Each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lots a **predefined functions**. covering various needs.
+* Each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lots a **predefined functions** covering various needs.
 
 ## Introduction: the role of functions
 
@@ -63,7 +63,7 @@ Our programs so far have mimicked the first example, but it's time to start modu
 
 ## Discovering functions
 
-A **function** is a group of instructions that performs a particular task.
+A **function** is a group of statements that performs a particular task.
 
 Here's a basic example of a function.
 
@@ -393,7 +393,7 @@ This book will introduce many other JavaScript functions.
 
 A function body must be kept simple, or otherwise split into several sub-functions. A a rule of thumb, 30 lines of code should be a max for non-specific cases.
 
-### Naming functions and parameters
+### Naming functions and parameters well
 
 Function naming is just as important as variable naming. You should choose names that express clearly the function purpose and follow a naming convention like [camelCase](https://en.wikipedia.org/wiki/Camel_case).
 
