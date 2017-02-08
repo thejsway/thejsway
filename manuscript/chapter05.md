@@ -6,7 +6,7 @@ In this chapter, you'll learn how to break down a program into subparts called f
 
 * A **function** is a group of instructions that performs a particular task. JavaScript functions are created using the `function` keyword.
 
-* Writen as a combinaison of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolitic one.
+* Written as a combinaison of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolitic one.
 
 * A **function call** triggers the execution of the function code. After it's done, execution resumes at the place where the call was made.
 
@@ -477,4 +477,4 @@ Write a program containing two functions to calculate the circumference and area
 
 > Circumference and area calculation formulas should be part of your school years memories... Or a Google click away :)
 
-> The value of number π (Pi) is obtained with `Math.PI` en JavaScript.
+> The value of number π (Pi) is obtained with `Math.PI` in JavaScript.
