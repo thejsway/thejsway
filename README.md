@@ -32,6 +32,7 @@ This repository contains the book source files. Your contributions are most welc
   * [Add conditions](manuscript/chapter03.md)
   * [Repeat statements](manuscript/chapter04.md)
   * [Write functions](manuscript/chapter05.md)
+  * [Create your first objects](manuscript/chapter06.md)
 
 More to come!
 
