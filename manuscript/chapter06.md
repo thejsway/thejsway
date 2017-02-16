@@ -305,7 +305,7 @@ console.log(aurora.describe());
 
 ![Execution result](images/chapter06-08.png)
 
-### Dog modeling
+### Modeling a dog
 
 Complete the following program to add the `dog` object definition.
 
@@ -318,10 +318,28 @@ console.log(`Look, a cat! ${dog.name} barks: ${dog.bark()}`);
 
 ![Execution result](images/chapter06-09.png)
 
-### Circle modeling
+### Modeling a circle
 
-TODO
+Complete the following program to add the `circle` object definition. Its radius value is input by the user.
 
-### Bank account modeling
+```js
+const r = Number(prompt("Enter the circle radius:"));
 
-TODO
+// TODO: create the circle object here
+
+console.log(`Its circumference is ${circle.circumference()}`);
+console.log(`Its area is ${circle.area()}`);
+```
+
+### Modeling a bank account
+
+Write a program that creates an `account` object with the following characteristics:
+
+* A `name` property set to "Alex".
+* A `balance` property set to 0.
+* A `credit` method adding the value passed as an argument to the account balance.
+* A `describe` method returning the account description.
+
+Use this object to show its description, crediting 250, debiting 80, then show its description again.
+
+![Execution result](images/chapter06-10.png)
