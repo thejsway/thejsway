@@ -4,7 +4,7 @@ In this chapter, you'll learn how to break down a program into subparts called f
 
 ## TL;DR
 
-* A **function** is a group of statements that performs a particular task. JavaScript functions are created using the `function` keyword. 
+* A **function** is a group of statements that performs a particular task. JavaScript functions are created using the `function` keyword.
 
 * Written as a combinaison of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolitic one.
 
@@ -461,7 +461,7 @@ function square1(x) {
 }
 
 // Square the given number x
-const square2 = (x) => {
+const square2 = x => {
   // TODO: complete the function code
 }
 
@@ -501,7 +501,7 @@ console.log(calculate(4, "+", 6));  // Must show 10
 console.log(calculate(4, "-", 6));  // Must show -2
 console.log(calculate(2, "*", 0));  // Must show 0
 console.log(calculate(12, "/", 0)); // Must show Infinity
-``` 
+```
 
 ### Circumference and area of a circle
 

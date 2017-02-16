@@ -9,12 +9,12 @@ In this chapter, we'll look at how to execute code on a repeating basis.
 * The `while` loop repeats statements *while* a certain condition is true. The `for` loop gives the ability to manage what happens just before the loop starts and after each loop iteration has run.
 
 ```js
+// While loop
 while (condition) {
     // Code to run while the condition is true
 }
-```
 
-```js
+// For loop
 for (initialization; condition; final expression) {
     // code to run while the condition is true
 }
