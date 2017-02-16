@@ -6,15 +6,44 @@ Up until now, all the code in our programs has been executed chronologically. Le
 
 * The `if` keyword defines a **conditional statement**, also called a **test**. The associated code block is only run if the **condition** is satisfied (its value is `true`). Thus, a condition is an expression whose evaluation always produces a boolean result (`true` or `false`).
 
+```js
+if (condition) {
+    // Code to run when the condition is true
+}
+```
+
 * The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve lisibility, its statements are generally **indented** (shifted to the right).
 
 * The **comparison operators** `===`, `!==`, `<`, `<=`, `>` et `>=` are used to compare numbers inside a condition. All of them return a boolean result.
 
 * An `else` statement can be associated to an `if` to express an **alternative**. Depending on the condition value, either the code block associated to the `if` or the one associated to the `else` will be run, but never both. Thre is no limit to the depth of condition nesting.
 
+```js
+if (condition) {
+    // Code to run when the condition is true
+}
+else {
+    // Code to run when the condition is false
+}
+```
+
 * Complex conditions can be created using the **logical operators** `&&` ("and"), `||` ("or") et `!` ("not").
 
 * The `switch` statement is used to kick off the execution of one code block among many, depending on the value of an expression.
+
+```js
+switch (expression) {
+case value1:
+    // Code to run when the expression matches value1
+    break;
+case value2:
+    // Code to run when the expression matches value2
+    break;
+...
+default:
+    // Code to run when neither case matches
+}
+```
 
 ## What's a condition?
 
@@ -274,7 +303,7 @@ case "rainy":
     console.log("Bring that umbrella!");
     break;
 case "snowy":
-    console.log("Just stay inside!");
+    console.log("Winter is coming! Just stay inside!");
     break;
 default:
     console.log("Not a valid weather type");
@@ -288,14 +317,14 @@ The `switch` statement kicks off the execution of one code block among many. Onl
 ```js
 switch (expression) {
 case value1:
-    // code run when the expression matches value1
+    // Code to run when the expression matches value1
     break;
 case value2:
-    // code run when the expression matches value2
+    // Code to run when the expression matches value2
     break;
 ...
 default:
-    // code run for when neither case matches
+    // Code to run when neither case matches
 }
 ```
 

@@ -8,7 +8,7 @@ This chapter will introduce objects and the way they are created and used in Jav
 
 * The value of a property can be an information (number, string, etc) or a function. In that case, the property is called a **method**.
 
-* Here's the general syntax for creating an **object literal**:
+* A JavaScript **object literal** is created by simply setting its properties within a pair of curly braces.
 
 ```js
 const myObject = {
@@ -24,9 +24,9 @@ const myObject = {
     // ...
 };
 
+myObject.property1 = newValue;   // Set the new value of property1 for myObject
 console.log(myObject.property1); // Show the value of property1 for myObject
-
-myObject.method1(...); // Call method1 on myObject
+myObject.method1(...);           // Call method1 on myObject
 ```
 
 * Inside a method, the `this` keyword represents the object on which the method is called.

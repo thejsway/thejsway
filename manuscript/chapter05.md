@@ -4,7 +4,7 @@ In this chapter, you'll learn how to break down a program into subparts called f
 
 ## TL;DR
 
-* A **function** is a group of statements that performs a particular task. JavaScript functions are created using the `function` keyword.
+* A **function** is a group of statements that performs a particular task. JavaScript functions are created using the `function` keyword. 
 
 * Written as a combinaison of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolitic one.
 
@@ -14,11 +14,43 @@ In this chapter, you'll learn how to break down a program into subparts called f
 
 * A `return` statement inside the function body defines the **return value** of the function. A function can accept zero, one or several **parameters** in order to work. For a particular call, supplied parameter values are called **arguments**.
 
-* There are two ways to create a function in JavaScript: **declaring** it or using a **function expression**, which can be assigned to a variable. A variable's value can be a function.
+* There are several ways to create a function in JavaScript. A first one is to use a **function declaration**.
 
-* **Anonymous functions** are (obviously) functions without a name. They can be created using a classical function expression or with the more concise **fat arrow** syntax.
+```js
+// Function declaration
+function myFunction(param1, param2, ...) {
+    // Function code using param1, param2, ...
+}
 
-* Each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lots a **predefined functions** covering various needs.
+// Function call
+myFunction(arg1, arg2, ...);
+```
+
+* Another way to create a function is to use a **function expression**. A function expression can be assigned to a variable because in JavaScript, a variable's value can be a function. Function expressions are often used to create **anonymous functions** (functions without a name).
+
+```js
+// Anonymous function created with a function expression and assigned to a variable
+const myVar = function(param1, param2, ...) {
+    // Function code using param1, param2, ...
+}
+
+// Function call
+myVar(arg1, arg2, ...);
+```
+
+* A third way to create an anonymous function is the more recent **fat arrow syntax**.
+
+```js
+// Fat arrow anonymous function assigned to a variable
+const myVar = (param1, param2, ...)  => {
+    // Function code using param1, param2, ...
+}
+
+// Function call
+myVar(arg1, arg2, ...);
+```
+
+* No matter how it's created, each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lots a **predefined functions** covering various needs.
 
 ## Introduction: the role of functions
 

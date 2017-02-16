@@ -8,11 +8,21 @@ In this chapter, we'll look at how to execute code on a repeating basis.
 
 * The `while` loop repeats statements *while* a certain condition is true. The `for` loop gives the ability to manage what happens just before the loop starts and after each loop iteration has run.
 
+```js
+while (condition) {
+    // Code to run while the condition is true
+}
+```
+
+```js
+for (initialization; condition; final expression) {
+    // code to run while the condition is true
+}
+```
+
 * The variable associated to the loop condition is called the loop **counter** and often named `i`.
 
-* The condition of a `while` loop must eventually become false, to avoid the risk of an **infinite loop**.
-
-* Updating the counter of a `for` loop inside its body is a bad idea.
+* Beware! The condition of a `while` loop must eventually become false, to avoid the risk of an **infinite loop**. Also, updating the counter of a `for` loop inside its body is a bad idea.
 
 * All loops can be written with `while`, but if you know in advance how many times you want the loop to run, `for` is the best choice.
 
@@ -60,7 +70,7 @@ You'll use the following syntax to write a `while` loop.
 
 ```js
 while (condition) {
-    // Code run while the condition is true
+    // Code to run while the condition is true
 }
 ```
 
@@ -95,7 +105,7 @@ Here's the `for` loop syntax.
 
 ```js
 for (initialization; condition; final expression) {
-    // code to run when condition is true
+    // code to run while the condition is true
 }
 ```
 
