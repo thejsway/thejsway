@@ -4,7 +4,7 @@ A modern introduction to an essential language.
 
 By [Baptiste Pesquet](http://bpesquet.com)
 
-[![Completion](https://img.shields.io/badge/Completion-25%25-red.svg)](https://leanpub.com/thejsway)
+[![Completion](https://img.shields.io/badge/Completion-30%25-red.svg)](https://leanpub.com/thejsway)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -33,6 +33,8 @@ This repository contains the book source files. Your contributions are most welc
   * [Repeat statements](manuscript/chapter04.md)
   * [Write functions](manuscript/chapter05.md)
   * [Create your first objects](manuscript/chapter06.md)
+  * [Store data in arrays](manuscript/chapter07.md)
+  * [Work with strings](manuscript/chapter08.md)
 
 More to come!
 
@@ -56,3 +58,5 @@ This book is built upon two online courses I wrote for the French EdTech startup
 Thanks to [Jessica Mautref](https://www.linkedin.com/in/jessicamautref) for her watchful eye during the writing process, and to [Emily Reese](https://www.linkedin.com/in/eclairereese) for the initial English translation. Both also contributed many good ideas.
 
 I've been inspired by other authors who decided to publish their books in an open way: [Kyle Simpson](https://github.com/getify), [Nicholas C. Zakas](https://www.nczonline.net/), [Axel Rauschmayer](http://dr-axel.de/) and [Marijn Haverbeke](http://marijnhaverbeke.nl/).
+
+Cover logo "Creative blue swirl" - http://www.logoopenstock.com
