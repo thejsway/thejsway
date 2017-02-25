@@ -13,15 +13,15 @@ A few chapters ago, you learned how to create your first objects in JavaScript. 
 * There are several ways to create and link JavaScript objects through prototypes. One is to use the `Object.create()` method.
 
 ```js
-// Create an object linked to myPrototype
-const myObject = Object.create(myPrototype);
+// Create an object linked to myPrototypeObject
+const myObject = Object.create(myPrototypeObject);
 ```
 
-* A **factory function** can be used to ease object construction and setup.
+* A **factory function** can be used in combination with `Object.create()` to ease object creation and setup.
 
 ```js
 function createObject(/* ... */) {
-    const obj = Object.create(myPrototype);
+    const obj = Object.create(myPrototypeObject);
     // obj init
     return obj;
 }
@@ -29,7 +29,7 @@ function createObject(/* ... */) {
 const myObject = createObject(/* ... */);
 ```
 
-* Another way to create and link objects is to use the `class` keyword to declare a **class** (a blueprint for objects). Objects are then created using the `new` operator, which calls the class **constructor** in order to initialize the newly created object.
+* Another way to create and link objects is to use the `class` keyword to define a **class** (a blueprint for objects). Objects are then created using the `new` operator, which calls the class **constructor** in order to initialize the newly created object.
 
 ```js
 class MyClass {
@@ -113,8 +113,8 @@ console.log(anotherObject.myProp); // 2
 In this example, the JavaScript statement `Object.create()` is used to create the object `anotherObject` with object `anObject` as its prototype.
 
 ```js
-// Create an object linked to myPrototype
-const myObject = Object.create(myPrototype);
+// Create an object linked to myPrototypeObject
+const myObject = Object.create(myPrototypeObject);
 ```
 
 When the statement `anotherObject.myProp` is run, the `myProp` property of `anObject` is used since `myProp` doesn't exist in `anotherObject`.
@@ -222,7 +222,7 @@ We also added the `createCharacter()` function in order to make character creati
 
 Even with these improvements, our RPG is still pretty boring. What does it lack? Monsters and fights, of course!
 
-Here's how a fight will be handled: if attacked, a character sees their life points decrease from the strength of the attacker. If its health value fall below zero, the character is considered dead and cannot attack anymore. Its slayer receives a fixed number of 10 experience points.
+Here's how a fight will be handled: if attacked, a character sees their life points decrease from the strength of the attacker. If its health value fall below zero, the character is considered dead and cannot attack anymore. Its vanquisher receives a fixed number of 10 experience points.
 
 First, let's add the possibility for our characters to fight one another. Since it's a shared ability, we define it as a `Character` method named 'attack()`.
 
@@ -398,6 +398,62 @@ const myObject = new MyClass(/* ... */);
 
 However, the `class` syntax is just an emulation layer above JavaScript's prototype-based OOP model, a (arguably) simpler way to create relationships between objects. It's an example of what programmers call **syntaxic sugar**. Under the hood, JavaScript still creates a `Character` object and uses prototypes to link it to the other ones.
 
-The usefulness of the `class` syntax is a pretty heated debate in the JavaScript community. Whether you adopt it or not, remember one thing: **there are no classes in JavaScript, only objects.**
+The usefulness of the `class` syntax is a pretty heated debate in the JavaScript community. Whether you adopt it or not, remember one thing: **there are no real classes in JavaScript, only objects linked together.**
 
 ## Coding time!
+
+### Dogs
+
+Complete the following program to add the definition of the `Dog` object prototype.
+
+> Dogs taller than 60 make `"Grrr! Grrr!"` when they bark, other ones make `"Woof! Woof!"`.
+
+```js
+// TODO: define the Dog prototype object here
+
+// Factory function to create and setup a new dog
+function createDog(name, species, size) {
+  const dog = Object.create(Dog);
+  dog.init(name, species, size);
+  return dog;
+}
+
+const fang = createDog("Fang", "boarhound", 75);
+console.log(`${fang.name} is a ${fang.species} dog measuring ${fang.size}`);
+console.log(`Look, a cat! ${fang.name} barks: ${fang.bark()}`);
+
+const snowy = createDog("Snowy", "terrier", 22);
+console.log(`${snowy.name} is a ${snowy.species} dog measuring ${snowy.size}`);
+console.log(`Look, a cat! ${snowy.name} barks: ${snowy.bark()}`);
+```
+
+![Execution result](images/chapter09-03.png)
+
+### Character inventory
+
+Improve the example RPG to add character inventory management according to the following rules:
+
+* A character's inventory contains a number of gold and a number of keys.
+
+* Each character begins with 10 gold and 1 key.
+
+* The character description must show the inventory state.
+
+* When a character slays annother one, the victim's inventory goes to its vanquisher.
+
+Here's the expected execution result.
+
+![Execution result](images/chapter09-04.png)
+
+### Account list
+
+Let's build upon a previous account object exercise. A bank account is still defined by:
+
+* A `name` property.
+* A `balance` property, initially set to 0.
+* A `credit` method adding the value passed as an argument to the account balance.
+* A `describe` method returning the account description.
+
+Write a program that creates three accounts: one belonging to Sean, another to Brad and the third one to Georges. These accounts are stored in an array. Next, the program credits 1000 to each account and shows its description.
+
+![Execution result](images/chapter09-05.png)
