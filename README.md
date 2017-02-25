@@ -60,4 +60,4 @@ Thanks to [Jessica Mautref](https://www.linkedin.com/in/jessicamautref) for her 
 
 I've been inspired by other authors who decided to publish their books in an open way: [Kyle Simpson](https://github.com/getify), [Nicholas C. Zakas](https://www.nczonline.net/), [Axel Rauschmayer](http://dr-axel.de/) and [Marijn Haverbeke](http://marijnhaverbeke.nl/).
 
-Cover logo: [Creative blue swirl](http://www.logoopenstock.com/logo/preview/64186/creative-blue-swirl-logo-design) by [Free Log Design](http://www.free-logodesign.com/).
+Cover logo: [Creative blue swirl](http://www.logoopenstock.com/logo/preview/64186/creative-blue-swirl-logo-design) by [Free Logo Design](http://www.free-logodesign.com/).

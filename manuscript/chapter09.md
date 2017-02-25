@@ -174,7 +174,7 @@ console.log(glacius.describe());
 
 ![Execution result](images/chapter09-01.png)
 
-In this example, we start by creating a `Character` object sharing the common properties between all characters. Aurora and Glacious are created with `Character` as their prototype and **delegate** their common behavior to it.
+In this example, we start by creating a `Character` object sharing the common properties between all characters. Aurora and Glacius are created with `Character` as their prototype and **delegate** their common behavior to it.
 
 I> Naming prototype objects with a first letter in uppercase is an often used convention.
 
@@ -182,7 +182,7 @@ I> Naming prototype objects with a first letter in uppercase is an often used co
 
 In the previous example, the character setup process became quite tedious and error-prone: first an object is created through `Object.create()`, and then each property is manually added to it.
 
-There is a better way. Check it out.
+There is a slightly better way. Check it out.
 
 ```js
 // Character prototype
