@@ -40,11 +40,11 @@ class MyClass {
 const myObject = new MyClass(/* ... */);
 ```
 
-* The `class` syntax emulates in JavaScript the class-based OOP model found in many other languages like Java or C#. However, it is just **syntaxic sugar** over JavaScript's own prototype-based OOP model. There are no real classes in JavaScript, only objects linked together.
+* The `class` syntax emulates in JavaScript the class-based OOP model found in many other languages like Java or C#. However, it is just **syntactic sugar** over JavaScript's own prototype-based OOP model. There are no real classes in JavaScript, only objects linked together.
 
 ## Context: a multiplayer RPG
 
-As a reminder, here's the code for our minimalist RPG taken from a previous chapter. it creates an object literal named `aurora` with threee properties (`name`, `health` and `strength`) and a `describe()` method.
+As a reminder, here's the code for our minimalist RPG taken from a previous chapter. it creates an object literal named `aurora` with three properties (`name`, `health` and `strength`) and a `describe()` method.
 
 ```js
 const aurora = {
@@ -93,7 +93,7 @@ You should already be aware that code duplication is evil. We must find a way to
 
 ## Objects and prototypes in JavaScript
 
-To share properties between objects in JavaScript, we use **prototypes**.
+To share properties between objects, JavaScript uses **prototypes**.
 
 In addition to its special properties, any JavaScript object has an internal property called `prototype`. This is a link (known as a **reference**) to another object. When trying to access a property that does not exist in an object, JavaScript tries to find this property in the prototype of this object.
 
@@ -396,7 +396,7 @@ class MyClass {
 const myObject = new MyClass(/* ... */);
 ```
 
-However, the `class` syntax is just an emulation layer above JavaScript's prototype-based OOP model, a (arguably) simpler way to create relationships between objects. It's an example of what programmers call **syntaxic sugar**. Under the hood, JavaScript still creates a `Character` object and uses prototypes to link it to the other ones.
+However, the `class` syntax is just an emulation layer above JavaScript's prototype-based OOP model, a (arguably) simpler way to create relationships between objects. It's an example of what programmers call **syntactic sugar**. Under the hood, JavaScript still creates a `Character` object and uses prototypes to link it to the other ones.
 
 The usefulness of the `class` syntax is a pretty heated debate in the JavaScript community. Whether you adopt it or not, remember one thing: **there are no real classes in JavaScript, only objects linked together.**
 
