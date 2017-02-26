@@ -36,6 +36,7 @@ This repository contains the book source files. Your contributions are most welc
   * [Store data in arrays](manuscript/chapter07.md)
   * [Work with strings](manuscript/chapter08.md)
   * [Understand object-oriented programming](manuscript/chapter09.md)
+  * [Discover functional programming](manuscript/chapter10.md)
 
 More to come!
 
