@@ -103,7 +103,7 @@ In the following example, lines 2 and 3 each increase the value of variable b  b
 
 ```js
 let b = 0;      // b contains 0
-b += 1;         // b contains 11
+b += 1;         // b contains 1
 b++;            // b conttains 2
 console.log(b); // Shows 2
 ```
