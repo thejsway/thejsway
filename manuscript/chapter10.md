@@ -6,7 +6,7 @@ Object-oriented programming, albeit quite popular, is not the only way to create
 
 * **Functional programming** is about writing programs by combining functions expressing *what* the program should do, rather than *how* to do it (which is the imperative way).
 
-* The **state** of a program is the value of its **global variables** at a given time. A goal of functional programming is to minimize state **mutations** (changes). Some possible solutions are declaring variables with `const` instead of `let`, splitting the code into functions and favor local variables over global ones.
+* The **state** of a program is the value of its **global variables** at a given time. A goal of functional programming is to minimize state **mutations** (changes) that make the code harder to understand. Some possible solutions are declaring variables with `const` instead of `let`, splitting the code into functions and favor local variables over global ones.
 
 * A **pure function** depends solely in its inputs for cumputing its outputs and has no **side effect**. Pure functions are easier to understand, combine together, and debug. Functional programming favors the use of pure functions whenever possible.
 
@@ -384,7 +384,7 @@ function averageRating(movies) {
 }
 ```
 
-Another possibility is to compute the rating sum by using `map()` before reducing an array containing only movie ratings.
+Another possible solution is to compute the rating sum by using `map()` before reducing an array containing only movie ratings.
 
 ```js
 // ...
@@ -402,12 +402,12 @@ Thanks to their first-class citizenry, functions can be combined together, rende
 Check out this final version of our example program.
 
 ```js
-const titles = (movies) => movies.map(movie => movie.title);
-const byNolan = (movie) => movie.director === "Christopher Nolan";
+const titles = movies => movies.map(movie => movie.title);
+const byNolan = movie => movie.director === "Christopher Nolan";
 const filter = (movies, fct) => movies.filter(fct);
-const goodRating = (movie) => movie.imdbRating >= 7.5;
-const ratings = (movies) => movies.map(movie => movie.imdbRating);
-const average = (array) => array.reduce((sum, value) => sum + value, 0) / array.length;
+const goodRating = movie => movie.imdbRating >= 7.5;
+const ratings = movies => movies.map(movie => movie.imdbRating);
+const average = array => array.reduce((sum, value) => sum + value, 0) / array.length;
 
 console.log(titles(movieList));
 const nolanMovieList = filter(movieList, byNolan);
@@ -416,14 +416,110 @@ console.log(titles(filter(movieList, goodRating)));
 console.log(average(ratings(nolanMovieList)));
 ```
 
-We have defined helper functions that we combine to achieve the desired behaviour. The code is concise and self-describing. Since it takes the filtering function as a parameter, our `filter()` function is an example of an higher-order function.
+We have defined helper functions that we combine to achieve the desired behaviour. The code is concise and self-describing. Since it takes the filtering function as a parameter, our own `filter()` function is an example of an higher-order function.
 
 ## JavaScript: a multi-paradigm language
 
 The JavaScript language is full of paradoxes. It has famously been [invented in ten days](https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript), and is now enjoying a popularity almost unique in programming history. Its syntax borrows heavily from maintream imperative languages like C or Java, but its design principles are closer to functional languages like [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)).
 
-As always, diversity is a source of flexibility and ultimately a strength. JavaScript's multi-paradigm nature means you can write imperative, object-oriented or functional code, choosing the right tool for the job and leveraging your previous programming experience.
+JavaScript's multi-paradigm nature means you can write imperative, object-oriented or functional code, choosing the right tool for the job and leveraging your previous programming experience. As always, diversity is a source of flexibility and ultimately a strength.
 
 ## Coding time!
 
-TODO
+### Older movies
+
+Improve the example program so that it shows the titles of movies released before year 2000, using functional programming.
+
+### Government forms
+
+Complete the following program to computes and shows the names of political forms ending with `"cy"`.
+
+```js
+const governmentForms = [{
+  name: "Plutocracy",
+  definition: "Rule by the weathly"
+},{
+  name: "Oligarchy",
+  definition: "Rule by a small number of people"
+},{
+  name: "Kleptocracy",
+  definition: "Rule by the thieves"
+},{
+  name: "Theocracy",
+  definition: "Rule by a religious elite"
+}, {
+  name: "Democracy",
+  definition: "Rule by the people"
+}, {
+  name: "Autocracy",
+  definition: "Rule by a single person"
+}];
+
+// TODO: compute the formsEndingWithCy array
+
+// Should show ["Plutocracy", "Kleptocracy", "Theocracy", "Democracy", "Autocracy"]
+console.log(formsEndingWithCy);
+```
+
+### Arrays sum
+
+Complete the following program to compute and shows the total sum of the values in each of the arrays.
+
+```js
+const arrays = [
+  [1, 4],
+  [11],
+  [3, 5, 7]
+];
+
+// TODO: compute the value of the arraysSum variable
+
+console.log(arraysSum); // Should show 31
+```
+
+### Student results
+
+Here's a program that shows female students results (name and average grade).
+
+```js
+const students = [{
+  name: "Anna",
+  sex: "f",
+  grades: [4.5, 3.5, 4]
+}, {
+  name: "Dennis",
+  sex: "m",
+  country: "Germany",
+  grades: [5, 1.5, 4]
+}, {
+  name: "Martha",
+  sex: "f",
+  grades: [5, 4, 2.5, 3]
+}, {
+  name: "Brock",
+  sex: "m",
+  grades: [4, 3, 2]
+}];
+
+// Compute female student results
+const femaleStudentsResults = [];
+for (student of students) {
+  if (student.sex === "f") {
+    let gradesSum = 0;
+    for (grade of student.grades) {
+      gradesSum += grade;
+    }
+    let averageGrade = gradesSum / student.grades.length;
+    femaleStudentsResults.push({
+      name: student.name,
+      avgGrade: averageGrade
+    });
+  }
+}
+
+console.log(femaleStudentsResults);
+```
+
+![Execution result](images/chapter10-02.png)
+
+Refactor it using functional programming. Execution result must stay the same.
