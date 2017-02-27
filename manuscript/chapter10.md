@@ -4,17 +4,23 @@ Object-oriented programming, albeit quite popular, is not the only way to create
 
 ## TL;DR
 
-TODO
+* **Functional programming** is about writing programs by combining functions expressing *what* the program should do, rather than *how* to do it (which is the imperative way).
 
-## JavaScript: a multi-paradigm language
+* The **state** of a program is the value of its **global variables** at a given time. A goal of functional programming is to minimize state **mutations** (changes). Some possible solutions are declaring variables with `const` instead of `let`, splitting the code into functions and favor local variables over global ones.
 
-TODO
+* A **pure function** depends solely in its inputs for cumputing its outputs and has no **side effect**. Pure functions are easier to understand, combine together, and debug. Functional programming favors the use of pure functions whenever possible.
+
+* The `map()`, `filter()` and `reduce()` methods can replace loops for array traversal and let you program with arrays in a functional way.
+
+* JavaScript functions can be passed around just like any other value: they are **first-class citizens**, enabling functional programming. A function that operates on another function (taking it as an parameter or returning it) is called an **higher-order function**.
+
+* JavaScript is a **multi-paradigm** language: you can write programs using an imperative, object-oriented or functional programming style.
 
 ## Context: a movie list
 
 In this chapter, we'll start with an example program and improve it little by little, without adding any new functionality. This important programmer task is called **refactoring**.
 
-Our initial program is about recent Batman movies. The data comes under the form of an array of objects. Each object describes a movie.
+Our initial program is about recent Batman movies. The data comes under the form of an array of objects, each object describing a movie.
 
 ```js
 const movieList = [{
@@ -55,7 +61,7 @@ const movieList = [{
 }];
 ```
 
-And here is the rest of the program, that uses the data to show some results about the movies. Check it out, it should be pretty self-explanatory.
+And here is the rest of the program that uses this data to show some results about the movies. Check it out, it should be pretty self-explanatory.
 
 ```js
 // Get movie titles
@@ -95,15 +101,39 @@ console.log(averageRating);
 
 ![Execution result](images/chapter10-01.png)
 
-## Pure functions
+## Program state
 
 The previous program is an example of what is called **imperative programming**. In this paradigm, the programmer gives orders to the computer through a series of statements that modify the program state. Imperative programming focuses on describing *how* a program operates.
 
-The concept of state is an important one. The **state** of a program is the value of its **global variables** (variables visible everythere in the code) at a given time. In our example, the values of `movieList`, `titles`, `nolanMovieCount`, `bestTitles`, `ratingSum` and `averageRating` form the state of the program. Any assignment to one of these variables is a state change, often called a **mutation**.
+The concept of state is an important one. The **state** of a program is the value of its **global variables** (variables accessible everythere in the code) at a given time. In our example, the values of `movieList`, `titles`, `nolanMovieCount`, `bestTitles`, `ratingSum` and `averageRating` form the state of the program. Any assignment to one of these variables is a state change, often called a **mutation**.
 
 In imperative programming, the state can be modified anywhere in the source code. This is convenient, but can also lead to nasty bugs and maintenance headaches. As the program grows in size and complexity, it's becoming easier for the programmer to mutate a part of the state by mistake, and harder to monitor state modifications.
 
-A first solution is to split the source code into subroutines called procedures or **functions**. This approach is called **procedural programming** and has the benefit of transforming some variables into **local variables**, which are only visible in the subroutine code.
+### Limiting mutations with `const` variables
+
+In order to decrease the risk of accidental state mutation, a first step is to favor `const` over `let` whenever applicable for variable declarations. A variable declared with the `const` keyword cannot be further reassigned. Array and object content can still be mutated, though. Check the following code for details.
+
+```js
+const n = 10;
+const fruit = "Banana";
+const obj = {
+  myProp: 2
+};
+const animals = ["Elephant", "Turtle"];
+
+obj.myProp = 3;          // Mutating a property is OK even for a const object
+obj.myOtherProp = "abc"; // Adding a new property is OK even for a const object
+animals.push("Gorilla"); // Updating content is OK even for a const array
+
+n++;               // Illegal
+fruit = "orange";  // Illegal
+obj = {};          // Illegal
+animals = ["Bee"]; // Illegal
+```
+
+### Splitting the program into functions
+
+Another solution is to split the source code into subroutines called procedures or **functions**. This approach is called **procedural programming** and has the benefit of transforming some variables into **local variables**, which are only visible in the subroutine code.
 
 Let's try to introduce some functions in our code.
 
@@ -117,7 +147,7 @@ function titles() {
   return titles;
 }
 
-// Count movies by Christopher Nolan
+// Get movies by Christopher Nolan
 function nolanMovies() {
   for (movie of movieList) {
     if (movie.director === "Christopher Nolan") {
@@ -147,7 +177,7 @@ function averageNolanRating() {
   return ratingSum / nolanMovieList.length;
 }
 
-let nolanMovieList = [];
+const nolanMovieList = [];
 
 console.log(titles());
 nolanMovies();
@@ -156,9 +186,243 @@ console.log(bestTitles());
 console.log(averageNolanRating());
 ```
 
+The state of our program is now limited to two variables: `movieList` and `nolanMovieList` (the latter being necessary in functions `nolanMovies()` and `averageNolanRating()`). The other variables are now local to the functions they are used into, which limit the possibility of an accidental state mutation.
+
+Also, this version of the program is easier to understand than the previous one. Functions with appropriate names help describe a program's behavior. Comments are now less necessary than before.
+
+## Pure functions
+
+Merely introducing some functions in a program is not enough to follow the functional programming paradigm. Whenever possible, we also need to use pure functions.
+
+A **pure function** is a function has the following characteristics:
+
+* Its outputs depend solely on its inputs.
+* It has no side effect.
+
+A **side effect** is a change in program state or an interaction with the outside world. A database access or a `console.log()` statement are examples of side effects.
+
+Given the same data, a pure function will always produce the same result. By design, a pure function is independent from the program state and must not access it. Such a function must accept **parameters** in order to do something useful. The only way for a function without parameters to be pure is to return a constant value.
+
+Pure functions are easier to understand, combine together, and debug: contrary to their *impure* counterparts, there's no need to look outside the function body to reason about it. Still, a number of side effects are necessary in any program, like showing output to the user or updating a database. In functional programming, the name of the game is to create those side effects only in some dedicated and clearly identified parts of the program. The rest of the code should be written as pure functions.
+
+Let's refactor our example code to introduce pure functions.
+
+```js
+// Get movie titles
+function titles(movies) {
+  const titles = [];
+  for (movie of movies) {
+    titles.push(movie.title);
+  }
+  return titles;
+}
+
+// Get movies by Christopher Nolan
+function nolanMovies(movies) {
+  const nolanMovies = [];
+  for (movie of movies) {
+    if (movie.director === "Christopher Nolan") {
+      nolanMovies.push(movie);
+    }
+  }
+  return nolanMovies;
+}
+
+// Get titles of movies with an IMDB rating greater or equal to 7.5
+function bestTitles(movies) {
+  const bestTitles = [];
+  for (movie of movies) {
+    if (movie.imdbRating >= 7.5) {
+      bestTitles.push(movie.title);
+    }
+  }
+  return bestTitles;
+}
+
+// Compute average rating of Christopher Nolan's movies
+function averageRating(movies) {
+  let ratingSum = 0;
+  let averageRating = 0;
+  for (movie of movies) {
+    ratingSum += movie.imdbRating;
+  }
+  return ratingSum / movies.length;
+}
+
+console.log(titles(movieList));
+const nolanMovieList = nolanMovies(movieList);
+console.log(nolanMovieList.length);
+console.log(bestTitles(movieList));
+console.log(averageRating(nolanMovieList));
+```
+
+Since we only do refactoring, the program output is still the same.
+
+The program state (`movieList` and `nolanMovieList`) hasn't changed. However, all our functions are now pure: instead of accessing the state, they use parameters to achieve their desired behavior. As an added benefit, the function `averageRating()` can now compute the average rating of any movie list: it has become more **generic**.
+
 ## Array operations
 
+Functional programming is about writing programs by combining functions expressing *what* the program should do, rather than *how* to do it. JavaScript offers several array-related methods that favor a functional programming style.
+
+### The `map()` method
+
+The `map()` method takes an array as a parameter and creates a new array with the results of calling a provided function on every element in this array. A typical use of `map()` is to replace a loop for array traversal.
+
+Let's see `map()` in action.
+
+```js
+const numbers = [1, 5, 10, 15];
+// The associated function multiply each array number by 2
+const doubles = numbers.map(x => x * 2);
+
+console.log(numbers); // [1, 5, 10, 15] (no change)
+console.log(doubles); // [2, 10, 20, 30]
+```
+
+Here's how our `titles()` could be rewritten using `map()`. Look how the function code is now more concise and expressive.
+
+```js
+// Get movie titles
+function titles(movies) {
+  /* Previous code
+  const titles = [];
+  for (movie of movies) {
+    titles.push(movie.title);
+  }
+  return titles;
+  */
+
+  // Return a new array containing only movie titles
+  return movies.map(movie => movie.title);
+}
+```
+
+### The `filter()` method
+
+The `filter()` method offers a way to test every element of an array against a provided function. Only elements that pass this test are added in the returned array.
+
+Here's an example of using `filter()`.
+
+```js
+const numbers = [1, 5, 10, 15];
+// Keep only the number greater or equal to 10
+const bigOnes = numbers.filter(x => x >= 10);
+
+console.log(numbers); // [1, 5, 10, 15] (no change)
+console.log(bigOnes); // [10, 15]
+```
+
+We can use this method in the `nolanMovies()` function.
+
+```js
+// Get movies by Christopher Nolan
+function nolanMovies(movies) {
+  /* Previous code
+  const nolanMovies = [];
+  for (movie of movies) {
+    if (movie.director === "Christopher Nolan") {
+      nolanMovies.push(movie);
+    }
+  }
+  return nolanMovies;
+  */
+
+  // Return a new array containing only movies by Christopher Nolan
+  return movies.filter(movie => movie.director === "Christopher Nolan");
+}
+```
+
+The `map()` and `filter()` method can be used together to achieve powerful effects. Look at this new version of the `bestTitles()` function.
+
+```js
+// Get titles of movies with an IMDB rating greater or equal to 7.5
+function bestTitles(movies) {
+  /* Previous code
+  onst bestTitles = [];
+  for (movie of movies) {
+    if (movie.imdbRating >= 7.5) {
+      bestTitles.push(movie.title);
+    }
+  }
+  return bestTitles;
+  */
+
+  // Filter movies by IMDB rating, then creates a movie titles array
+  return movies.filter(movie => movie.imdbRating >= 7.5).map(movie => movie.title)
+}
+```
+
+### The `reduce()` method
+
+The `reduce()` method applies a provided function to each array element in order to *reduce* it to one value. This method is typically used to perform calculations on an array.
+
+Here's an example of reducing an array to the sum of its values.
+
+```js
+const numbers = [1, 5, 10, 15];
+// Compute the sum of array elements
+const sum = numbers.reduce((acc, value) => acc + value, 0);
+
+console.log(numbers); // [1, 5, 10, 15] (no change)
+console.log(sum);     // 31
+```
+
+The `reduce()` method can take several parameters:
+
+* The first one is the function associated to `reduce()` and called for each array element takes two parameters: the first is an **accumulator** which contains the accumulated value previously returned by the last invocation of the function. The other function parameter is the array element.
+
+* The second one is the initial value of the accumulator (often 0).
+
+Here's how to apply `reduce()` to caculate the average rating of a movie list.
+
+```js
+// Compute average rating of Christopher Nolan's movies
+function averageRating(movies) {
+  // Compute the sum of all movie IMDB ratings
+  const ratingSum = movies.reduce((acc, movie) => acc + movie.imdbRating, 0);
+  return ratingSum / movies.length;
+}
+```
+
+Another possibility is to compute the rating sum by using `map()` before reducing an array containing only movie ratings.
+
+```js
+// ...
+// Compute the sum of all movie IMDB ratings
+const ratingSum = movies.map(movie => movie.imdbRating).reduce((acc, value) => acc + value, 0);
+// ...
+```
+
 ## Higher-order functions
+
+Throughout this chapter, we have leveraged the fact that JavaScript functions can be passed around just like any other value. We say that functions are **first-class citizens** in JavaScript, which means that they are treated equal to other types.
+
+Thanks to their first-class citizenry, functions can be combined together, rendering programs even more expressive and enabling a truly functional programming style. A function that takes another function as a parameter or returns another function is called an **higher-order function**.
+
+Check out this final version of our example program.
+
+```js
+const titles = (movies) => movies.map(movie => movie.title);
+const byNolan = (movie) => movie.director === "Christopher Nolan";
+const filter = (movies, fct) => movies.filter(fct);
+const goodRating = (movie) => movie.imdbRating >= 7.5;
+const ratings = (movies) => movies.map(movie => movie.imdbRating);
+const average = (array) => array.reduce((sum, value) => sum + value, 0) / array.length;
+
+console.log(titles(movieList));
+const nolanMovieList = filter(movieList, byNolan);
+console.log(nolanMovieList.length);
+console.log(titles(filter(movieList, goodRating)));
+console.log(average(ratings(nolanMovieList)));
+```
+
+We have defined helper functions that we combine to achieve the desired behaviour. The code is concise and self-describing. Since it takes the filtering function as a parameter, our `filter()` function is an example of an higher-order function.
+
+## JavaScript: a multi-paradigm language
+
+The JavaScript language is full of paradoxes. It has famously been [invented in ten days](https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript), and is now enjoying a popularity almost unique in programming history. Its syntax borrows heavily from maintream imperative languages like C or Java, but its design principles are closer to functional languages like [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)).
+
+As always, diversity is a source of flexibility and ultimately a strength. JavaScript's multi-paradigm nature means you can write imperative, object-oriented or functional code, choosing the right tool for the job and leveraging your previous programming experience.
 
 ## Coding time!
 
