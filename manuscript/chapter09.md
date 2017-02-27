@@ -4,7 +4,7 @@ A few chapters ago, you learned how to create your first objects in JavaScript. 
 
 ## TL;DR
 
-* **Object-oriented programming**, or OOP, is a programming paradigm that uses objects containing both data and behavior to create programs.
+* **Object-oriented programming**, or OOP, is a programming [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) that uses objects containing both data and behavior to create programs.
 
 * JavaScript's OOP model is based on **prototypes**. Any JavaScript object has an internal property called `prototype` which is a link (a **reference**) to another object. Prototypes are used to share properties and delegate behavior between objects.
 
@@ -325,7 +325,7 @@ console.log(glacius.describe());
 
 ## JavaScript classes... Or lack thereof
 
-**Object-oriented programming** (in short: OOP) is a programming paradigm based on objects containing both data and behavior. The previous example shows how a program can be created through the use of objects.
+**Object-oriented programming** (in short: OOP) is a programming [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) (a programming style) based on objects containing both data and behavior. The previous example shows how a program can be created through the use of objects.
 
 If you come from another programming background, chances are you already heard about things like classes and inheritance. Most object-oriented languages (C++, Java, C#, ...) use **classes** as blueprints for creating objects. **Inheritance** is the fact for a class to inherit properties and behavior from another one, creating a **"is a"** kind of relationship between the two classes.
 
