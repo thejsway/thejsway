@@ -14,10 +14,12 @@ By [Baptiste Pesquet](http://bpesquet.com)
 
 * Designed to be as beginner-friendly as possible, while covering some advanced concepts and good practices.
 * No complex setup needed: start working immediately from your browser.
-* Written from scratch with the latest language version (ES6/ES2015), avoiding awkwardnesses from the past and giving you future-proof knowledge.
+* Written from scratch using the latest language version (ES6/ES2015), avoiding awkwardnesses from the past and giving you future-proof knowledge.
 * Each chapter is accompanied by a series of exercises to put your newly acquired skills into practice.
 
-This repository contains the book source files. Your contributions are most welcome.
+This repository contains the book source files. Your [contributions](CONTRIBUTING.md) are most welcome.
+
+Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this-javascript-way-e9c45ab5b696#.fmmywlb2e).
 
 ## Table of contents
 
