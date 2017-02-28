@@ -8,7 +8,7 @@ Object-oriented programming, albeit quite popular, is not the only way to create
 
 * The **state** of a program is the value of its **global variables** at a given time. A goal of functional programming is to minimize state **mutations** (changes) that make the code harder to understand. Some possible solutions are declaring variables with `const` instead of `let`, splitting the code into functions and favor local variables over global ones.
 
-* A **pure function** depends solely in its inputs for cumputing its outputs and has no **side effect**. Pure functions are easier to understand, combine together, and debug. Functional programming favors the use of pure functions whenever possible.
+* A **pure function** depends solely in its inputs for computing its outputs and has no **side effect**. Pure functions are easier to understand, combine together, and debug. Functional programming favors the use of pure functions whenever possible.
 
 * The `map()`, `filter()` and `reduce()` methods can replace loops for array traversal and let you program with arrays in a functional way.
 
