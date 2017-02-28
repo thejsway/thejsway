@@ -43,7 +43,7 @@ To find the **length** of a string (the number of characters in it), add `.lengt
 ```js
 console.log("ABC".length); // 3
 const m = "I am a string";
-const l = message.length;
+const l = m.length;
 console.log(l); // 13
 ```
 
