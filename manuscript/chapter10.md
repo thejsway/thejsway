@@ -170,7 +170,6 @@ function bestTitles() {
 // Compute average rating of Christopher Nolan's movies
 function averageNolanRating() {
   let ratingSum = 0;
-  let averageRating = 0;
   for (movie of nolanMovieList) {
     ratingSum += movie.imdbRating;
   }
@@ -239,10 +238,9 @@ function bestTitles(movies) {
   return bestTitles;
 }
 
-// Compute average rating of Christopher Nolan's movies
+// Compute average rating of a movie list
 function averageRating(movies) {
   let ratingSum = 0;
-  let averageRating = 0;
   for (movie of movies) {
     ratingSum += movie.imdbRating;
   }
@@ -376,8 +374,16 @@ The `reduce()` method can take several parameters:
 Here's how to apply `reduce()` to caculate the average rating of a movie list.
 
 ```js
-// Compute average rating of Christopher Nolan's movies
+// Compute average rating of a movie list
 function averageRating(movies) {
+  /* Previous code
+  let ratingSum = 0;
+  for (movie of movies) {
+    ratingSum += movie.imdbRating;
+  }
+  return ratingSum / movies.length;
+  */
+
   // Compute the sum of all movie IMDB ratings
   const ratingSum = movies.reduce((acc, movie) => acc + movie.imdbRating, 0);
   return ratingSum / movies.length;
@@ -429,6 +435,8 @@ JavaScript's multi-paradigm nature means you can write imperative, object-orient
 ### Older movies
 
 Improve the example program so that it shows the titles of movies released before year 2000, using functional programming.
+
+![Execution result](images/chapter10-02.png)
 
 ### Government forms
 
@@ -520,6 +528,6 @@ for (student of students) {
 console.log(femaleStudentsResults);
 ```
 
-![Execution result](images/chapter10-02.png)
+![Execution result](images/chapter10-03.png)
 
 Refactor it using functional programming. Execution result must stay the same.
