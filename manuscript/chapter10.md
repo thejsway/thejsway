@@ -476,7 +476,8 @@ const movieList = [{
 
 // TODO: Make an array of the titles of movies released before 2000
 
-// console.log ( moviesBefore2000 );
+
+console.log ( moviesBefore2000 );
 ```
 
 ![Execution result](images/chapter10-02.png)
