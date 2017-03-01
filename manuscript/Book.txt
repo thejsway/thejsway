@@ -16,3 +16,6 @@ chapter07.md
 chapter08.md
 chapter09.md
 chapter10.md
+backmatter.txt
+conclusion.txt
+concl02.md
