@@ -440,7 +440,7 @@ Improve the example program so that it shows the titles of movies released befor
 
 ### Government forms
 
-Complete the following program to computes and shows the names of political forms ending with `"cy"`.
+Complete the following program to compute and show the names of political forms ending with `"cy"`.
 
 ```js
 const governmentForms = [{
@@ -471,7 +471,7 @@ console.log(formsEndingWithCy);
 
 ### Arrays sum
 
-Complete the following program to compute and shows the total sum of the values in each of the arrays.
+Complete the following program to compute and show the total sum of the values in each of the arrays.
 
 ```js
 const arrays = [
