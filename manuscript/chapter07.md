@@ -129,7 +129,7 @@ Using an invalid index to access a JavaScript array element returns the value `u
 
 ```js
 const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
-console.log(movies[9]); // undefined: last element is at index 2
+console.log(movies[5]); // undefined: last element is at index 4
 ```
 
 ## Iterating over an array
@@ -198,8 +198,8 @@ You can remove the last element of an array using the `pop()` method.
 ```js
 const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
 movies.pop();               // Remove the last array element
-console.log(movies.length); // 2
-console.log(movies[2]);     // undefined
+console.log(movies.length); // 4
+console.log(movies[4]);     // undefined
 ```
 
 Alternatively, you can use the `splice()` method with two parameters: the first one is the index from which to begin removing, and the second one is the number of elements to remove.
@@ -207,10 +207,19 @@ Alternatively, you can use the `splice()` method with two parameters: the first 
 ```js
 const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
 movies.splice(0, 1);        // Remove 1 element starting at index 0
-console.log(movies.length); // 5
+console.log(movies.length); // 4
 console.log(movies[0]);     // "Zootopia"
 console.log(movies[1]);     // "Babysitting"
 ```
+
+## More on Arrays
+
+You can do many wonderful things with arrays. Here are some links that may help you deepen your understanding of arrays:
+
+* Mozilla Developer Network [Array - JavaScript]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array )
+* W3 Schools [JavaScript Arrays]( https://www.w3schools.com/js/js_arrays.asp )
+* W3 Schools [JavaScript Array Methods]( https://www.w3schools.com/js/js_array_methods.asp )
+* W3 Schools [JavaScript Array Reference]( https://www.w3schools.com/jsref/jsref_obj_array.asp )
 
 ## Coding time!
 
@@ -246,14 +255,3 @@ const values = [3, 11, 7, 2, 9, 10];
 ### List of words
 
 Write a program that asks the user for a word until he types `"stop"`. The program then shows each of these words, except `"stop"`.
-
-
-## More on Arrays
-
-You can do many wonderful things with arrays. Here are some links that may help you deepen your understanding of arrays:
- 
-* Mozilla Developer Network [[Array - JavaScript ]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array )
-* W3 Schools [JavaScript Arrays]( https://www.w3schools.com/js/js_arrays.asp )
-* W3 Schools [JavaScript Array Methods]( https://www.w3schools.com/js/js_array_methods.asp )
-* W3 Schools [JavaScript Array Reference]( https://www.w3schools.com/jsref/jsref_obj_array.asp )
-
