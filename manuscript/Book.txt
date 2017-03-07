@@ -16,6 +16,10 @@ chapter07.md
 chapter08.md
 chapter09.md
 chapter10.md
+chapter11.md
+part2.txt
+chapter12.md
+chapter13.md
 backmatter.txt
 conclusion.txt
 concl02.md
