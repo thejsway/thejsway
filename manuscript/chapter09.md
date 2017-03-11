@@ -4,9 +4,9 @@ A few chapters ago, you learned how to create your first objects in JavaScript. 
 
 ## TL;DR
 
-* **Object-oriented programming**, or OOP, is a programming [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) that uses objects containing both data and behavior to create programs.
+* **Object-oriented programming**, or OOP, is a [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) that uses objects containing both data and behavior to create programs.
 
-* JavaScript's OOP model is based on **prototypes**. Any JavaScript object has an internal property called `prototype` which is a link (a **reference**) to another object. Prototypes are used to share properties and delegate behavior between objects.
+* JavaScript's OOP model is based on **prototypes**. Any JavaScript object has an internal property which is a link (a **reference**) to another object; its prototype. Prototypes are used to share properties and delegate behavior between objects.
 
 * When trying to access a property that does not exist in an object, JavaScript tries to find this property in the **prototype chain** of this object: its prototype, then its prototype's own prototype, and so on.
 
@@ -89,13 +89,94 @@ const glacius = {
 
 Our two characters are strikingly similar. They share the same properties, with the only difference being some property values.
 
-You should already be aware that code duplication is evil. We must find a way to share what's common to our characters.
+You should already be aware that code duplication is dangerous and should generally be avoided. We must find a way to share what's common to our characters.
 
-## Objects and prototypes in JavaScript
+## JavaScript classes
 
-To share properties between objects, JavaScript uses **prototypes**.
+Most object-oriented languages use classes as **abstractions** for the ideas or concepts manipulated by a program. A **class** is used to create objects representing a concept. It offers a convenient syntax to give both **data** and **behavior** to these objects.
 
-In addition to its special properties, any JavaScript object has an internal property called `prototype`. This is a link (known as a **reference**) to another object. When trying to access a property that does not exist in an object, JavaScript tries to find this property in the prototype of this object.
+JavaScript is no exception and supports programming with classes (but with a twist -- more on that later).
+
+### Creating a class
+
+Our example RPG deals with characters, so let's create a `Character` class to express what a character is.
+
+```js
+class Character {
+  constructor(name, health, strength) {
+    this.name = name;
+    this.health = health;
+    this.strength = strength;
+    this.xp = 0; // XP is always zero for new characters
+  }
+  // Return the character description
+  describe() {
+    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
+  }
+}
+```
+
+This example demonstrates several key facts about JavaScript classes:
+
+* A class is created with the `class` keyword, followed by the name of the class (usually starting with a uppercase letter).
+* Contrary to object literals, there is no separating punctuation between the elements inside a class.
+* A class can only contains **methods**, not data properties.
+* Just like with object literals, the `this` keyword is automatically set by JavaScript inside a method and represents **the object on which the method was called**.
+* A special method named `constructor()` can be added to a class definition. It is called during object creation and is often used to give it data properties.
+
+### Using a class
+
+Once a class is defined, you can use it to create objects. Check out the rest of the program.
+
+```js
+const aurora = new Character("Aurora", 150, 25);
+const glacius = new Character("Glacius", 130, 30);
+
+// Aurora is harmed by an arrow
+aurora.health = aurora.health - 20;
+
+// Aurora equips a strength necklace
+aurora.strength = aurora.strength + 10;
+
+// Aurora learn a new skill
+aurora.xp = aurora.xp + 15;
+
+console.log(aurora.describe());
+console.log(glacius.describe());
+```
+
+![Execution result](images/chapter09-01.png)
+
+The `aurora` and `glacius` objects are created as characters with the `new` operator. This statement calls the class constructor to initialize the newly created object. After creation, an object has access to the properties defined inside the class.
+
+Here's the canonical syntax for creating an object using a class.
+
+```js
+class MyClass {
+    constructor(/* ... */) {
+      // ...
+    }
+    method1(/* ... */) {
+        // ...
+    }
+    method2(/* ... */) {
+        // ...
+    }
+    // ...
+}
+
+const myObject = new MyClass(/* ... */);
+myObject.method1(/* ... */);
+// ...
+```
+
+## Under the hood: objects and prototypes
+
+### JavaScript's object-oriented model
+
+To create relationships between objects, JavaScript uses **prototypes**.
+
+In addition to its own particular properties, any JavaScript object has an internal property which is a link (known as a **reference**) to another object called its **prototype**. When trying to access a property that does not exist in an object, JavaScript tries to find this property in the prototype of this object.
 
 Here's an example (borrowed from Kyle Simpson's great book series [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md)).
 
@@ -141,204 +222,31 @@ console.log(yetAnotherObject.myOtherProp); // undefined
 
 This type of relationship between JavaScript objects is called **delegation**: an object delegates part of its operation to its prototype.
 
-## A prototype for our characters
+### The true nature of JavaScript classes
 
-### Character creation
+In *class-based* object-oriented languages like C++, Java and C#, classes are static **blueprints** (templates). When a object is created, the methods and properties of the class are copied into a new entity, called an **instance**. After instantiation, the newly created object has no relation whatsoever with its class.
 
-Now back to our RPG. Check out its updated code and the execution result.
+JavaScript's object-oriented model is based on prototypes, *not* classes, to share properties and delegate behavior between objects. Classes in the Java sense (staic blueprints) don't exist in JavaScript. There are only objects linked together through their prototype. 
 
-```js
-// Character prototype
-const Character = {
-  // Return the character description
-  describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
-  }
-};
+The JavaScript `class` syntax is merely a more convenient way to create relationships between objects through prototypes. Classes were introduced to emulate the class-based OOP model above JavaScript's own prototype-based model. It's an example of what programmers call **syntactic sugar**.
 
-const aurora = Object.create(Character);
-aurora.name = "Aurora";
-aurora.health = 150;
-aurora.strength = 25;
-aurora.xp = 0;
+> The usefulness of the `class` syntax is a pretty heated debate in the JavaScript community.
 
-const glacius = Object.create(Character);
-glacius.name = "Glacius";
-glacius.health = 150;
-glacius.strength = 30;
-glacius.xp = 0;
+## Object-oriented programming
 
-console.log(aurora.describe());
-console.log(glacius.describe());
-```
-
-![Execution result](images/chapter09-01.png)
-
-In this example, we start by creating a `Character` object sharing the common properties between all characters. Aurora and Glacius are created with `Character` as their prototype and **delegate** their common behavior to it.
-
-I> Naming prototype objects with a first letter in uppercase is an often used convention.
-
-### Character setup
-
-In the previous example, the character setup process became quite tedious and error-prone: first an object is created through `Object.create()`, and then each property is manually added to it.
-
-There is a slightly better way. Check it out.
-
-```js
-// Character prototype
-const Character = {
-  // Initialize the character
-  init(name, health, strength) {
-    this.name = name;
-    this.health = health;
-    this.strength = strength;
-    this.xp = 0; // XP is always zero for new characters
-  },
-  // Return the character description
-  describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
-  }
-};
-
-// Factory function to create and setup a new character
-function createCharacter(name, health, strength) {
-  const character = Object.create(Character);
-  character.init(name, health, strength);
-  return character;
-}
-
-const aurora = createCharacter("Aurora", 150, 25);
-const glacius = createCharacter("Glacius", 130, 30);
-
-console.log(aurora.describe());
-console.log(glacius.describe());
-```
-
-The new `init()` method of the `Character` object takes the initial values of a character's attributes and defines them as object properties. The `xp` property is always set to 0, since a newly created character has no experience.
-
-We also added the `createCharacter()` function in order to make character creation and setup process a one-liner. This is a example of a **factory function**: a function whose role is to create, initialize and return something (here, an object).
-
-## Let the fighting begin
-
-Even with these improvements, our RPG is still pretty boring. What does it lack? Monsters and fights, of course!
+Now back to our RPG, which is still pretty boring. What does it lack? Monsters and fights, of course!
 
 Here's how a fight will be handled: if attacked, a character sees their life points decrease from the strength of the attacker. If its health value fall below zero, the character is considered dead and cannot attack anymore. Its vanquisher receives a fixed number of 10 experience points.
 
-First, let's add the possibility for our characters to fight one another. Since it's a shared ability, we define it as a `Character` method named 'attack()`.
-
-```js
-// Character prototype
-const Character = {
-  // Initialize the character
-  init(name, health, strength) {
-    this.name = name;
-    this.health = health;
-    this.strength = strength;this.xp = 0; // XP is always zero for new characters
-  },
-  // Attack a target
-  attack(target) {
-    if (this.health > 0) {
-      const damage = this.strength;
-      console.log(`${this.name} attacks ${target.name} and causes ${damage} damage points`);
-      target.health -= damage;
-      if (target.health > 0) {
-        console.log(`${target.name} has ${target.health} health points left`);
-      } else {
-        target.health = 0;
-        const bonusXP = 10;
-        console.log(`${this.name} eliminated ${target.name} and wins ${bonusXP} experience points`);
-        this.xp += bonusXP;
-      }
-    } else {
-      console.log(`${this.name} can't attack (they've been eliminated)`);
-    }
-  },
-  // Return the character description
-  describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
-  }
-};
-```
-
-Now we can introduce a monster in the game and make it fight our players. Here's the final code of our RPG.
-
-```js
-// Character prototype
-const Character = {
-  // Initialize the character
-  init(name, health, strength) {
-    this.name = name;
-    this.health = health;
-    this.strength = strength;this.xp = 0; // XP is always zero for new characters
-  },
-  // Attack a target
-  attack(target) {
-    if (this.health > 0) {
-      const damage = this.strength;
-      console.log(`${this.name} attacks ${target.name} and causes ${damage} damage points`);
-      target.health -= damage;
-      if (target.health > 0) {
-        console.log(`${target.name} has ${target.health} health points left`);
-      } else {
-        target.health = 0;
-        const bonusXP = 10;
-        console.log(`${this.name} eliminated ${target.name} and wins ${bonusXP} experience points`);
-        this.xp += bonusXP;
-      }
-    } else {
-      console.log(`${this.name} can't attack (they've been eliminated)`);
-    }
-  },
-  // Return the character description
-  describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
-  }
-};
-
-// Factory function to create and setup a new character
-function createCharacter(name, health, strength) {
-  const character = Object.create(Character);
-  character.init(name, health, strength);
-  return character;
-}
-
-const aurora = createCharacter("Aurora", 150, 25);
-const glacius = createCharacter("Glacius", 130, 30);
-
-console.log("Welcome to the adventure! Here are our heroes:");
-console.log(aurora.describe());
-console.log(glacius.describe());
-
-const monster = createCharacter("Spike", 40, 20);
-console.log("A wild monster has appeared: it's named " + monster.name);
-
-monster.attack(aurora);
-monster.attack(glacius);
-aurora.attack(monster);
-glacius.attack(monster);
-
-console.log(aurora.describe());
-console.log(glacius.describe());
-```
-
-![Execution result](images/chapter09-02.png)
-
-## JavaScript classes... Or lack thereof
-
-**Object-oriented programming** (in short: OOP) is a programming [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) (a programming style) based on objects containing both data and behavior. The previous example shows how a program can be created through the use of objects.
-
-If you come from another programming background, chances are you already heard about things like classes and inheritance. Most object-oriented languages (C++, Java, C#, ...) use **classes** as blueprints for creating objects. **Inheritance** is the fact for a class to inherit properties and behavior from another one, creating a **"is a"** kind of relationship between the two classes.
-
-Although they are staples of traditional object-oriented programming, classes and inheritance are not supported natively by JavaScript. Instead, the language uses prototypes to share properties and delegate behavior between objects. This is an essential, *philosophical* difference.
-
-Technically speaking, the `class` keyword exists in JavaScript and can be used to emulate the class-based OOP model. Here's our RPG rewritten using a class for modeling characters.
+First, let's add the possibility for our characters to fight one another. Since it's a shared ability, we define it as a method named `attack()` in the `Character` class.
 
 ```js
 class Character {
   constructor(name, health, strength) {
     this.name = name;
     this.health = health;
-    this.strength = strength;this.xp = 0; // XP is always zero for new characters
+    this.strength = strength;
+    this.xp = 0; // XP is always zero for new characters
   }
   // Attack a target
   attack(target) {
@@ -363,7 +271,11 @@ class Character {
     return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
   }
 }
+```
 
+Now we can introduce a monster in the game and make it fight our players. Here's the rest of the final code of our RPG.
+
+```js
 const aurora = new Character("Aurora", 150, 25);
 const glacius = new Character("Glacius", 130, 30);
 
@@ -383,22 +295,10 @@ console.log(aurora.describe());
 console.log(glacius.describe());
 ```
 
-Most of the program hasn't changed. Instead of using a factory function, objects are now created with the `new` operator, resulting in a call to the **constructor** of the `Character` class.
+![Execution result](images/chapter09-02.png)
 
-Here is the general syntax for creating an object though a constructor call.
-
-```js
-class MyClass {
-    constructor(/* ... */)
-    // ...
-}
-
-const myObject = new MyClass(/* ... */);
-```
-
-However, the `class` syntax is just an emulation layer above JavaScript's prototype-based OOP model, a (arguably) simpler way to create relationships between objects. It's an example of what programmers call **syntactic sugar**. Under the hood, JavaScript still creates a `Character` object and uses prototypes to link it to the other ones.
-
-The usefulness of the `class` syntax is a pretty heated debate in the JavaScript community. Whether you adopt it or not, remember one thing: **there are no real classes in JavaScript, only objects linked together.**
+The previous program is a short example of **object-oriented programming** (in short: OOP), a  
+[programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) (a programming style) based on objects containing both data and behavior.
 
 ## Coding time!
 
