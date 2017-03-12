@@ -4,11 +4,11 @@ A few chapters ago, you learned how to create your first objects in JavaScript. 
 
 ## TL;DR
 
-* **Object-oriented programming**, or OOP, is a [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) that uses objects containing both **data** and **behavior** to create programs.
+* **Object-Oriented Programming**, or OOP, is a [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) that uses objects containing both **data** and **behavior** to create programs.
 
 * A **class** is an object-oriented abstraction for an idea or a concept manipulated by a program. It offers a convenient syntax to create objects representing this concept.
 
-* A JavaScript class is defined with the `class` keyword. It can only contain **methods**. The `constructor()` method, called during object creation, is often used to initialize it and give it data properties. Inside methods, the `this` keyword represents **the object on which the method was called**.
+* A JavaScript class is defined with the `class` keyword. It can only contain **methods**. The `constructor()` method, called during object creation, is used to initialize the object, often by giving it some data properties. Inside methods, the `this` keyword represents **the object on which the method was called**.
 
 ```js
 class MyClass {
@@ -34,7 +34,7 @@ const myObject = new MyClass(arg1, arg2, ...);
 // ...
 ```
 
-* JavaScript's OOP model is based on **prototypes**. Any JavaScript object has an internal property which is a link (a **reference**) to another object; its prototype. Prototypes are used to share properties and delegate behavior between objects.
+* JavaScript's OOP model is based on **prototypes**. Any JavaScript object has an internal property which is a link (a **reference**) to another object: its prototype. Prototypes are used to share properties and delegate behavior between objects.
 
 * When trying to access a property that does not exist in an object, JavaScript tries to find this property in the **prototype chain** of this object: its prototype, then its prototype's own prototype, and so on.
 
@@ -306,7 +306,7 @@ console.log(glacius.describe());
 
 ![Execution result](images/chapter09-02.png)
 
-The previous program is a short example of **object-oriented programming** (in short: OOP), a programming
+The previous program is a short example of **Object-Oriented Programming** (in short: OOP), a programming
 [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) (a programming style) based on objects containing both data and behavior.
 
 ## Coding time!
