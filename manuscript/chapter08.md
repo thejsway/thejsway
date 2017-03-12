@@ -186,9 +186,9 @@ console.log(months[0]);  // "Jan"
 console.log(months[11]); // "Dec"
 ```
 
-## More on Strings 
+## More on Strings
 
-* Mozilla Developer Network [JavaScript Reference: String ]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+* Mozilla Developer Network [JavaScript Reference: String]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 * W3 Schools [Strings]( https://www.w3schools.com/js/js_strings.asp )
 * W3 Schools [String Methods]( https://www.w3schools.com/js/js_string_methods.asp )
 * W3 Schools [String Reference]( https://www.w3schools.com/jsref/jsref_obj_string.asp )
@@ -213,8 +213,3 @@ Improve the previous program so that it shows the word written backwards.
 Improve the previous program to check if the word is a palindrome. A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing. Punctuation and spacing may not be taken into account here.
 
 > `"radar"` should be detected as a palindrome, `"Radar"` too.
-
-
-
-
-* 
