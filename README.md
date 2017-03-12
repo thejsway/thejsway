@@ -4,7 +4,7 @@ A modern introduction to an essential language.
 
 Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com)
 
-[![Completion](https://img.shields.io/badge/Completion-35%25-red.svg)](https://leanpub.com/thejsway)
+[![Completion](https://img.shields.io/badge/Completion-40%25-red.svg)](https://leanpub.com/thejsway)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -41,7 +41,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Discover functional programming](manuscript/chapter10.md)
   * Project: links sharing program
 * Part II: Create interactive web pages
-  * What's a web page?
+  * [What's a web page?](manuscript/chapter12.md)
   * [Discover the DOM](manuscript/chapter13.md)
   * ...
 * Part III: Build web apps
