@@ -4,7 +4,35 @@ A few chapters ago, you learned how to create your first objects in JavaScript. 
 
 ## TL;DR
 
-* **Object-oriented programming**, or OOP, is a [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) that uses objects containing both data and behavior to create programs.
+* **Object-oriented programming**, or OOP, is a [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) that uses objects containing both **data** and **behavior** to create programs.
+
+* A **class** is an object-oriented abstraction for an idea or a concept manipulated by a program. It offers a convenient syntax to create objects representing this concept.
+
+* A JavaScript class is defined with the `class` keyword. It can only contain **methods**. The `constructor()` method, called during object creation, is often used to initialize it and give it data properties. Inside methods, the `this` keyword represents **the object on which the method was called**.
+
+```js
+class MyClass {
+    constructor(param1, param2, ...) {
+        this.property1 = param1;
+        this.property2 = param2;
+        // ...
+    }
+    method1(/* ... */) {
+        // ...
+    }
+    method2(/* ... */) {
+        // ...
+    }
+    // ...
+}
+```
+
+* Objects are created from a class with the `new` operator. It calls the class constructor to initialize the newly created object.
+
+```js
+const myObject = new MyClass(arg1, arg2, ...);
+// ...
+```
 
 * JavaScript's OOP model is based on **prototypes**. Any JavaScript object has an internal property which is a link (a **reference**) to another object; its prototype. Prototypes are used to share properties and delegate behavior between objects.
 
@@ -17,30 +45,7 @@ A few chapters ago, you learned how to create your first objects in JavaScript. 
 const myObject = Object.create(myPrototypeObject);
 ```
 
-* A **factory function** can be used in combination with `Object.create()` to ease object creation and setup.
-
-```js
-function createObject(/* ... */) {
-    const obj = Object.create(myPrototypeObject);
-    // obj init
-    return obj;
-}
-
-const myObject = createObject(/* ... */);
-```
-
-* Another way to create and link objects is to use the `class` keyword to define a **class** (a blueprint for objects). Objects are then created using the `new` operator, which calls the class **constructor** in order to initialize the newly created object.
-
-```js
-class MyClass {
-    constructor(/* ... */)
-    // ...
-}
-
-const myObject = new MyClass(/* ... */);
-```
-
-* The `class` syntax emulates in JavaScript the class-based OOP model found in many other languages like Java or C#. However, it is just **syntactic sugar** over JavaScript's own prototype-based OOP model. There are no real classes in JavaScript, only objects linked together.
+* The JavaScript `class` syntax is another, arguably more convenient way to create relationships between objects through prototypes. It emulates the class-based OOP model found in many other languages like C++, Java or C#. It is, however, just **syntactic sugar** over JavaScript's own prototype-based OOP model. Classes in the Java sense (static blueprints) don't exist in JavaScript. There are only objects linked together through their prototype.
 
 ## Context: a multiplayer RPG
 
@@ -153,8 +158,10 @@ Here's the canonical syntax for creating an object using a class.
 
 ```js
 class MyClass {
-    constructor(/* ... */) {
-      // ...
+    constructor(param1, param2, ...) {
+        this.property1 = param1;
+        this.property2 = param2;
+        // ...
     }
     method1(/* ... */) {
         // ...
@@ -165,12 +172,14 @@ class MyClass {
     // ...
 }
 
-const myObject = new MyClass(/* ... */);
+const myObject = new MyClass(arg1, arg2, ...);
 myObject.method1(/* ... */);
 // ...
 ```
 
 ## Under the hood: objects and prototypes
+
+If you come from another programming background, chances are you already encountered classes and feel familiar with them. But as you'll soon discover, JavaScript classes are not quite like their C++, Java or C# counterparts.
 
 ### JavaScript's object-oriented model
 
@@ -222,11 +231,11 @@ console.log(yetAnotherObject.myOtherProp); // undefined
 
 This type of relationship between JavaScript objects is called **delegation**: an object delegates part of its operation to its prototype.
 
-### The true nature of JavaScript classes
+### The real nature of JavaScript classes
 
 In *class-based* object-oriented languages like C++, Java and C#, classes are static **blueprints** (templates). When a object is created, the methods and properties of the class are copied into a new entity, called an **instance**. After instantiation, the newly created object has no relation whatsoever with its class.
 
-JavaScript's object-oriented model is based on prototypes, *not* classes, to share properties and delegate behavior between objects. Classes in the Java sense (staic blueprints) don't exist in JavaScript. There are only objects linked together through their prototype. 
+JavaScript's object-oriented model is based on prototypes, *not* classes, to share properties and delegate behavior between objects. In JavaScript, "instanciating" a class creates a new object linked to a prototype object. Classes in the Java sense (static blueprints) don't exist in JavaScript. There are only objects in relationship through their prototype.
 
 The JavaScript `class` syntax is merely a more convenient way to create relationships between objects through prototypes. Classes were introduced to emulate the class-based OOP model above JavaScript's own prototype-based model. It's an example of what programmers call **syntactic sugar**.
 
@@ -297,32 +306,25 @@ console.log(glacius.describe());
 
 ![Execution result](images/chapter09-02.png)
 
-The previous program is a short example of **object-oriented programming** (in short: OOP), a  
-[programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) (a programming style) based on objects containing both data and behavior.
+The previous program is a short example of **object-oriented programming** (in short: OOP), a programming
+[paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) (a programming style) based on objects containing both data and behavior.
 
 ## Coding time!
 
 ### Dogs
 
-Complete the following program to add the definition of the `Dog` object prototype.
+Complete the following program to add the definition of the `Dog` class.
 
 > Dogs taller than 60 make `"Grrr! Grrr!"` when they bark, other ones make `"Woof! Woof!"`.
 
 ```js
-// TODO: define the Dog prototype object here
+// TODO: define the Dog class here
 
-// Factory function to create and setup a new dog
-function createDog(name, species, size) {
-  const dog = Object.create(Dog);
-  dog.init(name, species, size);
-  return dog;
-}
-
-const fang = createDog("Fang", "boarhound", 75);
+const fang = new Dog("Fang", "boarhound", 75);
 console.log(`${fang.name} is a ${fang.species} dog measuring ${fang.size}`);
 console.log(`Look, a cat! ${fang.name} barks: ${fang.bark()}`);
 
-const snowy = createDog("Snowy", "terrier", 22);
+const snowy = new Dog("Snowy", "terrier", 22);
 console.log(`${snowy.name} is a ${snowy.species} dog measuring ${snowy.size}`);
 console.log(`Look, a cat! ${snowy.name} barks: ${snowy.bark()}`);
 ```
