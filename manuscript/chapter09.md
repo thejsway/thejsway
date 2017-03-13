@@ -45,7 +45,7 @@ const myObject = new MyClass(arg1, arg2, ...);
 const myObject = Object.create(myPrototypeObject);
 ```
 
-* The JavaScript `class` syntax is another, arguably more convenient way to create relationships between objects through prototypes. It emulates the class-based OOP model found in many other languages like C++, Java or C#. It is, however, just **syntactic sugar** over JavaScript's own prototype-based OOP model. Classes in the Java sense (static blueprints) don't exist in JavaScript. There are only objects linked together through their prototype.
+* The JavaScript `class` syntax is another, arguably more convenient way to create relationships between objects. It emulates the class-based OOP model found in languages like C++, Java or C#. It is, however, just **syntactic sugar** on top of JavaScript's own prototype-based OOP model.
 
 ## Context: a multiplayer RPG
 
@@ -231,13 +231,13 @@ console.log(yetAnotherObject.myOtherProp); // undefined
 
 This type of relationship between JavaScript objects is called **delegation**: an object delegates part of its operation to its prototype.
 
-### The real nature of JavaScript classes
+### The true nature of JavaScript classes
 
 In *class-based* object-oriented languages like C++, Java and C#, classes are static **blueprints** (templates). When a object is created, the methods and properties of the class are copied into a new entity, called an **instance**. After instantiation, the newly created object has no relation whatsoever with its class.
 
-JavaScript's object-oriented model is based on prototypes, *not* classes, to share properties and delegate behavior between objects. In JavaScript, "instanciating" a class creates a new object linked to a prototype object. Classes in the Java sense (static blueprints) don't exist in JavaScript. There are only objects in relationship through their prototype.
+JavaScript's object-oriented model is based on prototypes, *not* classes, to share properties and delegate behavior between objects. In JavaScript, a class is itself an object, not a static blueprint. "Instanciating" a class creates a new object linked to a prototype object. Regarding classes behavior, the JavaScript language is quite different from C++, Java or C#, but close to other object-oriented languages like Python, Ruby and Smalltalk.
 
-The JavaScript `class` syntax is merely a more convenient way to create relationships between objects through prototypes. Classes were introduced to emulate the class-based OOP model above JavaScript's own prototype-based model. It's an example of what programmers call **syntactic sugar**.
+The JavaScript `class` syntax is merely a more convenient way to create relationships between objects through prototypes. Classes were introduced to emulate the class-based OOP model on top of JavaScript's own prototype-based model. It's an example of what programmers call [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar).
 
 > The usefulness of the `class` syntax is a pretty heated debate in the JavaScript community.
 
