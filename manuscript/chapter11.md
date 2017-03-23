@@ -28,7 +28,7 @@ The goal of this project is to build a basic social news program. Its user will 
 
 ## Expected result
 
-Here are a few screenshots of the expedted result.
+Here are a few screenshots of the expected result.
 
 ![Start menu](images/chapter11-01.png)
 
