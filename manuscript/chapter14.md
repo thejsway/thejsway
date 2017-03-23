@@ -96,7 +96,7 @@ for (const wonderElement of wonderElements) {
 
 ### Selecting an item according to its ID
 
-Lastly, each element of the DOM provides a method called `getElementById()` that returns among all sub-elements with the ID passed as a parameter.
+Lastly, each element of the DOM provides a method called `getElementById()` that returns among all sub-elements with the ID passed as a parameter. It returns `null` if no associated element can be found.
 
 The following code selects and displays the list with ID `"new"`.
 
@@ -138,7 +138,7 @@ console.log(document.querySelectorAll("#ancient > .exists").length); // Will be 
 
 > Check the [Mozille Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for a primer on the different CSS selectors available.
 
-The second method using CSS selectors is called `querySelector()`. It works the same way as `querySelectorAll()` but only returns the first matching element.
+The second method using CSS selectors is called `querySelector()`. It works the same way as `querySelectorAll()` but only returns the first matching element. It returns `null` if no associated element can be found.
 
 ```js
 // The first paragraph
@@ -239,8 +239,94 @@ if (document.getElementById("ancient").classList.contains("wonders")) {
 }
 ```
 
-> This is only a part of the DOM API. For more details, check the [Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/API/Element).
+> This is only a part of the DOM API. For more details, check the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Element).
 
 ## Coding time!
 
-TODO
+### Counting elements
+
+Here is some HTML code (content is by French poet Paul Verlaine).
+
+```html
+<h1>Mon rêve familier</h1>
+
+<p>Je fais souvent ce rêve <span class="adjective">étrange</span> et <span class="adjective">pénétrant</span></p>
+
+<p>D'une <span>femme <span class="adjective">inconnue</span></span>, et que j'aime, et qui m'aime</p>
+
+<p>Et qui n'est, chaque fois, ni tout à fait la même</p>
+
+<p>Ni tout à fait une autre, et m'aime et me comprend.</p>
+```
+
+Complete the following program to write the `countElements()` function, that takes a CSS selector as a parameter and returns the number of corresponding elements.
+
+```js
+// TODO: write the countElements() function here
+
+console.log(countElements("p"));              // Should show 4
+console.log(countElements(".adjective"));     // Should show 3
+console.log(countElements("p .adjective"));   // Should show 3
+console.log(countElements("p > .adjective")); // Should show 2
+```
+
+### Handling attributes
+
+Créez le fichier html/instruments.html ayant le contenu ci-dessous.
+
+```html
+<h1>Some musical instruments</h1>
+<ul>
+  <li id="clarinet" class="wind woodwind">
+    The <a href="https://en.wikipedia.org/wiki/Clarinet">clarinet</a>
+  </li>
+  <li id="saxophone" class="wind woodwind">
+    The <a href="https://en.wikipedia.org/wiki/Saxophone">saxophone</a>
+  </li>
+  <li id="trumpet" class="wind brass">
+    The <a href="https://en.wikipedia.org/wiki/Trumpet">trumpet</a>
+  </li>
+  <li id="violin" class="chordophone">
+    The <a href="https://en.wikipedia.org/wiki/Violin">violin</a>
+  </li>
+</ul>
+```
+
+Write a program containing a `linkInfo()` function that shows:
+
+* The total number of links.
+* The target of the first and last links.
+
+This function shuld work even if no links are present.
+
+![Expected result](images/chapter14-03.png)
+
+Add the following new instrument at the end of the HTML list, then check your program's new result.
+
+```html
+<li id="harpsichord">
+  The <a href="https://en.wikipedia.org/wiki/Harpsichord">harpsichord</a>
+</li>
+```
+
+![Expected result](images/chapter14-04.png)
+
+### Handling classes
+
+Improve the previous program to add a `has()` function that test if an element designated by its ID has a class. The function shows `true`, `false` or an error message if the element can't be found.
+
+```js
+// Show if an element has a class
+function has(id, someClass) {
+    //TODO: write the function code
+}
+
+has("saxophone", "woodwind");     // Should show true
+has("saxophone", "brass");        // Should show false
+has("trumpet", "brass");          // Should show true
+has("contrabass", "chordophone"); // Should show an error message
+```
+
+> Use `console.error()` rather than `console.log()` to display an error message in the console.
+
+![Expected result](images/chapter14-05.png)
