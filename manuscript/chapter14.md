@@ -44,6 +44,11 @@ Here's the example web page used throughout this chapter.
         <li class="exists">Colosseum</li>
         <li class="exists">Taj Mahal</li>
     </ul>
+    <h2>References</h2>
+    <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Seven_Wonders_of_the_Ancient_World">Seven Wonders of the Ancient World</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/New7Wonders_of_the_World">New Wonders of the World</a></li>
+    </ul>
 </div>
 ```
 
@@ -59,6 +64,8 @@ Suppose you want to select the title `"Wonders from Antiquity"` of our web page.
 // Show the "Wonders from Antiquity" h2 element
 console.log(document.body.childNodes[5].childNodes[1]);
 ```
+
+![Execution result](images/chapter14-06.png)
 
 This technique is pretty awkward and error-prone. The code is difficult to read and must be updated if new elements are further inserted in the web page. Fortunately, there are much better solutions.
 
@@ -78,6 +85,8 @@ console.log(titleElements[0]);     // Show the first h2
 console.log(titleElements.length); // 2 (total number of h2 elements in the page)
 ```
 
+![Execution result](images/chapter14-07.png)
+
 T> Suffixing JavaScript variables associated to DOM element nodes with `Element` (or `Elements` when the variable contains several nodes) is a popular naming convention. We'll stick to it throughout this book.
 
 ### Selecting items according to class
@@ -87,12 +96,14 @@ DOM elements also feature a method called `getElementsByClassName()`. It returns
 To select and display all document elements with a class `"wonders"`, you can write the following code.
 
 ```js
-// Show all elements that have the class "wonders"
-const wonderElements = document.getElementsByClassName("wonders");
-for (const wonderElement of wonderElements) {
-    console.log(wonderElement);
+// Show all elements that have the class "exists"
+const existingElements = document.getElementsByClassName("exists");
+for (const element of existingElements) {
+    console.log(element);
 }
 ```
+
+![Execution result](images/chapter14-08.png)
 
 ### Selecting an item according to its ID
 
@@ -105,6 +116,8 @@ The following code selects and displays the list with ID `"new"`.
 console.log(document.getElementById("new"));
 ```
 
+![Execution result](images/chapter14-09.png)
+
 E> Beware: contrary to others, the `getElementById()` method does not contain any `'s'` after the `"Element"` word.
 
 ### Selecting elements via CSS selectors
@@ -115,7 +128,7 @@ For example, let's say that you want to grab all the `<li>` elements of wonders 
 
 ```js
 // All "ancient" wonders that still exist
-console.log(document.getElementById("ancient").getElementsByClassName("exists").length); // Will show 1
+console.log(document.getElementById("ancient").getElementsByClassName("exists").length); // 1
 ```
 
 This syntax is a little clunky though. Let's learn two new methods that make finding elements easier.
@@ -124,16 +137,16 @@ The first is `querySelectorAll()`, with which you can use CSS selectors to ident
 
 ```js
 // All paragraphs
-console.log(document.querySelectorAll("p").length); // Will be 3
+console.log(document.querySelectorAll("p").length); // 3
 
 // All paragraphs inside the "content" ID block
-console.log(document.querySelectorAll("#content p").length); // Will be 2
+console.log(document.querySelectorAll("#content p").length); // 2
 
 // All elements with the "exists" class
-console.log(document.querySelectorAll(".exists").length); // Will be 8
+console.log(document.querySelectorAll(".exists").length); // 8
 
 // All "ancient" wonders that still exist
-console.log(document.querySelectorAll("#ancient > .exists").length); // Will be 1
+console.log(document.querySelectorAll("#ancient > .exists").length); // 1
 ```
 
 > Check the [Mozille Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for a primer on the different CSS selectors available.
@@ -141,9 +154,11 @@ console.log(document.querySelectorAll("#ancient > .exists").length); // Will be 
 The second method using CSS selectors is called `querySelector()`. It works the same way as `querySelectorAll()` but only returns the first matching element. It returns `null` if no associated element can be found.
 
 ```js
-// The first paragraph
+// Show the first paragraph
 console.log(document.querySelector("p"));
 ```
+
+![Execution result](images/chapter14-10.png)
 
 ### Choosing a selection method
 
@@ -198,6 +213,8 @@ The `getAttribute()` method can be applied to a DOM element and will return the 
 console.log(document.querySelector("a").getAttribute("href"));
 ```
 
+![Execution result](images/chapter14-11.png)
+
 Some attributes are directly accessible as properties. This is true for the `id`, `href`, and `value` attributes.
 
 ```js
@@ -207,6 +224,8 @@ console.log(document.querySelector("ul").id);
 // Show href attribute of the first link
 console.log(document.querySelector("a").href);
 ```
+
+![Execution result](images/chapter14-12.png)
 
 You can check for the existence of an attribute using the `hasAttribute()` method as seen in the example below.
 
@@ -225,7 +244,7 @@ In a web page, a tag can have multiple classes. The `classList` property retriev
 ```js
 // List of classes of the element identified by "ancient"
 const classes = document.getElementById("ancient").classList;
-console.log(classes.length); // Will be 1, since the element only has one class.
+console.log(classes.length); // 1 (since the element only has one class)
 console.log(classes[0]);     // "wonders"
 ```
 
@@ -233,13 +252,13 @@ You also have the opportunity to test the presence of a class on an element by c
 
 ```js
 if (document.getElementById("ancient").classList.contains("wonders")) {
-    console.log("The element with ID 'ancient' also has the class 'wonders'."); // Will be shown
+    console.log("The element with ID 'ancient' has the class 'wonders'."); // Will be shown
 } else {
-    console.log("The element with ID 'ancient' does not have the class 'wonders.');
+    console.log("The element with ID 'ancient' does not have the class 'wonders'.");
 }
 ```
 
-> This is only a part of the DOM API. For more details, check the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Element).
+> This is only a part of the DOM traversal API. For more details, check the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Element).
 
 ## Coding time!
 
@@ -251,11 +270,8 @@ Here is some HTML code (content is by French poet Paul Verlaine).
 <h1>Mon rêve familier</h1>
 
 <p>Je fais souvent ce rêve <span class="adjective">étrange</span> et <span class="adjective">pénétrant</span></p>
-
 <p>D'une <span>femme <span class="adjective">inconnue</span></span>, et que j'aime, et qui m'aime</p>
-
 <p>Et qui n'est, chaque fois, ni tout à fait la même</p>
-
 <p>Ni tout à fait une autre, et m'aime et me comprend.</p>
 ```
 
@@ -272,7 +288,7 @@ console.log(countElements("p > .adjective")); // Should show 2
 
 ### Handling attributes
 
-Créez le fichier html/instruments.html ayant le contenu ci-dessous.
+Here is the description of several musical instruments.
 
 ```html
 <h1>Some musical instruments</h1>
@@ -292,7 +308,7 @@ Créez le fichier html/instruments.html ayant le contenu ci-dessous.
 </ul>
 ```
 
-Write a program containing a `linkInfo()` function that shows:
+Write a JavaScript program containing a `linkInfo()` function that shows:
 
 * The total number of links.
 * The target of the first and last links.
