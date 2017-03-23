@@ -20,6 +20,7 @@ chapter11.md
 part2.txt
 chapter12.md
 chapter13.md
+chapter14.md
 backmatter.txt
 conclusion.txt
 concl02.md

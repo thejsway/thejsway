@@ -43,6 +43,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
 * Part II: Create interactive web pages
   * [What's a web page?](manuscript/chapter12.md)
   * [Discover the DOM](manuscript/chapter13.md)
+  * [Traverse the DOM](manuscript/chapter14.md)
   * ...
 * Part III: Build web apps
   * ...
