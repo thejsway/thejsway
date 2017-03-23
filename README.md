@@ -39,7 +39,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Work with strings](manuscript/chapter08.md)
   * [Understand object-oriented programming](manuscript/chapter09.md)
   * [Discover functional programming](manuscript/chapter10.md)
-  * Project: links sharing program
+  * [Project: a social news program](manuscript/chapter11.md)
 * Part II: Create interactive web pages
   * [What's a web page?](manuscript/chapter12.md)
   * [Discover the DOM](manuscript/chapter13.md)
