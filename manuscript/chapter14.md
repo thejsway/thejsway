@@ -4,15 +4,15 @@ In this chapter, you'll see how to use JavaScript to traverse the DOM.
 
 ## TL;DR
 
-* Rather than go through the DOM node by node, you can quickly access one or more elements using selection methods.
+* Rather than go through the DOM node by node, you can quickly access one or more elements using **selection methods**.
 
-* The `getElementsByTagName()`, `getElementsByClassName()` and `getElementById()` methods respectively search items by tag name, class, and ID. The first two methods return a list, and the latter returns a single item.
+* The `getElementsByTagName()`, `getElementsByClassName()` and `getElementById()` methods respectively search items by **tag name**, **class**, and **ID**. The first two methods return a list, and the latter returns a single item.
 
 * The `querySelectorAll()` and `querySelector()` methods make it possible to search for items using a **CSS selector**. The first method returns all matching items, and the second returns only the first.
 
-* The `innerHTML` property returns the HTML content of an element. The `textContent` property returns its textual content without any HTML markup.
+* The `innerHTML` property returns the **HTML content** of an element. The `textContent` property returns its **textual content** without any HTML markup.
 
-* The `getAttribute()` and `hasAttribute()` methods allow access to element attributes. The `classList` property and its method `contains()` provides access to an element's classes.
+* The `getAttribute()` and `hasAttribute()` methods allow access to element **attributes**. The `classList` property and its method `contains()` provides access to an element's **classes**.
 
 ## Sample web page
 
