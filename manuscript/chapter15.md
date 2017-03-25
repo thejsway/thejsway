@@ -4,17 +4,17 @@ Let's see how to use JavaScript to modify a web page once it's been loaded by th
 
 ## TL;DR
 
-The innerHTML, textContent , and classList properties, as well as the setAttribute method, let you modify a DOM element's information.
+* The `innerHTML`, `textContent` and `classList` properties, as well as the `setAttribute` method, let you modify a DOM element's information.
 
-    Create new DOM nodes via methods like createTextNode for, well, text nodes, and createElement for elements themselves.
+* You create new DOM nodes via methods `createTextNode()` (for, well, text nodes) and `createElement()` (for elements themselves).
 
-    The appendChild method lets you insert a new node as the last child of a DOM element.
+* The `appendChild()` method lets you insert a new node as the last child of a DOM element.
 
-    The insertBefore and insertAdjacentHTML methods are alternative possibilities for adding content.
+* The `insertBefore()` and `insertAdjacentHTML()` methods are alternative possibilities for adding content.
 
-    You can replace existing nodes with the replaceChild method or remove them with removeChild .
+* You can replace existing nodes with the `replaceChild()` method or remove them with `removeChild()`.
 
-    Manipulating the DOM with JavaScript should be done sparingly so that page performance doesn't suffer.
+* Manipulating the DOM with JavaScript should be done sparingly so that page performance doesn't suffer.
 
 ## Example page
 
@@ -187,53 +187,135 @@ document.getElementById("languages").insertBefore(perlElement, document.getEleme
 
 ### Determining the exact position of the new node
 
-There is a method to more precisely define the position of inserted elements: insertAdjacentHTML . Call it on an existing element and pass it the position and a string of HTML characters that represent the new content to be added. The new content's position should be either:
+There is a method to more precisely define the position of inserted elements: `insertAdjacentHTML()`. Call it on an existing element and pass it the position and a string of HTML characters that represent the new content to be added. The new content's position should be either:
 
-    beforebegin : before the existing element
+* `beforebegin`: before the existing element.
+* `afterbegin`: inside the existing element, before its first child.
+* `beforeend`: inside the existing element, after its last child.
+* `afterend`: after the existing element.
 
-    afterbegin : inside the existing element, before its first child
+Here's how these positions translate relative to an existing `<p>` tag.
 
-    beforeend : inside the existing element, after its last child
+```html
+<!-- beforebegin -->
+<p>
+  <!-- afterbegin -->
+  foo
+  <!-- beforeend -->
+</p>
+<!-- afterend -->
+```
 
-    afterend : after the existing element
+The following example uses `insertAdjacentHTML()` to add JavaScript to the top of the language list.
 
-For more clarification on these confusing position names, check out the Mozilla Developer Network's excellent writeup.
-
-This example uses insertAdjacentHTML to add JavaScript to the beginning of the list.
-
+```js
 // Add an element to the beginning of a list
+document.getElementById('languages').insertAdjacentHTML("afterBegin", '<li id="javascript">JavaScript</li>');
+```
 
-document.getElementById('languages').insertAdjacentHTML("afterBegin",
-
-'<li id="javascript">JavaScript</li>');
+![Execution result](images/chapter15-07.png)
 
 ## Replacing or removing nodes
 
 ### Replacing a node
 
-Replace a DOM element via the replaceChild method. This replaces a child node of the current element with another node. The new node and node-to-be-replaced are passed as parameters (in that order)!
+A DOM element can be replaced with the `replaceChild()` method. This replaces a child node of the current element with another node. The new node and node-to-be-replaced are passed as parameters (in that order).
 
-The example shows replacing the Perl line with bash instead.
+The example shows replacing the Perl language with Lisp instead.
 
-var bashElement = document.createElement("li"); // Create an li element
-
-bashElement.id = "bash"; // Define its id
-
-bashElement.textContent = "Bash"; // Define its text content
-
+```js
+const lispElement = document.createElement("li"); // Create an li element
+lispElement.id = "lisp";          // Define its ID
+lispElement.textContent = "Lisp"; // Define its text content
 // Replace the element identified by "perl" with the new element
+document.getElementById("languages").replaceChild(lispElement, document.getElementById("perl"));
+```
 
-document.getElementById("languages").replaceChild(bashElement, document.getElementById("perl"));
+![Execution result](images/chapter15-08.png)
 
 ### Removing a node
 
-Lastly, you can delete a node thanks to a method called removeChild , to which you'll pass the node-to-be-removed as a parameter.
+Lastly, you can delete a node thanks to a method called `removeChild()`, to which you'll pass the node-to-be-removed as a parameter.
 
-// Remove the element with the "bash" id
+```js
+// Remove the element with the "lisp" id
+document.getElementById("languages").removeChild(document.getElementById("lisp"));
+```
 
-document.getElementById("languages").removeChild(document.getElementById("bash"));
+![Execution result](images/chapter15-09.png)
 
-You should sparingly modify the DOM with JavaScript because doing so can slow down your web page. Creating and modifying elements before they're inserted into the DOM is the best way to maximize performance.
-Summary
+## DOM manipulations and performance
+
+Updating the DOM through JavaScript code causes the browser to compute the new page display. Frequent manipulations can lead to slowdowns and sub-par performance. As such, you should limit DOM access and update operations to a minimum.
+
+Creating and setting element properties *before* they're inserted into the DOM is a good way to preserve performance.
+
+```js
+// Bad: DOM is updated multiple times
+const newNode = document.createElement(...); // Create new element
+parentNode.appendChild(newNode); // Add it to the DOM
+newNode.id = ...; // Set some element properties
+newNode.textContent = "...";
+// ...
+
+// Better: DOM is updated only once
+const newNode = document.createElement(...); // Create new element
+newNode.id = ...; // Set some element properties
+newNode.textContent = "...";
+// ...
+parentNode.appendChild(newNode); // Add it to the DOM
+```
 
 ## Coding time!
+
+### Add a paragraph
+
+Improve the languages example to add a paragraph (`<p>` tag) containing a link (`<a>` tag) to the URL <https://en.wikipedia.org/wiki/List_of_programming_languages>.
+
+![Execution result](images/chapter15-10.png)
+
+### Newspaper list
+
+Here is the HTML code of a web page.
+
+```html
+<h1>Some newspapers</h1>
+<div id="content"></div>
+```
+
+Write a program that show on this page a list of newspapers defined in a JavaScript array. Each link must be clickable.
+
+```js
+// Newspaper list
+const newspapers = ["https://www.nytimes.com", "https://www.washingtonpost.com", "http://www.economist.com"];
+```
+
+![Execution result](images/chapter15-11.png)
+
+### Mini-dictionary
+
+Here is the HTML code of a web page.
+
+```html
+<h1>A mini-dictionary</h1>
+<div id="content"></div>
+```
+
+Write a program that show on this page a list of terms and definitions defined in a JavaScript array.
+
+```js
+const words = [{
+  term: "Procrastination",
+  definition: "Avoidance of doing a task that needs to be accomplished"
+}, {
+  term: "Tautology",
+  definition: "logical argument constructed in such a way that it is logically irrefutable"
+}, {
+  term: "Oxymoron",
+  definition: "figure of speech that juxtaposes elements that appear to be contradictory"
+}];
+```
+
+Use the HTML `<dl>` tag to create the list ([more on this tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)). Each term of the dictionary should be given more importance with a `<strong>` tag.
+
+![Execution result](images/chapter15-12.png)
