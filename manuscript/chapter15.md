@@ -206,7 +206,7 @@ Here's how these positions translate relative to an existing `<p>` tag.
 <!-- afterend -->
 ```
 
-The following example uses `insertAdjacentHTML()` to add JavaScript to the top of the language list.
+The following example uses `insertAdjacentHTML()` to add JavaScript at the top of the language list.
 
 ```js
 // Add an element to the beginning of a list
