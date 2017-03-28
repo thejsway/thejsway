@@ -14,11 +14,21 @@ Let's see how to use JavaScript to modify a web page once it's been loaded by th
 
 * You can replace existing nodes with the `replaceChild()` method or remove them with `removeChild()`.
 
+* The JavaScript `style` property represents the **style** attribute of a DOM element. It lets you modify the element's style and define values of its CSS properties.
+
+* CSS properties that involve multiple words are written in **camelCase** when dealing with JavaScript. For example, `font-family` becomes `fontFamily`.
+
+* The `style` property isn't enough to access an element's style. You should use the `getComputedStyle()` function instead.
+
 * Manipulating the DOM with JavaScript should be done sparingly so that page performance doesn't suffer.
 
-## Example page
+## Modify an existing element
 
-The examples in this chapter all use the content below.
+The DOM traversal properties studied in the previous chapter can also be used to update elements in the page.
+
+### Example page
+
+The examples in the next paragraphs use the HTML code below.
 
 ```html
 <h1 class="beginning">Some languages</h1>
@@ -31,10 +41,6 @@ The examples in this chapter all use the content below.
     </ul>
 </div>
 ```
-
-## Modify an existing element
-
-The DOM traversal properties studied in the previous chapter can also be used to update elements in the page.
 
 ### HTML content
 
@@ -244,6 +250,92 @@ document.getElementById("languages").removeChild(document.getElementById("lisp")
 
 ![Execution result](images/chapter15-09.png)
 
+## Styling elements
+
+JavaScript not only lets you interact with your web page structure, but it also lets you change the style of elements. It's time to learn how.
+
+Here is the example HTML content used in the next paragraphs.
+
+```html
+<p>First</p>
+<p style="color: green;">Second</p>
+<p id="para">Third</p>
+```
+
+And here is the associated CSS **stylesheet**. The rules in a stylesheet determine the appearance of elements on a page. Here, the one element we're adjusting via CSS here is the element with the `para` ID. Its text will be blue and in italics.
+
+```css
+#para {
+    font-style: italic;
+    color: blue;
+}
+```
+
+![Display result](images/chapter15-13.png)
+
+### The `style` property
+
+DOM elements are equipped with a property called `style`, which returns an object representing the HTML element's `style` attribute. This object's properties match up to its CSS properties. By defining these properties with JavaScript, you're actually modifying the element's style.
+
+The code below selects the page's first paragraph and modifies its text color and margins.
+
+```js
+const pElement = document.querySelector("p");
+pElement.style.color = "red";
+pElement.style.margin = "50px";
+```
+
+#### Compound CSS properties
+
+Some CSS properties have compound names, meaning they're composed of two words (like `background-color`). To interact with these properties via JavaScript, you have to ditch the hyphen and capitalize the first letter of following words.
+
+This example modifies the same paragraph element's `font-family` and `background-color` properties.
+
+```js
+// ...
+pElement.style.fontFamily = "Arial";
+pElement.style.backgroundColor = "black";
+```
+
+![Execution result](images/chapter15-14.png)
+
+This naming convention, already encountered in a previous chapter, is called [camelCase](https://en.wikipedia.org/wiki/Camel_case).
+
+You can see CSS properties and their JavaScript properties on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference).
+
+### The limits of the `style` property
+
+Let's try to display the text color of each of our example paragraphs.
+
+```js
+const paragraphElements = document.getElementsByTagName("p");
+console.log(paragraphElements[0].style.color); // "red"
+console.log(paragraphElements[1].style.color); // "green"
+console.log(paragraphElements[2].style.color); // Show nothing
+```
+
+![Execution result](images/chapter15-14.png)
+
+Why is the color of the third paragraph (blue) not showing?
+
+Because the `style` property used in this code only represents the `style` attribute of the element. Using this property, you cannot access style declarations defined elsewhere, for example in a CSS stylesheet. This explains why the third paragraph's style, defined externally, is not shown here.
+
+### Access element styles
+
+A better solution for accessing element styles is to use a function called `getComputedStyle()`. Its takes a DOM node as a parameter and returns an object that represents its style. You can then see the different CSS properties of the object.
+
+The following example will show the style properties of the third paragraph:
+
+```js
+const paragraphStyle = getComputedStyle(document.getElementById("para"));
+console.log(paragraphStyle.fontStyle); // "italic"
+console.log(paragraphStyle.color);     // color blue in RGB values
+```
+
+![Execution result](images/chapter15-15.png)
+
+> The color blue is represented as 3 color values: red, green, and blue (RGB). For each of these primary colors, values will always be between or equal to 0 and 255.
+
 ## DOM manipulations and performance
 
 Updating the DOM through JavaScript code causes the browser to compute the new page display. Frequent manipulations can lead to slowdowns and sub-par performance. As such, you should limit DOM access and update operations to a minimum.
@@ -268,7 +360,7 @@ parentNode.appendChild(newNode); // Add it to the DOM
 
 ## Coding time!
 
-### Add a paragraph
+### Adding a paragraph
 
 Improve the languages example to add a paragraph (`<p>` tag) containing a link (`<a>` tag) to the URL <https://en.wikipedia.org/wiki/List_of_programming_languages>.
 
@@ -319,3 +411,48 @@ const words = [{
 Use the HTML `<dl>` tag to create the list ([more on this tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl)). Each term of the dictionary should be given more importance with a `<strong>` tag.
 
 ![Execution result](images/chapter15-12.png)
+
+### Updating colors
+
+The following HTML content defines three paragraphs.
+
+```html
+  <h1>Paragraph 1</h1>
+  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim fringilla dapibus. Curabitur placerat efficitur molestie. Quisque quis consequat nibh. Aenean feugiat, eros eget aliquam vulputate, leo augue luctus lectus, non lobortis libero quam non sem. Aliquam sit amet tincidunt ex, mollis interdum massa. Sed vulputate mi id accumsan scelerisque. Nam interdum iaculis ipsum, non convallis mauris faucibus et. Pellentesque in imperdiet lorem, in condimentum neque. Nullam auctor sem eu sapien pulvinar, non ultricies ipsum hendrerit. Aliquam at magna convallis, ultrices enim vitae, mollis lacus.</div>
+
+  <h1>Paragraph 2</h1>
+  <div>Vivamus at justo blandit, ornare leo id, vehicula urna. Fusce sed felis eget magna viverra feugiat eget nec orci. Duis non massa nibh. Aenean vehicula velit a magna lobortis tempor ut quis felis. Proin vitae dui a eros facilisis fringilla ut ut ante. Curabitur eu magna dui. Ut hendrerit suscipit metus, id vehicula velit. Pellentesque ac nisl rutrum, efficitur velit dictum, cursus odio.</div>
+
+  <h1>Paragraph 3</h1>
+  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet pharetra massa. Nulla blandit erat nulla, et scelerisque libero varius ut. Praesent bibendum eu magna ullamcorper venenatis. Sed ut pellentesque leo. Sed ultrices sapien consequat odio posuere gravida. Nunc lorem tortor, volutpat nec maximus in, suscipit a ex. Praesent efficitur ex ut viverra placerat. Vivamus eu sapien sed enim vehicula sodales.</div>
+```
+
+Write a program that asks the user for the new text color, then for the new background color. The page is then updated accordingly.
+
+![Execution result with red text on white background](images/chapter15-16.png)
+
+### Information about an element
+
+Here is this exercise's HTML code.
+
+```html
+<div id="content">ABC
+    <br>Easy as
+    <br>One, two, three
+</div>
+<div id="infos"></div>
+```
+
+And the associated CSS stylesheet.
+
+```css
+#contenu {
+    float: right;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+```
+
+Write a program that adds to the page a list showing the height and witdh of the element identified by "content".
+
+![Execution result](images/chapter15-17.png)
