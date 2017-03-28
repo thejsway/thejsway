@@ -14,7 +14,7 @@ Let's see how to use JavaScript to modify a web page once it's been loaded by th
 
 * You can replace existing nodes with the `replaceChild()` method or remove them with `removeChild()`.
 
-* The JavaScript `style` property represents the **style** attribute of a DOM element. It lets you modify the element's style and define values of its CSS properties.
+* The JavaScript `style` property represents the `style` attribute of a DOM node. It lets you modify the element's style by defining values of its CSS properties.
 
 * CSS properties that involve multiple words are written in **camelCase** when dealing with JavaScript. For example, `font-family` becomes `fontFamily`.
 
@@ -31,7 +31,7 @@ The DOM traversal properties studied in the previous chapter can also be used to
 The examples in the next paragraphs use the HTML code below.
 
 ```html
-<h1 class="beginning">Some languages</h1>
+<h3 class="beginning">Some languages</h3>
 <div id="content">
     <ul id="languages">
         <li id="cpp">C++</li>
@@ -72,7 +72,7 @@ Use the `textContent` property to modify the text content of a DOM element. Here
 
 ```js
 // Modify the title's text content
-document.querySelector("h1").textContent += " for programming";
+document.querySelector("h3").textContent += " for programming";
 ```
 
 ![Execution result](images/chapter15-01.png)
@@ -83,14 +83,14 @@ The `setAttribute()` method sets the value of an attribute of an element. You pa
 
 ```js
 // Define the id attribute of the first title
-document.querySelector("h1").setAttribute("id", "title");
+document.querySelector("h3").setAttribute("id", "title");
 ```
 
 As you saw in the previous chapter, some attributes exist as properties and can be directly updated.
 
 ```js
 // Define the id attribute of the first title
-document.querySelector("h1").id = "title";
+document.querySelector("h3").id = "title";
 ```
 
 ### Classes
@@ -98,7 +98,7 @@ document.querySelector("h1").id = "title";
 You can use the `classList` property to add or remove classes from a DOM element!
 
 ```js
-const titleElement = document.querySelector("h1"); // Grab the first h1
+const titleElement = document.querySelector("h3"); // Grab the first h3
 titleElement.classList.remove("beginning");        // Remove the class "beginning"
 titleElement.classList.add("title");               // Add a class called "title"
 console.log(titleElement);
@@ -280,9 +280,9 @@ DOM elements are equipped with a property called `style`, which returns an objec
 The code below selects the page's first paragraph and modifies its text color and margins.
 
 ```js
-const pElement = document.querySelector("p");
-pElement.style.color = "red";
-pElement.style.margin = "50px";
+const paragraphElement = document.querySelector("p");
+paragraphElement.style.color = "red";
+paragraphElement.style.margin = "50px";
 ```
 
 #### Compound CSS properties
@@ -293,13 +293,13 @@ This example modifies the same paragraph element's `font-family` and `background
 
 ```js
 // ...
-pElement.style.fontFamily = "Arial";
-pElement.style.backgroundColor = "black";
+paragraphElement.style.fontFamily = "Arial";
+paragraphElement.style.backgroundColor = "black";
 ```
 
 ![Execution result](images/chapter15-14.png)
 
-This naming convention, already encountered in a previous chapter, is called [camelCase](https://en.wikipedia.org/wiki/Camel_case).
+This naming convention, already encountered in previous chapters, is called [camelCase](https://en.wikipedia.org/wiki/Camel_case).
 
 You can see CSS properties and their JavaScript properties on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference).
 
@@ -311,10 +311,10 @@ Let's try to display the text color of each of our example paragraphs.
 const paragraphElements = document.getElementsByTagName("p");
 console.log(paragraphElements[0].style.color); // "red"
 console.log(paragraphElements[1].style.color); // "green"
-console.log(paragraphElements[2].style.color); // Show nothing
+console.log(paragraphElements[2].style.color); // Show an empty string
 ```
 
-![Execution result](images/chapter15-14.png)
+![Execution result](images/chapter15-15.png)
 
 Why is the color of the third paragraph (blue) not showing?
 
@@ -332,9 +332,9 @@ console.log(paragraphStyle.fontStyle); // "italic"
 console.log(paragraphStyle.color);     // color blue in RGB values
 ```
 
-![Execution result](images/chapter15-15.png)
+![Execution result](images/chapter15-16.png)
 
-> The color blue is represented as 3 color values: red, green, and blue (RGB). For each of these primary colors, values will always be between or equal to 0 and 255.
+> The blue color is represented as 3 color values: red, green, and blue (RGB). For each of these primary colors, values will always be between or equal to 0 and 255.
 
 ## DOM manipulations and performance
 
@@ -418,18 +418,18 @@ The following HTML content defines three paragraphs.
 
 ```html
   <h1>Paragraph 1</h1>
-  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim fringilla dapibus. Curabitur placerat efficitur molestie. Quisque quis consequat nibh. Aenean feugiat, eros eget aliquam vulputate, leo augue luctus lectus, non lobortis libero quam non sem. Aliquam sit amet tincidunt ex, mollis interdum massa. Sed vulputate mi id accumsan scelerisque. Nam interdum iaculis ipsum, non convallis mauris faucibus et. Pellentesque in imperdiet lorem, in condimentum neque. Nullam auctor sem eu sapien pulvinar, non ultricies ipsum hendrerit. Aliquam at magna convallis, ultrices enim vitae, mollis lacus.</div>
+  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim fringilla dapibus. Curabitur placerat efficitur molestie. Quisque quis consequat nibh. Aenean feugiat, eros eget aliquam vulputate, leo augue luctus lectus, non lobortis libero quam non sem. Aliquam sit amet tincidunt ex, mollis interdum massa.</div>
 
   <h1>Paragraph 2</h1>
-  <div>Vivamus at justo blandit, ornare leo id, vehicula urna. Fusce sed felis eget magna viverra feugiat eget nec orci. Duis non massa nibh. Aenean vehicula velit a magna lobortis tempor ut quis felis. Proin vitae dui a eros facilisis fringilla ut ut ante. Curabitur eu magna dui. Ut hendrerit suscipit metus, id vehicula velit. Pellentesque ac nisl rutrum, efficitur velit dictum, cursus odio.</div>
+  <div>Vivamus at justo blandit, ornare leo id, vehicula urna. Fusce sed felis eget magna viverra feugiat eget nec orci. Duis non massa nibh. Aenean vehicula velit a magna lobortis tempor ut quis felis. Proin vitae dui a eros facilisis fringilla ut ut ante.</div>
 
   <h1>Paragraph 3</h1>
-  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet pharetra massa. Nulla blandit erat nulla, et scelerisque libero varius ut. Praesent bibendum eu magna ullamcorper venenatis. Sed ut pellentesque leo. Sed ultrices sapien consequat odio posuere gravida. Nunc lorem tortor, volutpat nec maximus in, suscipit a ex. Praesent efficitur ex ut viverra placerat. Vivamus eu sapien sed enim vehicula sodales.</div>
+  <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet pharetra massa. Nulla blandit erat nulla, et scelerisque libero varius ut. Praesent bibendum eu magna ullamcorper venenatis. Sed ut pellentesque leo. Sed ultrices sapien consequat odio posuere gravida.</div>
 ```
 
 Write a program that asks the user for the new text color, then for the new background color. The page is then updated accordingly.
 
-![Execution result with red text on white background](images/chapter15-16.png)
+![Execution result with red text on white background](images/chapter15-17.png)
 
 ### Information about an element
 
@@ -446,7 +446,7 @@ Here is this exercise's HTML code.
 And the associated CSS stylesheet.
 
 ```css
-#contenu {
+#content {
     float: right;
     margin-top: 100px;
     margin-right: 50px;
@@ -455,4 +455,4 @@ And the associated CSS stylesheet.
 
 Write a program that adds to the page a list showing the height and witdh of the element identified by "content".
 
-![Execution result](images/chapter15-17.png)
+![Execution result](images/chapter15-18.png)
