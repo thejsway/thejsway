@@ -371,7 +371,7 @@ Improve the languages example to add a paragraph (`<p>` tag) containing a link (
 Here is the HTML code of a web page.
 
 ```html
-<h1>Some newspapers</h1>
+<h3>Some newspapers</h3>
 <div id="content"></div>
 ```
 
@@ -389,7 +389,7 @@ const newspapers = ["https://www.nytimes.com", "https://www.washingtonpost.com",
 Here is the HTML code of a web page.
 
 ```html
-<h1>A mini-dictionary</h1>
+<h3>A mini-dictionary</h3>
 <div id="content"></div>
 ```
 
