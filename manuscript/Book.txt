@@ -22,6 +22,7 @@ chapter12.md
 chapter13.md
 chapter14.md
 chapter15.md
+chapter16.md
 backmatter.txt
 conclusion.txt
 concl02.md

@@ -45,6 +45,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Discover the DOM](manuscript/chapter13.md)
   * [Traverse the DOM](manuscript/chapter14.md)
   * [Modify the page](manuscript/chapter15.md)
+  * [React to events](manuscript/chapter16.md)
   * ...
 * Part III: Build web apps
   * ...
