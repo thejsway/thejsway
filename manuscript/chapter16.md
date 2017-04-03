@@ -18,13 +18,13 @@ To make a web page interactive, you have to respond to user actions. Let's disco
 
 ## Introduction to events
 
-Up until now, your JavaScript programs were executed right from the start. The execution order of statements was determined in advance and the only user interactions were data input through `prompt()` calls.
+Up until now, your JavaScript code was executed right from the start. The execution order of statements was determined in advance and the only user interactions were data input through `prompt()` calls.
 
 To add more interactivity, the page should react to the user's actions: clicking on a button, filling a form, etc. In that case, the execution order of statements is not determined in advance anymore, but depends on the user behavior. His actions trigger **events** that can be handled by writing JavaScript code.
 
 This way of writing programs is called **event-driven programming**. It is often used by user interfaces, and more generaly anytime a program needs to interact with an user.
 
-## A first example
+### A first example
 
 Here's some starter HTML code.
 
@@ -44,7 +44,7 @@ const buttonElement = document.getElementById("myButton");
 buttonElement.addEventListener("click", showMessage);
 ```
 
-In both cases, clicking on the button shows an `"Hello!` message.
+Clicking on the web page button shows an `"Hello!` message.
 
 ![Execution result](images/chapter16-01.png)
 
@@ -61,8 +61,48 @@ document.getElementById("myButton").addEventListener("click", () => {
 });
 ```
 
-Common event handling
-Key presses
+### Removing an event listener
+
+In some particular cases, you might want to stop reacting to an event on a DOM element. To achieve this, call the `removeEventListener()` on the element, massing as a parameter the function which used to handle the event.
+
+> This can only work if the handler function is not anonymous.
+
+```js
+// Remove the handler for the click event
+buttonElement.removeEventListener("click", showMessage);
+```
+
+## The event family
+
+Manay types of events can be triggered by DOM elements. Here are the main event categories.
+
+| Category | Examples |
+|---|---|
+| Keyboard events | Pressing or releasing a key |
+| Mouse events | Clicking on a mouse button, pressing or releasing a mouse button, hovering over a zone |
+| Window events | Loading or closing a page, resizing, scrolling |
+| Form events | Changing focus on a form field, submitting a form |
+
+Every event is associated to an `Event` object which has both **properties** (informations about the event) and **methods** (ways to act on the event). This object can be used by the handler function.
+
+Many properties of the `Event` object associated to an event depend on the event type. Some properties are always present, like `type` that returns the event type and `target` that return the event target (the DOM element that is the event source).
+
+The `Event` object is passed as a parameter to the handler function. The following code uses it to show the event type and target in the console.
+
+```js
+// Show event type and target when the user clicks on the button
+document.getElementById("myButton").addEventListener("click", (e) => {
+  console.log(`Event type: ${e.type}, target: ${e.target}`);
+});
+```
+
+> The parameter name chosen for the `Event` object is generaly `e` or `event`.
+
+![Execution result](images/chapter16-02.png)
+
+## Reacting to common events
+
+### Key presses
 
 The most common solution for reacting to key presses on a keyboard involves handling keypress events that happen on a web page (the DOM body  element, which corresponds to the global variable called document  in JavaScript). 
 
@@ -77,7 +117,8 @@ function keyboardInfo(e) {
 document.addEventListener("keydown", keyboardInfo);
 document.addEventListener("keyup", keyboardInfo);
 Test it! Type a key, any key. http://codepen.io/eclairereese/pen/QEKOrW?editors=1111 ✏️
-Mouse clicks
+
+### Mouse clicks
 
 Mouse clicks on any DOM element produce a click  type element.
 
@@ -117,7 +158,8 @@ You can use mousedown and mouseup events similarly to how you saw keydown and ke
 // Handle mouse button press and release
 document.addEventListener("mousedown", mouseInfo);
 document.addEventListener("mouseup", mouseInfo);
-Page loading
+
+### Page loading
 
 Depending on how complex it is, a web page can take time to be loaded 100% by the browser. You can add an event listener to know when this happens; it's an event listener on the window  object. This avoids messy situations where JavaScript interacts with pages that aren't fully loaded.
 
@@ -127,8 +169,10 @@ The following code displays a message in the console once the page is fully load
 window.addEventListener("load", function () {
     console.log("The page has been loaded!");
 });
-Go farther with events
-Event propagation
+
+## Go farther with events
+
+### Event propagation
 
 The DOM represents a web page as a hierarchy of nodes. Events triggered on a child node are going to then trigger on the parent node, then the parent node of the parent node, up until the root of the DOM (the document variable). This is called event propagation.
 
