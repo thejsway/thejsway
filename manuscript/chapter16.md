@@ -1,6 +1,6 @@
 # React to events
 
-To make a web page interactive, you have to respond to user actions. Let's discover ho to do so.
+To make a web page interactive, you have to respond to user actions. Let's discover how to do so.
 
 ## TL;DR
 
@@ -91,7 +91,7 @@ The `Event` object is passed as a parameter to the handler function. The followi
 
 ```js
 // Show event type and target when the user clicks on the button
-document.getElementById("myButton").addEventListener("click", (e) => {
+document.getElementById("myButton").addEventListener("click", e => {
   console.log(`Event type: ${e.type}, target: ${e.target}`);
 });
 ```
@@ -104,32 +104,52 @@ document.getElementById("myButton").addEventListener("click", (e) => {
 
 ### Key presses
 
-The most common solution for reacting to key presses on a keyboard involves handling keypress events that happen on a web page (the DOM body  element, which corresponds to the global variable called document  in JavaScript). 
+The most common solution for reacting to key presses on a keyboard involves handling `keypress` events that happen on a web page (the DOM `body` element, which corresponds to the global variable called `document` in JavaScript).
 
-To manage the press and release of any key, you'll use the keydown and keyup  events. This example uses the same function to manage two events. This time, the key's code is accessible in the keyCode property of the Event object.
+The following example shows in the console the character assoaciated to a pressed key. Yhe character info is given by the `charCode` property of the `Event` object associated to the event. This property returns a numerical value (called **Unicode value**) that can be translated to a string value by the `String.FromCharCode()` method.
 
+```js
+// Show the pressed character
+document.addEventListener("keypress", e => {
+    console.log(`You pressed the ${String.fromCharCode(e.charCode)} key`);
+});
+```
+
+![Execution result](images/chapter16-03.png)
+
+To manage the press and release of any key (not only the ones producing characters), you'll use the `keydown` and `keyup` events. This example uses the same function to manage two events. This time, the key's code is accessible in the `keyCode` property of the `Event` object.
+
+```js
 // Show information on a keyboard event
 function keyboardInfo(e) {
-    console.log("Keyboard event:" + e.type + ", key: " + e.keyCode);
+    console.log(`Keyboard event: ${e.type}, key: ${e.keyCode}`);
 }
 
 // Integrate this function into key press and release:
 document.addEventListener("keydown", keyboardInfo);
 document.addEventListener("keyup", keyboardInfo);
-Test it! Type a key, any key. http://codepen.io/eclairereese/pen/QEKOrW?editors=1111 ✏️
+```
+
+![Execution result](images/chapter16-04.png)
+
+This results demonstrates that the launch order of keyboard-related events is as follows: `keydown` -> `keypress` -> `keyup`.
+
+> The `keydown` is fired several times when a key is kept pressed.
 
 ### Mouse clicks
 
-Mouse clicks on any DOM element produce a click  type element.
+Mouse clicks on any DOM element produce a event of the `click` type. Tactile interfaces like smartphones and tablets also have `click` events associated with buttons, which are kicked off by actually pressing a finger on the button.
 
-Tactile interfaces like smartphones and tablets also have click events associated with buttons, which are kicked off by actually pressing a finger on the button. 
-The Event object associated with a click event has a button property which lets you know the button the mouse used (left or right), as well as clientX and clientY properties that return the horizontal and vertical coordinates of the place where the click happened. These coordinates are defined relative to the page zone currently shown by the browser. 
+The `Event` object associated with a `click` event has a `button` property which lets you know the mouse button used, as well as `clientX` and `clientY` properties that return the horizontal and vertical coordinates of the place where the click happened. These coordinates are defined relative to the page zone currently shown by the browser.
 
-The below code shows information on all click events that happen on a web page. These events are managed by a function called mouseInfo . 
+![Difference between absolute and relative coordinates](images/chapter16-05.png)
 
+The below code shows information on all click events that happen on a web page. The `mouseInfo()` function associated to the event uses another function, called `getMouseButton()`, to retrieve the clicked mouse button.
+
+```js
 // Return the name of the mouse button
 function getMouseButton(code) {
-    var button = "unknown";
+    let button = "unknown";
     switch (code) {
     case 0: // 0 is the code for the left mouse button
         button = "left";
@@ -144,20 +164,28 @@ function getMouseButton(code) {
     return button;
 }
 
-// Show information about a mouse event
+// Show info about mouse event
 function mouseInfo(e) {
-    console.log("Mouse event: " + e.type + ", button " +
-        getMouseButton(e.button) + ", X : " + e.clientX + ", Y : " + e.clientY);
+    console.log(`Mouse event: ${e.type}, button: ${getMouseButton(e.button)}, X: ${e.clientX}, Y: ${e.clientY}`);
 }
 
 // Add mouse click event listener
 document.addEventListener("click", mouseInfo);
-Test it! http://codepen.io/eclairereese/pen/PzGOeV?editors=1011 ✏️
-You can use mousedown and mouseup events similarly to how you saw keydown and keyup events used with keyboard events! The code below associates the same handler to two events.
+```
 
+![Execution result](images/chapter16-06.png)
+
+You can use `mousedown` and `mouseup` events similarly to `keydown` and `keyup` to deal with mouse buttons' press and release events. The code below associates the same handler to these two events.
+
+```js
 // Handle mouse button press and release
 document.addEventListener("mousedown", mouseInfo);
 document.addEventListener("mouseup", mouseInfo);
+```
+
+![Execution result](images/chapter16-07.png)
+
+The appearance order for mouse-related events is: `mousedown` -> `mouseup` -> `click`.
 
 ### Page loading
 
@@ -169,6 +197,8 @@ The following code displays a message in the console once the page is fully load
 window.addEventListener("load", function () {
     console.log("The page has been loaded!");
 });
+
+## Page closing
 
 ## Go farther with events
 
