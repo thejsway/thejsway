@@ -6,7 +6,7 @@ To make a web page interactive, you have to respond to user actions. Let's disco
 
 * You can make a web page interactive by writing JavaScript code tied to **events** within the browser.
 
-* Numerous types of events can be handled. Each event type is associated with an `Event` object that contains information about the event itself and its properties.
+* Numerous types of events can be handled. Each event type is associated with an `Event` object that contains properties giving information about the event.
 
 * `keypress`, `keydown` and `keyup` events let you react to keyboard-related events.
 
@@ -15,6 +15,8 @@ To make a web page interactive, you have to respond to user actions. Let's disco
 * Page loading and closing are associated with the events `load` and `beforeunload` respectively.
 
 * An event propagates within the DOM tree from its node of origin until the document root. This propagation can be interrupted with the `stopPropagation()` method.
+
+* Calling the `preventDefault()` method on an `Event` object cancels the default behavior associated to the action that triggered the event.
 
 ## Introduction to events
 
@@ -189,50 +191,104 @@ The appearance order for mouse-related events is: `mousedown` -> `mouseup` -> `c
 
 ### Page loading
 
-Depending on how complex it is, a web page can take time to be loaded 100% by the browser. You can add an event listener to know when this happens; it's an event listener on the window  object. This avoids messy situations where JavaScript interacts with pages that aren't fully loaded.
+Depending on how complex it is, a web page can take time to be entirely loaded by the browser. You can add an event listener on the `load` event produced by the `window` object (which represent the brower window) to know when this happens. This avoids messy situations where JavaScript interacts with pages that aren't fully loaded.
 
 The following code displays a message in the console once the page is fully loaded.
 
+```js
 // Web page loading event
-window.addEventListener("load", function () {
+window.addEventListener("load", e => {
     console.log("The page has been loaded!");
 });
+```
 
-## Page closing
+### Page closing
+
+You sometimes want to react to page closing. Closing happens when the user closes the tab displaying the page or navigates to another page in this tab. A frequent use case consists of showing a confirmation dialog to the user. Handling page closing is done by adding a handler for the `beforeunload` event on the `window` object.
+
+```js
+// Handle page closing
+window.addEventListener("beforeunload", e => {
+  const message = "Should you stay or should you go?";
+  // Standard way of showing a confirmation dialog
+  e.returnValue = message;
+  // Browser-specific way of showing a confirmation dialog
+  return message;
+});
+```
+
+> Setting the value of the `returnValue` property on the `Event` object is the standard way of triggering a confirmation dialog showing this value. However, some browsers use the return value of the event listener instead. The previous code associate the two techniques to be universal.
 
 ## Go farther with events
 
 ### Event propagation
 
-The DOM represents a web page as a hierarchy of nodes. Events triggered on a child node are going to then trigger on the parent node, then the parent node of the parent node, up until the root of the DOM (the document variable). This is called event propagation.
+The DOM represents a web page as a hierarchy of nodes. Events triggered on a child node are going to get triggered on the parent node, then the parent node of the parent node, up until the root of the DOM (the `document` variable). This is called **event propagation**.
 
-To see propagation in action, add this HTML code in the <body> tag of your HTML code.
+To see propagation in action, use this HTML code to create a small DOM hierachy.
 
-<p id="para">A paragraph with a <button id="propa">button</button> inside
-</p>
-Now add the complementary JavaScript code below to course.js. It adds click event handlers on the button, its parent (the paragraph), and the parent of that too (the root of the DOM). 
+```html
+<p id="para">A paragraph with a <button id="propa">button</button> inside</p>
+```
 
+Here's the complementary JavaScript code. It adds `click` event handlers on the button, its parent (the paragraph), and the parent of that too (the root of the DOM).
+
+```js
 // Click handler on the document
-document.addEventListener("click", function () {
+document.addEventListener("click", e => {
     console.log("Document handler");
 });
 // Click handler on the paragraph
-document.getElementById("para").addEventListener("click", function () {
+document.getElementById("para").addEventListener("click", e => {
     console.log("Paragraph handler");
 });
 // Click handler on the button
-document.getElementById("propa").addEventListener("click", function (e) {
-    console.log("Button handler");
-});
-Test it! Click the button and look at the console. http://codepen.io/eclairereese/pen/rLMYrj?editors=1111 ✏️
-The result in the browser console demonstrates the propagation of click events from the button up to the document level. You clicked the button, which means you also clicked the paragraph, which means you also clicked the document. But maybe you only want an event to kick off once the button is clicked and not count its larger ecosystem!
-
-Event propagation can be interrupted at any moment by calling the stopPropagation method on the Event object from a function that manages an event. This is useful to avoid the same event being handled multiple times.
-
-Adding a line in the button's click handler prevents the click event from propagating everywhere in the DOM tree.
-
-// Click handler on the button
-document.getElementById("propa").addEventListener("click", function (e) {
+document.getElementById("propa").addEventListener("click", e => {
     console.log("Button handler");
     e.stopPropagation(); // Stop the event propagation
 });
+```
+
+![Execution result](images/chapter16-08.png)
+
+The result in the browser console demonstrates the propagation of `click` events from the button up to the document level. You clicked the button, which means you also clicked the paragraph, which means you also clicked the document. 
+
+But maybe you only want an event to kick off once the button is clicked and not count its larger ecosystem? Event propagation can be interrupted at any moment by calling the `stopPropagation()` method on the `Event` object from an event handler. This is useful to avoid the same event being handled multiple times.
+
+Adding a line in the button's click handler prevents the `click` event from propagating everywhere in the DOM tree.
+
+```js
+// Click handler on the button
+document.getElementById("propa").addEventListener("click", e => {
+    console.log("Button handler");
+    e.stopPropagation(); // Stop the event propagation
+});
+```
+
+![Execution result](images/chapter16-09.png)
+
+### Cancelling the default behavior of an event
+
+Most of the user actions on a page are associated to a default behavior. Clicking on a link navigates to the link target, clicking anywhere with the right mouse button show a contextual menu, etc. Cancelling a default behavior is possible by calling the `preventDefault()` method on the `Event` object in an event handler.
+
+Let's use the following HTML code to see this possibility in action.
+
+```html
+<p>Time on your hands? <a id="forbidden" href="https://9gag.com/">Click here</a></p>
+```
+
+```js
+// Handling clicking on the forbidden link
+document.getElementById("forbidden").addEventListener("click", e => {
+  alert("Yes... But no.");
+  e.preventDefault(); // Cancels the default behavior
+});
+```
+
+Now clicking on the links shows a dialog instead of navigating to its target.
+
+![Execution result](images/chapter16-10.png)
+
+## Coding time!
+
+TODO
