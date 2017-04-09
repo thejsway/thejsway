@@ -251,7 +251,7 @@ document.getElementById("propa").addEventListener("click", e => {
 
 ![Execution result](images/chapter16-08.png)
 
-The result in the browser console demonstrates the propagation of `click` events from the button up to the document level. You clicked the button, which means you also clicked the paragraph, which means you also clicked the document. 
+The result in the browser console demonstrates the propagation of `click` events from the button up to the document level. You clicked the button, which means you also clicked the paragraph, which means you also clicked the document.
 
 But maybe you only want an event to kick off once the button is clicked and not count its larger ecosystem? Event propagation can be interrupted at any moment by calling the `stopPropagation()` method on the `Event` object from an event handler. This is useful to avoid the same event being handled multiple times.
 
@@ -291,4 +291,86 @@ Now clicking on the links shows a dialog instead of navigating to its target.
 
 ## Coding time!
 
-TODO
+### Counting clicks
+
+Start with the following HTML content.
+
+```html
+<button id="myButton">Click me!</button>
+<p>You clicked on the button <span id="clickCount">0</span> times</p>
+<button id="desactivate">Désactivate counting</button>
+```
+
+Write the JavaScript code that counts the number of clicks on the `myButton` button by updating the `clickCount` element. The `desactivate` button stop the counting.
+
+### Changing colors
+
+Here is some HTML content to start with.
+
+```html
+<p>Press the R (red), Y (yellow), G (green) or B (blue) key to change paragraph colors accordingly.</p>
+
+<h1>Paragraph 1</h1>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dignissim fringilla dapibus. Curabitur placerat efficitur molestie. Quisque quis consequat nibh. Aenean feugiat, eros eget aliquam vulputate, leo augue luctus lectus, non lobortis libero quam non sem. Aliquam sit amet tincidunt ex, mollis interdum massa.</div>
+
+<h1>Paragraph 2</h1>
+<div>Vivamus at justo blandit, ornare leo id, vehicula urna. Fusce sed felis eget magna viverra feugiat eget nec orci. Duis non massa nibh. Aenean vehicula velit a magna lobortis tempor ut quis felis. Proin vitae dui a eros facilisis fringilla ut ut ante.</div>
+
+<h1>Paragraph 3</h1>
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet pharetra massa. Nulla blandit erat nulla, et scelerisque libero varius ut. Praesent bibendum eu magna ullamcorper venenatis. Sed ut pellentesque leo. Sed ultrices sapien consequat odio posuere gravida.</div>
+```
+
+Write the associated JavaScript code that update background color of all `div` tags according to the key (R, Y, G or B) pressed by the user.
+
+![Execution result](images/chapter16-11.png)
+
+### A dessert list
+
+The following HTML code defines a list of desserts, empty for now.
+
+```html
+<h1>My favourite desserts</h1>
+
+<ul id="desserts">
+</ul>
+
+<button id="addButton">Add a dessert</button>
+```
+
+Write the JavaScript code that adds a new dessert to the list when the user clicks on the button. The dessert name is chosen by the user.
+
+Bonus points for adding the possibility of changing a dessert's name when clicking on it.
+
+![Execution result](images/chapter16-12.png)
+
+### Interactive quiz
+
+Here is the starter HTML code.
+
+```html
+<div id="content"></div>
+```
+
+And the associated JavaScript code that defines a question list.
+
+```js
+// List of questions (statement + answer)
+const questions = [
+{
+    statement: "2+2?",
+    answer: "2+2 = 4"
+},
+{
+    statement: "In what year did Christopher Columbus discover America?",
+    answer: "1492"
+},
+{
+    statement: "What occurs twice in a lifetime, but once in every year, twice in a week but never in a day?",
+    answer: "The E letter"
+}
+];
+```
+
+Complete this code to display the questions in the `<div>` element of the page, with a `"Show the answer"` button next to each question. Clicking this button replaces it with the answer for this question.
+
+![Execution result](images/chapter16-13.png)
