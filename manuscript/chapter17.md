@@ -1,6 +1,6 @@
 # Manipulate forms
 
-JavaScript lets you manage forms defined within your web page, in order to improve interactivity.
+JavaScript lets you manage forms defined within your web page, in order to further improve interactivity.
 
 ## TL;DR
 
@@ -10,7 +10,7 @@ Before data gets sent off, you can use JavaScript to interact with the form data
 Text zones (`input type="text">` or `<textarea>` each have a value property to access the inputted value.
 Once a text field is selected, we can say that this field has "focus." focus and blur events are triggered when the field is selected or deselected, respectively.
 Chexboxes, radio buttons, and dropdown menus generate change events once a user modifies their choice.
-The DOM element that corresponds the form has an elements property that lets you access its input fields. 
+The DOM element that corresponds the form has an elements property that lets you access its input fields.
 Submitting a form triggers a submit event on a form. You can prevent the sending of data associated with this event handler by using the preventDefault method on the associated Event object.
 Any modification of a text field triggers an input event, which can be used to validate its data in real time.
 
@@ -18,154 +18,167 @@ Any modification of a text field triggers an input event, which can be used to v
 
 ### Form recap
 
-Forms enhance web pages and allow users to input information through text fields, check boxes, dropdown menus, and more. Forms are defined with a `<form>` HTML tag, and within this tag, you have your different `<input>` tags, `<select>` tags, or `<textarea>` tags.
+Forms enhance web pages by allowing users to input information through text fields, check boxes, dropdown menus, and more. Inside a web page, a form is defined with a `<form>` HTML tag, and within this tag, you have your different `<input>` tags, `<select>` tags, or `<textarea>` tags.
 
-If you'd like a recap on forms in general, check out this chapter from our course on HTML and CSS: https://openclassrooms.com/courses/build-your-website-with-html5-and-css3/forms
-Data entered into a form by users is normally sent via a network to a web server that processes and sends a response to the browser. This response is normally a new web page! To do this, web servers use backend programming languages like PHP or Ruby.
+> If forms are totally new to you, the Mozilla Developer Network has a great intro aptly named [Your first HTML form](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form). For a more general recap on forms, check out this [course chapter]( https://openclassrooms.com/courses/build-your-website-with-html5-and-css3/forms) on OpenClassrooms.
 
 ### Handling forms with JavaScript
 
-Thanks to JavaScript, you can manage forms (and their data) directly within the browser before sending them to an external server. You can notify users of incorrect input data, make suggestions on what they type, and more. Who said forms were boring?!
+Data entered into a form by users is normally sent via a network to a **web server** that processes and sends a response to the browser as a new web page. To do this, web servers use backend programming languages like PHP or Ruby.
+
+Thanks to JavaScript, you can manage forms (and their data) directly within the browser *before* sending them to an external server. You can notify users of incorrect input data, make suggestions on what they type, and more. Who said forms were boring?
 
 ## Form fields
 
-Example form
+### Example form
 
-We're going to start with a simple form that allows users to sign up for a service. Put the following content in your chapter 6 HTML document, called course.html , or into a pen on CodePen.
+Let's start with a simple form that allows users to sign up for a service.
 
-<!doctype html>
-<html>
-    <head>
-    <meta charset="utf-8">
-        <title>Playing with forms</title>
-    </head>
-    
-    <body>
-        <form>
-    <h1>Signup form</h1>
-        <p>
-            <label for="username">Username</label> :
-            <input type="text" name="username" id="username" required>
-            <span id="usernameHelp"></span>
-        </p>
-        <p>
-            <label for="password">Password</label> :
-            <input type="password" name="password" id="password" required>
-            <span id="passwordHelp"></span>
-        </p>
-        <p>
-            <label for="emailAddress">Email address</label> :
-            <input type="email" name="emailAddress" id="emailAddress" required placeholder="user@gmail.com">
-            <span id="emailHelp"></span>
-        </p>
-        <p>
-            <input type="checkbox" name="confirmation" id="confirmation">
-            <label for="confirmation">Send me a confirmation email</label>
-        </p>
-        <p>
-            <input type="radio" name="subscription" id="newsroom" value="newspromo">
-            <label for="newsroom">Subscribe me to newsletters and promotions</label>
-            <br>
-            <input type="radio" name="subscription" id="news" value="news">
-            <label for="news">Subscribe me only to the newsletter</label>
-            <br>
-            <input type="radio" name="subscription" id="no" value="no" checked>
-            <label for="no">No subscriptions please</label>
-            <br>
-        </p>
-        <p>
-            <label for="nationality">Nationality :</label>
-            <select name="nationality" id="nationality">
-                <option value="US" selected>American</option>
-                <option value="FR">French</option>
-                <option value="ES">Spanish</option>
-                <option value="XX">Other</option>
-            </select>
-        </p>
-        
-        <input type="submit" value="Submit">
-        <input type="reset" value="Cancel">
-    </form>
-    
-    <script src="../js/course.js"></script>
-        </body>
+```html
+<form>
+  <h1>Signup form</h1>
+  <p>
+    <label for="username">Username</label>:
+    <input type="text" name="username" id="username" required>
+    <span id="usernameHelp"></span>
+  </p>
+  <p>
+    <label for="password">Password</label>:
+    <input type="password" name="password" id="password" required>
+    <span id="passwordHelp"></span>
+  </p>
+  <p>
+    <label for="emailAddress">Email address</label>:
+    <input type="email" name="emailAddress" id="emailAddress" required placeholder="user@domain">
+    <span id="emailHelp"></span>
+  </p>
+  <p>
+    <input type="checkbox" name="confirmation" id="confirmation">
+    <label for="confirmation">Send me a confirmation email</label>
+  </p>
+  <p>
+    <input type="radio" name="subscription" id="newsroom" value="newspromo">
+    <label for="newsroom">Subscribe me to newsletters and promotions</label>
+    <br>
+    <input type="radio" name="subscription" id="news" value="news">
+    <label for="news">Subscribe me only to the newsletter</label>
+    <br>
+    <input type="radio" name="subscription" id="no" value="no" checked>
+    <label for="no">No subscriptions</label>
+    <br>
+  </p>
+  <p>
+    <label for="nationality">Nationality</label>:
+    <select name="nationality" id="nationality">
+      <option value="US" selected>American</option>
+      <option value="FR">French</option>
+      <option value="ES">Spanish</option>
+      <option value="XX">Other</option>
+    </select>
+  </p>
 
-</html>
-This example contains multiple input zones: text, checkboxes, radio buttons, a dropdown menu, as well as send and cancel buttons. We'll learn how to deal with each of these elements with JavaScript. 
+  <input type="submit" value="Submit">
+  <input type="reset" value="Cancel">
+</form>
+```
 
-You might have noticed that the <form> tag doesn't have the usual action and method attributes. These attributes allow you to define a particular resource and request type, but since our form only handles a client-side situation here, they're not necessary.
+![Display result](images/chapter17-01.png)
 
-Type code examples as we go along into your course.js file or add them to your pen on CodePen.
+This example contains multiple input zones: text, checkboxes, radio buttons, a dropdown menu, as well as send and cancel buttons. We'll learn how to deal with each of these elements with JavaScript.
+
+> You might have noticed that the `<form>` tag doesn't have the usual `action` and `method` attributes. These attributes allow you to define the requested server resource when the form is submitted by the user. Since our form will only be handled by JavaScript in the browser, they're not necessary.
 
 ### Text zones
 
 #### Access input values
 
-A text field allows a user to input text on single or multiple lines. You have two options for defining text fields: a single-line text field is defined in HTML as <input type="text"> , and a multi-line text input field will be defined via <textarea> instead. Choose the best one for the content the user will be inputting!
+A **text field** allows a user to input text on single or multiple lines. You have two options for defining text fields: a single-line text field is defined in HTML as `<input type="text">`, and a multi-line text input field will be defined via `<textarea>` instead.
 
-Here's the extract from the above code that lets users input a username:
+Here's the extract from the above code that lets users input a username.
 
-<label for="username">Username</label> :
+```html
+<label for="username">Username</label>:
 <input type="text" name="username" id="username" required>
 <span id="usernameHelp"></span>
-In JavaScript, you can access the value of a text field by using the value  property of the corresponding DOM element. In adding a new value to this property, you'll modify the value shown in the text field.
+```
 
-The following example adds the value "MyCoolUsername" to the the text field:
+In JavaScript, you can access the value of a text field by using the `value` property of the corresponding DOM element. By defined a new value for this property, you'll modify the value shown in the text field.
 
-var usernameElement = document.getElementById("username");
+The following example adds the value "MyCoolUsername" to the the text field.
+
+```js
+// Define the value of the "username" input field
+const usernameElement = document.getElementById("username");
 usernameElement.value = "MyCoolUsername";
+```
 
-#### Focus areas
+#### Handling focus
 
-When a text zone is selected, it becomes the "focus" area of the form. You may have noticed field borders turning blue or other effects when you're accessing a particular input area. This helps you know where you are in the form. A user clicking on a text field (or tabbing down into it) kicks off a focus  event. Additionally, a focus event triggers a blur  event on the field that previously had the focus.
+When a text zone is selected, it becomes the focused area of the form. You may have noticed field borders turning blue or other effects when you're accessing a particular input area. This helps you know where you are in the form. A user clicking on a text field (or tabbing down into it) kicks off a `focus` event. Additionally, a `focus` event triggers a `blur` event on the field that previously had the focus.
 
 You can use these events to show the user tips related to the current text field, as in the following example:
 
+```js
 // Show a tip associated with a selected text area
-usernameElement.addEventListener("focus", function () {
-document.getElementById("usernameHelp").textContent = "Enter a unique username!";
+usernameElement.addEventListener("focus", e => {
+  document.getElementById("usernameHelp").textContent = "Enter a unique username!";
 });
 // Hide the advice when the user moves onto a different field
-usernameElement.addEventListener("blur", function (e) {
-document.getElementById("usernameHelp").textContent = "";
+usernameElement.addEventListener("blur", e => {
+  document.getElementById("usernameHelp").textContent = "";
 });
-Test it! Click the username field to get a helpful hint. http://codepen.io/eclairereese/pen/aZmVay?editors=1011  ✏️
-By selecting the username input field, you'll see a helpful message in the <span> tag, which was included in the HTML specifically to house the message (thus why it's initially empty).
+```
 
-From the JavaScript code, you can modify the target event by calling focus  (to add focus) and blur  (to remove it) on a DOM element. 
+By selecting the `username` input field, you'll see a helpful message in the HTML `<span>` defined specifically for that purpose and initially empty.
 
-// Add focus on username input
+![Execution result](images/chapter17-02.png)
+
+From JavaScript code, you can modify the input target by calling the `focus()` (to give focus) and `blur()` methods (to remove it) on a DOM element.
+
+```js
+// Give focus to the "username" input field
 usernameElement.focus();
-Multi-line text fields (<textarea> ) work similarly to <input> tags.
-We'll learn how to validate text that a user inputs (to make sure it fits certain criteria) later in this chapter!
+```
+
+Multi-line text fields (`<textarea>` tags) work similarly to `<input>` tags.
+
+> You'll learn how to validate text that a user inputs (to make sure it fits certain criteria) later in this chapter.
 
 ### Choice elements
 
-You often see form elements that allow users to make a choice among multiple possibilities. A change  event will be kicked off once a user changes their choice.
+You often see form elements that allow users to make a choice among multiple possibilities. A `change` event will be kicked off once a user changes their choice.
 
 #### Checkboxes
 
-You can add checkboxes to your HTML form by using the tag <input type="checkbox"> .
+You can add checkboxes to your HTML form by using the tag `<input type="checkbox">`.
 
 Here's the code from the example form that offers a user the choice to receive a confirmation email (or not).
 
+```html
 <input type="checkbox" name="confirmation" id="confirmation">
 <label for="confirmation">Send me a confirmation email</label>
-If the value of this box changes, an Event object associated with the change has a boolean property that checks what the new state of the field is (checked or not checked).
+```
 
-The below code will show a message in the console if the box is checked or not.
+Whenever the box is checked or unchecked by the user, a `change` event is kicked off. The `Event` object associated to this event has a `checked` boolean property that gives the new state of the field is (checked or not checked).
 
+The below code handles the `change` event on the checkbox to show a message in the console.
+
+```js
 // Show if the email confirmation checkbox is checked
-document.getElementById("confirmation").addEventListener("change", function (e) {
-console.log("Email confirmation request: " + e.target.checked);
+document.getElementById("confirmation").addEventListener("change", e => {
+  console.log(`Email confirmation request: ${e.target.checked}`);
 });
-Test it! Click the confirmation check box and look at the console. http://codepen.io/eclairereese/pen/aZmVay?editors=1011 ✏️
-Radio buttons
+```
 
-Radio buttons allow users to make a choice (out of multiple possibilities). Create radio buttons with <input type="radio"> tags, which have the same name attribute and different value attributes.
+![Execution result](images/chapter17-03.png)
+
+#### Radio buttons
+
+Radio buttons allow users to make a choice out of multiple possibilities. You create radio buttons with `<input type="radio">` tags, which have the same `name` attribute and different `value` attributes.
 
 Here's the extract from the example form that lets a user select between three radio buttons, each representing a subscription option.
 
+```html
 <input type="radio" name="subscription" id="newsroom" value="newspromo">
 <label for="newsroom">Subscribe me to newsletters and promotions</label>
 <br>
@@ -173,66 +186,130 @@ Here's the extract from the example form that lets a user select between three r
 <label for="news">Subscribe me only to the newsletter</label>
 <br>
 <input type="radio" name="subscription" id="no" value="no" checked>
-<label for="no">No subscriptions please</label>
+<label for="no">No subscriptions</label>
 <br>
-The following code adds a message to the console if the radio button selection changes.
+```
 
+The following JavaScript code adds a message to the console when the radio button selection changes.
+
+```js
 // Show the subscription type selected via radio button
-var subscriptionElements = document.getElementsByName("subscription");
-for (var i = 0; i < subscriptionElements.length; i++) {
-    subscriptionElements[i].addEventListener("change", function (e) {
-    console.log("Selected subscription: " + e.target.value);
-    });
+const subscriptionElements = document.getElementsByName("subscription");
+for (const element of subscriptionElements) {
+  element.addEventListener("change", e => {
+    console.log(`Selected subscription: ${e.target.value}`);
+  });
 }
-Test it! Change the subscription type and look at the console. http://codepen.io/eclairereese/pen/aZmVay?editors=1011  ✏️
-Once the value of a radio button input changes, the e.target.value of the change event contains the ﻿value  attribute of the newly selected <input>tag. 
+```
+
+![Execution result](images/chapter17-04.png)
+
+The `target.value` property of the `change` event matches the `value` attribute of the newly selected `<input>` tag.
 
 #### Dropdown lists
 
-Make a dropdown list by using the <select> tag (for the menu overall) in which you can add <option> tags for possible choices!
+A dropdown list is created using the `<select>` tag (for the menu overall) in which you can add `<option>` tags for possible choices.
 
 Here's the code extract from above that lets users choose a nationality:
 
-<label for="nationality">Nationality :</label>
+```html
+<label for="nationality">Nationality</label>:
 <select name="nationality" id="nationality">
-    <option value="US" selected>American</option>
-    <option value="FR">French</option>
-    <option value="ES">Spanish</option>
-    <option value="XX">Other</option>
+  <option value="US" selected>American</option>
+  <option value="FR">French</option>
+  <option value="ES">Spanish</option>
+  <option value="XX">Other</option>
 </select>
-The following code uses the change events triggered on the dropdown list to show the new choice made.
+```
 
+The following code uses the `change` event triggered on the dropdown list to show the new choice made by the user.
+
+```js
 // Show the selected nationality
 document.getElementById("nationality").addEventListener("change", function (e) {
 console.log("Nationality code: " + e.target.value);
 });
-Test it! Change the nationality selected and look at the console. http://codepen.io/eclairereese/pen/aZmVay?editors=1011 ✏️
-Like you saw with radio buttons, the e.target.value property of the change event contains the value attribute of the <option> tag associated with the new choice -- not the text shown in the dropdown list!
+```
+
+![Execution result](images/chapter17-04.png)
+
+Like with radio buttons, the `target.value` property of the `change` event matches the `value` attribute of the `<option>` tag associated with the new choice -- not the text shown in the dropdown list!
 
 ## Forms as DOM elements
 
-### Access form fields
+### Accessing form fields
 
-A <form> tag corresponds to a DOM element. This element has an elements property that pulls together all the form input fields. You can use this property to access a field via its name attribute or by its index (where it appears in the form).
+A `<form>` tag corresponds to a DOM element. This element has an `elements` property that pulls together all the form input fields. You can use this property to access a field via its `name` attribute or by its index (order of appearance in the form).
 
 The below example shows some information on the input fields of our example form.
 
-var form = document.querySelector("form");
-console.log("Number of fields:" + form.elements.length); // Will be 10
-console.log(form.elements[0].name); // Will be "username"
-console.log(form.elements.password.type); // Will be "password"
+```js
+// Show some info about the first form element
+const formElement = document.querySelector("form");
+console.log(`Number of fields: ${formElement.elements.length}`); // 10
+console.log(formElement.elements[0].name);       // "username"
+console.log(formElement.elements.password.type); // "password"
+```
 
 ### Submitting a form
 
-A form will be submitted when a user clicks on the submit button, which will have an <input type="submit" tag. An <input type="reset"> tag shows a button that resets the form data.
+A form will be submitted when a user clicks on the submit button, which will have an `<input type="submit">` tag. An `<input type="reset">` tag shows a button that resets the form data.
 
-Here are the two buttons from the sample form: 
+Here are the two buttons from the sample form.
 
+```html
 <input type="submit" value="Submit">
 <input type="reset" value="Cancel">
-As a general rule, submitting a form happens by sending the form data to a specified resource within the action attribute of the <form> tag. Prior to this, a submit event is triggered on the DOM element corresponding to the form. By adding a handler for this type of event, you can access form data before it gets sent. 
+```
 
-However, if you don't want a form to submit (or you want to disable any other default behavior), you can use the method ﻿preventDefault()﻿. 
+When a user submits a form, the default behavior of the browser is to contact a web server and request the resource identified by the `action` attribute of the `<form>` tag, sending form data along the way. Prior to this, a `submit` event is triggered on the DOM element corresponding to the form. By adding a handler for this type of event, you can access form data before it gets sent. You can event cancel the request to the server by calling the `preventDefault()` method on the `Event` object associated to the event.
+
+The following code show in the console all user input in the form, then cancels the request to the server.
+
+```js
+// Show all user input and cancels form data sending
+formElement.addEventListener("submit", e => {
+  const username = e.target.elements.username.value;
+  const password = e.target.elements.password.value;
+  const email = e.target.elements.emailAddress.value;
+  console.log(`Username: ${username}, password: ${password}, email: ${email}`);
+
+  if (e.target.elements.confirmation.checked) {
+    console.log("You asked for email confirmation");
+  } else {
+    console.log("You didn't asked for email confirmation");
+  }
+  switch (e.target.elements.subscription.value) {
+    case "newspromo":
+      console.log("You are subscribed to newsletters and promotions");
+      break;
+    case "news":
+      console.log("You are subscribed to newsletters only");
+      break;
+    case "no":
+      console.log("You are not subscribed to anything");
+      break;
+    default:
+      console.error("Unknown subscription code");
+  }
+  switch (e.target.elements.nationality.value) {
+    case "US":
+      console.log("Hello! You are a US citizen");
+      break;
+    case "FR":
+      console.log("Bonjour! You are a French citizen");
+      break;
+    case "ES":
+      console.log("Hola! You are a Spanish citizen");
+      break;
+    default:
+      console.log("Your nationality is unknown");
+  }
+  e.preventDefault(); // Cancel form data sending
+});
+```
+
+![Form submit result](images/chapter17-06.png)
 
 ## Form validation
 
