@@ -346,7 +346,7 @@ function bestTitles(movies) {
   */
 
   // Filter movies by IMDB rating, then creates a movie titles array
-  return movies.filter(movie => movie.imdbRating >= 7.5).map(movie => movie.title)
+  return movies.filter(movie => movie.imdbRating >= 7.5).map(movie => movie.title);
 }
 ```
 
