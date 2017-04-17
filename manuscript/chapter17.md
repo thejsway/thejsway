@@ -4,15 +4,21 @@ JavaScript lets you manage forms defined within your web page, in order to furth
 
 ## TL;DR
 
-Forms let users input data through a web page.
-Inputted data can be sent to a web server.
-Before data gets sent off, you can use JavaScript to interact with the form data.
-Text zones (`input type="text">` or `<textarea>` each have a value property to access the inputted value.
-Once a text field is selected, we can say that this field has "focus." focus and blur events are triggered when the field is selected or deselected, respectively.
-Chexboxes, radio buttons, and dropdown menus generate change events once a user modifies their choice.
-The DOM element that corresponds the form has an elements property that lets you access its input fields.
-Submitting a form triggers a submit event on a form. You can prevent the sending of data associated with this event handler by using the preventDefault method on the associated Event object.
-Any modification of a text field triggers an input event, which can be used to validate its data in real time.
+* A **form** lets users input data through a web page. Inputted data is usually sent to a **web server**. Before data gets sent off, you can use JavaScript to interact with the form data and validate it.
+
+* Text zones (`input type="text">` or `<textarea>`) each have a `value` property to access the inputted value.
+
+* When a text field becomes the input target, this field has the **focus**. The `focus` and `blur` events are triggered when the field gets or loses the focus, respectively. The `focus()` and `blur()` methods can update the focus target programmatically.
+
+* Chexboxes, radio buttons, and dropdown lists generate `change` events whenever a user modifies their choice.
+
+* The DOM element that corresponds to the form has an `elements` property that lets you access its input fields programmatically.
+
+* Submitting a form triggers a `submit` event on the form DOM element. You can prevent the sending of form data to the server by using the `preventDefault()` method on the associated `Event` object.
+
+* Any modification of a text field triggers an `input` event, which can be used to validate its data as the user enters it.
+
+* A **regular expression** is a pattern to which strings can be compared. Regular expressions are often used to perform fine-grained validations of form data.
 
 ## JavaScript and forms
 
@@ -313,54 +319,143 @@ formElement.addEventListener("submit", e => {
 
 ## Form validation
 
-Checking data inputted by users before it gets sent to a server is a major use of JavaScript with web forms. You can also immediately alert a user to problems with their input, which improves the user's experience, since they won't have to deal with constant retrying if they submit the wrong type of data.
+Checking data inputted by users before it gets sent to a server is a major use of JavaScript with web forms. Using form validation, you can improve the user's experience by immediately alerting him on problems with their input. This is also an efficient way to prevent useless server requests with wrong data.
 
 Validation can happen in several ways:
 
-as input is being entered;
-after input is entered;
-when the user submits the form.
-This last technique only involves adding validation in the submit event handler for the form. We'll look at each technique one at a time, using the example form from the last chapter!
+* as input is being entered;
+* after input is entered;
+* when the user submits the form.
 
-Instant validation
+This last technique only involves adding validation in the `submit` event handler for the form: you already know how to do that.  We'll look the other two techniques one at a time, using the same example form as before.
 
-Validation while a user is inputting information is based on ﻿input  events, which are triggered on an input zone each time its value changes.
+### Instant validation
+
+Validation while a user is inputting information is based on `input` events, which are triggered on an input zone each time its value changes.
 
 The following code example adds an input event handler on the password field. This handler checks the length (number of characters) of the password being typed and shows a message to the user with specific content and color.
 
+```js
 // Validate password length
-document.getElementById("password").addEventListener("input", function (e) {
-    var password = e.target.value; // Value of the password field
-    var passwordLength = "weak";
-    var messageColor = "red"; // Weak password => red
+document.getElementById("password").addEventListener("input", e => {
+    const password = e.target.value; // Value of the password field
+    let passwordLength = "too short";
+    let messageColor = "red"; // Short password => red
     if (password.length >= 8) {
-        passwordLength = "strong";
+        passwordLength = "adequate";
         messageColor = "green"; // Long password => green
     } else if (password.length >= 4) {
         passwordLength = "moderate";
         messageColor = "orange"; // Moderate password => orange
     }
-    var passwordHelpElement = document.getElementById("passwordHelp");
-    passwordHelpElement.textContent = "Strength: " + passwordLength; // helper text
+    const passwordHelpElement = document.getElementById("passwordHelp");
+    passwordHelpElement.textContent = `Length: ${passwordLength}`; // helper text
     passwordHelpElement.style.color = messageColor; // helper text color
 });
-Test it! Try different passwords and see which ones give you a green "strong" message. http://codepen.io/eclairereese/pen/vKXWwQ?editors=1010 ✏️
-Post-input validation
+```
 
-A text zone's input is considered finished once ﻿focus  is lost on the zone, which kicks off a ﻿blur  event that you can use to trigger validation.
+![Execution result](images/chapter17-07.png)
 
-Let's imagine that you want to validate the presence of an @ in the email address entered by a user. You'll need the JavaScript method indexOf to do this, which will let you find a value in a string of characters and send a value of -1 if the value isn't found.
+### Post-input validation
 
-Here's the JavaScript code which shows this validation. 
+A text zone's input is considered finished once focus is lost on the zone, which kicks off a `blur` event that you can use to trigger validation.
 
+Let's imagine that you want to validate the presence of an `@` character in the email address entered by a user. Here's the JavaScript code which shows this validation.
+
+```js
 // Checking an email address once it's entered
-document.getElementById("emailAddress").addEventListener("blur", function (e) {
-    var emailAddressValidity = "";
-    if (e.target.value.indexOf("@") === -1) {
-        // the email address doesn't contain @
-        emailAddressValidity = "invalid address";
-    }
-    document.getElementById("emailHelp").textContent = emailAddressValidity;
+document.getElementById("emailAddress").addEventListener("blur", e => {
+  let emailAddressValidity = "";
+  if (e.target.value.indexOf("@") === -1) {
+    // the email address doesn't contain @
+    emailAddressValidity = "Invalid address";
+  }
+  document.getElementById("emailHelp").textContent = emailAddressValidity;
 });
+```
 
-## Coding time!
+![Execution result](images/chapter17-08.png)
+
+### Regular expressions
+
+The previous validations were quite primitive: many string containing a `@` character are not valid email addresses. To perform more advanced checks, you can use a powerful tool: **regular expressions**.
+
+A regular expression defines a **pattern** to which strings are compared, searching for matches. Many programming languages support them. A powerful addition to a programmer's toolbelt, they can nonetheless take quite a bit of time to be comfortable with. What follows is just an introduction to the vast domain of regular expression.
+
+Let's get started by trying to create a regular expression checking for the presence of an `@` character inside a string. Here's the associated JavaScript code.
+
+```js
+const regex = /@/; // String must contain @
+console.log(regex.test(""));  // false
+console.log(regex.test("@")); // true
+console.log(regex.test("sophie&mail.fr")); // false
+console.log(regex.test("sophie@mail.fr")); // true
+```
+
+A JavaScript regular expression is defined by placing its pattern between a pair of `/` characters. It's an object whose `test()` method checks matches between the pattern and the string passed à as parameter. If a match is detected, this method returns `true`, and `false` otherwise.
+
+The following table presents some of the numerous possibilities offedred by regular expressions.
+
+| Pattern | Matches if | Match  | No match |
+|---|---|---|---|
+| `abc` | String contains `"abc"` | `"abc"`, `"abcdef"`, `"123abc456"` | `"abdc"`, `"1bca"`, `"adbc"`, `"ABC"` |
+| `[abc]` | String contains either `"a"`, `"b"` or `"c"` | `"abc"`, `"daef"`, `"bbb"`, `"12c34"` | `"def"`, `"xyz"`, `"123456"`, `"BBB"` |
+| `[a-z]` | String contains a lowercase letter | `"abc"`, `"12f43"`, `"_r_"` | `"123"`, `"ABC"`, `"_-_"` |
+| `[0-9]` or `\d` | String contains a digit | `"123"`, `"ab4c"`, `"a56"` | `"abc"` |
+| `a.c` | String contains `"a"`, followed by any character, followed by `"c"`  | `"abc"`, `"acc"`, `"12a.c34"` | `"ac"`, `"abbc"`, `"ABC"` |
+| `a\.c` | String contains `"a.c"` | `"a.c"`, `"a.cdef"`, `"12a.c34"` | `"ac"`, `"abc"` |
+| `a.+c` | String contains `"a"`, followed by at least one character, followed by `"c"` | `"abc"`, `"abbc"`, `"12a$ùc34"` | `"ac"`, `"bbc"` |
+| `a.*c` | String contains `"a"`, followed by zero or more characters, followed by `"c"`  | `"abc"`, `"abbc"`, `"ac"` | `"ABC"`, `"bbc"` |
+
+Observing these examples leads us to the following rules:
+
+* Brackets `[]` define a character interval. Any string with at least a character in this interval will match the pattern.
+
+* The `[a-z]` and `[A-Z]` patterns are used to search for the presence of any letter, respectively lowercase and uppercase.
+
+* The `[0-9]` and `\d` patterns are essentially identical and match a digit in a string.
+
+* The `.` character replaces any one character.
+
+* The `\` (*backslash*) character indicates that the following character should be searched as-if. . For example, `\.` is used to match the `.` character itself.
+
+* The `+` character matches one of several instances of the preceding expression.
+
+* The `*` character matches zero, one of several instances of the preceding expression.
+
+T> The site <https://regex101.com> is useful to understand, test and debug regular expressions.
+
+Let's get back to our example and check the email address field. Here's a possible regular expression (among many others) to test it against: `/.+@.+\..+/`.
+
+Q> Before reading further, can you decode this pattern to understand what conditions a string must respect to match it?
+
+OK, here is the answer. This pattern matches a string that:
+
+* Starts with one or several characters (`.+`).
+* Next, contains the `@` character (`@`).
+* Next, contains one or several characters (`.+`).
+* Next, contains the `.` character (`\.`).
+* Finishes with one or several characters (`.+`).
+
+In other words, any string of the form `xxx@yyy.zzz` will match this pattern. This is not the end-all, be-all way to validate an email address, but it's a start.
+
+Check out how to put this solution into practice.
+
+```js
+// Check email validity when field loses focus
+document.getElementById("emailAddress").addEventListener("blur", e => {
+  // Match a string of the form xxx@yyy.zzz
+  const emailRegex = /.+@.+\..+/;
+  let validityMessage = "";
+  if (!emailRegex.test(e.target.value)) {
+    validityMessage = "Invalid address";
+  }
+  document.getElementById("emailHelp").textContent = validityMessage;
+});
+```
+
+![Execution result](images/chapter17-09.png)
+
+## Coding time!
+
+TODO
