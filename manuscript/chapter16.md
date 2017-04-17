@@ -267,7 +267,7 @@ document.getElementById("propa").addEventListener("click", e => {
 
 ![Execution result](images/chapter16-09.png)
 
-### Cancelling the default behavior of an event
+### Cancelling the default behavior of an action
 
 Most of the user actions on a page are associated to a default behavior. Clicking on a link navigates to the link target, clicking anywhere with the right mouse button show a contextual menu, etc. Cancelling a default behavior is possible by calling the `preventDefault()` method on the `Event` object in an event handler.
 
