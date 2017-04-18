@@ -1,4 +1,4 @@
-# Modify the page
+# Modify page structure
 
 Let's see how to use JavaScript to modify a web page once it's been loaded by the browser! You can thus make your content more dynamic and interactive.
 
