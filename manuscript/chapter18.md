@@ -194,7 +194,7 @@ The example code defines a function called `moveBlock()` which moves the block h
 
 Position values are written in pixels. These are the strings you saw that resemble "XXpx," which requires the use of the JavaScript `parseFloat()` function to convert numeric values before making calculations.
 
-W> Don't use `Number()` to convert a string with "px" into a numerical value. This won't work, and you'll get a `NaN` value (*Not a Number*) as a result!
+W> Don't use `Number()` to convert a string with `"px"` into a numerical value. This won't work, and you'll get a `NaN` value (*Not a Number*) as a result!
 
 The `requestAnimationFrame()` function lets you ask the browser to execute a function as soon as possible, which updates the animation. It's the browser's job to make the animation as smooth as possible. The returned value of `requestAnimationFrame()` is an ID for the animation, which can bu used to further modify it.
 
@@ -215,7 +215,7 @@ let animationId = requestAnimationFrame(animate);
 
 Let's now see how to stop the block before it reaches the border of the frame that contains it. We'll have to verify that the left border position is less than the width of the frame, bearing in mind the thickness of the block itself.
 
-Here's the modified JavaScript code.
+Here's the updated JavaScript code.
 
 ```js
 // Move the block to the right, all the way to the end of the frame
@@ -238,6 +238,7 @@ function moveBlock() {
 
 const frameElement = document.getElementById("frame");
 const blockElement = document.getElementById("block");
+// Convert the block width (value of the form "XXpx") to a number
 const blockWidth = parseFloat(getComputedStyle(block).width);
 
 // Movement value in pixels
