@@ -233,7 +233,7 @@ The following code uses the `change` event triggered on the dropdown list to sho
 ```js
 // Show the selected nationality
 document.getElementById("nationality").addEventListener("change", function (e) {
-console.log("Nationality code: " + e.target.value);
+  console.log("Nationality code: " + e.target.value);
 });
 ```
 
@@ -456,6 +456,160 @@ document.getElementById("emailAddress").addEventListener("blur", e => {
 
 ![Execution result](images/chapter17-09.png)
 
-## Coding time!
+## Coding time!
 
-TODO
+### Password checker
+
+Start with the following HTML code.
+
+```html
+<form>
+  <p>
+    <label for="password1">Enter the password</label>:
+    <input type="password" name="password1" id="password1" required>
+  </p>
+  <p>
+    <label for="password2">Confirm the password</label>:
+    <input type="password" name="password2" id="password2" required>
+  </p>
+
+  <input type="submit" value="Send">
+</form>
+
+<p id="passwordHelp"></p>
+```
+
+Write the JavaScript code that validates the password when the user submits the form. The validation rules are as follow:
+
+* The two inputted passwords must be identical.
+* The minimal password length is 6 characters.
+* The password must contain at least one digit.
+
+The validation result must be shown on the page with an appropriate message in each case.
+
+![Execution rrsult](images/chapter17-10.png)
+
+### Character list
+
+The TV show Game of Thrones is about the struggle for power between several noble families. In this exercise, you'll have to show characters belonging to the house selected by the user.
+
+Here is the associated HTML code.
+
+```html
+<h1>A few of the Game of Thrones characters</h1>
+<form>
+  <label for="house">House</label>:
+  <select name="house" id="house">
+      <option value="" selected>Select a house</option>
+  </select>
+</form>
+
+<p>
+  <ul id="characters"></ul>
+</p>
+```
+
+The starter JavaScript code is as follows.
+
+```js
+// Character list. Each house has a name and a code
+const houses = [{
+  code: "ST",
+  name: "Stark"
+}, {
+  code: "LA",
+  name: "Lannister"
+}, {
+  code: "BA",
+  name: "Baratheon"
+}, {
+  code: "TA",
+  name: "Targaryen"
+}];
+
+// Return an array of characters belonging to a house
+function getCharacters(houseCode) {
+  switch (houseCode) {
+    case "ST":
+      return ["Eddard", "Catelyn", "Robb", "Sansa", "Arya", "Jon Snow"];
+    case "LA":
+      return ["Tywin", "Cersei", "Jaime", "Tyrion"];
+    case "BA":
+      return ["Robert", "Stannis", "Renly"];
+    case "TA":
+      return ["Aerys", "Daenerys", "Viserys"];
+    default:
+      return []; // Empty array
+  }
+}
+```
+
+Complete this code so that:
+
+* The house dropdown list is filled during page load.
+* The list of characters is shown whenever the user selects a new house in the list.
+
+![Execution result](images/chapter17-11.png)
+
+### Autocomplete
+
+In this exercise, you'll have to assist the user in selecting a country. As he enters the country name in an input box, the page shows a list of corresponding countries. Clicking on a suggested country replaces the value in the input box.
+
+> To keep things simple, only countries starting with a `"A"` letter are taken into account.
+
+Here is the HTML code that creates the input box.
+
+```html
+<label for="country">Enter a country name</label>:
+<input type="text" id="country">
+<div id="suggestions"></div>
+```
+
+The following CSS code improves the page presentation.
+
+```css
+/* Add spacing between each country suggestion */
+.suggestion {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* Change suggestion color when hovering it with the mouse */
+.suggestion:hover {
+    background-color: #adf;
+    cursor: pointer;
+}
+
+/* Position the suggestion list just below the input box */
+#suggestions {
+    position: absolute;
+    border: 1px solid black;
+    left: 155px;
+}
+```
+
+At last, the starter JavaScript code defines the list of countries.
+
+```js
+// Country list
+const countryList = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Anguilla",
+  "Antarctica",
+  "Antigua-and-Barbuda",
+  "Argentina",
+  "Armenia",
+  "Aruba",
+  "Australia",
+  "Autria",
+  "Azerbaïjan"
+];
+```
+
+Complete this code to implement country autocompletion.
+
+![Execution result](images/chapter17-12.png)
