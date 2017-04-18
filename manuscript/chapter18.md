@@ -41,7 +41,7 @@ setInterval(decreaseCounter, 1000);
 
 ### Kick off a repeated action
 
-How did the previous example work? The JavaScript code defines a function called `decreaseCounter()` that accesses and then decreases one by one the value of the HTML element named `counter`. 
+How did the previous example work? The JavaScript code defines a function called `decreaseCounter()` that accesses and then decreases one by one the value of the HTML element named `counter`.
 
 > Calling `Number()` in the function code is mandatory: it converts the counter string into a number, which endows it with subtraction functionality.
 
@@ -225,11 +225,11 @@ function moveBlock() {
   // Convert the width of the frame (value of the form "XXpx") to a number
   const xMax = parseFloat(getComputedStyle(frame).width);
   // If the block isn't already to the end of the frame
-  if (xBlock + blockWidth <= xMax) { 
+  if (xBlock + blockWidth <= xMax) {
     // Block movement
     block.style.left = (xBlock + movement) + "px";
     animationId = requestAnimationFrame(moveBlock);
-  } 
+  }
   else {
     // Cancel the animation
     cancelAnimationFrame(animationId);
@@ -278,19 +278,19 @@ Let's check out how to get a similar effect as the previous example by using CSS
   height: 40px;
   background: red;
   position: relative;
-  margin-left: -20px;
-  animation-name: moveBlock;
-  animation-duration: 6s;
-  animation-fill-mode: forwards;
+  margin-left: -20px; /* Negative margin to simplify position calculations */
+  animation-name: moveBlock; /* Name of animation */
+  animation-duration: 6s; /* Length of animation */
+  animation-fill-mode: forwards; /* Let the block in its final position */
 }
 
 @keyframes moveBlock {
   from {
-    /* Initial position: to the left of the frame) */
+    /* Initial position: to the left of the frame (taking negative margin into account) */
     left: 20px;
   }
   to {
-    /* Final position: within the right side of the frame) */
+    /* Final position: within the right side of the frame (taking negative margin into account) */
     left: 100%;
   }
 }
@@ -312,4 +312,36 @@ Here's how you might want to approach your decision:
 
 ## Coding time!
 
-TODO
+### Chronometer
+
+Write a interactive web page with a button to start and stop a chronometer counting the number of elapsed seconds.
+
+### Bouncing ball
+
+The goal of this exercise is to make a ball bounce accross the screen.
+
+Start with the following HTML and CSS content.
+
+```html
+<p>
+  <button id="start">Start</button>
+  <button id="stop" disabled>Stop</button>
+</p>
+
+<div id="frame">
+  <img id="ball" src="https://raw.githubusercontent.com/oc-courses/javascript-web/gh-pages/chapitre_7/images/basketball.jpg">
+</div>
+```
+
+```css
+#ball {
+    position: relative;
+    left: 0px;
+}
+```
+
+Write the JavaScript code that makes the ball bounce horizontally.
+
+![Execution result](images/chapter18-04.png)
+
+T> Create a variable with values 1 or -1 to know in which direction the ball should move.
