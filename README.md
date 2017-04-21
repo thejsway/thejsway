@@ -50,6 +50,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Bring pages to life](manuscript/chapter18.md)
   * [Project: a social news web page](manuscript/chapter19.md)
 * Part III: Build web applications
+  * [Web development essentials](manuscript/chapter20.md)
   * ...
 * Conclusion
   * ...
