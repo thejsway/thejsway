@@ -6,6 +6,8 @@ You know now enough JavaScript and DOM to go ahead and create interactive web pa
 
 This project builds upon the social news program you created previously. This time, the objective is to make a social news web page.
 
+> The general idea and page layout for this project are inspired by the [Discover Meteor book](https://www.discovermeteor.com/)'s example application.
+
 ## Functional requirements
 
 * A link is defined by its title, its URL and its author (submitter).
