@@ -1,8 +1,26 @@
-# Web development essentials
+# Web development 101
 
-Understanding how clients and servers exchange data is crucial for every web developer.
+Understanding the fundamentals of web development crucial for every JavaScript developer. Let's dive into this topic.
+
+> Some of this chapter is inspired by the [Symfony PHP framework documentation](http://symfony.com/doc/current/introduction/http_fundamentals.html).
 
 ## TL;DR
+
+* Data exchanges on the Web follow a **request/response** paradigm. A **client** issues a request to a **server**, which process it and sends back its result to the client.
+
+* **HTTP** (HyperText Transfer Protocol), is the protocol that allows two machines to communicate with each other on the web. Its secured version is **HTTPS**.
+
+* HTTP is based on textual commands. The HTTP **method** defines the type of the request. The main HTTP methods are `GET` to access a resource and `POST` to push some information on the server.
+
+* An HTTP response contains a **status code** indicating the result of the request: 200 for success, 404 for a resource not found, etc.
+
+* Web resources are uniquely addressed by their **URL** (Uniform resource locator). An URL is a text of the form `http://www.mywebsite.com/myresourcepath/myresource`.
+
+* In a traditional web development scenario, user actions lead to a full page reload. Another web development model, nicknamed **AJAX** (Aynchronous JavaScript and XML), uses JavaScript and **asynchronous** HTTP requests to fetch data when needed and update only the desired portions of the page. This enables the creation of web applications
+
+* Cross-domain AJAX requests are only possible if the server has been configured to accept them by setting on **cross-origin resource sharing** (CORS).
+
+* **JSON** (JavaScript Object Notation), a textual syntax for describing structured information, has replaced XML as the data format of the web. A JSON document is a set of name/value pairs.
 
 ## How the Web works
 
@@ -36,7 +54,7 @@ To understand each other, web clients and servers use a common protocol: HTTP.
 
 ## HTTP, the web protocol
 
-HTTP, which stands for **HyperText Transfer Protocol**, is the technical foundation of the World Wide Web. It is a **protocal**, a language that allows two machines to communicate with each other.
+HTTP, which stands for **HyperText Transfer Protocol**, is the technical foundation of the World Wide Web. It is a **protocol**, a language that allows two machines to communicate with each other.
 
 > HTTPS is the secured version of HTTP.
 
@@ -138,8 +156,39 @@ In a **synchronous** exchange, the asker waits until he gets the needed info. A 
 
 On the contrary, the asker in an **asynchronous** exchange can do something else while waiting for the completion of his request. Email is an example of such an exchange.
 
-The traditional web development model uses synchronous requests: the web client is blocked while waiting for the server to complete its request. The AJAX model uses asynchronous requests to improve the user experience.
+The traditional web development model uses synchronous requests: the web client is blocked while waiting for the server to complete its request. The AJAX model uses asynchronous requests: data is fetched when needed in the background.
 
 ### Cross-domain requests
 
+For security reasons, many websites have a conservative policy regarding AJAX requests. This *same origin policy* states that requests are limited to thieur origin domain: `"http://mysite"` cannot send a request to `"http://anothersite"`. This prevents some servers to be accessible via AJAX calls.
+
+Enabling cross-domain requests is done by setting on **cross-origin resource sharing** (CORS) in the server configuration.
+
+> For more information about this topic, check out thi [MDN article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+
 ## JSON, a data format for the web
+
+The `"X"` letter in AJAX stands for XML, a generic markup language that used to be the standard for cross-platform data exchanges. While still in use, XML is quite verbose and tends to be replaced by JSON as the standard data format on the web.
+
+JSON, or **JavsScript Object Notation**, is a textual syntax for describing structured information. As you'll see in the following example, JSON borrows heavily from the JavaScript object syntax.
+
+```json
+{
+  "cars" : [
+    { "model" : "Peugeot",
+      "color" : "blue",
+      "registration" : 2012,
+      "checkups" : [ 2015, 2017 ]
+    },
+    { "model" : "Citroën",
+      "color" : "white",
+      "registration" : 1999,
+      "checkups" : [ 2003, 2005, 2007, 2009, 2011, 2013 ]
+    }
+  ]
+}
+```
+
+A JSON document is a set of name/value pairs. Name are always within double quotes `""`. Values can be numbers, strings, booleans, arrays or objects.
+
+Many programming languages have native support for the JSON format... Including JavaScript, of course!
