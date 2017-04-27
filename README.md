@@ -51,6 +51,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Project: a social news web page](manuscript/chapter19.md)
 * Part III: Build web applications
   * [Web development 101](manuscript/chapter20.md)
+  * [Query a web server](manuscript/chapter21.md)
   * ...
 * Conclusion
   * ...
