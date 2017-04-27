@@ -37,11 +37,11 @@ Imagine you want to create a list of all the movies you've seen this year.
 One solution would be to create several variables:
 
 ```js
-var movie1 = "The Wolf of Wall Street";
-var movie2 = "Zootopia";
-var movie3 = "Babysitting";
-var movie4 = "Metropolis";
-var movie5 = "Gone with the Wind";
+const movie1 = "The Wolf of Wall Street";
+const movie2 = "Zootopia";
+const movie3 = "Babysitting";
+const movie4 = "Metropolis";
+const movie5 = "Gone with the Wind";
 // ...
 ```
 

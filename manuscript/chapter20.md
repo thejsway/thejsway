@@ -16,7 +16,7 @@ Understanding the fundamentals of web development crucial for every JavaScript d
 
 * Web resources are uniquely addressed by their **URL** (Uniform resource locator). An URL is a text of the form `http://www.mywebsite.com/myresourcepath/myresource`.
 
-* In a traditional web development scenario, user actions lead to a full page reload. Another web development model, nicknamed **AJAX** (Aynchronous JavaScript and XML), uses JavaScript and **asynchronous** HTTP requests to fetch data when needed and update only the desired portions of the page. This enables the creation of web applications
+* In a traditional web development scenario, user actions on a page trigger a full reload after a synchronous request to a server. Another web development model, nicknamed **AJAX** (Aynchronous JavaScript and XML), uses JavaScript and **asynchronous** HTTP requests to fetch data when needed and update only the desired portions of the page. This enables the creation of **web applications**, aiming to offer the user experience of a native app.
 
 * Cross-domain AJAX requests are only possible if the server has been configured to accept them by setting on **cross-origin resource sharing** (CORS).
 
@@ -164,7 +164,7 @@ For security reasons, many websites have a conservative policy regarding AJAX re
 
 Enabling cross-domain requests is done by setting on **cross-origin resource sharing** (CORS) in the server configuration.
 
-> For more information about this topic, check out thi [MDN article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+> For more information about this topic, check out this [MDN article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
 
 ## JSON, a data format for the web
 
