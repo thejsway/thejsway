@@ -189,9 +189,9 @@ Complete the following program to obtain the expected results.
 // Show a DOM object's child node
 // "node" is the DOM object
 // "index" is the index of the child node
-function showChild(node, index) {
+const showChild = (node, index) => {
     // TODO: add code here
-}
+};
 
 // Should show the h1 node
 showChild(document.body, 1);

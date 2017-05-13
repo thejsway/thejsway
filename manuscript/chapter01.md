@@ -22,7 +22,7 @@ Let's get started! This chapter will introduce you to the fundamentals of progra
 
 Here's our very first JavaScript program.
 
-```javascript
+```js
 console.log("Hello from JavaScript!");
 ```
 

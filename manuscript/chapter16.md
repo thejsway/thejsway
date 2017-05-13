@@ -37,9 +37,10 @@ Here's some starter HTML code.
  And here's the associated JavaScript code.
 
 ```js
-function showMessage() {
+const showMessage = () => {
   alert("Hello!");
-}
+};
+
 // Access the button
 const buttonElement = document.getElementById("myButton");
 // Listen to the "click" event
@@ -123,9 +124,9 @@ To manage the press and release of any key (not only the ones producing characte
 
 ```js
 // Show information on a keyboard event
-function keyboardInfo(e) {
+const keyboardInfo = e => {
     console.log(`Keyboard event: ${e.type}, key: ${e.keyCode}`);
-}
+};
 
 // Integrate this function into key press and release:
 document.addEventListener("keydown", keyboardInfo);
@@ -150,7 +151,7 @@ The below code shows information on all click events that happen on a web page. 
 
 ```js
 // Return the name of the mouse button
-function getMouseButton(code) {
+const getMouseButton = code => {
     let button = "unknown";
     switch (code) {
     case 0: // 0 is the code for the left mouse button
@@ -164,12 +165,12 @@ function getMouseButton(code) {
         break;
     }
     return button;
-}
+};
 
 // Show info about mouse event
-function mouseInfo(e) {
+const mouseInfo = e => {
     console.log(`Mouse event: ${e.type}, button: ${getMouseButton(e.button)}, X: ${e.clientX}, Y: ${e.clientY}`);
-}
+};
 
 // Add mouse click event listener
 document.addEventListener("click", mouseInfo);

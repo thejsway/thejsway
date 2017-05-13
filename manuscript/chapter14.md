@@ -333,9 +333,9 @@ Improve the previous program to add a `has()` function that test if an element d
 
 ```js
 // Show if an element has a class
-function has(id, someClass) {
+const has = (id, someClass) => {
     //TODO: write the function code
-}
+};
 
 has("saxophone", "woodwind");     // Should show true
 has("saxophone", "brass");        // Should show false

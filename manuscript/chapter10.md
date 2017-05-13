@@ -23,42 +23,50 @@ In this chapter, we'll start with an example program and improve it little by li
 Our initial program is about recent Batman movies. The data comes under the form of an array of objects, each object describing a movie.
 
 ```js
-const movieList = [{
-  title: "Batman",
-  year: 1989,
-  director: "Tim Burton",
-  imdbRating: 7.6
-}, {
-  title: "Batman Returns",
-  year: 1992,
-  director: "Tim Burton",
-  imdbRating: 7.0
-}, {
-  title: "Batman Forever",
-  year: 1995,
-  director: "Joel Schumacher",
-  imdbRating: 5.4
-}, {
-  title: "Batman & Robin",
-  year: 1997,
-  director: "Joel Schumacher",
-  imdbRating: 3.7
-}, {
-  title: "Batman Begins",
-  year: 2005,
-  director: "Christopher Nolan",
-  imdbRating: 8.3
-}, {
-  title: "The Dark Knight",
-  year: 2008,
-  director: "Christopher Nolan",
-  imdbRating: 9.0
-}, {
-  title: "The Dark Knight Rises",
-  year: 2012,
-  director: "Christopher Nolan",
-  imdbRating: 8.5
-}];
+const movieList = [
+  {
+    title: "Batman",
+    year: 1989,
+    director: "Tim Burton",
+    imdbRating: 7.6
+  },
+  {
+    title: "Batman Returns",
+    year: 1992,
+    director: "Tim Burton",
+    imdbRating: 7.0
+  },
+  {
+    title: "Batman Forever",
+    year: 1995,
+    director: "Joel Schumacher",
+    imdbRating: 5.4
+  },
+  {
+    title: "Batman & Robin",
+    year: 1997,
+    director: "Joel Schumacher",
+    imdbRating: 3.7
+  },
+  {
+    title: "Batman Begins",
+    year: 2005,
+    director: "Christopher Nolan",
+    imdbRating: 8.3
+  },
+  {
+    title: "The Dark Knight",
+    year: 2008,
+    director: "Christopher Nolan",
+    imdbRating: 9.0
+  },
+  {
+    title: "The Dark Knight Rises",
+    year: 2012,
+    director: "Christopher Nolan",
+    imdbRating: 8.5
+  }
+];
 ```
 
 And here is the rest of the program that uses this data to show some results about the movies. Check it out, it should be pretty self-explanatory.
@@ -139,25 +147,25 @@ Let's try to introduce some functions in our code.
 
 ```js
 // Get movie titles
-function titles() {
+const titles = () => {
   const titles = [];
   for (movie of movieList) {
     titles.push(movie.title);
   }
   return titles;
-}
+};
 
 // Get movies by Christopher Nolan
-function nolanMovies() {
+const nolanMovies = () => {
   for (movie of movieList) {
     if (movie.director === "Christopher Nolan") {
       nolanMovieList.push(movie);
     }
   }
-}
+};
 
 // Get titles of movies with an IMDB rating greater or equal to 7.5
-function bestTitles() {
+const bestTitles = () => {
   const bestTitles = [];
   for (movie of movieList) {
     if (movie.imdbRating >= 7.5) {
@@ -165,16 +173,16 @@ function bestTitles() {
     }
   }
   return bestTitles;
-}
+};
 
 // Compute average rating of Christopher Nolan's movies
-function averageNolanRating() {
+const averageNolanRating = () => {
   let ratingSum = 0;
   for (movie of nolanMovieList) {
     ratingSum += movie.imdbRating;
   }
   return ratingSum / nolanMovieList.length;
-}
+};
 
 const nolanMovieList = [];
 
@@ -208,16 +216,16 @@ Let's refactor our example code to introduce pure functions.
 
 ```js
 // Get movie titles
-function titles(movies) {
+const titles = movies => {
   const titles = [];
   for (movie of movies) {
     titles.push(movie.title);
   }
   return titles;
-}
+};
 
 // Get movies by Christopher Nolan
-function nolanMovies(movies) {
+const nolanMovies = movies => {
   const nolanMovies = [];
   for (movie of movies) {
     if (movie.director === "Christopher Nolan") {
@@ -225,10 +233,10 @@ function nolanMovies(movies) {
     }
   }
   return nolanMovies;
-}
+};
 
 // Get titles of movies with an IMDB rating greater or equal to 7.5
-function bestTitles(movies) {
+const bestTitles = movies => {
   const bestTitles = [];
   for (movie of movies) {
     if (movie.imdbRating >= 7.5) {
@@ -236,16 +244,16 @@ function bestTitles(movies) {
     }
   }
   return bestTitles;
-}
+};
 
 // Compute average rating of a movie list
-function averageRating(movies) {
+const averageRating = movies => {
   let ratingSum = 0;
   for (movie of movies) {
     ratingSum += movie.imdbRating;
   }
   return ratingSum / movies.length;
-}
+};
 
 console.log(titles(movieList));
 const nolanMovieList = nolanMovies(movieList);
@@ -281,7 +289,7 @@ Here's how our `titles()` could be rewritten using `map()`. Look how the functio
 
 ```js
 // Get movie titles
-function titles(movies) {
+const titles = movies => {
   /* Previous code
   const titles = [];
   for (movie of movies) {
@@ -292,7 +300,7 @@ function titles(movies) {
 
   // Return a new array containing only movie titles
   return movies.map(movie => movie.title);
-}
+};
 ```
 
 ### The `filter()` method
@@ -314,7 +322,7 @@ We can use this method in the `nolanMovies()` function.
 
 ```js
 // Get movies by Christopher Nolan
-function nolanMovies(movies) {
+const nolanMovies = movies => {
   /* Previous code
   const nolanMovies = [];
   for (movie of movies) {
@@ -327,14 +335,14 @@ function nolanMovies(movies) {
 
   // Return a new array containing only movies by Christopher Nolan
   return movies.filter(movie => movie.director === "Christopher Nolan");
-}
+};
 ```
 
 The `map()` and `filter()` method can be used together to achieve powerful effects. Look at this new version of the `bestTitles()` function.
 
 ```js
 // Get titles of movies with an IMDB rating greater or equal to 7.5
-function bestTitles(movies) {
+const bestTitles = movies => {
   /* Previous code
   onst bestTitles = [];
   for (movie of movies) {
@@ -347,7 +355,7 @@ function bestTitles(movies) {
 
   // Filter movies by IMDB rating, then creates a movie titles array
   return movies.filter(movie => movie.imdbRating >= 7.5).map(movie => movie.title);
-}
+};
 ```
 
 ### The `reduce()` method
@@ -375,7 +383,7 @@ Here's how to apply `reduce()` to caculate the average rating of a movie list.
 
 ```js
 // Compute average rating of a movie list
-function averageRating(movies) {
+const averageRating = movies => {
   /* Previous code
   let ratingSum = 0;
   for (movie of movies) {
@@ -387,7 +395,7 @@ function averageRating(movies) {
   // Compute the sum of all movie IMDB ratings
   const ratingSum = movies.reduce((acc, movie) => acc + movie.imdbRating, 0);
   return ratingSum / movies.length;
-}
+};
 ```
 
 Another possible solution is to compute the rating sum by using `map()` before reducing an array containing only movie ratings.
@@ -437,47 +445,54 @@ JavaScript's multi-paradigm nature means you can write imperative, object-orient
 Improve the example movie program from above so that it shows the titles of movies released before year 2000, using functional programming.
 
 ```js
-const movieList = [{
-  title: "Batman",
-  year: 1989,
-  director: "Tim Burton",
-  imdbRating: 7.6
-}, {
-  title: "Batman Returns",
-  year: 1992,
-  director: "Tim Burton",
-  imdbRating: 7.0
-}, {
-  title: "Batman Forever",
-  year: 1995,
-  director: "Joel Schumacher",
-  imdbRating: 5.4
-}, {
-  title: "Batman & Robin",
-  year: 1997,
-  director: "Joel Schumacher",
-  imdbRating: 3.7
-}, {
-  title: "Batman Begins",
-  year: 2005,
-  director: "Christopher Nolan",
-  imdbRating: 8.3
-}, {
-  title: "The Dark Knight",
-  year: 2008,
-  director: "Christopher Nolan",
-  imdbRating: 9.0
-}, {
-  title: "The Dark Knight Rises",
-  year: 2012,
-  director: "Christopher Nolan",
-  imdbRating: 8.5
-}];
+const movieList = [
+  {
+    title: "Batman",
+    year: 1989,
+    director: "Tim Burton",
+    imdbRating: 7.6
+  },
+  {
+    title: "Batman Returns",
+    year: 1992,
+    director: "Tim Burton",
+    imdbRating: 7.0
+  },
+  {
+    title: "Batman Forever",
+    year: 1995,
+    director: "Joel Schumacher",
+    imdbRating: 5.4
+  },
+  {
+    title: "Batman & Robin",
+    year: 1997,
+    director: "Joel Schumacher",
+    imdbRating: 3.7
+  },
+  {
+    title: "Batman Begins",
+    year: 2005,
+    director: "Christopher Nolan",
+    imdbRating: 8.3
+  },
+  {
+    title: "The Dark Knight",
+    year: 2008,
+    director: "Christopher Nolan",
+    imdbRating: 9.0
+  },
+  {
+    title: "The Dark Knight Rises",
+    year: 2012,
+    director: "Christopher Nolan",
+    imdbRating: 8.5
+  }
+];
 
 // TODO: Make an array of the titles of movies released before 2000
 
-
-console.log ( moviesBefore2000 );
+console.log(moviesBefore2000);
 ```
 
 ![Execution result](images/chapter10-02.png)
@@ -487,25 +502,32 @@ console.log ( moviesBefore2000 );
 Complete the following program to compute and show the names of political forms ending with `"cy"`.
 
 ```js
-const governmentForms = [{
-  name: "Plutocracy",
-  definition: "Rule by the weathly"
-},{
-  name: "Oligarchy",
-  definition: "Rule by a small number of people"
-},{
-  name: "Kleptocracy",
-  definition: "Rule by the thieves"
-},{
-  name: "Theocracy",
-  definition: "Rule by a religious elite"
-}, {
-  name: "Democracy",
-  definition: "Rule by the people"
-}, {
-  name: "Autocracy",
-  definition: "Rule by a single person"
-}];
+const governmentForms = [
+  {
+    name: "Plutocracy",
+    definition: "Rule by the weathly"
+  },
+  {
+    name: "Oligarchy",
+    definition: "Rule by a small number of people"
+  },
+  {
+    name: "Kleptocracy",
+    definition: "Rule by the thieves"
+  },
+  {
+    name: "Theocracy",
+    definition: "Rule by a religious elite"
+  },
+  {
+    name: "Democracy",
+    definition: "Rule by the people"
+  },
+  {
+    name: "Autocracy",
+    definition: "Rule by a single person"
+  }
+];
 
 // TODO: compute the formsEndingWithCy array
 
@@ -534,24 +556,29 @@ console.log(arraysSum); // Should show 31
 Here's a program that shows female students results (name and average grade). Refactor it using functional programming. Execution result must stay the same.
 
 ```js
-const students = [{
-  name: "Anna",
-  sex: "f",
-  grades: [4.5, 3.5, 4]
-}, {
-  name: "Dennis",
-  sex: "m",
-  country: "Germany",
-  grades: [5, 1.5, 4]
-}, {
-  name: "Martha",
-  sex: "f",
-  grades: [5, 4, 2.5, 3]
-}, {
-  name: "Brock",
-  sex: "m",
-  grades: [4, 3, 2]
-}];
+const students = [
+  {
+    name: "Anna",
+    sex: "f",
+    grades: [4.5, 3.5, 4]
+  },
+  {
+    name: "Dennis",
+    sex: "m",
+    country: "Germany",
+    grades: [5, 1.5, 4]
+  },
+  {
+    name: "Martha",
+    sex: "f",
+    grades: [5, 4, 2.5, 3]
+  },
+  {
+    name: "Brock",
+    sex: "m",
+    grades: [4, 3, 2]
+  }
+];
 
 // Compute female student results
 const femaleStudentsResults = [];

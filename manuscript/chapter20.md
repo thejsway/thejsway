@@ -1,6 +1,6 @@
 # Web development 101
 
-Understanding the fundamentals of web development crucial for every JavaScript developer. Let's dive into this topic.
+Understanding the fundamentals of web development is crucial for every JavaScript developer. Let's dive into this topic.
 
 > Some of this chapter is inspired by the [Symfony PHP framework documentation](http://symfony.com/doc/current/introduction/http_fundamentals.html).
 

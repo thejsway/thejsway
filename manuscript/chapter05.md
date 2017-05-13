@@ -461,9 +461,7 @@ function square1(x) {
 }
 
 // Square the given number x
-const square2 = x => {
-  // TODO: complete the function code
-}
+const square2 = x => // TODO: complete the function code
 
 console.log(square1(0)); // Must show 0
 console.log(square1(2)); // Must show 4

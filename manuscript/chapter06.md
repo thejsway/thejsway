@@ -175,10 +175,10 @@ const aurora = {
 console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.strength} as strength`);
 
 // Aurora is harmed by an arrow
-aurora.health = aurora.health - 20;
+aurora.health -= 20;
 
 // Aurora equips a strength necklace
-aurora.strength = aurora.strength + 10;
+aurora.strength += 10;
 
 console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.strength} as strength`);
 ```
@@ -292,10 +292,10 @@ Improve our example RPG program to add an experience property named `xp` to the 
 // TODO: create the character object here
 
 // Aurora is harmed by an arrow
-aurora.health = aurora.health - 20;
+aurora.health -= 20;
 
 // Aurora equips a strength necklace
-aurora.strength = aurora.strength + 10;
+aurora.strength += 10;
 
 // Aurora learn a new skill
 aurora.xp = aurora.xp + 15;

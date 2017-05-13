@@ -1,4 +1,4 @@
-# Bring pages to life
+# Animate elements
 
 This chapter will get you started with JavaScript for animations! We'll see how to kick off animations that should run repeatedly or should stop at a certain point.
 
@@ -24,12 +24,12 @@ And now for the corresponding JavaScript code.
 
 ```js
 // Count down the counter
-function decreaseCounter() {
+const decreaseCounter = () => {
   // Convert counter text to a number
   const counter = Number(counterElement.textContent);
   // Decrease counter by one
   counterElement.textContent = counter - 1;
-}
+};
 
 const counterElement = document.getElementById("counter");
 
@@ -58,7 +58,7 @@ Let's try to stop the counter once the countdown is complete. We'll also modify 
 
 ```js
 // Count down the counter until 0
-function decreaseCounter() {
+const decreaseCounter = () => {
   // Convert counter text to a number
   const counter = Number(counterElement.textContent);
   if (counter > 1) {
@@ -72,7 +72,7 @@ function decreaseCounter() {
     const title = document.getElementById("title");
     title.textContent = "BOOM!!";
   }
-}
+};
 
 const counterElement = document.getElementById("counter");
 
@@ -97,7 +97,7 @@ Imagine that you want to modify the page text after its "explosion" in the previ
 
 ```js
 // Count down the counter until 0
-function decreaseCounter() {
+const decreaseCounter = () => {
   // Convert counter text to a number
   const counter = Number(counterElement.textContent);
   if (counter > 1) {
@@ -115,7 +115,7 @@ function decreaseCounter() {
       title.textContent = "Everything's broken now :(";
     }, 2000);
   }
-}
+};
 
 const counterElement = document.getElementById("counter");
 
@@ -165,14 +165,14 @@ And here is the JavaScript code that lets you move the red block.
 
 ```js
 // Move the block to the left
-function moveBlock() {
+const moveBlock = () => {
   // Convert the left position of the block (value of the form "XXpx") to a number
   const xBlock = parseFloat(getComputedStyle(block).left);
   // Move the block to the right
   block.style.left = (xBlock + movement) + "px";
   // Have the browser call moveBlock as soon as possible
   requestAnimationFrame(moveBlock);
-}
+};
 
 const frameElement = document.getElementById("frame");
 const blockElement = document.getElementById("block");
@@ -201,12 +201,13 @@ The `requestAnimationFrame()` function lets you ask the browser to execute a fun
 Here is how `requestAnimationFrame()` is used in combination with an animation function.
 
 ```js
-function animate() {
+const animate = () => {
     // Animation code
     // ...
     // At end of animation, request another one
     animationId = requestAnimationFrame(animate);
-}
+};
+
 // Animation start
 let animationId = requestAnimationFrame(animate);
 ```
@@ -219,7 +220,7 @@ Here's the updated JavaScript code.
 
 ```js
 // Move the block to the right, all the way to the end of the frame
-function moveBlock() {
+const moveBlock = () => {
   // Convert the left position of the block (value of the form "XXpx") to a number
   const xBlock = parseFloat(getComputedStyle(block).left);
   // Convert the width of the frame (value of the form "XXpx") to a number
@@ -234,7 +235,7 @@ function moveBlock() {
     // Cancel the animation
     cancelAnimationFrame(animationId);
   }
-}
+};
 
 const frameElement = document.getElementById("frame");
 const blockElement = document.getElementById("block");

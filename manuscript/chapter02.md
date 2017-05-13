@@ -6,7 +6,7 @@ You know how to use JavaScript to display values. However, for a program to be t
 
 * A **variable** is an information storage area. Every variable has a **name**, a **value** and a **type**. In JavaScript, the type of a variable is deduced from the value stored in it: JavaScript is a **dynamically typed** language.
 
-* A variable is declared using the `let` keyword followed by the variable name. To declare a **constant** (a variable whose initial value must never change), it's better to use the `const` keyword instead.
+* A variable is declared using the `let` keyword followed by the variable name. To declare a **constant** (a variable whose initial value will never change), it's better to use the `const` keyword instead.
 
 * To give a value to a variable, we use the **assignment operator** `=`. For number variables, the operators `+=` and `++` can **increment** (increase by 1) their value.
 
@@ -289,7 +289,7 @@ Observe the following program and try to predict the final values of its variabl
 
 ```js
 let a = 2;
-a = a - 1;
+a -= 1;
 a++;
 let b = 8;
 b += 2;

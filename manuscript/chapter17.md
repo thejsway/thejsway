@@ -232,7 +232,7 @@ The following code uses the `change` event triggered on the dropdown list to sho
 
 ```js
 // Show the selected nationality
-document.getElementById("nationality").addEventListener("change", function (e) {
+document.getElementById("nationality").addEventListener("change", e => {
   console.log("Nationality code: " + e.target.value);
 });
 ```
@@ -528,7 +528,7 @@ const houses = [{
 }];
 
 // Return an array of characters belonging to a house
-function getCharacters(houseCode) {
+const getCharacters = houseCode => {
   switch (houseCode) {
     case "ST":
       return ["Eddard", "Catelyn", "Robb", "Sansa", "Arya", "Jon Snow"];
@@ -541,7 +541,7 @@ function getCharacters(houseCode) {
     default:
       return []; // Empty array
   }
-}
+};
 ```
 
 Complete this code so that:
