@@ -28,7 +28,6 @@ chapter18.md
 chapter19.md
 part3.txt
 chapter20.md
-chapter21.md
 backmatter.txt
 conclusion.txt
 concl02.md
