@@ -1,84 +1,82 @@
 # Query a web server
 
+This chapter will teach you how to retrieve data from a web server through HTTP requests.
+
 ## TL;DR
 
-## Writing asynchronous code: callbacks Vs promises
+TODO
 
-Understanding asynchronous code can be tricky, since statements won't be executed in a linear and sequential fashion like with synchronous operations.
+## Creating asynchronous HTTP requests in JavaScript
 
-Traditionally, JavaScript uses **callbacks** to performs actions asynchonously. A callback is a function executed in the future when a particular condition is met. A DOM event handler like the following one is an example of a callback.
+In the previous chapter, we discussed synchronous vs asynchronous requests. Since synchronous requests block the calling process until their result is received, only aaynchronous HTTP requests should be used when building a web applications. However, asynchronous code can be tricky to write and to understand, since statements won't be executed in a linear and sequential fashion like with synchronous operations.
 
-```js
-// Add a event handler (a callback) to the "click" event
-document.getElementById("myButton").addEventListener("click", e => {
-  // Callback code, called when the "click" event arises on the DOM element
-  // ...
-}};
-```
+### The `fetch()` method
 
-However, callback-based code has a dangerous tendency to end up like this: a pyramid-shaped imbroglio of nested callback functions.
+The best way to send asynchronous HTTP requests in JavaScript is to use the `fetch()` method. Here is its general usage form.
 
 ```js
-// The pyramid of doom
-getData(a => {
-    filterData(a, b => {
-        processData(b, c => {
-            displayData(c, d => {
-                // ...
-            });
-        });
-    });
+// Sends an aynchronous HTTP request to the target url
+fetch(url)
+.then(() => {
+  // Code called in the future when the request ends successfully
+})
+.catch(() => {
+  // Code called in the future when an errors occurs during the request
 });
 ```
 
-Code written this way is often confusing and difficult to debug. As such, it is referred as **callback hell**.
+> You might encounter JavaScript code that uses an object called `XMLHttpRequest` to perform HTTP operations. This is a more ancient technique now replaced by `fetch()`.
 
-A more elegant solution for writing asynchronous code has emerged under the form of promises. A **promise** is a wrapper for an operation whose result might be available in the future.
+### Under the hood: promises
 
-In JavaScript, a promise is an object with `then()` and `catch()` methods. `then()` is called when the promise is **fulfilled**: the associated operation has finished successfully. It takes the operation result as a parameter. On the contrary, `catch()` is called when the promise is **rejected**: this associated operation has failed.
+When the `fetch()` method is executed, it immediatly returns a **promise**, which is a wrapper for an operation whose result might be available in the future. A JavaScript promise is an object with `then()` and `catch()` methods. `then()` is called when the promise is **fulfilled**: the associated operation has finished successfully. It takes the operation result as a parameter. On the contrary, `catch()` is called when the promise is **rejected**: this associated operation has failed.
 
-What's great about promises is that they can be chained together.
-
-The previous code example could be rewritten Using promises instead of callbacks.
+What's great about promises is that they can be chained together. Here's how you could perform a series of asynchronous operations in JavaScript.
 
 ```js
 getData()
-  .then(a => filterData(a))
-  .then(b => processData(b))
-  .then(c => displayData(c))
+  .then(a => filterData(a)) // Called asynchronously when getData() returns
+  .then(b => processData(b)) // Called asynchronously when filterData() returns
+  .then(c => displayData(c)) // Called asynchronously when processData() returns
   // ...
 ```
 
-## Querying a web server
+### Example: retrieving a text file
 
-Let's start with a very basic example: displaying the content of a text file located on a web server. This file is located at URL `https://s3-us-west-2.amazonaws.com/s.cdpn.io/814404/languages.txt` and has the following content.
+Let's start with a very basic example: displaying the content of a text file located on a web server. The file URL is `https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/languages.txt` and it has the following content.
 
 ```text
 C++;Java;C#;PHP
 ```
 
-Check out how to retrieve that file in JavaScript.
+Here's how to do this in JavaScript using `fetch()`.
 
 ```js
-// Retrieve file from the server
-fetch("https://s3-us-west-2.amazonaws.com/s.cdpn.io/814404/languages.txt")
-  .then(response => {
-    // Return file textual content
-    return response.text();
-  })
+fetch("https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/languages.txt")
+  .then(response => response.text()) // Access and return response's text content
   .then(text => {
-    // Display file content in the console
-    console.log(text);
+    console.log(text); // Display file content in the console
   });
 ```
 
-This code uses the JavaScript `fetch()` function to get the file from its URL. This function launches an **asynchronous** HTTP request to a web server and returns a promise. When the HTTP response sent by the server is available, it transforms it into text and shows this text in the console.
+![Execution result](images/chapter21-01.png)
 
-## Dealing with errors
+The result of the asynchronous HTTP request created by `fetch()` comes under the the form of a `Response` object. This object has several methods to deal with the response of the HTTP call. The `text()` method used in this example reads the response's text content and returns another promise. Its result is managed by the second `then()` method, which simply displays the file's textual content in the console.
+
+To learn more about the `Response` object, consult, as usual, the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Response).
+
+### Dealing with errors
+
+By nature, external HTTP requests are subject to errors: network failure, missing resource, etc. Handling these errors is done by adding a `catch()` method to the `fetch()` call. A basic level of error handling is to log the error message in the console.
 
 ```js
-//  .catch(err => console.error(err));
+fetch("http://non-existent-resource")
+  .catch(err => {
+    console.error(err.message);
+  });
 ```
+
+![Execution result](images/chapter21-02.png)
 
 ## Handling JSON data
 
