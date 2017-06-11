@@ -1,0 +1,17 @@
+[
+    {
+        "name": "The Starry Night",
+        "year": "1889",
+        "artist": "Vincent Van Gogh"
+    },
+    {
+        "name": "The Scream",
+        "year": "1893",
+        "artist": "Edvard Munch"
+    },
+    {
+        "name": "Guernica",
+        "year": "1937",
+        "artist": "Pablo Picasso"
+    }
+]
