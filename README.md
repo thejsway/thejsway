@@ -4,7 +4,7 @@ A modern introduction to an essential language.
 
 Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com)
 
-[![Completion](https://img.shields.io/badge/Completion-65%25-red.svg)](https://leanpub.com/thejsway)
+[![Completion](https://img.shields.io/badge/Completion-70%25-red.svg)](https://leanpub.com/thejsway)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -51,6 +51,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Project: a social news web page](manuscript/chapter19.md)
 * Part III: Build web applications
   * [Web development 101](manuscript/chapter20.md)
+  * [Query a web server](manuscript/chapter21.md)
   * ...
 * Conclusion
   * ...
