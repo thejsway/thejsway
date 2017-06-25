@@ -154,7 +154,7 @@ The set of technologies enabling the creation of web applications is codenamed *
 
 In a **synchronous** exchange, the asker waits until he gets the needed info. A telephone call is an example of a synchronous exchange.
 
-On the contrary, the asker in an **asynchronous** exchange can do something else while waiting for the completion of his request. Email is an example of such an exchange.
+On the contrary, the asker in an **asynchronous** exchange can do something else while waiting for the completion of his request. Email is an example of an asynchronous exchange.
 
 The traditional web development model uses synchronous requests: the web client is blocked while waiting for the server to complete its request. The AJAX model uses asynchronous requests: data is fetched when needed in the background.
 
