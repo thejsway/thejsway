@@ -52,6 +52,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
 * Part III: Build web applications
   * [Web development 101](manuscript/chapter20.md)
   * [Query a web server](manuscript/chapter21.md)
+  * [Use web APIs](manuscript/chapter22.md)
   * ...
 * Conclusion
   * ...
