@@ -375,7 +375,7 @@ console.log(sum);     // 31
 
 The `reduce()` method can take several parameters:
 
-* The first one is the function associated to `reduce()` and called for each array element takes two parameters: the first is an **accumulator** which contains the accumulated value previously returned by the last invocation of the function. The other function parameter is the array element.
+* The first one is the function associated to `reduce()` and called for each array element. It takes two parameters: the first is an **accumulator** which contains the accumulated value previously returned by the last invocation of the function. The other function parameter is the array element.
 
 * The second one is the initial value of the accumulator (often 0).
 
