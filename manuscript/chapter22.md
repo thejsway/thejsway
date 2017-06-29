@@ -4,18 +4,18 @@ In this chapter, you'll learn how to leverage real-world web services in your ap
 
 ## TL;DR
 
-* An **API**, or **Application Programming Interface**, is a set of well-defined services offered by a software program or service to others. Developers use them to integrate external technologies or services into their applications.
+* An **API** or **Application Programming Interface** is a set of well-defined services offered by a software program or service to others. Developers use them to integrate external technologies or services into their applications.
 
 * A **web API** is an API accessible through web technologies (HTTP or HTTPS). They often use JSON as their data format.
 
-* A web API can be consumed programmatically using an **AJAX call**. Before that, the API must be checked out and its documentation studied to understand how it works and what it returns.
+* A web API can be consumed programmatically using an **AJAX call**. Before that, the API must be checked out and its documentation studied in order to understand how it works and what it returns.
 
 ```js
 // Fetch data from the API
 fetch("http://my-api-url")
   .then(response => response.json()) // Translate JSON into JavaScript
   .then(content => {
-    // Use API content
+    // Use returned content
     // ...
   })
   .catch(err => {
@@ -145,7 +145,7 @@ const grabRandomBeer = () => {
 document.getElementById("grabButton").addEventListener("click", grabRandomBeer);
 ```
 
-Each time the `"Grab a beer"` button is clicked on the web page, an anonymous function is called to retrive and display a random beer.
+Each time the `"Grab a beer"` button is clicked on the web page, an anonymous function is called to retrieve and display a random beer.
 
 ![Execution result](images/chapter22-04.png)
 
@@ -211,7 +211,6 @@ Now we just have to call the API from our JavaScript code and displaythe main re
 ```
 
 ```js
-// Please generate yourself an API key instead of using mine
 fetch(
   "http://api.wunderground.com/api/YOUR_OWN_KEY/conditions/q/france/bordeaux.json"
 )
@@ -239,12 +238,38 @@ fetch(
   });
 ```
 
-![Weather is usually much nicer around here!](images/chapter22-05.png)
+![Weather is usually much nicer around here...](images/chapter22-05.png)
 
 ## Coding time!
 
 ### More beer please
 
+Improve the previous Punk API example to display additionnal information about the showcased beer : alcohol by volume (ABV), volume and date of first brewage.
+
+![Expected result](images/chapter22-06.png)
+
 ### GitHub profile
 
+The ubiquitous code sharing platform [GitHub](https://github.com) has a public API. The goal of this exercise is to display some information about a GitHub user, identified by his login. The API documentation is available [here](https://developer.github.com/v3/users/).
+
+Use this API to show the profile picture,name and website address of a GitHub user whose login is entered in a text box.
+
+![Expected result](images/chapter22-07.png)
+
+> You can test your code by using the GitHub logins of prominent JS community members like `brendaneich` (JavaScript's father), `douglascrockford` or `vjeux`.
+
 ### Star Wars universe
+
+The open [Star Wars API](https://swapi.co/) has all the Star Wars data you've ever wanted. In this exercise, you'll show information about some of the planets in the  universe.
+
+Here is the starting HTML code.
+
+```html
+<h2>Some Star Wars planets</h2>
+<div id="links"></div>
+<div id="infos"></div>
+```
+
+Write the associated JavaScript code so that a list of links for the first ten planets identifiers (from 1 to 10) is generated automatically. Clicking on a planet link shows information about it.
+
+![Expected result](images/chapter22-08.png)
