@@ -6,7 +6,7 @@ In this chapter, you'll see how to use JavaScript to traverse the DOM.
 
 * Rather than go through the DOM node by node, you can quickly access one or more elements using **selection methods**.
 
-* The `getElementsByTagName()`, `getElementsByClassName()` and `getElementById()` methods respectively search items by **tag name**, **class**, and **ID**. The first two methods return a list, and the latter returns a single item.
+* The `getElementsByTagName()`, `getElementsByClassName()` and `getElementById()` methods respectively search items by **tag name**, **class**, and **ID**. The first two methods return a list, which can further be converted to an array with `Array.from()`. The latter method returns a single item. 
 
 * The `querySelectorAll()` and `querySelector()` methods make it possible to search for items using a **CSS selector**. The first method returns all matching items, and the second returns only the first.
 
@@ -71,14 +71,12 @@ This technique is pretty awkward and error-prone. The code is difficult to read 
 
 ### Selecting items according to HTML tag
 
-All DOM elements have a method called `getElementsByTagName()`. This returns, under the form of a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList), a list of items that have the name of the tag that's passed as a parameter.
+All DOM elements have a method called `getElementsByTagName()`. This returns, under the form of a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) object, a list of items that have the name of the tag that's passed as a parameter. The search happens through all the sub-elements of the node on which the method is called -- not only its direct children.
 
-The search happens through all the sub-elements of the node on which the method is called -- not only its direct children.
-
-With this method, selecting the first `h2` element becomes super easy:
+With the `getElementsByTagName()` method, selecting the first `h2` element becomes super easy:
 
 ```js
-// Get all h2 elements
+// Get all h2 elements into an array
 const titleElements = document.getElementsByTagName("h2");
 
 console.log(titleElements[0]);     // Show the first h2
@@ -91,16 +89,18 @@ T> Suffixing JavaScript variables associated to DOM element nodes with `Element`
 
 ### Selecting items according to class
 
-DOM elements also feature a method called `getElementsByClassName()`. It returns a list of elements with the class name as a parameter. Again, the search covers all sub-elements of the node on which the method is called.
+DOM elements also feature a method called `getElementsByClassName()`. It returns a `NodeList` object of elements with the class name as a parameter. Again, the search covers all sub-elements of the node on which the method is called.
+
+It's important to note that `NodeList` objects are *not* real JavaScript arrays. For example, you cannot use the `forEach()` method to iterate on a `NodeList`. To turn a `NodeList` object into an array, use the `Array.from()` method.
 
 To select and display all document elements with a class `"wonders"`, you can write the following code.
 
 ```js
 // Show all elements that have the class "exists"
-const existingElements = document.getElementsByClassName("exists");
-for (const element of existingElements) {
+const existingElements = Array.from(document.getElementsByClassName("exists"));
+existingElements.forEach(element => {
     console.log(element);
-}
+});
 ```
 
 ![Execution result](images/chapter14-08.png)

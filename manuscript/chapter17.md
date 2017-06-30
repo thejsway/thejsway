@@ -200,12 +200,12 @@ The following JavaScript code adds a message to the console when the radio butto
 
 ```js
 // Show the subscription type selected via radio button
-const subscriptionElements = document.getElementsByName("subscription");
-for (const element of subscriptionElements) {
+const subscriptionElements = Array.from(document.getElementsByName("subscription"));
+subscriptionElements.forEach(element => {
   element.addEventListener("change", e => {
     console.log(`Selected subscription: ${e.target.value}`);
   });
-}
+});
 ```
 
 ![Execution result](images/chapter17-04.png)

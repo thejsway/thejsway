@@ -18,7 +18,7 @@ A lot of code you write will involve modifying chains of text characters - or [s
 
 * You may iterate over a string using either a `for` or the newer `for-of` loop.
 
-* The **spread operator** `[...]` can be used to turn a string into an array that can be traversed letter by letter with the `forEach()` method.
+* The `Array.from()` method can be used to turn a string into an array that can be traversed letter by letter with the `forEach()` method.
 
 * Searching for values inside a string is possible with the `indexOf()`, `startsWith()` and `endsWith()` methods.
 
@@ -155,11 +155,11 @@ If the index is not needed inside the loop, this syntax is arguably simpler than
 
 ## Turning a string into an array
 
-The JavaScript **spread operator** `[...]` can be used to turn a string into an array. This array can further be traversed with the `forEach()` method. Just like the previous ones, this example show the string letters one-by-one.
+The JavaScript method `Array.from()` can be used to turn a string into an array. This array can further be traversed with the `forEach()` method. Just like the previous ones, this example show the string letters one-by-one.
 
 ```js
 const name = "Sarah";
-const nameArray = [...name];
+const nameArray = Array.from(name);
 nameArray.forEach(letter => {
     console.log(letter);
 });
