@@ -51,7 +51,7 @@ This web API returns an array containing some articles. Each article corresponds
 
 > Curious about creating such an API? You'll learn how to build this very service (and others) in an upcoming chapter.
 
-Real-world APIs are almost always accompanied by an online **documentation** showing how to use it. Studying this documentation is essential for using the API without mistakes.
+Real-world APIs are almost always accompanied by an online **documentation** showing how to use it. Studying this documentation is essential for using the API flawlessly.
 
 ### Calling an API with JavaScript
 
