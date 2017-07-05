@@ -53,6 +53,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Web development 101](manuscript/chapter20.md)
   * [Query a web server](manuscript/chapter21.md)
   * [Use web APIs](manuscript/chapter22.md)
+  * [Send data to a web server](manuscript/chapter23.md)
   * ...
 * Conclusion
   * ...

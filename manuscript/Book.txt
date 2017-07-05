@@ -30,6 +30,7 @@ part3.txt
 chapter20.md
 chapter21.md
 chapter22.md
+chapter23.md
 backmatter.txt
 conclusion.txt
 concl02.md
