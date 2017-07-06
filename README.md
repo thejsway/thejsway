@@ -4,7 +4,7 @@ A modern introduction to an essential language.
 
 Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com)
 
-[![Completion](https://img.shields.io/badge/Completion-70%25-red.svg)](https://leanpub.com/thejsway)
+[![Completion](https://img.shields.io/badge/Completion-75%25-red.svg)](https://leanpub.com/thejsway)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -63,4 +63,4 @@ More to come!
 
 ## Published version
 
-A published version is available on [Leanpub](https://leanpub.com/thejsway) on a pay-as-you-want pricing model. Pricing will eventually change when the book is complete. If you like what you see so far, your financial contribution to this effort would be much appreciated.
+A multi-format ebook version is available [here](https://leanpub.com/thejsway) on a pay-as-you-want pricing model. Pricing will eventually change once the book is complete. If you like what you see so far, your financial contribution to this effort would be much appreciated.
