@@ -10,7 +10,7 @@ Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
 
 ## Overview
 
-This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaSscript. Numerous brain cycles were spent to make it:
+This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. Numerous brain cycles were spent to make it:
 
 * **Beginner-friendly yet comprehensive**. From the very basics of programming up to full-stack web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!
 * **Standards-aligned**. From start to finish, the book enforces good programming habits, embraces the ubiquitous JavaScript tools [ESLint](http://eslint.org) and [Prettier](https://github.com/prettier/prettier) and closely follows the popular [AirBnb Style Guide](https://github.com/airbnb/javascript).
