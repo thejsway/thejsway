@@ -66,4 +66,4 @@ More to come!
 
 This book is and will stay free for everyone to read online here. However, you can also purchase a [multi-format, DRM-free ebook version](https://leanpub.com/thejsway), with an option to get the commented source code for all exercises and projects.
 
-If you like the content you find here and want to support this effort, your financial contribution would be much appreciated :)
+If you like the content you find here and want to support this effort, your financial contribution would be much appreciated. Thanks in advance!
