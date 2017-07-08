@@ -2,7 +2,7 @@
 
 A modern introduction to an essential language.
 
-Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com)
+Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
 
 [![Completion](https://img.shields.io/badge/Completion-75%25-red.svg)](https://leanpub.com/thejsway)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
@@ -10,14 +10,15 @@ Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com)
 
 ## Overview
 
-"The JavaScript Way" is a book to help you get off to a good start in the JavaScript universe or catch up with its newest evolutions. Here are some highlights:
+"The JavaScript Way" is a book to help you get off to a good start in the JavaScript universe or catch up with its latest evolutions. It was carefully designed to be:
 
-* Designed to be as beginner-friendly as possible, while covering some advanced concepts and following good practices.
-* No complex setup needed: start working immediately from your browser.
-* Written from scratch using the latest language standard (ES6/ES2015), avoiding awkwardnesses from the past and giving you future-proof knowledge.
-* Each chapter is accompanied by a series of exercises to put your newly acquired skills into practice.
+* **Beginner-friendly, yet comprehensive**. You'll learn the essentials parts of the language all the way to the basics of full-stack web development. No previous knowledge needed!
+* **Standards-aligned**. From start to finish, the book enforces good programming habits, embraces ubiquitous JavaScript tools [ESLint](http://eslint.org) and [Prettier](https://github.com/prettier/prettier) and closely follows the popular [AirBnb Style Guide](https://github.com/airbnb/javascript).
+* **Future-proof**. It is entirely written using the recent ES2015 syntax, avoiding awkwardnesses from the past.
+* **Practice-oriented**. No learning comes without doing! Each chapter is accompanied by a series of exercises to put your newly acquired skills into action. A three-part project will guide you in the creation of a complete social news web application.
+* **Easy to follow**. Code along directly in your browser or build yourself a great JavaScript development environment.
 
-This repository contains the book source files. Your [contributions](CONTRIBUTING.md) are most welcome.
+This repository contains the book manuscript files, free to read. Your [contributions](CONTRIBUTING.md) are most welcome.
 
 Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this-javascript-way-e9c45ab5b696#.fmmywlb2e).
 
@@ -63,4 +64,4 @@ More to come!
 
 ## Published version
 
-A multi-format ebook version is available [here](https://leanpub.com/thejsway) on a pay-as-you-want pricing model. Pricing will eventually change once the book is complete. If you like what you see so far, your financial contribution to this effort would be much appreciated.
+A multi-format, DRM-free ebook version is [available](https://leanpub.com/thejsway) on a pay-as-you-want pricing model. Pricing will eventually change once the book is complete. If you like what you see so far, your financial contribution to this effort would be much appreciated.
