@@ -15,10 +15,10 @@ This book aims to be a useful companion for anyone wishing to (re)discover the m
 * **Beginner-friendly yet comprehensive**. From the very basics of programming up to full-stack web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!
 * **Standards-aligned**. From start to finish, the book enforces good programming habits, embraces the ubiquitous JavaScript tools [ESLint](http://eslint.org) and [Prettier](https://github.com/prettier/prettier) and closely follows the popular [AirBnb Style Guide](https://github.com/airbnb/javascript).
 * **Future-proof**. It is entirely written using the recent ES2015 syntax, avoiding awkwardnesses from the past.
-* **Practice-oriented**. No real learning happens without doing! Each chapter is accompanied by a series of exercises to put your newly acquired skills into action. A three-part project will guide you in the creation of a complete social news web application.
-* **Easy to follow**. Code along directly in your browser or build yourself a great JavaScript development environment.
+* **Practical**. No real learning happens without practicing! Each chapter is accompanied by a series of exercises to put your newly acquired skills into action. A three-part project will guide you in the creation of a complete social news web application.
+* **Easy to follow**. Code along directly in your browser or build a great JavaScript development environment on your local machine.
 
-This repository contains the book manuscript files, free to read. Your [contributions](CONTRIBUTING.md) are most welcome.
+This repository contains the book manuscript files, free to read for everyone. Your [contributions](CONTRIBUTING.md) are most welcome.
 
 Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this-javascript-way-e9c45ab5b696#.fmmywlb2e).
 
@@ -28,7 +28,6 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [About this book](manuscript/intro01.md)
   * [Welcome to programming](manuscript/intro02.md)
   * [Introducing JavaScript](manuscript/intro03.md)
-  * [What you'll need](manuscript/intro04.md)
 * Part I: Learn to code programs
   * [3, 2, 1... Code!](manuscript/chapter01.md)
   * [Play with variables](manuscript/chapter02.md)
@@ -55,15 +54,18 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Query a web server](manuscript/chapter21.md)
   * [Use web APIs](manuscript/chapter22.md)
   * [Send data to a web server](manuscript/chapter23.md)
+  * [The Node.js platform](manuscript/chapter24.md)
   * ...
 * Conclusion
   * ...
   * [Acknowledgements](manuscript/concl02.md)
+* Appendices
+  * [Environment setup](manuscript/appendix01.md)
 
 More to come!
 
 ## Published version
 
-This book is and will stay free for everyone to read online here. However, you can also purchase a [multi-format, DRM-free ebook version](https://leanpub.com/thejsway), with an option to get the commented source code for all exercises and projects.
+This book is also available as a [multi-format, DRM-free ebook](https://leanpub.com/thejsway), with an option to buy the commented source code for all exercises and projects. The ebook has no minimal price for now: this will eventually change once the book is finished.
 
 If you like the content you find here and want to support this effort, your financial contribution would be much appreciated. Thanks in advance!

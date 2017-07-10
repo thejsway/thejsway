@@ -3,7 +3,6 @@ introduction.txt
 intro01.md
 intro02.md
 intro03.md
-intro04.md
 mainmatter.txt
 part1.txt
 chapter01.md
@@ -31,6 +30,9 @@ chapter20.md
 chapter21.md
 chapter22.md
 chapter23.md
+chapter24.md
 backmatter.txt
 conclusion.txt
 concl02.md
+appendices.txt
+appendix01.md

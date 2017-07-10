@@ -14,6 +14,8 @@
 
 JavaScript is first and foremost the programming language of the web. It was invented in 1995 by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich), who at the time worked for [Netscape](https://en.wikipedia.org/wiki/Netscape_Communications), which created the first popular web browser (Firefox's ancestor).
 
+I> A **browser** is the software you use to visit webpages and use web applications.
+
 W> JavaScript should not be confused with Java, another language invented at the same time! Both share a similar syntax, but their use cases and "philosophies" are very different.
 
 The idea behind JavaScript was to create a simple language to make web pages dynamic and interactive, since back then, pages were very simple.
@@ -24,7 +26,7 @@ Web builders starting gradually enriching their pages by adding JavaScript code.
 
 Because of the explosion of the Web and the advent of the web 2.0 (based on rich, interactive pages), JavaScript has become increasingly popular. Web browser designers have optimized the execution speed of JavaScript, which means it's now a very fast language.
 
-This led to the 2009 emergence of the [Node.js](https://nodejs.org) platform, which allows you to create JavaScript web applications very quickly. Thanks to a service called [MongoDB](https://www.mongodb.com), JavaScript has even entered the database world (software whose role is to store information).
+This led to the emergence of the [Node.js](https://nodejs.org) platform, which allows you to create JavaScript applications outside the browser. Thanks to a software called [MongoDB](https://www.mongodb.com), JavaScript has even entered the database world (software whose role is to store information).
 
 Finally, the popularity of smartphones and tablets with different systems (iOS, Android, Windows Phone) has led to the emergence of so-called cross-platform development tools. They allow you to write a single mobile application that's compatible with these systems. These tools are almost always based on... JavaScript!
 
