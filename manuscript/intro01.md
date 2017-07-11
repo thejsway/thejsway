@@ -14,11 +14,11 @@ This book is divided into three main parts. The first one teaches the basics of 
 
 Each chapter starts with a **TL;DR** paragraph which summarizes it, so you'll be able to skip ahead if you already know a chapter's content.
 
-At the end of each chapter, a series of short and focused exercises will make you put your newly acquired skills into practice. Searching them seriously is *essential*: real learning comes with practicing, not just reading. Each part ends with a project guiding you in the creation of a social news web app.
+At the end of each chapter, a series of short and focused exercises will make you put your newly acquired skills into practice. Each part ends with a project guiding you in the creation of a social news web application.
 
 ## Following along
 
-You have two options for following along, depending on how comfortable you feel setting up your local machine:
+You have two options for following along, depending on how eager you are to get into the action and how comfortable you feel setting up your local machine:
 
 * Coding online, using feature-packed JavaScript playgrounds like [CodePen](https://codepen.io) and [Glitch](https://glitch.com).
 * Building a local development environment.

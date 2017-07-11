@@ -33,6 +33,8 @@ chapter23.md
 chapter24.md
 backmatter.txt
 conclusion.txt
+concl01.md
 concl02.md
 appendices.txt
 appendix01.md
+appendix02.md
