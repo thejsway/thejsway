@@ -4,6 +4,8 @@ Let's get started! This chapter will introduce you to the fundamentals of progra
 
 ## TL;DR
 
+* The JavaScript command `console.log()` shows a message in the **console**, a information zone available in most JavaScript environments.
+
 * A **value** is a piece of information. The **type** of a value defines its role and the operations applicable to it.
 
 * The JavaScript language uses the **number** type to represent a numerical value (with or without decimals) and the **string** type to represent text.
@@ -15,8 +17,6 @@ Let's get started! This chapter will introduce you to the fundamentals of progra
 * A computer program is made of several **lines of code** read sequentially during execution.
 
 * **Comments** (`// ...` or `/* ... */`) are non-executed parts of code. They form a useful program documentation.
-
-* The JavaScript command `console.log()` displays a message.
 
 ## Your first program
 
