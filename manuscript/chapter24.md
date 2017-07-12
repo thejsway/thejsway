@@ -194,6 +194,8 @@ const johnDoe = new User("John", "Doe");
 console.log(johnDoe.describe());
 ```
 
+![Execution result](images/chapter24-08.png)
+
 ## Node.js packages
 
 The Node platform provides a way to structure an application under the form of a **package**.
