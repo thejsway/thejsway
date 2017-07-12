@@ -10,91 +10,19 @@ In this chapter, you'll discover how to create JavaScript applications outside t
 
 * Node adheres to the [CommonJS](http://requirejs.org/docs/commonjs.html) module format. It provides a `require()` for loading a module.
 
-* Inside a module, the `module.exports` object is used to export pieces of code. You can **add properties** to it to export functions.
+* Inside a module, the `module.exports` object is used to export pieces of code. You can **add properties** to it to export element. You can also **reassign** `module.exports` to exporte only a specific element.
 
-```js
-// Export a function
-module.exports.myFunction1 = (/* ... */) => {
-  // function1 code;
-  // ...
-}
-// Export another function
-module.exports.myFunction2 = (/* ... */) => {
-  // function2 code;
-  // ...
-}
-```
+* Node provides a way to structure an application under the form of a **package**. A package is a folder containing an application described by a `package.json` file. The default entry point of a package is the `index.js` file.
 
-```js
-// Load the "my-module.js" module
-const myModule = require("./my-module.js");
-
-// Use myModule.myFunction1() and myModule.myFunction2()
-// ...
-```
-
-* You can also **reassign** `module.exports` to expose only an object literal created by a function.
-
-```js
-// Declare a factory function that returns an object literal
-const createObj = () => {
-  // Create and return an object literal
-  return {
-    property1: value1,
-    method1(/* ... */) {
-    // ...
-    },
-    method2(/* ... */) {
-    // ...
-    }
-  }
-};
-
-// Export the factory function
-module.exports = createObj;
-```
-
-```js
-// Load the "my-module.js" module
-const myModule = require("./my-module.js");
-
-// Create an object by calling the exported function of this module
-const obj = myModule();
-
-// Use obj.property1, obj.method1() and obj.method2()
-// ...
-```
-
-* Lastly, you can also expose only a JavaScript class.
-
-```js
-// Export only a class
-module.exports = class MyClass {
-  // Class code
-  // ...
-};
-```
-
-```js
-// Load the "my-module.js" module
-const MyModule = require("./my-module.js");
-
-// Create an object from the exported class
-const obj = new MyModule();
-// ...
-```
-
-* Node provides a way to structure an application under the form of a **package**. A package is a folder containing an application described by a `package.json` file.
-
-* Package versions are defined using the **semantic versioning** format: a three-digit string of the form `MAJOR.MINOR.PATCH`. This format facilitates the management of **dependancies** between packages.
+* Package versions are defined using the **semantic versioning** format: a three-digit string of the form `MAJOR.MINOR.PATCH`. This format facilitates the management of **dependencies** between packages.
 
 * [npm](https://www.npmjs.com) (Node Package Manager) is the standard package manager for the Node ecosystem. It consists of a command line client and an online registry of public packages accessed by the client. This registry is the largest ecosystem of open source libraries in the world.
 
-* The main npm commands are `npm install` to install all the dependancies of a package or adding a new one, and `npm update` to update all the packages install missing ones according to `package.json`.
+* The main npm commands are `npm install` (to install all the dependencies of a package or adding a new one) and `npm update` (to update all the packages and install missing ones according to `package.json`).
 
-* Once installed with npm, packages defined as dependancies are stored in the `node_modules/` subfolder and can be loaded as modules using `require()`.
+* Once installed through npm, packages defined as dependencies are stored in the `node_modules/` subfolder and can be loaded as modules using `require()`.
 
-* Some packages (containing only executable files) cannot be loaded as modules. Some modules (single JavaScript files) are not packages.
+* Some packages (containing only executable files or no entry point) cannot be loaded as modules. Some modules (single JavaScript files) are not packages.
 
 ## Introducing Node.js
 
@@ -125,6 +53,8 @@ As you see, the `console.log()` command is also available in Node. Just like in 
 ```console
 node hello.js
 ```
+
+![Execution result](images/chapter24-04.png)
 
 An in-depth study of the Node platform is out of this book's scope. Let's focus on two of its defining features: **modules** and **packages**.
 
@@ -186,9 +116,9 @@ The result of the call to `require()` is an object, named `greetings` here. This
 
 > Giving the object resulting from a call to `require()` the same name as the loaded module's name, through not mandatory, is a common practice.
 
-### Exposing an object
+### Exporting only a specific object
 
-Numerous modules in the Node.js ecosystem expose only a single object aggregating all of the module's functionality. To do so, they reassign the `module.exports` object instead of adding properties to it.
+Numerous modules in the Node.js ecosystem exporte only a single object aggregating all of the module's functionality. To do so, they reassign the `module.exports` object instead of adding properties to it.
 
 For example, check out how the following module `calculator.js` is defined.
 
@@ -219,7 +149,6 @@ module.exports = createCalc;
 In this module, the only exported element is a function that returns an object literal. Using it in another file (located in the same folder) is as follows.
 
 ```js
-// Load the module "calculator.js"
 const calculator = require("./calculator.js");
 
 // Create an object by calling the exported function of this module
@@ -231,14 +160,14 @@ console.log(`2 + 3 = ${calc.add(2, 3)}`); // "2 + 3 = 5"
 
 The result of the call to `require()` is a function stored in the `calculator` variable, referencing the `createCalc()` function. Calling this function returns an object with several methods, which can be subsequently used.
 
-### Exposing a class
+### Exporting only a class
 
 When you want a module to only export a specific class, you can also reassign the `module.exports` object.
 
 Here is a module `user.js` that defines and exports a `User` class.
 
 ```js
-// Export a class User
+// Export a User class
 module.exports = class User {
   constructor(firstName, lastName) {
     this.firstName = firstName;
@@ -255,7 +184,7 @@ module.exports = class User {
 Here's how to use this class in another file (located in the same folder).
 
 ```js
-// Load the module "user.js"
+// Notice the first uppercase letter, since User is a class
 const User = require("./user.js");
 
 // Create an object from this class
@@ -273,14 +202,14 @@ The Node platform provides a way to structure an application under the form of a
 
 Technically, a package is a folder containing the following elements:
 
-* A `package.json` file which describes the application and its dependancies.
+* A `package.json` file which describes the application and its dependencies.
 * A entry point into the application, defaulting to the `index.js` file.
 * A `node_modules/` subfolder, which is the default place where Node looks for modules to be loaded into the application.
 * All the other files forming the source code of the application.
 
 ### The `package.json` file
 
-This JSON file describes the application and its dependancies: you can think of it as the app's ID document. It has a well-defined format consisting of many fields, most of them optional. The two mandatory fields are:
+This JSON file describes the application and its dependencies: you can think of it as the app's ID document. It has a well-defined format consisting of many fields, most of them optional. The two mandatory fields are:
 
 * `name` (all lowercase letters without dots, underscores and any non-URL safe character in it).
 * `version` (following the semantic versioning format - more on that later).
@@ -295,7 +224,7 @@ Below is an example of a typical `package.json` file.
   "scripts": {
     "start": "node index.js"
   },
-  "dependancies": {
+  "dependencies": {
     "moment": "^2.18.1",
     "semver": "^5.3.0"
   },
@@ -319,11 +248,11 @@ Here are the rules for defining a version number:
 * New features added in a backwards-compatible way should increment the `MINOR` digit.
 * Breaking changes should increment the `MAJOR` digit.
 
-These strict rules exist to facilitate the management of **dependancies** between packages.
+These strict rules exist to facilitate the management of **dependencies** between packages.
 
-### Dependancies
+### Dependencies
 
-In the `package.json` file definition, the `dependancies` field is used to declared the external packages needed by the current package. Each dependancy is created with the package name followed by a **version range**. This version range specifies the package versions that are acceptable to use.
+In the `package.json` file definition, the `dependencies` field is used to declared the external packages needed by the current package. Each dependency is created with the package name followed by a **version range**. This version range specifies the package versions that are acceptable to use.
 
 There are many ways to define a version range. The most commonly used ones are:
 
@@ -333,29 +262,31 @@ There are many ways to define a version range. The most commonly used ones are:
   * The `^2.18.1` version range accepts versions `2.18.7` and `2.19.0`, but not `3.0.0`.
   * The `^0.2.3` version range accepts version `0.2.5` but not `0.3.0` nor `1.0.0`.
 
-Fine-tuning the targeted versions of external packages though version ranges helps limiting the risk of breaking the application apart when updating its dependancies.
+Fine-tuning the targeted versions of external packages though version ranges helps limiting the risk of breaking the application apart when updating its dependencies.
 
-## Package management with npm
+## Package management with **npm**
 
-Soon after the creation of Node.js, it became apparent that something was missing to orchestrate code sharing and reuse through modules. So [npm](https://www.npmjs.com) (Node Package Manager) was born in 2010. It is still the standard package manager for the Node ecosystem, even if it is being challenged by [yarn](https://yarnpkg.com), a more recent alternative.
+Soon after the creation of Node.js, it became apparent that something was missing to orchestrate code sharing and reuse through modules. So [npm](https://www.npmjs.com) (Node Package Manager) was born in 2010. It is still the standard package manager for the Node ecosystem, even if it is being challenged by [yarn](https://yarnpkg.com), a more recent alternative. It consists of a command line client, also called **npm**, and an online database of public packages, called the **npm registry** and accessed by the client.
 
-It consists of a command line client, also called **npm**, and an online database of public packages, called the **npm registry** and accessed by the client. Over 477,000 packages are now available on the registry, ready to reuse and covering various needs. This makes npm the largest ecosystem of open source libraries in the world.
+![npm logo](images/chapter24-03.png)
+
+ Over 477,000 packages are now available on the registry, ready to reuse and covering various needs. This makes npm the largest ecosystem of open source libraries in the world.
 
 The npm client is used by typing commands in a terminal open in the package's folder. It offers numerous possibilities for managing packages. Let's study two of the most important ones.
 
-### Installing dependancies
+### Installing dependencies
 
-To install all the dependancies of a package, you type the following npm command.
+To install all the dependencies of a package, you type the following npm command.
 
 ```console
 npm install
 ```
 
-This will read the `package.json` file, look for the packages satisfying the version ranges declared in the `dependancies` field, and download and install them (and their own dependancies) in the `node_modules/` subfolder.
+This will read the `package.json` file, look for the packages satisfying the version ranges declared in the `dependencies` field, and download and install them (and their own dependencies) in the `node_modules/` subfolder.
 
-### Adding a new dependancy
+### Adding a new dependency
 
-There are two ways for adding a new dependancy to a package. The first one is to manually edit the `package.json` to declare the dependancy and its associated version range. The next step is to run the following npm command.
+There are two ways for adding a new dependency to a package. The first one is to manually edit the `package.json` to declare the dependency and its associated version range. The next step is to run the following npm command.
 
 ```console
 npm update
@@ -363,22 +294,23 @@ npm update
 
 This will update all the packages listed to the latest version respecting their version range, and install missing packages.
 
-The other way is to run the following command, which will fetch a package from the registry, download it in the `node/mobules/` subfolder and (since npm 5) update the `package.json` to add a new dependancy.
+The other way is to run the following command.
 
 ```console
 npm install <package-id>
 ```
 
-The `<package-id>` parameter is usually the dependancy's package name.
+This command will fetch a specific package from the registry, download it in the `node/mobules/` subfolder and (since npm 5) update the `package.json` file to add it as a new dependency. The `<package-id>` parameter is usually the dependency's package name.
 
-### Using a dependancy
+### Using a dependency
 
-Once external packages have been downloaded in `node_modules/`, the application can load them as modules with the `require()` function.
+Once external packages have been installed in `node_modules/`, the application can load them as modules with the `require()` function.
 
-For example, the npm registry has a **semver** package that can be used to perform manual version range checks.
+For example, the npm registry has a **semver** package that handles semantic versioning. Assuming this package has been installed as a dependency, it can be used to perform manual version range checks.
 
 ```js
 // Load the npm semver package as a module
+// Notice the omission of "./" since the package was installed in node_modules/
 const semver = require("semver");
 
 // Check if specific versions satisfy a range
@@ -393,7 +325,7 @@ Let's recap what you learned so far:
 * A *module* is anything that can be loaded with `require()`.
 * A *package* is a Node application described by a `package.json` file.
 
-A package used in another Node application is loaded with `require()`, making it a module. To be used this way, a package must contain an `index.js` file or a `main` field defining a specific entry point.
+A package used in another Node application is loaded with `require()`, making it a module. To be loaded as a module, a package must contain an `index.js` file or a `main` field in `package.json` defining a specific entry point.
 
 Some packages only contain an executable command and thus cannot be loaded as modules. On the other hand, a single JavaScript file loaded with `require()` is a module but not a package, since it doesn't have a `package.json` file.
 
@@ -403,6 +335,38 @@ Check out the [npm documentation](https://docs.npmjs.com/how-npm-works/packages)
 
 ### Circles again
 
+Create a `circle.js` module exporting two functions `circumference()` and `area()`, each taking the circle radius as a parameter.
+
+Load this module in a `index.js` file and test the two functions.
+
+![Execution result](images/chapter24-05.png)
+
 ### Accounting
 
+Create a `accounting.js` module exporting.
+
+Load this module in a `index.js` file and test the two functions.
+
+```js
+// TODO: load the "accounting.js" module
+
+// Create object from the exported class
+const myAccount = new Account("Jeff");
+myAccount.credit(150);
+console.log(myAccount.describe());
+```
+
+![Execution result](images/chapter24-06.png)
+
 ### Playing with dates
+
+The npm package [moment](https://momentjs.com/) is very popular for managing dates and times.
+
+Create a Node package and install the current `moment` version as a dependency. Then, load this package and use it to:
+
+* Display the current date.
+* Compute the number of years since 1976, November 26th.
+
+![Execution result](images/chapter24-07.png)
+
+T> Use the [moment documentation](https://momentjs.com/docs/) to discover how to use this package.
