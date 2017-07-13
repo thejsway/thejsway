@@ -8,6 +8,8 @@ Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
+> This is still a work in progress: expect some typos, clumsiness and mistakes. Feel free to correct them!
+
 ## Overview
 
 This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. Numerous brain cycles were spent to make it:
@@ -67,6 +69,6 @@ More to come!
 
 ## Published version
 
-This book is also available as a [multi-format, DRM-free ebook](https://leanpub.com/thejsway), with an option to buy the commented source code for all exercises and projects. The ebook has no minimal price for now: this will eventually change once the book is finished.
+This content is also available as a [multi-format, DRM-free ebook](https://leanpub.com/thejsway), with an option to get the commented source code for all exercises and projects.
 
-If you like the content you find here and want to support this effort, your financial contribution would be much appreciated. Thanks in advance!
+If you like what you find here and want to support this effort, your financial contribution would be much appreciated. Thanks in advance!
