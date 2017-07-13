@@ -1,4 +1,4 @@
-# Discover the Node.js platform
+# Discover Node.js
 
 In this chapter, you'll discover how to create JavaScript applications outside the browser thanks to a technology called Node.js.
 
