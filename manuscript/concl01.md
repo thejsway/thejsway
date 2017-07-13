@@ -1,10 +1,10 @@
 # The road ahead
 
-You made it to the end of this book. Congratulations!
+Congratulations, you made it to the end!
 
 ## TL;DR
 
-This book covered a lot of ground. Here are some key takeaways.
+This book covers a lot of ground. Here are some key takeaways.
 
 * JavaScript is a **programming language** created in 1995 for adding interactivity to web pages. Still the language of the web, it has also parvaded many other environments: servers, mobile devices, connected objects, etc.
 
@@ -49,7 +49,7 @@ Still undecided or looking for more? Take Wes Bos' [JavaScript30](https://javasc
 
 ### Get a deeper understanding of the language
 
-You hopefully learnt a lot already, but JavaScript is a surprinsgly deep language that still has a lot in store for you. Some prominent resources to strengthen your knowledge are:
+You hopefully learnt a lot already, but JavaScript is a surprisingly deep language that still has a lot in store for you. Some prominent resources to strengthen your knowledge are:
 
 * Kyle Simpson's [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS), a book series diving deep into the core mechanisms of the language.
 * Ilya Kantor's [javascript.info](http://javascript.info), an online tutorial with a lot of interesting content.
