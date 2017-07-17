@@ -127,39 +127,15 @@ JavaScript can interact with an HTML document to provide dynamic interactivity: 
 A JavaScript file, usually stored in a `.js` file, is loaded by a web page with a `<script>` tag.
 
 ```html
-<!-- Link to a JavaScript file -->
+<!-- Load a JavaScript file -->
 <script src="path/to/file.js"></script>
 ```
 
 ## Developing web pages
 
-To create interactive web pages, you need to write HTML, CSS and JavaScript code. If you're just starting out, the easiest way to do so is by using an online JavaScript playground like [CodePen](http://codepen.io). However, you will likely want to develop in a more professional fashion at some point. You may also need to work offline, which is not supported by CodePen.
+To create interactive web pages, you need to write HTML, CSS and JavaScript code. If you're just starting out, the easiest way to do so is by using an online JavaScript playground. However, you will likely want to develop in a more professional fashion at some point, or need to work offline.
 
-### Using a code editor
-
-To do so, you'll need a **code editor**, a software that will assist you during coding. Here are some of them:
-
-* [Visual Studio Code](https://code.visualstudio.com/) (my personal favorite).
-* [Brackets](http://brackets.io/).
-* [Atom](https://atom.io/).
-* [Sublime Text](https://www.sublimetext.com/).
-
-### Browser and developer tools
-
-A **browser** is the software you use to visit webpages and use web applications. Modern browser include **developer tools** to help with web development. Each browser differs in exactly which tools they provide, but they're more similarities than differences among them.
-
-These tools usually include a **JavaScript console** (to show JS output and type commands), a **page inspector** (to browse the page structure) and many more!
-
-![The Firefox JavaScript console](images/chapter12-01.png)
-
-Check out the following links to discover more about browser developer tools:
-
-* [Khan Academy - Inspecting HTML and CSS](https://www.khanacademy.org/computing/computer-programming/html-css/web-development-tools/a/using-the-browser-developer-tools).
-* [OpenClassrooms - Optimize your website with DevTools](https://openclassrooms.com/courses/optimize-your-website-with-devtools).
-* [Chrome DevTools Overview](https://developer.chrome.com/devtools).
-* [Firefox Developer Tools](https://developer.mozilla.org/son/docs/Tools).
-
-> Even if you're using CodePen to follow along this book, you can still use the developer tools in addition to the CodePen console. For performance reasons, the CodePen console does not always show the same amount of information as the "real" browser console.
+Refer to the [appendix](#env-setup) for details on setting up your environment.
 
 ## Coding time!
 
