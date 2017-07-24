@@ -260,7 +260,7 @@ How are some good ways to name variables?
 
 ### Choose meaningful names
 
-The most important rule is to give each variable a name that reflects its role. This is the case in the second example above, where you use the word `radius` to actually indicate...well, a radius.
+The most important rule is to give each variable a name that reflects its role. This is the case in the second example above, where you use the word `radius` to actually indicate... Well, a radius.
 
 ### Don't use reserved words
 
