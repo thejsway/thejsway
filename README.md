@@ -57,6 +57,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Use web APIs](manuscript/chapter22.md)
   * [Send data to a web server](manuscript/chapter23.md)
   * [Discover Node.js](manuscript/chapter24.md)
+  * [Create a web server](manuscript/chapter25.md)
   * ...
 * Conclusion
   * [The road ahead](manuscript/concl01.md)

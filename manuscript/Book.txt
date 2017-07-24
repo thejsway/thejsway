@@ -31,6 +31,7 @@ chapter21.md
 chapter22.md
 chapter23.md
 chapter24.md
+chapter25.md
 backmatter.txt
 conclusion.txt
 concl01.md
