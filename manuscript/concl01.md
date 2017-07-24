@@ -58,26 +58,6 @@ You hopefully learnt a lot already, but JavaScript is a surprisingly deep langua
 
 Lastly, you might want to check out my own little [curated collection](http://www.pearltrees.com/t/javascript/id13385349#l634) of JavaScript-related links.
 
-### Discover new tools
-
-Over the years, a lot of tools have been created to ease a JavaScript developer's life:
-
-* **Librairies**, focusing on improving a particular aspect of the language.
-* **Frameworks**, offering a way to design and structure an application.
-* **Building tools**, streamlining the application packaging process.
-* **Linters**, checking source code against quality metrics and rules.
-* **Transpilers**, translating modern JavaScript code to make it run on older environments.
-* And many others!
-
-In particular, two kinds of tools are of great interest to any JavaScript professional:
-
-* A linter can greatly improve your code's quality, detecting bugs and enforcing good practices. [ESLint](http://eslint.org) is a common choice.
-* A code formatter frees you from the burden of formatting your code manually and improves consistency. [Prettier](https://github.com/prettier/prettier) is the current standard.
-
-Both ESLint and Prettier are discussed in the [appendix](#env-setup).
-
-For the rest, this area of the JavaScript landscape is moving *very* fast. You may as well stay away from new and shiny things and concentrate on improving your core language skills first. This will probably serve you better in the long run.
-
 ### Get social
 
 JavaScript's popularity is peaking. Why not becoming a part of its huge developer community?
