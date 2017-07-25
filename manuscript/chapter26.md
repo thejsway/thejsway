@@ -1,6 +1,6 @@
 # Project: a social news web app
 
-This final project is the culmination of the book. Good luck!
+This final project is the culmination of the book. You can check out the [expected result](https://thejsway-publink.herokuapp.com). Good luck!
 
 ## Objective
 
