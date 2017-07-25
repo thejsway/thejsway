@@ -60,7 +60,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Create a web server](manuscript/chapter25.md)
   * [Project: a social news web app](manuscript/chapter26.md)
 * Conclusion
-  * [The road ahead](manuscript/concl01.md)
+  * [Summary and perspectives](manuscript/concl01.md)
   * [Acknowledgements](manuscript/concl02.md)
 * Appendices
   * [Environment setup](manuscript/appendix01.md)

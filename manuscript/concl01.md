@@ -1,4 +1,4 @@
-# The road ahead
+# Summary and perspectives
 
 Congratulations, you made it to the end!
 
@@ -24,7 +24,7 @@ This book covers a lot of ground. Here are some key takeaways.
 
 * Node emphasizes modularity. Its **npm** package registry is the largest ecosystem of open source libraries in the world.
 
-## What's next?
+## The road ahead
 
 This book is designed to be the first step of a JavaScript-centered learning path. I hope it inspired you to go further. If so, you are only at the beginning of a long and exciting journey!
 
@@ -52,8 +52,8 @@ Still undecided or looking for more? Take Wes Bos' [JavaScript30](https://javasc
 You hopefully learnt a lot already, but JavaScript is a surprisingly deep language that still has a lot in store for you. Some prominent resources to strengthen your knowledge are:
 
 * Kyle Simpson's [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS), a book series diving deep into the core mechanisms of the language.
+* Axel Rauschmayer's authoritative [blog](http://2ality.com/) and [books](http://exploringjs.com).
 * Ilya Kantor's [javascript.info](http://javascript.info), an online tutorial with a lot of interesting content.
-* Marijn Haverbeke's [Eloquent JavaScript](http://eloquentjavascript.net) book, which covers many additional topics.
 * The JavaScript section of the [Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/JavaScript), full of reference material, guides and tutorials.
 
 Lastly, you might want to check out my own little [curated collection](http://www.pearltrees.com/t/javascript/id13385349#l634) of JavaScript-related links.
