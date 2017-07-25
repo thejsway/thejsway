@@ -1,8 +1,22 @@
 # Create a web server
 
+It's time to put your Node.js knowledge into practice and create a real-world web server in JavaScript. This is often called **back-end programming**.
+
+> You will build exactly the server that what used in previous chapters dealing with client-side web development. To test your server code, you can go back to code examples from chapters 22 and 23, and only change the start of the server URL from `https://thejsway-server.glitch.com` to your server URL.
+
 ## TL;DR
 
-TODO
+* The Node.js platform is well suited for creating **web servers** in JavaScript, with or with the help of a framework.
+
+* A **framework** provides a standard way to design and structure an application. **Express** is a common choice for building a web server with Node.
+
+* In order to respond to requests, an Express app defines **routes** (entry points associated to URLs) and listens to incoming HTTP requests.
+
+* The main Express method are `get()` to handle a `GET` request, `post()` to handle a `POST request` and `use()` to define a **middleware** (code that runs during the request/response cycle).
+
+* Incoming form or JSON data can be managed through specialized packages like **multer** and **body-parser**.
+
+* JavaScript can be used on both the client side (browser) and the server side of a web application. This empowers you to create complete **web applications**.
 
 ## Using a framework
 
@@ -61,7 +75,7 @@ const listener = app.listen(process.env.PORT || 3000, () => {
 });
 ```
 
-You can launch your server with commands `node index.js` or `npm start`, then type its root URL (<http://localhost:3000> if your server runs on your local machine) in a browser. You should see the string `"Hello from Express!"` appear.
+You can launch your server with either `node index.js` or `npm start`, then type its root URL (<http://localhost:3000> if your server runs on your local machine) in a browser. You should see the string `"Hello from Express!"` appear.
 
 ![Execution result](images/chapter25-01.png)
 
@@ -94,7 +108,7 @@ When an HTTP request is made to the route URL, the associated callback function 
 
 ### Listening to requests
 
-To detect incoming request, a web server must listen on a specific port. A **port** is a communication endpoint on a machine.
+To process incoming request, a web server must listen on a specific port. A **port** is a communication endpoint on a machine.
 
 The main Express object has a `listen()` method that taks as parameter the listening port and a callback function called for each request. The last part of the server code calls this method to start listening.
 
@@ -106,16 +120,38 @@ const listener = app.listen(process.env.PORT || 3000, () => {
 });
 ```
 
-## Publishing data
+## Creating an API
 
-Our web server is pretty limited for now, handling only one route and always returning the same string. Let's create our own little API by publishing some data in JSON format.
+Your web server is pretty limited for now, handling only one route and always returning the same string. Let's create your own little API by publishing some data in JSON format.
+
+### Enabling AJAX requests
+
+In a previous chapter, we talked about cross-origin requests (from one domain to another). Authorizing them on your server is mandatory to accept AJAX calls from clients.
+
+Enabling CORS on an Express web server is done by adding the following code in your main application file.
+
+```js
+// Enable CORS (see https://enable-cors.org/server_expressjs.html)
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+```
+
+This is an example of a **middleware**: code that runs somewhere between the reception of the HTTP request and the sending of the HTTP response.
+
+## Exposing data
 
 To match what was done on the client side in a previous chapter, we'll publish some blog articles. The API route is `"/api/articles"`, and the associated callback return a list of JavaScript objects.
 
-Here's the code to be added to the server *before* the last part (the one that starts the listening).
+Here's the code to be added to the server just before the last part (the one that starts the listening).
 
 ```js
-// Define a list of articles
+// Define an article list
 const articles = [
   { id: 1, title: "First article", content: "Hello World!" },
   {
@@ -144,17 +180,13 @@ When accessing the `"/api/articles"` route (<http://localhost:3000/api/articles>
 
 ## Accepting data
 
-Our web server offers a *read-only* service: it publishes some data but doesn't accept any... Until now!
+So far, your web server offers a *read-only* service: it publishes some data but doesn't accept any... Until now!
 
 As you saw in a previous chapter, information submitted to a web server can be either form data or JSON data.
 
-### Enabling Cross-Origin Resource Sharing
-
-TODO
-
 ### Handling form data
 
-Form data comes encapsulated into the HTTP `POST` request sent by the client to the server. The first server task is to extract this information from the request. The simplest way to do this is to use a specialized npm package, such as [multer](https://www.npmjs.com/package/multer).
+Form data comes encapsulated into the HTTP `POST` request sent by the client to the server. The first server task is to extract this information from the request. The simplest way to do this is to use a specialized npm package, such as [multer](https://www.npmjs.com/package/multer). Install it with the `npm install multer` command or directly in your app dependencies.
 
 ```json
 "dependencies": {
@@ -173,7 +205,7 @@ const multer = require("multer");
 const upload = multer();
 ```
 
-The following route accepts form data sent to the `"/animals"` route.
+The following route accepts form data sent to the `"/animals"` route. Notice the use of `app.post()` instead of `app.get()` to handle `POST` HTTP requests, and the addition of `upload.array()` as a second parameter to add a `body` object containing the fields of the form to the `request` object.
 
 ```js
 // Handle form data submission to the "/animals" route
@@ -186,9 +218,129 @@ app.post("/animals", upload.array(), (request, response) => {
 
 The values of the `name` and `vote` variables are extracted from the request body, and a string is constructed and sent back to the client.
 
+![Execution result](images/chapter25-06.png)
+
 ### Handling JSON data
 
-TODO: cars
+Managing incoming JSON data requires parsing it from the received `POST` request. Using an npm package like [body-parser](https://www.npmjs.com/package/body-parser) is the easiest solution. Install it with the `npm install body-parser` command or directly in your app dependencies.
+
+```json
+"dependencies": {
+  ...
+  "body-parser": "^1.17.2"
+},
+```
+
+Then, add the following code towards the beginning of your server main file.
+
+```js
+// Load the body-parser package as a module
+const bodyParser = require("body-parser");
+
+// Access the JSON parsing service
+const jsonParser = bodyParser.json();
+```
+
+The following code handle `POST` requests to the `"/api/cars"` route. JSON data is parsed by `jsonParser` and defined as the request body.
+
+```js
+// Handle submission of a JSON car array
+app.post("/api/cars", jsonParser, (request, response) => {
+  const cars = request.body;
+  response.send(`You sent me a list of cars: ${JSON.stringify(cars)}`);
+});
+```
+
+![Execution result](images/chapter25-07.png)
+
+## Publishing web pages
+
+Finally, let's learn how to serve HTML content so that your web server can come into its own.
+
+For example, `GET` HTTP requests to the `"/hello"` route should show a basic web page. A naive way to do so would be to simply return an HTML string.
+
+```js
+// Return HTML content for requests to "/hello"
+app.get("/hello", (request, response) => {
+  const htmlContent = `<!doctype html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Hello web page</title>
+    </head>
+    <body>
+      Hello!
+    </body>
+    </html>`;
+  response.send(htmlContent);
+});
+```
+
+However, things would quickly get out of hands as the complexity of the web page grows. A better solution is to define the HTML content in an external file stored in a dedicated subfolder, and return that file as a result of the request.
+
+For example, create a subfolder named `views` and a file named `hello.html` inside it. Give the HTML file the following content.
+
+```html
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello web page</title>
+</head>
+
+<body>
+    <h2>Hello web page</h2>
+    <div id="content">Hello!</div>
+</body>
+
+</html>
+```
+
+Then, update the callback for the `"/hello"` route to send the HTML file as the request response.
+
+```js
+// Return a web page for requests to "/hello"
+app.get("/hello", (request, response) => {
+  response.sendFile(`${__dirname}/views/hello.html`);
+});
+```
+
+Pointing your browser to the `"/hello"` URL (<http://localhost:3000/hello> if your server runs locally) should now display the web page.
+
+![Execution result](images/chapter25-03.png)
+
+Most web pages will need to load client-side resources sush as images, CSS and JavaScript files. A common practice is to put these assets in a dedicated subfolder.
+
+For example, create a `public` subfolder and a `hello.js` JavaScript file inside it with the following content.
+
+```js
+// Update the "content" DOM element
+document.getElementById("content").textContent = "Hello from JavaScript!";
+```
+
+You should now have the following folder structure for your server.
+
+![Folder structure](images/chapter25-04.png)
+
+Update the `hello.html` to load this JavaScript file.
+
+```html
+<script src="/hello.js"></script>
+```
+
+Lastly, you must tell Express that client assets are located in the `public` subfolder, so that the server can serve them directly. Add the following code towards the beginning of your main application file.
+
+```js
+// Serve content of the "public" subfolder directly
+app.use(express.static("public"));
+```
+
+Accessing the `"/hello"` URL shows you a slightly different result. The `hello.js` file was loaded and executed by the browser, updating the web page content.
+
+![Execution result](images/chapter25-05.png)
+
+In this example, JavaScript was used both for back-end (server side) and front-end (client side) programming. This is one of its core strengths: knowing only one programming language empowers you to create complete **web applications**. How great is that?
 
 ## Coding time!
 
