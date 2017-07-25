@@ -39,7 +39,7 @@ To be able to use a web API, you have to know its address and its usage mode. Mo
 
 ### Checking out an API
 
-The first web API you'll use here simulates a blog and exposes a series of articles, Its URL is <https://thejsway.glitch.me/api/articles>. Opening it in a browser shows the JSON data returned by the API.
+The first web API you'll use here simulates a blog and exposes a series of articles, Its URL is <https://thejsway-server.glitch.me/api/articles>. Opening it in a browser shows the JSON data returned by the API.
 
 ![API result in a browser](images/chapter22-01.png)
 
@@ -68,7 +68,7 @@ And here's the associated JavaScript code.
 
 ```js
 // Fetch data from the API
-fetch("https://thejsway.glitch.me/api/articles")
+fetch("https://thejsway-server.glitch.me/api/articles")
   .then(response => response.json()) // Translate JSON into JavaScript
   .then(articles => {
     articles.forEach(article => {

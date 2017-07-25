@@ -100,7 +100,7 @@ document.querySelector("form").addEventListener("submit", e => {
   // Create a FormData object, passing the form as a parameter
   const formData = new FormData(e.target);
   // Send form data to the server with an aynchronous POST request
-  fetch("https://thejsway.glitch.me/animals", {
+  fetch("https://thejsway-server.glitch.me/animals", {
     method: "POST",
     body: formData
   })
@@ -116,7 +116,7 @@ document.querySelector("form").addEventListener("submit", e => {
 
 The event listener starts by disabling the default form submission behavior, which is to send a synchronous HTTP `POST` request to a server. Instead, a `FormData` object is created with the form itself (the `e.target` expression) as a parameter. All form fields are automatically added as key/value pairs in this object.
 
-Once the form fields are encapsulated in the `FormData` object, the `fetch()` method seen previously is used to send an asynchronous request to the `https://thejsway.glitch.me/animals` URL. The second parameter of the `fetch()` call sets the HTTP method as `POST` and adds the form data into the body of the request.
+Once the form fields are encapsulated in the `FormData` object, the `fetch()` method seen previously is used to send an asynchronous request to the `https://thejsway-server.glitch.me/animals` URL. The second parameter of the `fetch()` call sets the HTTP method as `POST` and adds the form data into the body of the request.
 
 Lastly, the page's `result` element is updated when the server responds to the asynchronous request.
 
@@ -138,7 +138,7 @@ const formData = new FormData();
 formData.append("size", "L");
 formData.append("color", "blue");
 // Send data to the server
-fetch("https://thejsway.glitch.me/tshirt", {
+fetch("https://thejsway-server.glitch.me/tshirt", {
   method: "POST",
   body: formData
 })
@@ -177,7 +177,7 @@ const cars = [
 ];
 
 // Send this array as JSON data to the server
-fetch("https://thejsway.glitch.me/api/cars", {
+fetch("https://thejsway-server.glitch.me/api/cars", {
   method: "POST",
   headers: {
     Accept: "application/json",
