@@ -4,7 +4,7 @@ A modern introduction to an essential language.
 
 Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
 
-[![Completion](https://img.shields.io/badge/Completion-85%25-red.svg)](https://leanpub.com/thejsway)
+[![Completion](https://img.shields.io/badge/Completion-90%25-red.svg)](https://leanpub.com/thejsway)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -58,15 +58,13 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Send data to a web server](manuscript/chapter23.md)
   * [Discover Node.js](manuscript/chapter24.md)
   * [Create a web server](manuscript/chapter25.md)
-  * ...
+  * [Project: a social news web app](manuscript/chapter26.md)
 * Conclusion
   * [The road ahead](manuscript/concl01.md)
   * [Acknowledgements](manuscript/concl02.md)
 * Appendices
   * [Environment setup](manuscript/appendix01.md)
   * [JavaScript style guide](manuscript/appendix02.md)
-
-More to come!
 
 ## Published version
 
