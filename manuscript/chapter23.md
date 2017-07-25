@@ -204,7 +204,7 @@ The second parameter of the `fetch()` call sets `POST` as the HTTP method to use
 
 Write the HTML code that shows input fields for creating a new blog article by entering its title and content.
 
-Then, write the associated JavaScript to send the article fields as form data to the URL `https://thejsway.glitch.me/articles`. You should receive a confirmation message from the server and display it on the page.
+Then, write the associated JavaScript code to send the article fields as form data to the URL `https://thejsway-server.herokuapp.com/articles`. You should receive a confirmation message from the server and display it on the page.
 
 ![Execution result](images/chapter23-05.png)
 
@@ -217,6 +217,6 @@ The goal of this exercise is to send your traveling info to a server. Data is ex
 * A `name` field representing your name. Its value is a string.
 * A `countries` field representing the countries you already visited. Its value is an array of objects. Each object has a `name` field (string) for the country name, and a `year` field (integer) for the year you last visited it.
 
-This data must be sent to the URL `https://thejsway.glitch.me/api/countries`. You should receive a confirmation message from the server and display it in the console.
+This data must be sent to the URL `https://thejsway-server.herokuapp.com/api/countries`. You should receive a confirmation message from the server and display it in the console.
 
 ![Execution result](images/chapter23-06.png)
