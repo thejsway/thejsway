@@ -26,7 +26,7 @@ for (const myElement of myArray) {
 }
 ```
 
-* The `push()` method adds an element ad the end of an array.
+* The `push()` method adds an element at the end of an array. The `unshift()` method adds it at the beginning.
 
 * The `pop()` and `splice()` are used to remove elements from the array.
 
@@ -190,6 +190,14 @@ console.log(movies[5]); // "Ghostbusters"
 ```
 
 You add a new item to an array with the `push()` method. The new element to be added is passed as a parameter to the method. It is inserted at the end of the array.
+
+To add an element at the beginning of an array, use the `unshift()` method of `push()`.
+
+```js
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
+movies.unshift("Pacific Rim");
+console.log(movies[0]); // "Pacific Rim"
+```
 
 ### Removing an element from an array
 
