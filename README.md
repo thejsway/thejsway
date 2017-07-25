@@ -4,7 +4,7 @@ A modern introduction to an essential language.
 
 Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
 
-[![Completion](https://img.shields.io/badge/Completion-80%25-red.svg)](https://leanpub.com/thejsway)
+[![Completion](https://img.shields.io/badge/Completion-85%25-red.svg)](https://leanpub.com/thejsway)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
@@ -14,7 +14,7 @@ Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
 
 This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. Numerous brain cycles were spent to make it:
 
-* **Beginner-friendly yet comprehensive**. From the very basics of programming up to full-stack web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!
+* **Beginner-friendly yet comprehensive**. From the very basics of programming up to front-end and back-end web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!
 * **Standards-aligned**. From start to finish, the book enforces good programming habits, embraces the ubiquitous JavaScript tools [ESLint](http://eslint.org) and [Prettier](https://github.com/prettier/prettier) and closely follows the popular [AirBnb Style Guide](https://github.com/airbnb/javascript).
 * **Future-proof**. It is entirely written using the recent ES2015 syntax, avoiding awkwardnesses from the past.
 * **Hands-on**. No real learning happens without practicing! Each chapter is accompanied by a series of exercises to put your newly acquired skills into action. A three-part project will guide you in the creation of a social news web application.

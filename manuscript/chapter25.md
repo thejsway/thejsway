@@ -2,7 +2,7 @@
 
 It's time to put your Node.js knowledge into practice and create a real-world web server in JavaScript. This is often called **back-end programming**.
 
-> You will build exactly the server that what used in previous chapters dealing with client-side web development. To test your server code, you can go back to code examples from chapters 22 and 23, and only change the start of the server URL from `https://thejsway-server.glitch.com` to your server URL.
+> You will build exactly the server that was used in the previous chapters dealing with client-side web development. To test your server code, you can go back to code examples from chapters 22 and 23, and only change the start of the server URL from `https://thejsway-server.glitch.com` to your server URL.
 
 ## TL;DR
 
@@ -251,7 +251,7 @@ app.post("/api/cars", jsonParser, (request, response) => {
 });
 ```
 
-![Execution result](images/chapter25-07.png)
+![Execution result](images/chapter23-04.png)
 
 ## Publishing web pages
 
@@ -346,6 +346,18 @@ In this example, JavaScript was used both for back-end (server side) and front-e
 
 ### T-shirt color
 
-### New article
+Add a `"/tshirt"` route to your server for handling the submission of form data containing a `size` and a `color` field, like in the chapter 23 example. In the route callback, send back a confirmation message to the client.
+
+![Execution result](images/chapter23-03.png)
 
 ### Visited countries
+
+Add a `"/api/countries"` route to your server to manager traveler information received as JSON data, like in the chapter 23 exercise. In the route callback, send back a confirmation message to the client.
+
+![Execution result](images/chapter23-06.png)
+
+### New article
+
+Add a `"/articles"` route to your server. This route should accept a new blog article as form data and add it to the server's article list, like in the chapter 23 exercise. The new article ID must be equal to the maximum ID among existing articles plus one.
+
+![Execution result](images/chapter23-05.png)
