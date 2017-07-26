@@ -124,9 +124,7 @@ Next, open the HTML file in your browser to execute the JavaScript code stored i
 
 #### From chapter 24 onwards
 
-In these chapters, you'll create Node.js applications to execute your JavaScript code. 
-
-Each Node app must sit in its own folder and is described by a `package.json` file located at the root of this folder. Subdirectories may be used to store specific files:
+In these chapters, you'll create Node.js applications to execute your JavaScript code. Each Node app must sit in its own folder and is described by a `package.json` file located at the root of this folder. Subdirectories may be used to store specific files:
 
 * `node_modules` (automatically created) for external dependencies.
 * `public` for client assets loaded by the browser, like CSS and JavaScript files.
