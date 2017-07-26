@@ -114,7 +114,7 @@ The following example shows in the console the character assoaciated to a presse
 ```js
 // Show the pressed character
 document.addEventListener("keypress", e => {
-    console.log(`You pressed the ${String.fromCharCode(e.charCode)} key`);
+  console.log(`You pressed the ${String.fromCharCode(e.charCode)} key`);
 });
 ```
 
@@ -125,7 +125,7 @@ To manage the press and release of any key (not only the ones producing characte
 ```js
 // Show information on a keyboard event
 const keyboardInfo = e => {
-    console.log(`Keyboard event: ${e.type}, key: ${e.keyCode}`);
+  console.log(`Keyboard event: ${e.type}, key: ${e.keyCode}`);
 };
 
 // Integrate this function into key press and release:
@@ -152,24 +152,28 @@ The below code shows information on all click events that happen on a web page. 
 ```js
 // Return the name of the mouse button
 const getMouseButton = code => {
-    let button = "unknown";
-    switch (code) {
+  let button = "unknown";
+  switch (code) {
     case 0: // 0 is the code for the left mouse button
-        button = "left";
-        break;
+      button = "left";
+      break;
     case 1: // 1 is the code for the middle mouse button
-        button = "middle";
-        break;
+      button = "middle";
+      break;
     case 2: // 2 is the code for the right button
-        button = "right";
-        break;
-    }
-    return button;
+      button = "right";
+      break;
+  }
+  return button;
 };
 
 // Show info about mouse event
 const mouseInfo = e => {
-    console.log(`Mouse event: ${e.type}, button: ${getMouseButton(e.button)}, X: ${e.clientX}, Y: ${e.clientY}`);
+  console.log(
+    `Mouse event: ${e.type}, button: ${getMouseButton(
+      e.button
+    )}, X: ${e.clientX}, Y: ${e.clientY}`
+  );
 };
 
 // Add mouse click event listener
@@ -199,7 +203,7 @@ The following code displays a message in the console once the page is fully load
 ```js
 // Web page loading event
 window.addEventListener("load", e => {
-    console.log("The page has been loaded!");
+  console.log("The page has been loaded!");
 });
 ```
 
@@ -237,16 +241,16 @@ Here's the complementary JavaScript code. It adds `click` event handlers on the 
 ```js
 // Click handler on the document
 document.addEventListener("click", e => {
-    console.log("Document handler");
+  console.log("Document handler");
 });
 // Click handler on the paragraph
 document.getElementById("para").addEventListener("click", e => {
-    console.log("Paragraph handler");
+  console.log("Paragraph handler");
 });
 // Click handler on the button
 document.getElementById("propa").addEventListener("click", e => {
-    console.log("Button handler");
-    e.stopPropagation(); // Stop the event propagation
+  console.log("Button handler");
+  e.stopPropagation(); // Stop the event propagation
 });
 ```
 
@@ -261,8 +265,8 @@ Adding a line in the button's click handler prevents the `click` event from prop
 ```js
 // Click handler on the button
 document.getElementById("propa").addEventListener("click", e => {
-    console.log("Button handler");
-    e.stopPropagation(); // Stop the event propagation
+  console.log("Button handler");
+  e.stopPropagation(); // Stop the event propagation
 });
 ```
 
@@ -357,18 +361,19 @@ And the associated JavaScript code that defines a question list.
 ```js
 // List of questions (statement + answer)
 const questions = [
-{
+  {
     statement: "2+2?",
     answer: "2+2 = 4"
-},
-{
+  },
+  {
     statement: "In what year did Christopher Columbus discover America?",
     answer: "1492"
-},
-{
-    statement: "What occurs twice in a lifetime, but once in every year, twice in a week but never in a day?",
+  },
+  {
+    statement:
+      "What occurs twice in a lifetime, but once in every year, twice in a week but never in a day?",
     answer: "The E letter"
-}
+  }
 ];
 ```
 

@@ -12,19 +12,19 @@ This chapter will introduce objects and the way they are created and used in Jav
 
 ```js
 const myObject = {
-    property1: value1,
-    property2: value2,
-    // ... ,
-    method1(/* ... */) {
-        // ...
-    },
-    method2(/* ... */) {
-        // ...
-    },
+  property1: value1,
+  property2: value2,
+  // ... ,
+  method1(/* ... */) {
     // ...
+  },
+  method2(/* ... */) {
+    // ...
+  }
+  // ...
 };
 
-myObject.property1 = newValue;   // Set the new value of property1 for myObject
+myObject.property1 = newValue; // Set the new value of property1 for myObject
 console.log(myObject.property1); // Show the value of property1 for myObject
 myObject.method1(...);           // Call method1 on myObject
 ```
@@ -57,9 +57,9 @@ Here is the JavaScript representation of a blue Bic ballpoint pen.
 
 ```js
 const pen = {
-    type: "ballpoint",
-    color: "blue",
-    brand: "Bic"
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
 };
 ```
 
@@ -75,9 +75,9 @@ After creating an object, you can access the value of its properties using **dot
 
 ```js
 const pen = {
-    type: "ballpoint",
-    color: "blue",
-    brand: "Bic"
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
 };
 
 console.log(pen.type);  // "ballpoint"
@@ -89,9 +89,9 @@ Accessing an object's property is an **expression** that produces a value. Such 
 
 ```js
 const pen = {
-    type: "ballpoint",
-    color: "blue",
-    brand: "Bic"
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
 };
 
 console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);
@@ -105,9 +105,9 @@ Once an object is created, you can change the value of its properties with the s
 
 ```js
 const pen = {
-    type: "ballpoint",
-    color: "blue",
-    brand: "Bic"
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
 };
 
 pen.color = "red"; // Modify the pen color property
@@ -121,9 +121,9 @@ JavaScript even offers the ability to dynamically add new properties to an alrea
 
 ```js
 const pen = {
-    type: "ballpoint",
-    color: "blue",
-    brand: "Bic"
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
 };
 
 pen.price = "2.5"; // Set the pen price property
@@ -153,9 +153,9 @@ Let me introduce you to Aurora, our first RPG character.
 
 ```js
 const aurora = {
-    name: "Aurora",
-    health: 150,
-    strength: 25
+  name: "Aurora",
+  health: 150,
+  strength: 25
 };
 ```
 
@@ -167,9 +167,9 @@ Aurora is about to start a series of great adventures, some of which will update
 
 ```js
 const aurora = {
-    name: "Aurora",
-    health: 150,
-    strength: 25
+  name: "Aurora",
+  health: 150,
+  strength: 25
 };
 
 console.log(`${aurora.name} has ${aurora.health} health points and ${aurora.strength} as strength`);
@@ -195,14 +195,14 @@ Observe the following example.
 
 ```js
 const aurora = {
-    name: "Aurora",
-    health: 150,
-    strength: 25
+  name: "Aurora",
+  health: 150,
+  strength: 25
 };
 
 // Return the character description
 function describe(character) {
-    return `${character.name} has ${character.health} health points and ${character.strength} as strength`;
+  return `${character.name} has ${character.health} health points and ${character.strength} as strength`;
 }
 
 console.log(describe(aurora));
@@ -216,14 +216,15 @@ Now for an alternative approach: creating a `describe()` property *inside* the o
 
 ```js
 const aurora = {
-    name: "Aurora",
-    health: 150,
-    strength: 25,
+  name: "Aurora",
+  health: 150,
+  strength: 25,
 
-    // Return the character description
-    describe() {
-        return `${this.name} has ${this.health} health points and ${this.strength} as strength`;
-    }
+  // Return the character description
+  describe() {
+    return `${this.name} has ${this.health} health points and ${this
+      .strength} as strength`;
+  }
 };
 
 console.log(aurora.describe());
@@ -259,14 +260,15 @@ Now look closely at the body of the `describe()` method on our object.
 
 ```js
 const aurora = {
-    name: "Aurora",
-    health: 150,
-    strength: 25,
+  name: "Aurora",
+  health: 150,
+  strength: 25,
 
-    // Return the character description
-    describe() {
-        return `${this.name} has ${this.health} health points and ${this.strength} as strength`;
-    }
+  // Return the character description
+  describe() {
+    return `${this.name} has ${this.health} health points and ${this
+      .strength} as strength`;
+  }
 };
 ```
 

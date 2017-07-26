@@ -4,7 +4,7 @@ This chapter will introduce you to [arrays]( https://en.wikipedia.org/wiki/Array
 
 ## TL;DR
 
-* An **array** represents a set of elements. A JavaScript array is an object that has special properties, like `length` to access its size (number of elements).
+* An **array** represents a list of elements. A JavaScript array is an object that has special properties, like `length` to access its size (number of elements).
 
 * You can think of an array as a set of boxes, each storing a specific value and associated with a number called its **index**. The first element of an array will be index number 0 - not 1.
 
@@ -14,15 +14,15 @@ This chapter will introduce you to [arrays]( https://en.wikipedia.org/wiki/Array
 
 ```js
 for (let i = 0; i < myArray.length; i++) {
-    // Use myArray[i] to access each array element one by one
+  // Use myArray[i] to access each array element one by one
 }
 
 myArray.forEach(myElement => {
-    // Use myElement to access each array element one by one
+  // Use myElement to access each array element one by one
 });
 
 for (const myElement of myArray) {
-    // Use myElement to access each array element one by one
+  // Use myElement to access each array element one by one
 }
 ```
 
@@ -40,8 +40,6 @@ One solution would be to create several variables:
 const movie1 = "The Wolf of Wall Street";
 const movie2 = "Zootopia";
 const movie3 = "Babysitting";
-const movie4 = "Metropolis";
-const movie5 = "Gone with the Wind";
 // ...
 ```
 
@@ -51,12 +49,10 @@ Another possibility is to group the movies in an object.
 
 ```js
 const movies = {
-    movie1: "The Wolf of Wall Street",
-    movie2: "Zootopia",
-    movie3: "Babysitting",
-    movie4: "Metropolis",
-    movie5: "Gone with the Wind",
-    // ...
+  movie1: "The Wolf of Wall Street",
+  movie2: "Zootopia",
+  movie3: "Babysitting",
+  // ...
 };
 ```
 
@@ -75,7 +71,7 @@ In JavaScript, an array is an object that has special properties.
 Here's how to create our list of movies in the form of an array.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 ```
 
 An array is created with a pair of square brackets `[]`. Everything within the brackets makes up the array.
@@ -93,8 +89,8 @@ T> Since an array may contain multiple elements, it's good to name the array plu
 The number of elements stored in an array is called its **size**. Here's how to access it.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
-console.log(movies.length); // 5
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+console.log(movies.length); // 3
 ```
 
 You access the size of an array via its `length` property, using the dot notation.
@@ -102,7 +98,7 @@ You access the size of an array via its `length` property, using the dot notatio
 Of course, this `length` property returns 0 in case of an empty array.
 
 ```js
-const emptyArray = [];           // Create an empty array
+const emptyArray = []; // Create an empty array
 console.log(emptyArray).length); // 0
 ```
 
@@ -117,19 +113,17 @@ Here is how you might represent the `movies` array:
 You can access a particular element by passing its index within **square brackets** `[]`:
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 console.log(movies[0]); // "The Wolf of Wall Street"
 console.log(movies[1]); // "Zootopia"
 console.log(movies[2]); // "Babysitting"
-console.log(movies[3]); // "Metroplis"
-console.log(movies[4]); // "Gone with the Wind"
 ```
 
 Using an invalid index to access a JavaScript array element returns the value `undefined`.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
-console.log(movies[5]); // undefined: last element is at index 4
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+console.log(movies[3]); // undefined: last element is at index 2
 ```
 
 ## Iterating over an array
@@ -139,9 +133,9 @@ There are several ways to browse an array element by element.
 The first is to use a `for` loop as discussed previously.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 for (let i = 0; i < movies.length; i++) {
-    console.log(movies[i]);
+  console.log(movies[i]);
 }
 ```
 
@@ -149,12 +143,18 @@ The `for` loop runs through each element in the array starting with index 0 all 
 
 Another way is to call the `forEach()` method on the array. It takes as a paramater a **function** that will be applied to each array element.
 
+```js
+myArray.forEach(myElement => {
+  // Use myElement to access each array element one by one
+});
+```
+
 Here's the previous example, rewritten with this method and a fat arrow function.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 movies.forEach(movie => {
-    console.log(movie);
+  console.log(movie);
 });
 ```
 
@@ -164,16 +164,16 @@ Lastly, you can use the `for-of` loop, a special kind of loop dealing with [iter
 
 ```js
 for (const myElement of myArray) {
-    // Use myElement to access each array element one by one
+  // Use myElement to access each array element one by one
 }
 ```
 
 Check out the previous example written with a `for-of` loop.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 for (const movie of movies) {
-    console.log(movie);
+  console.log(movie);
 }
 ```
 
@@ -184,7 +184,7 @@ for (const movie of movies) {
 Don't lie to me: you've just watched Ghostbusters *yet another time*. Let's add it to the list. Here's how you'd do so.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 movies.push("Ghostbusters");
 console.log(movies[5]); // "Ghostbusters"
 ```
@@ -194,7 +194,7 @@ You add a new item to an array with the `push()` method. The new element to be a
 To add an element at the beginning of an array, use the `unshift()` method of `push()`.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 movies.unshift("Pacific Rim");
 console.log(movies[0]); // "Pacific Rim"
 ```
@@ -204,30 +204,21 @@ console.log(movies[0]); // "Pacific Rim"
 You can remove the last element of an array using the `pop()` method.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
-movies.pop();               // Remove the last array element
-console.log(movies.length); // 4
-console.log(movies[4]);     // undefined
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+movies.pop(); // Remove the last array element
+console.log(movies.length); // 2
+console.log(movies[2]); // undefined
 ```
 
 Alternatively, you can use the `splice()` method with two parameters: the first one is the index from which to begin removing, and the second one is the number of elements to remove.
 
 ```js
-const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting", "Metroplis", "Gone with the Wind"];
-movies.splice(0, 1);        // Remove 1 element starting at index 0
-console.log(movies.length); // 4
-console.log(movies[0]);     // "Zootopia"
-console.log(movies[1]);     // "Babysitting"
+const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
+movies.splice(0, 1); // Remove 1 element starting at index 0
+console.log(movies.length); // 2
+console.log(movies[0]); // "Zootopia"
+console.log(movies[1]); // "Babysitting"
 ```
-
-## More on Arrays
-
-You can do many wonderful things with arrays. Here are some links that may help you deepen your understanding of arrays:
-
-* Mozilla Developer Network [Array - JavaScript]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array )
-* W3 Schools [JavaScript Arrays]( https://www.w3schools.com/js/js_arrays.asp )
-* W3 Schools [JavaScript Array Methods]( https://www.w3schools.com/js/js_array_methods.asp )
-* W3 Schools [JavaScript Array Reference]( https://www.w3schools.com/jsref/jsref_obj_array.asp )
 
 ## Coding time!
 

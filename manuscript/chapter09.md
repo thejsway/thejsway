@@ -12,18 +12,18 @@ A few chapters ago, you learned how to create your first objects in JavaScript. 
 
 ```js
 class MyClass {
-    constructor(param1, param2, ...) {
-        this.property1 = param1;
-        this.property2 = param2;
-        // ...
-    }
-    method1(/* ... */) {
-        // ...
-    }
-    method2(/* ... */) {
-        // ...
-    }
+  constructor(param1, param2, ...) {
+    this.property1 = param1;
+    this.property2 = param2;
     // ...
+  }
+  method1(/* ... */) {
+    // ...
+  }
+  method2(/* ... */) {
+    // ...
+  }
+  // ...
 }
 ```
 
@@ -60,7 +60,8 @@ const aurora = {
 
   // Return the character description
   describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
+    return `${this.name} has ${this.health} health points, ${this
+      .strength} as strength and ${this.xp} XP points`;
   }
 };
 
@@ -87,7 +88,8 @@ const glacius = {
 
   // Return the character description
   describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
+    return `${this.name} has ${this.health} health points, ${this
+      .strength} as strength and ${this.xp} XP points`;
   }
 };
 ```
@@ -116,7 +118,8 @@ class Character {
   }
   // Return the character description
   describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
+    return `${this.name} has ${this.health} health points, ${this
+      .strength} as strength and ${this.xp} XP points`;
   }
 }
 ```
@@ -158,18 +161,18 @@ Here's the canonical syntax for creating an object using a class.
 
 ```js
 class MyClass {
-    constructor(param1, param2, ...) {
-        this.property1 = param1;
-        this.property2 = param2;
-        // ...
-    }
-    method1(/* ... */) {
-        // ...
-    }
-    method2(/* ... */) {
-        // ...
-    }
+  constructor(param1, param2, ...) {
+    this.property1 = param1;
+    this.property2 = param2;
     // ...
+  }
+  method1(/* ... */) {
+    // ...
+  }
+  method2(/* ... */) {
+    // ...
+  }
+  // ...
 }
 
 const myObject = new MyClass(arg1, arg2, ...);
@@ -191,7 +194,7 @@ Here's an example (borrowed from Kyle Simpson's great book series [You Don't Kno
 
 ```js
 const anObject = {
-    myProp: 2
+  myProp: 2
 };
 
 // Create anotherObject using anObject as a prototype
@@ -213,7 +216,7 @@ If the prototype of an object does not have a desired property, then research co
 
 ```js
 const anObject = {
-    myProp: 2
+  myProp: 2
 };
 
 // Create anotherObject using anObject as a prototype
@@ -261,14 +264,19 @@ class Character {
   attack(target) {
     if (this.health > 0) {
       const damage = this.strength;
-      console.log(`${this.name} attacks ${target.name} and causes ${damage} damage points`);
+      console.log(
+        `${this.name} attacks ${target.name} and causes ${damage} damage points`
+      );
       target.health -= damage;
       if (target.health > 0) {
         console.log(`${target.name} has ${target.health} health points left`);
       } else {
         target.health = 0;
         const bonusXP = 10;
-        console.log(`${this.name} eliminated ${target.name} and wins ${bonusXP} experience points`);
+        console.log(
+          `${this
+            .name} eliminated ${target.name} and wins ${bonusXP} experience points`
+        );
         this.xp += bonusXP;
       }
     } else {
@@ -277,7 +285,8 @@ class Character {
   }
   // Return the character description
   describe() {
-    return `${this.name} has ${this.health} health points, ${this.strength} as strength and ${this.xp} XP points`;
+    return `${this.name} has ${this.health} health points, ${this
+      .strength} as strength and ${this.xp} XP points`;
   }
 }
 ```

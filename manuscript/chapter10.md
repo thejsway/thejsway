@@ -129,13 +129,13 @@ const obj = {
 };
 const animals = ["Elephant", "Turtle"];
 
-obj.myProp = 3;          // Mutating a property is OK even for a const object
+obj.myProp = 3; // Mutating a property is OK even for a const object
 obj.myOtherProp = "abc"; // Adding a new property is OK even for a const object
 animals.push("Gorilla"); // Updating content is OK even for a const array
 
-n++;               // Illegal
-fruit = "orange";  // Illegal
-obj = {};          // Illegal
+n++; // Illegal
+fruit = "orange"; // Illegal
+obj = {}; // Illegal
 animals = ["Bee"]; // Illegal
 ```
 
@@ -540,11 +540,7 @@ console.log(formsEndingWithCy);
 Complete the following program to compute and show the total sum of the values in each of the arrays.
 
 ```js
-const arrays = [
-  [1, 4],
-  [11],
-  [3, 5, 7]
-];
+const arrays = [[1, 4], [11], [3, 5, 7]];
 
 // TODO: compute the value of the arraysSum variable
 
@@ -553,7 +549,7 @@ console.log(arraysSum); // Should show 31
 
 ### Student results
 
-Here's a program that shows female students results (name and average grade). Refactor it using functional programming. Execution result must stay the same.
+Here's a program that shows female students results (name and average grade).
 
 ```js
 const students = [
@@ -582,13 +578,13 @@ const students = [
 
 // Compute female student results
 const femaleStudentsResults = [];
-for (student of students) {
+for (const student of students) {
   if (student.sex === "f") {
     let gradesSum = 0;
-    for (grade of student.grades) {
+    for (const grade of student.grades) {
       gradesSum += grade;
     }
-    let averageGrade = gradesSum / student.grades.length;
+    const averageGrade = gradesSum / student.grades.length;
     femaleStudentsResults.push({
       name: student.name,
       avgGrade: averageGrade
@@ -598,5 +594,7 @@ for (student of students) {
 
 console.log(femaleStudentsResults);
 ```
+
+Refactor it using functional programming. Execution result must stay the same.
 
 ![Execution result](images/chapter10-03.png)

@@ -138,7 +138,7 @@ So, the previous example may also be written with a `for` for an identical resul
 ```js
 const name = "Sarah";
 for (let i = 0; i < name.length; i++) {
-    console.log(name[i]);
+  console.log(name[i]);
 }
 ```
 
@@ -147,7 +147,7 @@ A recent JavaScript evolution has introduced yet another option to iterate over 
 ```js
 const name = "Sarah";
 for (const letter of name) {
-    console.log(letter);
+  console.log(letter);
 }
 ```
 
@@ -161,7 +161,7 @@ The JavaScript method `Array.from()` can be used to turn a string into an array.
 const name = "Sarah";
 const nameArray = Array.from(name);
 nameArray.forEach(letter => {
-    console.log(letter);
+  console.log(letter);
 });
 ```
 
@@ -199,14 +199,6 @@ const months = monthList.split(",");
 console.log(months[0]);  // "Jan"
 console.log(months[11]); // "Dec"
 ```
-
-## More on Strings
-
-* Mozilla Developer Network [JavaScript Reference: String]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-* W3 Schools [Strings]( https://www.w3schools.com/js/js_strings.asp )
-* W3 Schools [String Methods]( https://www.w3schools.com/js/js_string_methods.asp )
-* W3 Schools [String Reference]( https://www.w3schools.com/jsref/jsref_obj_string.asp )
-* Quirksmode [Strings]( http://www.quirksmode.org/js/strings.html )
 
 ## Coding time!
 

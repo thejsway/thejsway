@@ -19,7 +19,7 @@ In this chapter, you'll learn how to break down a program into subparts called f
 ```js
 // Function declaration
 function myFunction(param1, param2, ...) {
-    // Function code using param1, param2, ...
+  // Function code using param1, param2, ...
 }
 
 // Function call
@@ -30,24 +30,24 @@ myFunction(arg1, arg2, ...);
 
 ```js
 // Anonymous function created with a function expression and assigned to a variable
-const myVar = function(param1, param2, ...) {
-    // Function code using param1, param2, ...
+const myFunc = function(param1, param2, ...) {
+  // Function code using param1, param2, ...
 }
 
 // Function call
-myVar(arg1, arg2, ...);
+myFunc(arg1, arg2, ...);
 ```
 
 * A third way to create an anonymous function is the more recent **fat arrow syntax**.
 
 ```js
 // Fat arrow anonymous function assigned to a variable
-const myVar = (param1, param2, ...)  => {
-    // Function code using param1, param2, ...
+const myFunc = (param1, param2, ...)  => {
+  // Function code using param1, param2, ...
 }
 
 // Function call
-myVar(arg1, arg2, ...);
+myFunc(arg1, arg2, ...);
 ```
 
 * No matter how it's created, each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lots a **predefined functions** covering various needs.
@@ -58,23 +58,23 @@ To understand why functions are important, check out our example from a previous
 
 ```text
 Begin
-    Get out the rice cooker
-    Fill it with rice
-    Fill it with water
-    Cook the rice
-    Chop the vegetables
-    Stir-fry the vegetables
-    Taste-test the vegetables
-        If the veggies are good
-            Remove them from the stove
-        If the veggies aren't good
-            Add more pepper and spices
-        If the veggies aren't cooked enough
-            Keep stir-frying the veggies
-    Heat the tortilla
-    Add rice to tortilla
-    Add vegetables to tortilla
-    Roll tortilla
+  Get out the rice cooker
+  Fill it with rice
+  Fill it with water
+  Cook the rice
+  Chop the vegetables
+  Stir-fry the vegetables
+  Taste-test the vegetables
+    If the veggies are good
+      Remove them from the stove
+    If the veggies aren't good
+      Add more pepper and spices
+    If the veggies aren't cooked enough
+      Keep stir-frying the veggies
+  Heat the tortilla
+  Add rice to tortilla
+  Add vegetables to tortilla
+  Roll tortilla
 End
 ```
 
@@ -82,10 +82,10 @@ Here's the same general idea, written in a different way.
 
 ```text
 Begin
-    Cook rice
-    Stir-fry vegetables
-    Add fillings
-    Roll together
+  Cook rice
+  Stir-fry vegetables
+  Add fillings
+  Roll together
 End
 ```
 
@@ -101,7 +101,7 @@ Here's a basic example of a function.
 
 ```js
 function sayHello() {
-    console.log("Hello!");
+  console.log("Hello!");
 }
 
 console.log("Start of program");
@@ -119,7 +119,7 @@ Check out the first lines of the example above.
 
 ```js
 function sayHello() {
-    console.log("Hello!");
+  console.log("Hello!");
 }
 ```
 
@@ -130,7 +130,7 @@ This is an example of a function **declaration**.
 ```js
 // Declare a function called myFunction
 function myFunction() {
-    // Function code
+  // Function code
 }
 ```
 
@@ -174,7 +174,7 @@ Here is a variation of our example program.
 
 ```js
 function sayHello() {
-    return "Hello!";
+  return "Hello!";
 }
 
 console.log("Start of program");
@@ -192,10 +192,10 @@ The keyword `return` indicates that the function will return a value, which is s
 ```js
 // Declare myFunction
 function myFunction() {
-    let returnValue;
-    // Calculate return value
-    // returnValue = ...
-    return returnValue;
+  let returnValue;
+  // Calculate return value
+  // returnValue = ...
+  return returnValue;
 }
 
 // Get return value from myFunction
@@ -211,8 +211,8 @@ If you try to retrieve the return value of a function that does not actually hav
 
 ```js
 function myFunction() {
-    // ...
-    // No return value
+  // ...
+  // No return value
 }
 
 const result = myFunction();
@@ -225,7 +225,7 @@ Let's simplify our example a bit by getting rid of the variable that stores the 
 
 ```js
 function sayHello() {
-    return "Hello!";
+  return "Hello!";
 }
 
 console.log(sayHello()); // "Hello!"
@@ -239,8 +239,8 @@ You can declare variables inside a function, as in the example below.
 
 ```js
 function sayHello() {
-    const message = "Hello!";
-    return message;
+  const message = "Hello!";
+  return message;
 }
 
 console.log(sayHello()); // "Hello!"
@@ -252,8 +252,8 @@ The variables declared in the body of a function are called **local variables**.
 
 ```js
 function sayHello() {
-    const message = "Hello!";
-    return message;
+  const message = "Hello!";
+  return message;
 }
 
 console.log(sayHello()); // "Hello!"
@@ -274,8 +274,8 @@ Let's edit the above example to add a personalized greeting:
 
 ```js
 function sayHello(name) {
-    const message = `Hello, ${name}!`;
-    return message;
+  const message = `Hello, ${name}!`;
+  return message;
 }
 
 console.log(sayHello("Baptiste")); // "Hello, Baptiste!"
@@ -291,7 +291,7 @@ Here's the general syntax of a function declaration with parameters. The number 
 ```js
 // Declare a function myFunction with parameters
 function myFunction(param1, param2, ...) {
-    // Statements using param1, param2, ...
+  // Statements using param1, param2, ...
 }
 
 // Function call
@@ -303,9 +303,9 @@ Just like with local variables, parameter scope is limited to the function body.
 
 ```js
 function sayHello(name) {
-    // Here, "name" is the function parameter
-    const message = `Hello, ${name}!`;
-    return message;
+  // Here, "name" is the function parameter
+  const message = `Hello, ${name}!`;
+  return message;
 }
 
 // Here, "name" is a variable used as an argument
@@ -319,7 +319,7 @@ When calling a function, respecting the number and order of parameters is paramo
 
 ```js
 function presentation(name, age) {
-    console.log(`Your name is ${name} and you're ${age} years old`);
+  console.log(`Your name is ${name} and you're ${age} years old`);
 }
 
 presentation("Garance", 9); // "Your name is Garance and you're 9 years old"
@@ -334,8 +334,8 @@ Declaration is not the only way to create functions in JavaScript. Check out thi
 
 ```js
 const hello = function(name) {
-    const message = `Hello, ${name}!`;
-    return message;
+  const message = `Hello, ${name}!`;
+  return message;
 }
 
 console.log(hello("Richard")); // "Hello, Richard!"
@@ -348,22 +348,22 @@ The function created in this example has no name: it is **anonymous**. As you'll
 Here's how to create an anonymous function and assign it to a variable.
 
 ```js
-// Assignment of an anonymous function to the myVar variable
-const myVar = function(param1, param2, ...) {
-    // Statements using param1, param2, ...
+// Assignment of an anonymous function to the myFunc variable
+const myFunc = function(param1, param2, ...) {
+  // Statements using param1, param2, ...
 }
 
 // Anonymous function call
 // param1 value is set to arg1, param2 to arg2, ...
-myVar(arg1, arg2, ...);
+myFunc(arg1, arg2, ...);
 ```
 
 Recent language evolutions have introduced a more concise way to create anonymous functions:
 
 ```js
 const hello = (name) => {
-    const message = `Hello, ${name}!`;
-    return message;
+  const message = `Hello, ${name}!`;
+  return message;
 }
 
 console.log(hello("William")); // "Hello, William!"
@@ -372,14 +372,14 @@ console.log(hello("William")); // "Hello, William!"
 Functions created this way are called **fat arrow functions**.
 
 ```js
-// Assignment of an anonymous function to the myVar variable
-const myVar = (param1, param2, ...)  => {
-    // Statements using param1, param2, ...
+// Assignment of an anonymous function to the myFunc variable
+const myFunc = (param1, param2, ...)  => {
+  // Statements using param1, param2, ...
 }
 
 // Anonymous function call
 // param1 value is set to arg1, param2 to arg2, ...
-myVar(arg1, arg2, ...);
+myFunc(arg1, arg2, ...);
 ```
 
 Fat arrow function syntax can be further simplified in some particular cases:
@@ -427,9 +427,7 @@ A function body must be kept simple, or otherwise split into several sub-functio
 
 ### Naming functions and parameters well
 
-Function naming is just as important as variable naming. You should choose names that express clearly the function purpose and follow a naming convention like [camelCase](https://en.wikipedia.org/wiki/Camel_case).
-
-A popular practice is to include in the name an **action verb** like *calculate*, *show*, *find*, etc.
+Function naming is just as important as variable naming. You should choose names that express clearly the function purpose and follow a naming convention. Refer to the [appendix](#style-guide) for some useful advice.
 
 T> If you have difficulties coming up with a right name for a function, then maybe its purpose is not that clear and you should ask yourself if this function deserves to exist.
 
@@ -442,8 +440,8 @@ Complete the following program so that it asks the user for his first and last n
 ```js
 // Say hello to the user
 function sayHello(firstName, lastName) {
-    const message = `Hello, ${firstName} ${lastName}!`;
-    return message;
+  const message = `Hello, ${firstName} ${lastName}!`;
+  return message;
 }
 
 // TODO: ask user for first and last name

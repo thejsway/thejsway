@@ -8,7 +8,7 @@ Up until now, all the code in our programs has been executed chronologically. Le
 
 ```js
 if (condition) {
-    // Code to run when the condition is true
+  // Code to run when the condition is true
 }
 ```
 
@@ -20,10 +20,10 @@ if (condition) {
 
 ```js
 if (condition) {
-    // Code to run when the condition is true
+  // Code to run when the condition is true
 }
 else {
-    // Code to run when the condition is false
+  // Code to run when the condition is false
 }
 ```
 
@@ -34,14 +34,14 @@ else {
 ```js
 switch (expression) {
 case value1:
-    // Code to run when the expression matches value1
-    break;
+  // Code to run when the expression matches value1
+  break;
 case value2:
-    // Code to run when the expression matches value2
-    break;
+  // Code to run when the expression matches value2
+  break;
 ...
 default:
-    // Code to run when neither case matches
+  // Code to run when neither case matches
 }
 ```
 
@@ -64,7 +64,7 @@ Here's how you translate the program to JavaScript.
 ```js
 const number = Number(prompt("Enter a number:"));
 if (number > 0) {
-    console.log(`${number} is positive`);
+  console.log(`${number} is positive`);
 }
 ```
 
@@ -74,7 +74,7 @@ Conditional syntax looks like this:
 
 ```js
 if (condition) {
-    // Code to run when the condition is true
+  // Code to run when the condition is true
 }
 ```
 
@@ -94,12 +94,12 @@ Any expression producing a boolean value (either `true` or `false`) can be used 
 
 ```js
 if (true) {
-    // The condition for this if is always true
-    // This block of code will always be executed
+  // The condition for this if is always true
+  // This block of code will always be executed
 }
 if (false) {
-    // The condition for this if is always false
-    // This block of code will never be executed
+  // The condition for this if is always false
+  // This block of code will never be executed
 }
 ```
 
@@ -123,7 +123,7 @@ Now let's modify the example code to replace `>` with `>=` and change the messag
 ```js
 const number = Number(prompt("Enter a number:"));
 if (number >= 0) {
-    console.log(`${number} is positive or zero`);
+  console.log(`${number} is positive or zero`);
 }
 ```
 
@@ -140,10 +140,10 @@ Let's enrich our sample with different messages depending if the number's positi
 ```js
 const number = Number(prompt("Enter a number:"));
 if (number > 0) {
-    console.log(`${number} is positive`);
+  console.log(`${number} is positive`);
 }
 else {
-    console.log(`${number} is negative or zero`);
+  console.log(`${number} is negative or zero`);
 }
 ```
 
@@ -153,10 +153,10 @@ The syntax for creating an alternative is to add an `else` keyword after an init
 
 ```js
 if (condition) {
-    // Code to run when the condition is true
+  // Code to run when the condition is true
 }
 else {
-    // Code to run when the condition is false
+  // Code to run when the condition is false
 }
 ```
 
@@ -169,13 +169,15 @@ Let's go next level and display a specific message if the entered number is zero
 ```js
 const number = Number(prompt("Enter a number:"));
 if (number > 0) {
-    console.log(`${number} is positive`);
-} else { // number <= 0
-    if (number < 0) {
-        console.log(`${number} is nagative`);
-    } else { // number === 0
-        console.log(`${number} is zero`);
-    }
+  console.log(`${number} is positive`);
+} else {
+  // number <= 0
+  if (number < 0) {
+    console.log(`${number} is nagative`);
+  } else {
+    // number === 0
+    console.log(`${number} is zero`);
+  }
 }
 ```
 
@@ -194,11 +196,11 @@ A particular case happens when the only statement in a `else` block is an `if`. 
 ```js
 const number = Number(prompt("Enter a number:"));
 if (number > 0) {
-    console.log(`${number} is positive`);
+  console.log(`${number} is positive`);
 } else if (number < 0) {
-    console.log(`${number} is negative`);
+  console.log(`${number} is negative`);
 } else {
-    console.log(`${number} is zero`);
+  console.log(`${number} is zero`);
 }
 ```
 
@@ -214,7 +216,7 @@ Here's how you'd translate that same check into JS.
 
 ```js
 if ((number >= 0) && (number <= 100)) {
-    console.log(`${number} is between 0 and 100, both included`);
+  console.log(`${number} is between 0 and 100, both included`);
 }
 ```
 
@@ -239,7 +241,7 @@ Here it is, translated into JavaScript:
 
 ```js
 if ((number < 0) || (number > 100)) {
-    console.log(`${number} is not in between 0 and 100`);
+  console.log(`${number} is not in between 0 and 100`);
 }
 ```
 
@@ -258,7 +260,7 @@ There's another operator for when you know what you don't want: the not operator
 
 ```js
 if (!(number > 100)) {
-    console.log(`${number} is less than or equal to 100`);
+  console.log(`${number} is less than or equal to 100`);
 }
 ```
 
@@ -276,15 +278,15 @@ Let's write some code that helps people decide what to wear based on the weather
 ```js
 const weather = prompt("What's the weather like?");
 if (weather === "sunny") {
-    console.log("T-shirt time!");
+  console.log("T-shirt time!");
 } else if (weather === "windy") {
-    console.log("Windbreaker life.");
+  console.log("Windbreaker life.");
 } else if (weather === "rainy") {
-    console.log("Bring that umbrella!");
+  console.log("Bring that umbrella!");
 } else if (weather === "snowy") {
-    console.log("Just stay inside!");
+  console.log("Just stay inside!");
 } else {
-    console.log("Not a valid weather type");
+  console.log("Not a valid weather type");
 }
 ```
 
@@ -293,19 +295,19 @@ When a program should trigger a block from several operations depending on the v
 ```js
 const weather = prompt("What's the weather like?");
 switch (weather) {
-case "sunny":
+  case "sunny":
     console.log("T-shirt time!");
     break;
-case "windy":
+  case "windy":
     console.log("Windbreaker life.");
     break;
-case "rainy":
+  case "rainy":
     console.log("Bring that umbrella!");
     break;
-case "snowy":
+  case "snowy":
     console.log("Winter is coming! Just stay inside!");
     break;
-default:
+  default:
     console.log("Not a valid weather type");
 }
 ```
@@ -316,15 +318,15 @@ The `switch` statement kicks off the execution of one code block among many. Onl
 
 ```js
 switch (expression) {
-case value1:
+  case value1:
     // Code to run when the expression matches value1
     break;
-case value2:
+  case value2:
     // Code to run when the expression matches value2
     break;
-...
-default:
-    // Code to run when neither case matches
+  // ...
+  default:
+  // Code to run when neither case matches
 }
 ```
 
@@ -335,10 +337,10 @@ Adding a `break;` in each block is important so you get out of the switch statem
 ```js
 const x = "abc";
 switch (x) {
-case "abc":
+  case "abc":
     console.log("x = abc");
-    // break omitted: the next block is also run!
-case "def":
+  // break omitted: the next block is also run!
+  case "def":
     console.log("x = def");
     break;
 }

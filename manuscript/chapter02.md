@@ -115,8 +115,8 @@ The **scope** of a variable is the part of the program where the variable is vis
 ```js
 let nb1 = 0;
 {
-    nb1 = 1; // OK : nb1 is declared in the parent block
-    const nb2 = 0;
+  nb1 = 1; // OK : nb1 is declared in the parent block
+  const nb2 = 0;
 }
 console.log(nb1); // OK : nb1 is declared in the current block
 console.log(nb2); // Error! nb2 is not visible here
@@ -165,7 +165,7 @@ const f = 100;
 console.log("Variable f contains the value " + f);
 ```
 
-JavaScript is extremely tolerant in terms of type conversion. However, sometimes conversion isn't possible. If a number fails to convert, you'll get the result `NaN`  (*Not a Number*).
+JavaScript is extremely tolerant in terms of type conversion. However, sometimes conversion isn't possible. If a number fails to convert, you'll get the result `NaN` (*Not a Number*).
 
 ```js
 const g = "five" * 2;

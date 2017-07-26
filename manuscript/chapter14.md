@@ -99,7 +99,7 @@ To select and display all document elements with a class `"wonders"`, you can wr
 // Show all elements that have the class "exists"
 const existingElements = Array.from(document.getElementsByClassName("exists"));
 existingElements.forEach(element => {
-    console.log(element);
+  console.log(element);
 });
 ```
 
@@ -231,9 +231,9 @@ You can check for the existence of an attribute using the `hasAttribute()` metho
 
 ```js
 if (document.querySelector("a").hasAttribute("target")) {
-    console.log("The first link has a target attribute.");
+  console.log("The first link has a target attribute.");
 } else {
-    console.log("The first link does not have a target attribute."); // Will be shown
+  console.log("The first link does not have a target attribute."); // Will be shown
 }
 ```
 
@@ -252,9 +252,9 @@ You also have the opportunity to test the presence of a class on an element by c
 
 ```js
 if (document.getElementById("ancient").classList.contains("wonders")) {
-    console.log("The element with ID 'ancient' has the class 'wonders'."); // Will be shown
+  console.log("The element with ID 'ancient' has the class 'wonders'."); // Will be shown
 } else {
-    console.log("The element with ID 'ancient' does not have the class 'wonders'.");
+  console.log("The element with ID 'ancient' does not have the class 'wonders'.");
 }
 ```
 
@@ -334,7 +334,7 @@ Improve the previous program to add a `has()` function that test if an element d
 ```js
 // Show if an element has a class
 const has = (id, someClass) => {
-    //TODO: write the function code
+  // TODO: write the function code
 };
 
 has("saxophone", "woodwind");     // Should show true

@@ -169,38 +169,39 @@ The necessary first step is to check out and understand the API data format. The
 
 ```json
 {
-    "response": {
-        "version": "0.1",
-        "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
-        "features": {
-            "conditions": 1
-        }
-    },
-    "current_observation": {
-        "image": {
-            "url": "http://icons.wxug.com/graphics/wu2/logo_130x80.png",
-            "title": "Weather Underground",
-            "link": "http://www.wunderground.com"
-        },
-        "display_location": {
-            "full": "Bordeaux, France",
-            "city": "Bordeaux",
-            "state": "33",
-           ...
-        },
-        "observation_location": {
-            "full": "Bordeaux, ",
-            "city": "Bordeaux",
-            "state": "",
-            "country": "FR",
-            ...
-        },
-        "estimated": {},
-        "station_id": "LFBD",
-        "observation_time": "Last Updated on June 28, 9:30 PM CEST",
-        ...
+  "response": {
+    "version": "0.1",
+    "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
+    "features": {
+      "conditions": 1
     }
+  },
+  "current_observation": {
+    "image": {
+      "url": "http://icons.wxug.com/graphics/wu2/logo_130x80.png",
+      "title": "Weather Underground",
+      "link": "http://www.wunderground.com"
+    },
+    "display_location": {
+      "full": "Bordeaux, France",
+      "city": "Bordeaux",
+      "state": "33",
+      ...
+    },
+    "observation_location": {
+      "full": "Bordeaux, ",
+      "city": "Bordeaux",
+      "state": "",
+      "country": "FR",
+      ...
+    },
+    "estimated": {},
+    "station_id": "LFBD",
+    "observation_time": "Last Updated on June 28, 9:30 PM CEST",
+    ...
+  }
 }
+
 ```
 
 Now we just have to call the API from our JavaScript code and displaythe main result on a web page.

@@ -83,9 +83,9 @@ Each object has a property called `nodeType` which indicates its type. The value
 
 ```js
 if (document.body.nodeType === document.ELEMENT_NODE) {
-    console.log("Body is an element node!");
+  console.log("Body is an element node!");
 } else {
-    console.log("Body is a textual node!");
+  console.log("Body is a textual node!");
 }
 ```
 
@@ -134,17 +134,17 @@ To browse a list of child nodes, you can use a classical `for` loop, the `forEac
 ```js
 // Browse the body node's children using a for loop@
 for (let i = 0; i < document.body.childNodes.length; i++) {
-    console.log(document.body.childNodes[i]);
+  console.log(document.body.childNodes[i]);
 }
 
 // Browse the body node's children using the forEach() method
 document.body.childNodes.forEach(node => {
-    console.log(node);
+  console.log(node);
 });
 
 // Browse the body node's children using a for-of loop
 for (const node of document.body.childNodes) {
-    console.log(node);
+  console.log(node);
 }
 ```
 
@@ -190,7 +190,7 @@ Complete the following program to obtain the expected results.
 // "node" is the DOM object
 // "index" is the index of the child node
 const showChild = (node, index) => {
-    // TODO: add code here
+  // TODO: add code here
 };
 
 // Should show the h1 node

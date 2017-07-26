@@ -174,16 +174,18 @@ JSON, or **JavsScript Object Notation**, is a textual syntax for describing stru
 
 ```json
 {
-  "cars" : [
-    { "model" : "Peugeot",
-      "color" : "blue",
-      "registration" : 2012,
-      "checkups" : [ 2015, 2017 ]
+  "cars": [
+    {
+      "model": "Peugeot",
+      "color": "blue",
+      "registration": 2012,
+      "checkups": [2015, 2017]
     },
-    { "model" : "Citroën",
-      "color" : "white",
-      "registration" : 1999,
-      "checkups" : [ 2003, 2005, 2007, 2009, 2011, 2013 ]
+    {
+      "model": "Citroën",
+      "color": "white",
+      "registration": 1999,
+      "checkups": [2003, 2005, 2007, 2009, 2011, 2013]
     }
   ]
 }

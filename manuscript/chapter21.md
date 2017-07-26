@@ -6,7 +6,7 @@ This chapter will teach you how to retrieve data from a web server through HTTP 
 
 * HTTP requests sent to a web server need to be **asynchronous** to prevent blocking the client application while waiting for the server's response.
 
-* The JavaScript `fetch()` method has replaced `XMLHttpRequest` as the go-to way of creating an asynchronous request. Its `then()` and `catch()` methods respectively handle the success and failure of the request.
+* The JavaScript `fetch()` method is replacing `XMLHttpRequest` as the go-to way of creating an asynchronous request. Its `then()` and `catch()` methods respectively handle the success and failure of the request.
 
 ```js
 // Sends an aynchronous HTTP request to the target url
@@ -77,11 +77,14 @@ C++;Java;C#;PHP
 Here's how to do this in JavaScript using `fetch()`.
 
 ```js
-fetch("https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/languages.txt")
+fetch(
+  "https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/languages.txt"
+)
   .then(response => response.text()) // Access and return response's text content
   .then(text => {
     console.log(text); // Display file content in the console
   });
+
 ```
 
 ![Execution result](images/chapter21-01.png)
@@ -160,28 +163,30 @@ console.log(JSON.parse(planesText)); // Display the array of objects
 
 ```json
 [
-    {
-        "title": "The Wolf of Wall Street",
-        "year": "2013",
-        "author": "Martin Scorsese"
-    },
-    {
-        "title": "Inside Out",
-        "year": "2015",
-        "author": "Pete Docter"
-    },
-    {
-        "title": "Babysitting",
-        "year": "2013",
-        "author": "Philippe Lacheau and Nicolas Benamou"
-    }
+  {
+    "title": "The Wolf of Wall Street",
+    "year": "2013",
+    "author": "Martin Scorsese"
+  },
+  {
+    "title": "Inside Out",
+    "year": "2015",
+    "author": "Pete Docter"
+  },
+  {
+    "title": "Babysitting",
+    "year": "2013",
+    "author": "Philippe Lacheau and Nicolas Benamou"
+  }
 ]
 ```
 
 Here's how to retrieve this file from its URL and display each movie title in the console.
 
 ```js
-fetch("https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/movies.json")
+fetch(
+  "https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/movies.json"
+)
   .then(response => response.json()) // Access and return response's JSON content
   .then(movies => {
     // Iterate on the movie array
@@ -221,21 +226,21 @@ In this exercise, you'll show information about some famous paintings on a web p
 
 ```json
 [
-    {
-        "name": "The Starry Night",
-        "year": "1889",
-        "artist": "Vincent Van Gogh"
-    },
-    {
-        "name": "The Scream",
-        "year": "1893",
-        "artist": "Edvard Munch"
-    },
-    {
-        "name": "Guernica",
-        "year": "1937",
-        "artist": "Pablo Picasso"
-    }
+  {
+    "name": "The Starry Night",
+    "year": "1889",
+    "artist": "Vincent Van Gogh"
+  },
+  {
+    "name": "The Scream",
+    "year": "1893",
+    "artist": "Edvard Munch"
+  },
+  {
+    "name": "Guernica",
+    "year": "1937",
+    "artist": "Pablo Picasso"
+  }
 ]
 ```
 

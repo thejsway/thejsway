@@ -338,19 +338,19 @@ The following code example adds an input event handler on the password field. Th
 ```js
 // Validate password length
 document.getElementById("password").addEventListener("input", e => {
-    const password = e.target.value; // Value of the password field
-    let passwordLength = "too short";
-    let messageColor = "red"; // Short password => red
-    if (password.length >= 8) {
-        passwordLength = "adequate";
-        messageColor = "green"; // Long password => green
-    } else if (password.length >= 4) {
-        passwordLength = "moderate";
-        messageColor = "orange"; // Moderate password => orange
-    }
-    const passwordHelpElement = document.getElementById("passwordHelp");
-    passwordHelpElement.textContent = `Length: ${passwordLength}`; // helper text
-    passwordHelpElement.style.color = messageColor; // helper text color
+  const password = e.target.value; // Value of the password field
+  let passwordLength = "too short";
+  let messageColor = "red"; // Short password => red
+  if (password.length >= 8) {
+    passwordLength = "adequate";
+    messageColor = "green"; // Long password => green
+  } else if (password.length >= 4) {
+    passwordLength = "moderate";
+    messageColor = "orange"; // Moderate password => orange
+  }
+  const passwordHelpElement = document.getElementById("passwordHelp");
+  passwordHelpElement.textContent = `Length: ${passwordLength}`; // helper text
+  passwordHelpElement.style.color = messageColor; // helper text color
 });
 ```
 
@@ -513,19 +513,24 @@ The starter JavaScript code is as follows.
 
 ```js
 // Character list. Each house has a name and a code
-const houses = [{
-  code: "ST",
-  name: "Stark"
-}, {
-  code: "LA",
-  name: "Lannister"
-}, {
-  code: "BA",
-  name: "Baratheon"
-}, {
-  code: "TA",
-  name: "Targaryen"
-}];
+const houses = [
+  {
+    code: "ST",
+    name: "Stark"
+  },
+  {
+    code: "LA",
+    name: "Lannister"
+  },
+  {
+    code: "BA",
+    name: "Baratheon"
+  },
+  {
+    code: "TA",
+    name: "Targaryen"
+  }
+];
 
 // Return an array of characters belonging to a house
 const getCharacters = houseCode => {

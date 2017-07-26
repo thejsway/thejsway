@@ -11,12 +11,12 @@ In this chapter, we'll look at how to execute code on a repeating basis.
 ```js
 // While loop
 while (condition) {
-    // Code to run while the condition is true
+  // Code to run while the condition is true
 }
 
 // For loop
 for (initialization; condition; final expression) {
-    // code to run while the condition is true
+  // code to run while the condition is true
 }
 ```
 
@@ -55,8 +55,8 @@ Here's a sample program written with a `while` loop.
 ```js
 let number = 1;
 while (number <= 5) {
-    console.log(number);
-    number++;
+  console.log(number);
+  number++;
 }
 ```
 
@@ -70,7 +70,7 @@ You'll use the following syntax to write a `while` loop.
 
 ```js
 while (condition) {
-    // Code to run while the condition is true
+  // Code to run while the condition is true
 }
 ```
 
@@ -93,7 +93,7 @@ Here's the same program as above written instead with a `for` loop.
 ```js
 let number;
 for (number = 1; number <= 5; number++) {
-    console.log(number);
+  console.log(number);
 }
 ```
 
@@ -105,7 +105,7 @@ Here's the `for` loop syntax.
 
 ```js
 for (initialization; condition; final expression) {
-    // code to run while the condition is true
+  // code to run while the condition is true
 }
 ```
 
@@ -123,9 +123,9 @@ The variable used during initialization, condition, and the final expression of 
 
 ```js
 for (let i = 1; i <= 5; i++) {
-    console.log(i);
+  console.log(i); // OK
 }
-// The i variable is not visible here
+console.log(i); // Error: the i variable is not visible here
 ```
 
 ## Common mistakes
@@ -137,8 +137,8 @@ The main risk with `while` loops is producing an **infinite loop**, meaning the 
 ```js
 let number = 1;
 while (number <= 5) {
-    console.log(number);
-    // The number variable is not updated: the loop condition stays true forever
+  console.log(number);
+  // The number variable is never updated: the loop condition stays true forever
 }
 ```
 
@@ -150,8 +150,8 @@ Imagine that you accidentally modify the loop counter in the loop body, just lik
 
 ```js
 for (let i = 1; i <= 5; i++) {
-    console.log(i);
-    i++; // The i variable is updated in the loop body
+  console.log(i);
+  i++; // The i variable is updated in the loop body
 }
 ```
 
@@ -168,7 +168,7 @@ Each time the loop runs, the counter variable is incremented *twice*: once in th
 ```js
 let letter = "";
 while (letter !== "X") {
-    letter = prompt("Type a letter or X to exit:");
+  letter = prompt("Type a letter or X to exit:");
 }
 ```
 
@@ -192,9 +192,9 @@ Check the following program that shows even number (divisibles by 2) betwen 1 an
 
 ```js
 for (let i = 1; i <= 10; i++) {
-    if (i % 2 === 0) {
-        console.log(`${i} is even`);
-    }
+  if (i % 2 === 0) {
+    console.log(`${i} is even`);
+  }
 }
 ```
 
