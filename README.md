@@ -4,21 +4,19 @@ A modern introduction to an essential language.
 
 Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
 
-[![Completion](https://img.shields.io/badge/Completion-90%25-red.svg)](https://leanpub.com/thejsway)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-> This is still a work in progress: expect some typos, clumsiness and mistakes. Feel free to correct them!
+> This content is in beta stage: expect some typos, glitches and mistakes. Feel free to correct them!
 
 ## Overview
 
 This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. Numerous brain cycles were spent to make it:
 
 * **Beginner-friendly yet comprehensive**. From the very basics of programming up to front-end and back-end web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!
-* **Standards-aligned**. From start to finish, the book enforces good programming habits, embraces the ubiquitous JavaScript tools [ESLint](http://eslint.org) and [Prettier](https://github.com/prettier/prettier) and closely follows the popular [AirBnb Style Guide](https://github.com/airbnb/javascript).
-* **Future-proof**. It is entirely written using the recent ES2015 syntax, avoiding awkwardnesses from the past.
+* **Standards-aligned**. The book is entirely written using the recent **ES2015** syntax, avoiding awkwardnesses from the past. From start to finish, it enforces good programming habits, embraces the ubiquitous JavaScript tools [ESLint](http://eslint.org) and [Prettier](https://github.com/prettier/prettier) and closely follows the popular [AirBnb Style Guide](https://github.com/airbnb/javascript).
 * **Hands-on**. No real learning happens without practicing! Each chapter is accompanied by a series of exercises to put your newly acquired skills into action. A three-part project will guide you in the creation of a social news web application ([see it in action](https://thejsway-publink.herokuapp.com)).
-* **Easy to follow**. Code along directly in your browser or build a great JavaScript development environment on your local machine.
+* **Easy to follow**. Code along directly in your browser or build an efficient JavaScript development environment on your local machine.
 
 This repository contains the book manuscript files, free to read for everyone. Your [contributions](CONTRIBUTING.md) are most welcome.
 
@@ -66,8 +64,8 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Environment setup](manuscript/appendix01.md)
   * [JavaScript style guide](manuscript/appendix02.md)
 
-## Published version
+## Other versions
 
-This content is also available as a [multi-format, DRM-free ebook](https://leanpub.com/thejsway), with an option to get the commented source code for all exercises and projects.
+This content is also available as a [multi-format, DRM-free ebook](https://leanpub.com/thejsway), with an option to get the commented source code for all exercises and projects. An interactive online course is under way.
 
 If you like what you find here and want to support this effort, your financial contribution would be much appreciated. Thanks in advance!
