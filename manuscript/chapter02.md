@@ -241,10 +241,10 @@ To close this chapter, let's discuss variable naming. The computer doesn't care 
 Nonetheless, naming variables well can make your code much easier to read. Check out these two examples:
 
 ```js
-const nb1 = 5.5;
-const nb2 = 3.14;
-const nb3 = 2 * nb2 * nb1;
-console.log(nb3);
+const a = 5.5;
+const b = 3.14;
+const c = 2 * a * b;
+console.log(c);
 ```
 
 ```js
@@ -256,24 +256,7 @@ console.log(perimeter);
 
 They function in the same way, but the second version is much easier to understand.
 
-How are some good ways to name variables?
-
-### Choose meaningful names
-
-The most important rule is to give each variable a name that reflects its role. This is the case in the second example above, where you use the word `radius` to actually indicate... Well, a radius.
-
-### Don't use reserved words
-
-The keywords of JavaScript are reserved names. They should not be used as variable names. Here's the [list of reserved words in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords).
-
-### Follow a naming convention
-
-It can take several words to describe the roles of certain variables. The most common way to account for these variables is to use the [camelCase](https://en.wikipedia.org/wiki/Camel_case) naming convention, based on two main principles:
-
-* All variable names begin with a **lowercase** letter.
-* If the name of a variable consists of several words, the first letter of each word (except the first word) is **uppercase**.
-
-W> Like many other languages, JavaScript is **case sensitive**. For example, `myVariable` and `myvariable` are two different variable names. Be careful!
+Naming things is an important part of the programmer's job. Refer to the [appendix](#style-guide) for some useful advice.
 
 ## Coding time!
 
@@ -321,7 +304,7 @@ Observe the following program.
 let number1 = 5;
 let number2 = 3;
 
-// Type your code here (and nowhere else!)
+// TODO: type your code here (and nowhere else!)
 
 console.log(number1); // Should show 3
 console.log(number2); // Should show 5
