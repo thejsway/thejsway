@@ -150,7 +150,7 @@ Albeit more challenging, this web development model can lead to limited resource
 
 The set of technologies enabling the creation of web applications is codenamed **AJAX** (*Aynchronous JavaScript and XML*). An AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
 
-### Synchronous Vs asynchronous requests
+### Synchronous vs asynchronous requests
 
 In a **synchronous** exchange, the asker waits until he gets the needed info. A telephone call is an example of a synchronous exchange.
 

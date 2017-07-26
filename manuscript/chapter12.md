@@ -139,7 +139,7 @@ Refer to the [appendix](#env-setup) for details on setting up your environment.
 
 ## Coding time!
 
-You can skip this exercise if you ahve prior experience with HTML and CSS.
+You can skip this exercise if you have prior experience with HTML and CSS.
 
 ### Your first web page
 
