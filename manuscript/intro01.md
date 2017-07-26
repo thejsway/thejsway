@@ -10,7 +10,7 @@ However, this book can also be useful to people having some experience in softwa
 
 ## Overview
 
-This book is divided into three main parts. The first one teaches the basics of programming with JavaScript. The second one explains how to use JavaScript to create interactive web pages. The third one deals with web application developement on the client and server sides. Each part depends on the previous ones, but there's no other prerequisite to reading.
+This book is divided into three main parts. The first one teaches the basics of programming with JavaScript. The second one explains how to use JavaScript to create interactive web pages. The third one deals with web application development on both the client and server sides. Each part depends on the previous ones, but there's no other prerequisite to reading.
 
 Each chapter starts with a **TL;DR** paragraph which summarizes it, so you'll be able to skip ahead if you already know a chapter's content.
 
@@ -25,6 +25,6 @@ You have two options for following along, depending on how eager you are to get 
 
 First option is the easiest and quickest; Second one is more powerful and will probably become necessary as you tackle bigger programming challenges in a not-so-distant future. Refer to the [appendix](#env-setup) for details on both.
 
-Whichever solution you may choose, be sure to test every code sample and search every exercise and project. Reading along is *not enough*: coding along is mandatory to get a real grasp of how things work and become a capable programmer.
+Whichever solution you may choose, be sure to test *every* code sample and search *every* exercise and project. Reading along is not enough: coding along is mandatory to get a real grasp of how things work and become a capable programmer.
 
 I wish you a great journey in the wonderful world of JavaScript!

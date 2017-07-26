@@ -6,7 +6,7 @@
 
 * A **program** is a list of actions given to a computer. These actions take the form of textual commands. All these commands form the program's **source code**.
 
-* The **programmer**'s task is to create programs. To accomplish this goal, he can use  different programming languages.
+* The **programmer**'s task is to create programs. To accomplish this goal, he can use different programming languages.
 
 * Before writing code, one must think ahead and decompose the problem to be addressed in a series of elementary operations forming an **algorithm**.
 
@@ -52,7 +52,7 @@ int $0x80
 
 Pretty scary, isn't it? Fortunately, other programming languages are much more simpler and convenient to use than assembly language.
 
-### Programming languages
+### The family of programming languages
 
 There are a large number of programming languages, each adapted to different uses and with its own syntax. However, there are similarities between the most popular programming languages. For example, here's a simple program written in Python:
 

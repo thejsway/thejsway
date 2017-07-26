@@ -62,7 +62,7 @@ Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this
   * [Acknowledgements](manuscript/concl02.md)
 * Appendices
   * [Environment setup](manuscript/appendix01.md)
-  * [JavaScript style guide](manuscript/appendix02.md)
+  * [Style guide](manuscript/appendix02.md)
 
 ## Other versions
 
