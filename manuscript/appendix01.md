@@ -6,7 +6,7 @@ This book targets a recent version of the JavaScript language. More specifically
 
 A **browser** is the software you use to visit webpages and use web applications. Check [whatbrowser.org](http://whatbrowser.org) for more info and advice about upgrading your browser, and this [compatibility table](https://kangax.github.io/compat-table/es6/) for more detail about ES2015 support among browsers.
 
-The safest bet is to choose either Google Chrome or Mozilla Firefox, two "evergreen" (self-updated) browsers will excellent ES2015 support in their latest versions. Other capable browsers include Opera and Microsoft Edge (Windows 10's default browser). On the contrary, all versions of Internet Explorer will have issues with ES2015 code: stay away from them.
+The safest bet is to choose either Google Chrome or Mozilla Firefox, two "evergreen" (self-updated) browsers with excellent ES2015 support in their recent versions. Other capable browsers include Opera and Microsoft Edge (Windows 10's default browser). On the contrary, all versions of Internet Explorer will have issues with ES2015 code: stay away from them.
 
 ## Solution A: coding online
 
@@ -90,6 +90,8 @@ It's important to set up your basic folder and file structure before actually st
 
 Create a folder in your storage disk dedicated to coding along this book. The folder name doesn't matter, `thejsway-code` will do nicely. All local files you subsequently create should be stored in subfolders of this root folder. The most logical solution is to create a subfolder for each chapter of the book.
 
+You can either download a [predefined folder structure](https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/code-skeleton.zip) or follow the next few paragraphs to create this folder structure by hand.
+
 #### For chapters 1 to 23
 
 In these chapters, you'll execute your JavaScript code in the browser. Your files will be stored according to their type: HTML files (the ones with a `.html` extension) in a `html` subfolder, CSS files (`.css`) a `css` subfolder and JavaScript files (`.js`) in a `js` subfolder. Each chapter is set up in a series of folders as follows.
@@ -122,7 +124,14 @@ Next, open the HTML file in your browser to execute the JavaScript code stored i
 
 #### From chapter 24 onwards
 
-In these chapters, you'll create Node.js applications to execute your JavaScript code. TODO
+In these chapters, you'll create Node.js applications to execute your JavaScript code. 
+
+Each Node app must sit in its own folder and is described by a `package.json` file located at the root of this folder. Subdirectories may be used to store specific files:
+
+* `node_modules` (automatically created) for external dependencies.
+* `public` for client assets loaded by the browser, like CSS and JavaScript files.
+* `views` for HTML files.
+* `modules` for internal modules.
 
 ### Use the browser's development tools
 
