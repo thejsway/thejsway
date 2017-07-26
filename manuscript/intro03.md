@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-* Originally created to animate web pages, the JavaScript language can now bu used almost everywhere, from servers to mobile apps and connected devices.
+* Originally created to animate web pages, the JavaScript language can now be used almost everywhere, from servers to mobile apps and connected devices.
 
 * JavaScript is becoming essential for many software developers. It's an excellent choice as a first language for learning programming.
 
