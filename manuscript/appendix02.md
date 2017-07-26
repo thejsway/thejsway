@@ -1,4 +1,4 @@
-# JavaScript style guide {#style-guide}
+# Style guide {#style-guide}
 
 Here are the coding rules and principles used throughout the book.
 
@@ -42,7 +42,7 @@ A simple and efficient solution is to rely on a tool au automate the low-level t
 
 ## Code quality
 
-Since JavaScript is a dynamically typed language, a number of errors don't show up until execution: misnaming a function, loading a nonexistent module, etc. In addition, many other mistakes like declaring a variable but never using it won't affect execution outcome, but make your code harder to read and lower its overall quality.
+Since JavaScript is a dynamically typed language, a number of errors don't show up until execution: misnaming a function, loading a nonexistent module, etc. In addition, many other mistakes like declaring a variable without ever using it won't affect execution outcome, but make your code harder to read and lower its overall quality.
 
 Fortunately, specialized tools called **linters** can check your code against rules during edition and warn about potential defects. By allowing to fix many bugs before they happen, linters greatly enhance developer productivity.
 
@@ -50,7 +50,7 @@ This book uses [ESLint](http://eslint.org) for linting code. ESLint is a very fl
 
 > This opiniated style guide is well worth a read.
 
-This book's ESLint configuration extends the AirBnb and Prettier rules (Prettier getting the preceence), with a few minor deviations.
+This book's ESLint configuration extends the AirBnb and Prettier rules (Prettier getting the precedence), with a few minor deviations.
 
 Here is the content of the book's `.eslintrc` configuration file.
 
