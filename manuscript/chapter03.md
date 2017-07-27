@@ -51,7 +51,7 @@ Suppose we want to write a program that makes enter a number to the user, who th
 
 ```text
 Enter a number
-Si the number is positive
+if the number is positive
     Display a message
 ```
 
