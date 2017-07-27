@@ -74,14 +74,14 @@ And here is the rest of the program that uses this data to show some results abo
 ```js
 // Get movie titles
 const titles = [];
-for (movie of movieList) {
+for (const movie of movieList) {
   titles.push(movie.title);
 }
 console.log(titles);
 
 // Count movies by Christopher Nolan
 const nolanMovieList = [];
-for (movie of movieList) {
+for (const movie of movieList) {
   if (movie.director === "Christopher Nolan") {
     nolanMovieList.push(movie);
   }
@@ -90,7 +90,7 @@ console.log(nolanMovieList.length);
 
 // Get titles of movies with an IMDB rating greater or equal to 7.5
 const bestTitles = [];
-for (movie of movieList) {
+for (const movie of movieList) {
   if (movie.imdbRating >= 7.5) {
     bestTitles.push(movie.title);
   }
@@ -100,7 +100,7 @@ console.log(bestTitles);
 // Compute average movie rating of Christopher Nolan's movies
 let ratingSum = 0;
 let averageRating = 0;
-for (movie of nolanMovieList) {
+for (const movie of nolanMovieList) {
   ratingSum += movie.imdbRating;
 }
 averageRating = ratingSum / movieList.length;
@@ -149,7 +149,7 @@ Let's try to introduce some functions in our code.
 // Get movie titles
 const titles = () => {
   const titles = [];
-  for (movie of movieList) {
+  for (const movie of movieList) {
     titles.push(movie.title);
   }
   return titles;
@@ -157,7 +157,7 @@ const titles = () => {
 
 // Get movies by Christopher Nolan
 const nolanMovies = () => {
-  for (movie of movieList) {
+  for (const movie of movieList) {
     if (movie.director === "Christopher Nolan") {
       nolanMovieList.push(movie);
     }
@@ -167,7 +167,7 @@ const nolanMovies = () => {
 // Get titles of movies with an IMDB rating greater or equal to 7.5
 const bestTitles = () => {
   const bestTitles = [];
-  for (movie of movieList) {
+  for (const movie of movieList) {
     if (movie.imdbRating >= 7.5) {
       bestTitles.push(movie.title);
     }
@@ -178,7 +178,7 @@ const bestTitles = () => {
 // Compute average rating of Christopher Nolan's movies
 const averageNolanRating = () => {
   let ratingSum = 0;
-  for (movie of nolanMovieList) {
+  for (const movie of nolanMovieList) {
     ratingSum += movie.imdbRating;
   }
   return ratingSum / nolanMovieList.length;
@@ -218,7 +218,7 @@ Let's refactor our example code to introduce pure functions.
 // Get movie titles
 const titles = movies => {
   const titles = [];
-  for (movie of movies) {
+  for (const movie of movies) {
     titles.push(movie.title);
   }
   return titles;
@@ -227,7 +227,7 @@ const titles = movies => {
 // Get movies by Christopher Nolan
 const nolanMovies = movies => {
   const nolanMovies = [];
-  for (movie of movies) {
+  for (const movie of movies) {
     if (movie.director === "Christopher Nolan") {
       nolanMovies.push(movie);
     }
@@ -238,7 +238,7 @@ const nolanMovies = movies => {
 // Get titles of movies with an IMDB rating greater or equal to 7.5
 const bestTitles = movies => {
   const bestTitles = [];
-  for (movie of movies) {
+  for (const movie of movies) {
     if (movie.imdbRating >= 7.5) {
       bestTitles.push(movie.title);
     }
@@ -249,7 +249,7 @@ const bestTitles = movies => {
 // Compute average rating of a movie list
 const averageRating = movies => {
   let ratingSum = 0;
-  for (movie of movies) {
+  for (const movie of movies) {
     ratingSum += movie.imdbRating;
   }
   return ratingSum / movies.length;
@@ -292,7 +292,7 @@ Here's how our `titles()` could be rewritten using `map()`. Look how the functio
 const titles = movies => {
   /* Previous code
   const titles = [];
-  for (movie of movies) {
+  for (const movie of movies) {
     titles.push(movie.title);
   }
   return titles;
@@ -325,7 +325,7 @@ We can use this method in the `nolanMovies()` function.
 const nolanMovies = movies => {
   /* Previous code
   const nolanMovies = [];
-  for (movie of movies) {
+  for (const movie of movies) {
     if (movie.director === "Christopher Nolan") {
       nolanMovies.push(movie);
     }
@@ -345,7 +345,7 @@ The `map()` and `filter()` method can be used together to achieve powerful effec
 const bestTitles = movies => {
   /* Previous code
   const bestTitles = [];
-  for (movie of movies) {
+  for (const movie of movies) {
     if (movie.imdbRating >= 7.5) {
       bestTitles.push(movie.title);
     }
@@ -386,7 +386,7 @@ Here's how to apply `reduce()` to calculate the average rating of a movie list.
 const averageRating = movies => {
   /* Previous code
   let ratingSum = 0;
-  for (movie of movies) {
+  for (const movie of movies) {
     ratingSum += movie.imdbRating;
   }
   return ratingSum / movies.length;
