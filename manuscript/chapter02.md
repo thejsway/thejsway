@@ -264,7 +264,7 @@ Build a habit of choosing good variables name in all exercises, starting with th
 
 ### Improved hello
 
-Write a program that asks the user for his first name and his last name. Th program then displays them in one sentence.
+Write a program that asks the user for his first name and his last name. The program then displays them in one sentence.
 
 ### Final values
 
@@ -288,7 +288,7 @@ Check your prediction by executing it.
 
 ### VAT calculation
 
-Write a program that asks the user for a raw price. After that, its calculates the corresponding final price using a VAT rate of 20.6%.
+Write a program that asks the user for a raw price. After that, it calculates the corresponding final price using a VAT rate of 20.6%.
 
 ### From Celsius to Fahrenheit degrees
 
