@@ -9,7 +9,7 @@ Thanks to [Jessica Mautref](https://www.linkedin.com/in/jessicamautref) for her 
 
 I've been inspired by other authors who decided to publish their books in an open way: [Kyle Simpson](https://github.com/getify), [Nicholas C. Zakas](https://www.nczonline.net/), [Axel Rauschmayer](http://dr-axel.de/) and [Marijn Haverbeke](http://marijnhaverbeke.nl/).
 
-Thanks to everyone who improved the book content through contributions: Gilad Penn, NewMountain, Emre Akbudak, opheron, Theo Armour, Filip Białek, KeelyBird, Juhani Niinimaa, Louis Rainier.
+Thanks to everyone who improved the book content through contributions: Gilad Penn, NewMountain, Emre Akbudak, opheron, Theo Armour, Filip Białek, KeelyBird, Juhani Niinimaa, Louis Rainier, Chandan Rai, ScottyRotten.
 
 Illustration credits:
 
