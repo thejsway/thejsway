@@ -9,7 +9,7 @@ This chapter will teach you how to retrieve data from a web server through HTTP 
 * The JavaScript `fetch()` method is replacing `XMLHttpRequest` as the go-to way of creating an asynchronous request. Its `then()` and `catch()` methods respectively handle the success and failure of the request.
 
 ```js
-// Sends an aynchronous HTTP request to the target url
+// Sends an asynchronous HTTP request to the target url
 fetch(url)
   .then(() => {
     // Code called in the future when the request ends successfully
