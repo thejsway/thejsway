@@ -238,7 +238,7 @@ This type of relationship between JavaScript objects is called **delegation**: a
 
 In *class-based* object-oriented languages like C++, Java and C#, classes are static **blueprints** (templates). When a object is created, the methods and properties of the class are copied into a new entity, called an **instance**. After instantiation, the newly created object has no relation whatsoever with its class.
 
-JavaScript's object-oriented model is based on prototypes, *not* classes, to share properties and delegate behavior between objects. In JavaScript, a class is itself an object, not a static blueprint. "Instanciating" a class creates a new object linked to a prototype object. Regarding classes behavior, the JavaScript language is quite different from C++, Java or C#, but close to other object-oriented languages like Python, Ruby and Smalltalk.
+JavaScript's object-oriented model is based on prototypes, *not* classes, to share properties and delegate behavior between objects. In JavaScript, a class is itself an object, not a static blueprint. "Instantiating" a class creates a new object linked to a prototype object. Regarding classes behavior, the JavaScript language is quite different from C++, Java or C#, but close to other object-oriented languages like Python, Ruby and Smalltalk.
 
 The JavaScript `class` syntax is merely a more convenient way to create relationships between objects through prototypes. Classes were introduced to emulate the class-based OOP model on top of JavaScript's own prototype-based model. It's an example of what programmers call [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar).
 
@@ -350,7 +350,7 @@ Improve the example RPG to add character inventory management according to the f
 
 * The character description must show the inventory state.
 
-* When a character slays annother one, the victim's inventory goes to its vanquisher.
+* When a character slays another one, the victim's inventory goes to its vanquisher.
 
 Here's the expected execution result.
 

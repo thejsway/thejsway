@@ -110,7 +110,7 @@ When an HTTP request is made to the route URL, the associated callback function 
 
 To process incoming request, a web server must listen on a specific port. A **port** is a communication endpoint on a machine.
 
-The main Express object has a `listen()` method that taks as parameter the listening port and a callback function called for each request. The last part of the server code calls this method to start listening.
+The main Express object has a `listen()` method that tasks as parameter the listening port and a callback function called for each request. The last part of the server code calls this method to start listening.
 
 ```js
 // Start listening to incoming requests
@@ -310,7 +310,7 @@ Pointing your browser to the `"/hello"` URL (<http://localhost:3000/hello> if yo
 
 ![Execution result](images/chapter25-03.png)
 
-Most web pages will need to load client-side resources sush as images, CSS and JavaScript files. A common practice is to put these assets in a dedicated subfolder.
+Most web pages will need to load client-side resources such as images, CSS and JavaScript files. A common practice is to put these assets in a dedicated subfolder.
 
 For example, create a `public` subfolder and a `hello.js` JavaScript file inside it with the following content.
 

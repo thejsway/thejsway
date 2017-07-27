@@ -36,7 +36,7 @@ Let's recapitulate what we already know about strings:
 
 * The `+` operator concatenates (combines or adds) two or more strings.
 
-Beyond these basic uses, strings have even more versatilty.
+Beyond these basic uses, strings have even more versatility.
 
 ## Obtaining string length
 

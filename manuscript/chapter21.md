@@ -27,14 +27,14 @@ fetch(url)
 
 ## Creating asynchronous HTTP requests in JavaScript
 
-In the previous chapter, we discussed synchronous vs asynchronous requests. Since synchronous requests block the calling process until their result is received, only aaynchronous HTTP requests should be used when building a web applications. However, asynchronous code can be tricky to write and to understand, since statements won't be executed in a linear and sequential fashion like with synchronous operations.
+In the previous chapter, we discussed synchronous vs asynchronous requests. Since synchronous requests block the calling process until their result is received, only asynchronous HTTP requests should be used when building a web applications. However, asynchronous code can be tricky to write and to understand, since statements won't be executed in a linear and sequential fashion like with synchronous operations.
 
 ### The `fetch()` method
 
 The best way to send asynchronous HTTP requests in JavaScript is to use the `fetch()` method. Here is its general usage form.
 
 ```js
-// Sends an aynchronous HTTP request to the target url
+// Sends an asynchronous HTTP request to the target url
 fetch(url)
   .then(() => {
     // Code called in the future when the request ends successfully
@@ -48,7 +48,7 @@ fetch(url)
 
 ### Under the hood: promises
 
-When the `fetch()` method is executed, it immediatly returns a **promise**, which is a wrapper for an operation whose result might be available in the future. A promise is in one of these states:
+When the `fetch()` method is executed, it immediately returns a **promise**, which is a wrapper for an operation whose result might be available in the future. A promise is in one of these states:
 
 * *pending*: initial state, not fulfilled or rejected.
 * *fulfilled*: meaning that the operation completed successfully.
@@ -133,7 +133,7 @@ console.log(JSON.parse(planeText)); // Display the object
 
 ![Execution result](images/chapter21-03.png)
 
-These mathods can also handle JSON arrays.
+These methods can also handle JSON arrays.
 
 ```js
 // Define an array containing two objects

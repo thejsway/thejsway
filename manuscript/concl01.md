@@ -6,7 +6,7 @@ Congratulations, you made it to the end!
 
 This book covers a lot of ground. Here are some key takeaways.
 
-* JavaScript is a **programming language** created in 1995 for adding interactivity to web pages. Still the language of the web, it has also parvaded many other environments: servers, mobile devices, connected objects, etc.
+* JavaScript is a **programming language** created in 1995 for adding interactivity to web pages. Still the language of the web, it has also pervaded many other environments: servers, mobile devices, connected objects, etc.
 
 * JavaScript has been standardized under the name **ECMAScript** and is continuously improved. Its latest major version is **ES2015**, also known as ES6.
 

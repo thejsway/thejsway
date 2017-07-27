@@ -11,7 +11,7 @@ You know now how to retrieve some data from web servers or APIs. This chapter wi
 ```js
 // Create a FormData object containing the HTML form data
 const formData = new FormData(myForm);
-// Send form data to the server with an aynchronous POST request
+// Send form data to the server with an asynchronous POST request
 fetch("https://my-server-url", {
   method: "POST",
   body: formData
@@ -99,7 +99,7 @@ document.querySelector("form").addEventListener("submit", e => {
   e.preventDefault();
   // Create a FormData object, passing the form as a parameter
   const formData = new FormData(e.target);
-  // Send form data to the server with an aynchronous POST request
+  // Send form data to the server with an asynchronous POST request
   fetch("https://thejsway-server.herokuapp.com/animals", {
     method: "POST",
     body: formData

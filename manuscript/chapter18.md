@@ -318,7 +318,7 @@ Write a interactive web page with a button to start and stop a chronometer count
 
 ### Bouncing ball
 
-The goal of this exercise is to make a basketball bounce accross the screen. You can download the balle image [here](https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/basketball.jpg).
+The goal of this exercise is to make a basketball bounce across the screen. You can download the ball image [here](https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/basketball.jpg).
 
 Start with the following HTML and CSS content.
 
@@ -329,7 +329,7 @@ Start with the following HTML and CSS content.
 </p>
 
 <div id="frame">
-  <!-- Update the "src" attribute if you downloeded the image locally -->
+  <!-- Update the "src" attribute if you downloaded the image locally -->
   <img id="ball" src="https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/basketball.jpg">
 </div>
 ```

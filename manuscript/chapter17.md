@@ -10,7 +10,7 @@ JavaScript lets you manage forms defined within your web page, in order to furth
 
 * When a text field becomes the input target, this field has the **focus**. The `focus` and `blur` events are triggered when the field gets or loses the focus, respectively. The `focus()` and `blur()` methods can update the focus target programmatically.
 
-* Chexboxes, radio buttons, and dropdown lists generate `change` events whenever a user modifies their choice.
+* Checkboxes, radio buttons, and dropdown lists generate `change` events whenever a user modifies their choice.
 
 * The DOM element that corresponds to the form has an `elements` property that lets you access its input fields programmatically.
 

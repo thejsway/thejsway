@@ -6,7 +6,7 @@ This chapter will help you discover how a web page is shown by a browser.
 
 * A **web page** is a structured document containing both text and HTML tags. The **DOM**, or *Document Object Model*, is a standardized way to define a web page's structure.
 
-* Tho DOM is alos an **API** allowing programmatical interactions with the web page. With JavaScript, you can access the structure of a page displayed in a browser and modify it.
+* Tho DOM is also an **API** allowing programmatical interactions with the web page. With JavaScript, you can access the structure of a page displayed in a browser and modify it.
 
 * The DOM represents a web page as a hierarchy of **objects**, where each object corresponds to a node in the nested HTML element tree.
 
@@ -125,7 +125,7 @@ To eliminate these text nodes between tags, you could have written the HTML page
 <body><h1>My web page</h1><!-- ... -->
 ```
 
-It's better, however, to take the text nodes between tags into accouant than to sacrifice lisibility and code indentation.
+It's better, however, to take the text nodes between tags into account than to sacrifice visibility and code indentation.
 
 ### Browse child nodes
 
@@ -176,7 +176,7 @@ console.log(document.parentNode); // Will show null, since body has no parent no
 
 Your mission here is to create a `showChild()` function that shows one a of children of an DOM element node. This function takes as parameter the parent node and the child node index. Error cases like non-element node or out-of-limits index must be taken into account.
 
-Here'e the associated HTML code.
+Here's the associated HTML code.
 
 ```html
 <h1>A title</h1>
