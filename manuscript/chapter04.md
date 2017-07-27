@@ -188,7 +188,7 @@ When it's done, improve it so that the number of turns is given by the user.
 
 ### Parity
 
-Check the following program that shows even number (divisibles by 2) betwen 1 and 10.
+Check the following program that shows even number (divisibles by 2) between 1 and 10.
 
 ```js
 for (let i = 1; i <= 10; i++) {
@@ -226,7 +226,7 @@ When it's done, improve it to only accept numbers between 2 and 9 (use the previ
 
 ### Neither yes nor no
 
-Writea program that plays "neither yes, nor no" with the user: he enters a text until he types either "yes" or "no", ending the game.
+Write a program that plays "neither yes, nor no" with the user: he enters a text until he types either "yes" or "no", ending the game.
 
 ### FizzBuzz
 
