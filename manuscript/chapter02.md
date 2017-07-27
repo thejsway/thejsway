@@ -16,11 +16,11 @@ You know how to use JavaScript to display values. However, for a program to be t
 
 * Expressions may be included in strings delimited by a pair of backticks (\`). Such a string is called a **template literal**.
 
-* **Type conversions** may happen implicitely during the evaluation of an expression, or explicitely when using the `Number()` and `String()` commands, to obtain a respectively a number or a string.
+* **Type conversions** may happen implicitly during the evaluation of an expression, or explicitly when using the `Number()` and `String()` commands, to obtain respectively a number or a string.
 
 * The `prompt()` and `alert()` commands deal with information input and display under the form of dialog boxes.
 
-* Variable naming is essential to program lisibility. Following a naming convention like [camelCase](https://en.wikipedia.org/wiki/Camel_case) is good practice.
+* Variable naming is essential to program visibility. Following a naming convention like [camelCase](https://en.wikipedia.org/wiki/Camel_case) is good practice.
 
 ## Variables
 
@@ -264,7 +264,7 @@ Build a habit of choosing good variables name in all exercises, starting with th
 
 ### Improved hello
 
-Write a program that asks the user for his first name and his last name. Th program then displays them in one sentence.
+Write a program that asks the user for his first name and his last name. The program then displays them in one sentence.
 
 ### Final values
 
@@ -288,7 +288,7 @@ Check your prediction by executing it.
 
 ### VAT calculation
 
-Write a program that asks the user for a raw price. After that, its calculates the corresponding final price using a VAT rate of 20.6%.
+Write a program that asks the user for a raw price. After that, it calculates the corresponding final price using a VAT rate of 20.6%.
 
 ### From Celsius to Fahrenheit degrees
 
