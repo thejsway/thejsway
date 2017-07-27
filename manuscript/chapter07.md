@@ -186,7 +186,7 @@ Don't lie to me: you've just watched Ghostbusters *yet another time*. Let's add 
 ```js
 const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
 movies.push("Ghostbusters");
-console.log(movies[5]); // "Ghostbusters"
+console.log(movies[3]); // "Ghostbusters"
 ```
 
 You add a new item to an array with the `push()` method. The new element to be added is passed as a parameter to the method. It is inserted at the end of the array.
