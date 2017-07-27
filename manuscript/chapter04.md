@@ -188,7 +188,7 @@ When it's done, improve it so that the number of turns is given by the user.
 
 ### Parity
 
-Check the following program that shows even number (divisibles by 2) between 1 and 10.
+Check the following program that shows even number (divisible by 2) between 1 and 10.
 
 ```js
 for (let i = 1; i <= 10; i++) {

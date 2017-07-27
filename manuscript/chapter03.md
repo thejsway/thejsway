@@ -12,11 +12,11 @@ if (condition) {
 }
 ```
 
-* The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve lisibility, its statements are generally **indented** (shifted to the right).
+* The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve visibility, its statements are generally **indented** (shifted to the right).
 
 * The **comparison operators** `===`, `!==`, `<`, `<=`, `>` et `>=` are used to compare numbers inside a condition. All of them return a boolean result.
 
-* An `else` statement can be associated to an `if` to express an **alternative**. Depending on the condition value, either the code block associated to the `if` or the one associated to the `else` will be run, but never both. Thre is no limit to the depth of condition nesting.
+* An `else` statement can be associated to an `if` to express an **alternative**. Depending on the condition value, either the code block associated to the `if` or the one associated to the `else` will be run, but never both. There is no limit to the depth of condition nesting.
 
 ```js
 if (condition) {
@@ -173,7 +173,7 @@ if (number > 0) {
 } else {
   // number <= 0
   if (number < 0) {
-    console.log(`${number} is nagative`);
+    console.log(`${number} is negative`);
   } else {
     // number === 0
     console.log(`${number} is zero`);
@@ -189,7 +189,7 @@ The execution flow for the previous program can be expressed graphically using a
 
 ![Example flow diagram](images/chapter03-01.png)
 
-This example shows how essential indentation is for understanding a program's flow. There is no limit to the possible depth of condition nesting, but too many will affect program lisibility.
+This example shows how essential indentation is for understanding a program's flow. There is no limit to the possible depth of condition nesting, but too many will affect program visibility.
 
 A particular case happens when the only statement in a `else` block is an `if`. In that case, you can write this `else` on the same line as the `if` and without braces. Here's a more concise way to write our example program.
 
@@ -220,7 +220,7 @@ if ((number >= 0) && (number <= 100)) {
 }
 ```
 
-I> Parentheses between sub-conditions are not mandatory but I advise you to add them anyway, to avoir nasty bugs in some special cases.
+I> Parentheses between sub-conditions are not mandatory but I advise you to add them anyway, to avoid nasty bugs in some special cases.
 
 The `&&` operator ("logical and") can apply to both types of boolean values. `true` will only be the result of the statement if both conditions are true.
 
@@ -389,7 +389,7 @@ if (nb1 > nb2) {
 console.log(nb1, nb2, nb3);
 ```
 
-Before executing it, try to guess the final values of variables `nb1`, `nb2` and `nb3` depeding on their initial values. Complete the following table.
+Before executing it, try to guess the final values of variables `nb1`, `nb2` and `nb3` depending on their initial values. Complete the following table.
 
 |Initial values       |`nb1` final value |`nb2` final value|`nb3` final value|
 |---------------------|------------------|-----------------|-----------------|
@@ -405,7 +405,7 @@ Write a program that accepts a month number (between 1 and 12), then shows the n
 
 ### Following second
 
-Write a program that asks for a time under the form of three informations (hours, minutes, seconds). The program calculates and shows the time one second after. Incorrect inputs must be taken into account.
+Write a program that asks for a time under the form of three information (hours, minutes, seconds). The program calculates and shows the time one second after. Incorrect inputs must be taken into account.
 
 > This is not as simple as it seems... Look at the following results to see for yourself:
 >

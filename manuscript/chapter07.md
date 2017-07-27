@@ -141,7 +141,7 @@ for (let i = 0; i < movies.length; i++) {
 
 The `for` loop runs through each element in the array starting with index 0 all the way up to the length of the array minus 1, which will be its last element.
 
-Another way is to call the `forEach()` method on the array. It takes as a paramater a **function** that will be applied to each array element.
+Another way is to call the `forEach()` method on the array. It takes as a parameter a **function** that will be applied to each array element.
 
 ```js
 myArray.forEach(myElement => {

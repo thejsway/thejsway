@@ -55,7 +55,7 @@ Real-world APIs are almost always accompanied by an online **documentation** sho
 
 ### Calling an API with JavaScript
 
-Now that we know the address and data format of our example API, let's try to show its result on a web page. To do so, we'll leverage our AJAX knowledge from the previous chapter. Check out the following example, whichs show how to access the article list from the API.
+Now that we know the address and data format of our example API, let's try to show its result on a web page. To do so, we'll leverage our AJAX knowledge from the previous chapter. Check out the following example, which show how to access the article list from the API.
 
 Here's the HTML code for the page.
 
@@ -155,7 +155,7 @@ Another class of APIs requires the client to authenticate himself when accessing
 
 > Of course, authentication-based APIs often also have rate limits.
 
-There is no universal standard regarding access keys. Each service is free to use its own custom format. The client must provide its access key when accessing the API, generaly by adding it at the end of the API URL.
+There is no universal standard regarding access keys. Each service is free to use its own custom format. The client must provide its access key when accessing the API, generally by adding it at the end of the API URL.
 
 A prerequisite for using any key-based web API is to generate oneself an access key for this particular service.
 
@@ -204,7 +204,7 @@ The necessary first step is to check out and understand the API data format. The
 
 ```
 
-Now we just have to call the API from our JavaScript code and displaythe main result on a web page.
+Now we just have to call the API from our JavaScript code and displays the main result on a web page.
 
 ```html
 <h2>The weather in</h2>
@@ -245,7 +245,7 @@ fetch(
 
 ### More beer please
 
-Improve the previous Punk API example to display additionnal information about the showcased beer : alcohol by volume (ABV), volume and date of first brewage.
+Improve the previous Punk API example to display additional information about the showcased beer : alcohol by volume (ABV), volume and date of first brewage.
 
 ![Expected result](images/chapter22-06.png)
 

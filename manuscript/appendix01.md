@@ -12,7 +12,7 @@ The safest bet is to choose either Google Chrome or Mozilla Firefox, two "evergr
 
 Maybe you're a little bit of the impatient type, or maybe you'd rather not set up your local machine right now. Fortunately, one of the beauties of JavaScript is that it can run on almost any browser. All you'll need in addition is an active Internet connection.
 
-Coding online requires a **JavaScript playground**, an online service where you can type some JavaScript code and immediatly visualize its result.
+Coding online requires a **JavaScript playground**, an online service where you can type some JavaScript code and immediately visualize its result.
 
 ### For chapters 1 to 23: CodePen
 
@@ -32,7 +32,7 @@ You should use a pen (not necessarily saved) to try every code sample this book 
 
 ### From chapter 24 onwards: Glitch
 
-Starting with chapter 24, a **back-end** playground will be necessary to create Node.js applications. The prominent choice is [Giltch](https://glitch.com), a platform for quickly building Node-based web applications. Glitch emulates a local Node setup and automates things like code execution, package management, hosting and deployment. You can also remix (clone) any Glitch app to personalize it for your needs.
+Starting with chapter 24, a **back-end** playground will be necessary to create Node.js applications. The prominent choice is [Glitch](https://glitch.com), a platform for quickly building Node-based web applications. Glitch emulates a local Node setup and automates things like code execution, package management, hosting and deployment. You can also remix (clone) any Glitch app to personalize it for your needs.
 
 ![The Glitch logo](images/appendix01-02.png)
 
@@ -120,7 +120,7 @@ For examples and each exercise of a chapter, create an HTML file in the `html` s
 
 This `<script>` tag asks the browser to load the `examples.js` JavaScript file, located at path `../js/examples.js`. The two dots (`..`) at the beginning of the path indicate you're going back one level in the directory structure relative to the HTML file itself before looking in the `js` subfolder for a file named `examples.js`.
 
-Next, open the HTML file in your browser to execute the JavaScript code stored in the `.js` file. Its result will be shown in the browser console (see bolow).
+Next, open the HTML file in your browser to execute the JavaScript code stored in the `.js` file. Its result will be shown in the browser console (see below).
 
 #### From chapter 24 onwards
 

@@ -24,7 +24,7 @@ Up until now, your JavaScript code was executed right from the start. The execut
 
 To add more interactivity, the page should react to the user's actions: clicking on a button, filling a form, etc. In that case, the execution order of statements is not determined in advance anymore, but depends on the user behavior. His actions trigger **events** that can be handled by writing JavaScript code.
 
-This way of writing programs is called **event-driven programming**. It is often used by user interfaces, and more generaly anytime a program needs to interact with an user.
+This way of writing programs is called **event-driven programming**. It is often used by user interfaces, and more generally anytime a program needs to interact with an user.
 
 ### A first example
 
@@ -86,7 +86,7 @@ Manay types of events can be triggered by DOM elements. Here are the main event 
 | Window events | Loading or closing a page, resizing, scrolling |
 | Form events | Changing focus on a form field, submitting a form |
 
-Every event is associated to an `Event` object which has both **properties** (informations about the event) and **methods** (ways to act on the event). This object can be used by the handler function.
+Every event is associated to an `Event` object which has both **properties** (information about the event) and **methods** (ways to act on the event). This object can be used by the handler function.
 
 Many properties of the `Event` object associated to an event depend on the event type. Some properties are always present, like `type` that returns the event type and `target` that return the event target (the DOM element that is the event source).
 
@@ -109,7 +109,7 @@ document.getElementById("myButton").addEventListener("click", e => {
 
 The most common solution for reacting to key presses on a keyboard involves handling `keypress` events that happen on a web page (the DOM `body` element, which corresponds to the global variable called `document` in JavaScript).
 
-The following example shows in the console the character assoaciated to a pressed key. Yhe character info is given by the `charCode` property of the `Event` object associated to the event. This property returns a numerical value (called **Unicode value**) that can be translated to a string value by the `String.FromCharCode()` method.
+The following example shows in the console the character associated to a pressed key. Yhe character info is given by the `charCode` property of the `Event` object associated to the event. This property returns a numerical value (called **Unicode value**) that can be translated to a string value by the `String.FromCharCode()` method.
 
 ```js
 // Show the pressed character
@@ -230,7 +230,7 @@ window.addEventListener("beforeunload", e => {
 
 The DOM represents a web page as a hierarchy of nodes. Events triggered on a child node are going to get triggered on the parent node, then the parent node of the parent node, up until the root of the DOM (the `document` variable). This is called **event propagation**.
 
-To see propagation in action, use this HTML code to create a small DOM hierachy.
+To see propagation in action, use this HTML code to create a small DOM hierarchy.
 
 ```html
 <p id="para">A paragraph with a <button id="propa">button</button> inside</p>
@@ -303,10 +303,10 @@ Start with the following HTML content.
 ```html
 <button id="myButton">Click me!</button>
 <p>You clicked on the button <span id="clickCount">0</span> times</p>
-<button id="desactivate">Désactivate counting</button>
+<button id="deactivate">Désactivate counting</button>
 ```
 
-Write the JavaScript code that counts the number of clicks on the `myButton` button by updating the `clickCount` element. The `desactivate` button stop the counting.
+Write the JavaScript code that counts the number of clicks on the `myButton` button by updating the `clickCount` element. The `deactivate` button stop the counting.
 
 ### Changing colors
 

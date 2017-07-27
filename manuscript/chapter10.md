@@ -113,7 +113,7 @@ console.log(averageRating);
 
 The previous program is an example of what is called **imperative programming**. In this paradigm, the programmer gives orders to the computer through a series of statements that modify the program state. Imperative programming focuses on describing *how* a program operates.
 
-The concept of state is an important one. The **state** of a program is the value of its **global variables** (variables accessible everythere in the code) at a given time. In our example, the values of `movieList`, `titles`, `nolanMovieCount`, `bestTitles`, `ratingSum` and `averageRating` form the state of the program. Any assignment to one of these variables is a state change, often called a **mutation**.
+The concept of state is an important one. The **state** of a program is the value of its **global variables** (variables accessible everywhere in the code) at a given time. In our example, the values of `movieList`, `titles`, `nolanMovieCount`, `bestTitles`, `ratingSum` and `averageRating` form the state of the program. Any assignment to one of these variables is a state change, often called a **mutation**.
 
 In imperative programming, the state can be modified anywhere in the source code. This is convenient, but can also lead to nasty bugs and maintenance headaches. As the program grows in size and complexity, it's becoming easier for the programmer to mutate a part of the state by mistake, and harder to monitor state modifications.
 
@@ -344,7 +344,7 @@ The `map()` and `filter()` method can be used together to achieve powerful effec
 // Get titles of movies with an IMDB rating greater or equal to 7.5
 const bestTitles = movies => {
   /* Previous code
-  onst bestTitles = [];
+  const bestTitles = [];
   for (movie of movies) {
     if (movie.imdbRating >= 7.5) {
       bestTitles.push(movie.title);
@@ -379,7 +379,7 @@ The `reduce()` method can take several parameters:
 
 * The second one is the initial value of the accumulator (often 0).
 
-Here's how to apply `reduce()` to caculate the average rating of a movie list.
+Here's how to apply `reduce()` to calculate the average rating of a movie list.
 
 ```js
 // Compute average rating of a movie list
@@ -434,7 +434,7 @@ We have defined helper functions that we combine to achieve the desired behaviou
 
 ## JavaScript: a multi-paradigm language
 
-The JavaScript language is full of paradoxes. It has famously been [invented in ten days](https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript), and is now enjoying a popularity almost unique in programming history. Its syntax borrows heavily from maintream imperative languages like C or Java, but its design principles are closer to functional languages like [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)).
+The JavaScript language is full of paradoxes. It has famously been [invented in ten days](https://www.w3.org/community/webed/wiki/A_Short_History_of_JavaScript), and is now enjoying a popularity almost unique in programming history. Its syntax borrows heavily from mainstream imperative languages like C or Java, but its design principles are closer to functional languages like [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)).
 
 JavaScript's multi-paradigm nature means you can write imperative, object-oriented or functional code, choosing the right tool for the job and leveraging your previous programming experience. As always, diversity is a source of flexibility and ultimately a strength.
 
@@ -505,7 +505,7 @@ Complete the following program to compute and show the names of political forms 
 const governmentForms = [
   {
     name: "Plutocracy",
-    definition: "Rule by the weathly"
+    definition: "Rule by the wealthy"
   },
   {
     name: "Oligarchy",

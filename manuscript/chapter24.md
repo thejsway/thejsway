@@ -10,7 +10,7 @@ In this chapter, you'll discover how to create JavaScript applications outside t
 
 * Node adheres to the [CommonJS](http://requirejs.org/docs/commonjs.html) module format. It provides a `require()` for loading a module.
 
-* Inside a module, the `module.exports` object is used to export pieces of code. You can **add properties** to it to export element. You can also **reassign** `module.exports` to exporte only a specific element.
+* Inside a module, the `module.exports` object is used to export pieces of code. You can **add properties** to it to export element. You can also **reassign** `module.exports` to export only a specific element.
 
 * Node provides a way to structure an application under the form of a **package**. A package is a folder containing an application described by a `package.json` file. The default entry point of a package is the `index.js` file.
 
@@ -34,7 +34,7 @@ To understand what [Node.js](https://nodejs.org) (or Node for short) is, we have
 
 The core idea behind Node.js was simple yet visionary: since the V8 engine is so good at executing code, why not leverage its power to create efficient JavaScript applications *outside the browser*? And thus Node.js was born in 2009, originally written by Ryan Dahl. Its project quickly became very popular and Node is now one of the top technologies for building apps and creating APIs with JavaScript.
 
-![The offical Node logo](images/chapter24-02.png)
+![The official Node logo](images/chapter24-02.png)
 
 Node also made it easier for developers to publish, share and reuse code. Today, hundreds of thousands of ready-to-use JavaScript libraries, called **packages**, are available and easy to integrate in any Node-based project (more on that later). This rich ecosystem is one of Node's greatest strengths.
 
@@ -62,7 +62,7 @@ An in-depth study of the Node platform is out of this book's scope. Let's focus 
 
 ### The benefits of modularity
 
-The general idea behind modules is pretty straighforward and similar to the one behind functions. Instead of writing all the code in one place, thus creating a monolithic application, it's often better to split the functionalities into smaller, looslety coupled parts. Each part should focus on a specific task, making it far easier to understand and reuse. The general application's behavior results from the interactions between these buildind blocks.
+The general idea behind modules is pretty straightforward and similar to the one behind functions. Instead of writing all the code in one place, thus creating a monolithic application, it's often better to split the functionalities into smaller, loosely coupled parts. Each part should focus on a specific task, making it far easier to understand and reuse. The general application's behavior results from the interactions between these building blocks.
 
 These smaller parts are sometimes referred to as components in other environments. In Node, they are called **modules** and can come under different forms. The general definition of a module is: anything that can be loaded using Node's `require()` function. The Node.js platform adheres to the [CommonJS](http://requirejs.org/docs/commonjs.html) module format.
 
@@ -118,7 +118,7 @@ The result of the call to `require()` is an object, named `greetings` here. This
 
 ### Exporting only a specific object
 
-Numerous modules in the Node.js ecosystem exporte only a single object aggregating all of the module's functionality. To do so, they reassign the `module.exports` object instead of adding properties to it.
+Numerous modules in the Node.js ecosystem export only a single object aggregating all of the module's functionality. To do so, they reassign the `module.exports` object instead of adding properties to it.
 
 For example, check out how the following module `calculator.js` is defined.
 
@@ -258,7 +258,7 @@ In the `package.json` file definition, the `dependencies` field is used to decla
 
 There are many ways to define a version range. The most commonly used ones are:
 
-* Targeting a very specific version. Exemple: `2.18.1`.
+* Targeting a very specific version. Example: `2.18.1`.
 * Using the `~` operator to allow patch-level changes. For example, the `~2.18.1` version range accepts version `2.18.7`, but not `2.19.0` nor `3.0.0`.
 * Using the `^` operator to allow changes that do not modify the left-most non-zero digit in the version. Examples:
   * The `^2.18.1` version range accepts versions `2.18.7` and `2.19.0`, but not `3.0.0`.
@@ -302,7 +302,7 @@ The other way is to run the following command.
 npm install <package-id>
 ```
 
-This command will fetch a specific package from the registry, download it in the `node/mobules/` subfolder and (since npm 5) update the `package.json` file to add it as a new dependency. The `<package-id>` parameter is usually the dependency's package name.
+This command will fetch a specific package from the registry, download it in the `node/modules/` subfolder and (since npm 5) update the `package.json` file to add it as a new dependency. The `<package-id>` parameter is usually the dependency's package name.
 
 ### Using a dependency
 

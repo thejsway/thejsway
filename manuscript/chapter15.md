@@ -177,7 +177,7 @@ document.getElementById("languages").appendChild(rubyElement); // Insert the new
 
 ### Adding a node before another one
 
-Sometimes, inserting a new node at the end of its parent's children list is not ideal. In that case, you can use the `insertBeforce()` method. Called on the future parent, this method takes as parameters the new node and the node before which the new one will be inserted.
+Sometimes, inserting a new node at the end of its parent's children list is not ideal. In that case, you can use the `insertBefore()` method. Called on the future parent, this method takes as parameters the new node and the node before which the new one will be inserted.
 
 As an example, here's how the Perl language could be inserted before PHP in the list.
 

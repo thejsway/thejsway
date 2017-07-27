@@ -6,7 +6,7 @@ In this chapter, you'll learn how to break down a program into subparts called f
 
 * A **function** is a group of statements that performs a particular task. JavaScript functions are created using the `function` keyword.
 
-* Written as a combination of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolitic one.
+* Written as a combination of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolithic one.
 
 * A **function call** triggers the execution of the function code. After it's done, execution resumes at the place where the call was made.
 
@@ -162,7 +162,7 @@ Calling a function triggers the execution of actions listed therein (the code in
 
 ### Usefulness of functions
 
-A complex problem is generally more manageable when broken down in simpler subproblems. Computer programs are no exception to this rule. Written as a combination of several short and focused functions, a program will be easier to understand and to update than a monolitic one. As an added bonus, some functions could be reused in other programs!
+A complex problem is generally more manageable when broken down in simpler subproblems. Computer programs are no exception to this rule. Written as a combination of several short and focused functions, a program will be easier to understand and to update than a monolithic one. As an added bonus, some functions could be reused in other programs!
 
 Creating functions can also be a solution to the problem of [code duplication](https://en.wikipedia.org/wiki/Duplicate_code): instead of being duplicated at several places, a piece of code is centralized in a function and called from anywhere when needed.
 

@@ -16,7 +16,7 @@ Understanding the fundamentals of web development is crucial for every JavaScrip
 
 * Web resources are uniquely addressed by their **URL** (Uniform resource locator). An URL is a text of the form `http://www.mywebsite.com/myresourcepath/myresource`.
 
-* In a traditional web development scenario, user actions on a page trigger a full reload after a synchronous request to a server. Another web development model, nicknamed **AJAX** (Aynchronous JavaScript and XML), uses JavaScript and **asynchronous** HTTP requests to fetch data when needed and update only the desired portions of the page. This enables the creation of **web applications**, aiming to offer the user experience of a native app.
+* In a traditional web development scenario, user actions on a page trigger a full reload after a synchronous request to a server. Another web development model, nicknamed **AJAX** (Asynchronous JavaScript and XML), uses JavaScript and **asynchronous** HTTP requests to fetch data when needed and update only the desired portions of the page. This enables the creation of **web applications**, aiming to offer the user experience of a native app.
 
 * Cross-domain AJAX requests are only possible if the server has been configured to accept them by setting on **cross-origin resource sharing** (CORS).
 
@@ -46,7 +46,7 @@ Data exchanges on the Web follow a **request/response** paradigm.
 
 ![A web exchange example](images/chapter20-01.png)
 
-1. Th exchange is started by the client, which sends a **request** to the server to access a particuler web resource.
+1. Th exchange is started by the client, which sends a **request** to the server to access a particular web resource.
 1. The server prepares a result for the request.
 1. The server send backs this result to the client.
 
@@ -58,7 +58,7 @@ HTTP, which stands for **HyperText Transfer Protocol**, is the technical foundat
 
 > HTTPS is the secured version of HTTP.
 
-Technically speaking, HTTP is a pretty simple procotol based on **textual commands**.
+Technically speaking, HTTP is a pretty simple protocol based on **textual commands**.
 
 ### Anatomy of an HTTP request
 
@@ -80,7 +80,7 @@ The most important line is the first one. It contains:
 
 * The HTTP **method** (the request type, also named **command**). Here, the `GET` method indicates a resource access request.
 * The requested **resource**. Here, `/` (root symbol) indicates a request for the default document.
-* The HTTP protocal **version**, here 1.1.
+* The HTTP protocol **version**, here 1.1.
 
 The other lines of text are called **header fields**. They give more information about the client request: server name (`Host`), accepted content types (`Accept`), client software details (`User-Agent`). They are many other possible header fields.
 
@@ -122,13 +122,13 @@ Family | Meaning | Examples
 **4xx** | Client error | 404: resource not found
 **5xx** | Server error | 500: internal server error
 
-> For a more in-depth prsentation of the HTTP protocol, head over to the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview).
+> For a more in-depth presentation of the HTTP protocol, head over to the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview).
 
 ### Addressing a resource with an URL
 
-Web sites are ususally accessed using their address, a piece of text of the form `http://www.mywebsite.com/myresourcepath/myresource`. This addresse can be plsit into several subparts
+Web sites are usually accessed using their address, a piece of text of the form `http://www.mywebsite.com/myresourcepath/myresource`. This address can be split into several subparts
 
-* `http://` means an access through the HTTP protocal.
+* `http://` means an access through the HTTP protocol.
 * `www.mywebsite.com` is the **domain name** of the web site.
 * `/myresourcepath/myresource` is the **path** of the requested resource.
 
@@ -148,7 +148,7 @@ Another web development model aims to avoid transmitting a whole new page for ea
 
 Albeit more challenging, this web development model can lead to limited resource loads, improved interactivity and an user experience nearly on par with native applications.
 
-The set of technologies enabling the creation of web applications is codenamed **AJAX** (*Aynchronous JavaScript and XML*). An AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
+The set of technologies enabling the creation of web applications is codenamed **AJAX** (*Asynchronous JavaScript and XML*). An AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
 
 ### Synchronous vs asynchronous requests
 
@@ -160,7 +160,7 @@ The traditional web development model uses synchronous requests: the web client 
 
 ### Cross-domain requests
 
-For security reasons, many websites have a conservative policy regarding AJAX requests. This *same origin policy* states that requests are limited to thieur origin domain: `"http://mysite"` cannot send a request to `"http://anothersite"`. This prevents some servers to be accessible via AJAX calls.
+For security reasons, many websites have a conservative policy regarding AJAX requests. This *same origin policy* states that requests are limited to their origin domain: `"http://mysite"` cannot send a request to `"http://anothersite"`. This prevents some servers to be accessible via AJAX calls.
 
 Enabling cross-domain requests is done by setting on **cross-origin resource sharing** (CORS) in the server configuration.
 
@@ -170,7 +170,7 @@ Enabling cross-domain requests is done by setting on **cross-origin resource sha
 
 The `"X"` letter in AJAX stands for XML, a generic markup language that used to be the standard for cross-platform data exchanges. While still in use, XML is quite verbose and tends to be replaced by JSON as the standard data format on the web.
 
-JSON, or **JavsScript Object Notation**, is a textual syntax for describing structured information. As you'll see in the following example, JSON borrows heavily from the JavaScript object syntax.
+JSON, or **JavaScript Object Notation**, is a textual syntax for describing structured information. As you'll see in the following example, JSON borrows heavily from the JavaScript object syntax.
 
 ```json
 {

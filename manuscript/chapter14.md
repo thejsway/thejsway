@@ -149,7 +149,7 @@ console.log(document.querySelectorAll(".exists").length); // 8
 console.log(document.querySelectorAll("#ancient > .exists").length); // 1
 ```
 
-> Check the [Mozille Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for a primer on the different CSS selectors available.
+> Check the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for a primer on the different CSS selectors available.
 
 The second method using CSS selectors is called `querySelector()`. It works the same way as `querySelectorAll()` but only returns the first matching element. It returns `null` if no associated element can be found.
 
