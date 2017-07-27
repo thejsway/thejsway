@@ -26,9 +26,9 @@ Here's our very first JavaScript program.
 console.log("Hello from JavaScript!");
 ```
 
-This program displays the text `"Hello from JavaScript!"` in the **console**, a zone displaying textual information available in most JavaScript environnements, such as browsers.
+This program displays the text `"Hello from JavaScript!"` in the **console**, a zone displaying textual information available in most JavaScript environments, such as browsers.
 
-To achieve this, its uses a JavaScript command named `console.log()`, which role is to display a piece of information. The text to be displayed is placed between parenthesis and followed by a semicolon, which mark the end of the line.
+To achieve this, it uses a JavaScript command named `console.log()`, which role is to display a piece of information. The text to be displayed is placed between parentheses and followed by a semicolon, which mark the end of the line.
 
 Displaying a text on the screen (the famous [Hello World](https://en.wikipedia.org/wiki/Hello_world) all programmers know) is often the first thing you'll do when you learn a new programming language. It's the classic example. You've already taken that first step!
 
