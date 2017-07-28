@@ -50,7 +50,7 @@ const myFunc = (param1, param2, ...)  => {
 myFunc(arg1, arg2, ...);
 ```
 
-* No matter how it's created, each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lots a **predefined functions** covering various needs.
+* No matter how it's created, each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lot of **predefined functions** covering various needs.
 
 ## Introduction: the role of functions
 
@@ -162,7 +162,7 @@ Calling a function triggers the execution of actions listed therein (the code in
 
 ### Usefulness of functions
 
-A complex problem is generally more manageable when broken down in simpler subproblems. Computer programs are no exception to this rule. Written as a combination of several short and focused functions, a program will be easier to understand and to update than a monolithic one. As an added bonus, some functions could be reused in other programs!
+A complex problem is generally more manageable when broken down into simpler subproblems. Computer programs are no exception to this rule. Written as a combination of several short and focused functions, a program will be easier to understand and to update than a monolithic one. As an added bonus, some functions could be reused in other programs!
 
 Creating functions can also be a solution to the problem of [code duplication](https://en.wikipedia.org/wiki/Duplicate_code): instead of being duplicated at several places, a piece of code is centralized in a function and called from anywhere when needed.
 
@@ -266,7 +266,7 @@ Not being able to use local variables outside the functions in which they are de
 
 ### Parameter passing
 
-A **parameter** is an information that the function needs in order to work. The function parameters are defined in parentheses immediately following the name of the function. You can then use the parameter value in the body of the function.
+A **parameter** is information that the function needs in order to work. The function parameters are defined in parentheses immediately following the name of the function. You can then use the parameter value in the body of the function.
 
 You supply the parameter value when calling the function. This value is called an **argument**.
 
@@ -423,7 +423,7 @@ This book will introduce many other JavaScript functions.
 
 ### Limiting function complexity
 
-A function body must be kept simple, or otherwise split into several sub-functions. A a rule of thumb, 30 lines of code should be a max for non-specific cases.
+A function body must be kept simple, or otherwise split into several sub-functions. As a rule of thumb, 30 lines of code should be a max for non-specific cases.
 
 ### Naming functions and parameters well
 
@@ -470,7 +470,7 @@ console.log(square2(2)); // Must show 4
 console.log(square2(5)); // Must show 25
 ```
 
-When it's done, update the program so that it shows the square of every number between 0 en 10.
+When it's done, update the program so that it shows the square of every number between 0 and 10.
 
 > Writing 10 dumb calls to `square()` is forbidden! You know how to repeat statements, don't you ? ;)
 
