@@ -219,7 +219,7 @@ console.log(temp1, temp2, temp3); // Show "36.9 37.6 37.1"
 
 ### Entering a number
 
-Regardless of the entered data, the `prompt()` command always return a string value. If this value is to be used in numerical expressions, it *must* be converted into a number with the `Number()` command.
+Regardless of the entered data, the `prompt()` command always returns a string value. If this value is to be used in numerical expressions, it *must* be converted into a number with the `Number()` command.
 
 ```js
 const input = prompt("Enter a number:"); // input's type is string
