@@ -40,7 +40,7 @@ Node also made it easier for developers to publish, share and reuse code. Today,
 
 ### A first example
 
-> The rest of this chapter assumes a working Node environnement. Refer to the [appendix](#env-setup) for setting one up.
+> The rest of this chapter assumes a working Node environnement. Refer to the [appendix](appendix01.md) for setting one up.
 
 The simplest possible Node program is as follows.
 
