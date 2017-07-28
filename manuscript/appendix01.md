@@ -1,4 +1,4 @@
-# Environment setup {#env-setup}
+# Environment setup
 
 ## Prerequisite: a modern browser
 
