@@ -10,7 +10,7 @@ A lot of code you write will involve modifying chains of text characters - or [s
 
 * JavaScript string are **[immutable]( https://en.wikipedia.org/wiki/Immutable_object )**: once created, a string value never changes. String methods never affect the initial value and always return a new string.
 
-* The `toLowerCase()` and `toUpperCase()` methods respectively convert strings to lower and upper case.
+* The `toLowerCase()` and `toUpperCase()` methods respectively return new converted strings to lower and upper case.
 
 * String values may be compared using the `===` operator, which is case sensitive.
 
