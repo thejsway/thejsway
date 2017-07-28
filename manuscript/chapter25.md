@@ -2,7 +2,7 @@
 
 It's time to put your Node.js knowledge into practice and create a real-world web server in JavaScript. This is often called **back-end programming**.
 
-> You will build exactly the server that was used in the previous chapters dealing with client-side web development. To test your server code, you can go back to code examples from chapters 22 and 23, and only change the start of the server URL from `https://thejsway-server.glitch.com` to your server URL.
+> You will build exactly the server that was used in the previous chapters dealing with client-side web development. To test your server code, you can go back to code examples from chapters 22 and 23, and only change the start of the server URL from `https://thejsway-server.herokuapp.com` to your own server URL (which would be `http://localhost:3000` if your server runs on your local machine).
 
 ## TL;DR
 
@@ -218,7 +218,7 @@ app.post("/animals", upload.array(), (request, response) => {
 
 The values of the `name` and `vote` variables are extracted from the request body, and a string is constructed and sent back to the client.
 
-![Execution result](images/chapter25-06.png)
+![Execution result](images/chapter23-02.png)
 
 ### Handling JSON data
 
