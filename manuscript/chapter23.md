@@ -142,7 +142,7 @@ fetch("https://thejsway-server.herokuapp.com/tshirt", {
   method: "POST",
   body: formData
 })
-  then(response => response.text())
+  .then(response => response.text())
     .then(result => {
       document.getElementById("result").textContent = result;
     })
