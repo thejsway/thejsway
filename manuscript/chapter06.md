@@ -345,3 +345,7 @@ Write a program that creates an `account` object with the following characterist
 Use this object to show its description, crediting 250, debiting 80, then show its description again.
 
 ![Execution result](images/chapter06-10.png)
+
+[<= Previous (Part I: Write functions)](chapter05.md)
+
+[(Part I: Store data in arrays) Next =>](chapter07.md)

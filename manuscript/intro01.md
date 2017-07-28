@@ -31,4 +31,4 @@ I wish you a great journey in the wonderful world of JavaScript!
 
 [<= Previous (Table of Contents)](/README.md)
 
-[(Introduction: Welcome to Programming) Next =>](/README.md)
+[(Introduction: Welcome to Programming) Next =>](intro02.md)

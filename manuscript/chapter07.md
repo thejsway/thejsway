@@ -254,3 +254,7 @@ const values = [3, 11, 7, 2, 9, 10];
 ### List of words
 
 Write a program that asks the user for a word until he types `"stop"`. The program then shows each of these words, except `"stop"`.
+
+[<= Previous (Part I: Create your first objects)](chapter06.md)
+
+[(Part I: Work with strings) Next =>](chapter08.md)

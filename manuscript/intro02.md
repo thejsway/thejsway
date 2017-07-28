@@ -145,3 +145,7 @@ We used a simple writing style, not a specific programming language. In fact, we
 Writing programs that can reliably perform expected tasks is a programmer's goal. A beginner can learn to quickly create simple programs. Things get more complicated when the program evolves and becomes more complex. It takes experience and a lot of practice before you feel like you'll control this complexity! Once you have the foundation, the only limit is your imagination!
 
 > "The computer programmer is a creator of universes for which he alone is the lawgiver. No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or field of battle and to command such unswervingly dutiful actors or troops." (Joseph Weizenbaum)
+
+[<= Previous (Introduction: About this book)](intro01.md)
+
+[(Introduction: Introducing Javascript) Next =>](intro03.md)

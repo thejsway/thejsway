@@ -598,3 +598,7 @@ console.log(femaleStudentsResults);
 Refactor it using functional programming. Execution result must stay the same.
 
 ![Execution result](images/chapter10-03.png)
+
+[<= Previous (Part I: Understand object-oriented programming)](chapter08.md)
+
+[(Part I: Project: a social news program) Next =>](chapter10.md)

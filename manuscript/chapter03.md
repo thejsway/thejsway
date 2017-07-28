@@ -412,3 +412,7 @@ Write a program that asks for a time under the form of three information (hours,
 > * 14h17m59s => 14h18m0s
 > * 6h59m59s => 7h0m0s
 > * 23h59m59s => 0h0m0s (midnight)
+
+[<= Previous (Part I: Play with variables)](chapter02.md)
+
+[(Part I: Repeat statements) Next =>](chapter04.md)

@@ -313,3 +313,7 @@ console.log(number2); // Should show 5
 Add the necessary code to swap the values of variables `number1` and `number2`.
 
 T> This exercise has several valid solutions. You may use more than two variables to solve it.
+
+[<= Previous (Part I: 3, 2, 1... Code!)](chapter01.md)
+
+[(Part I: Add conditions) Next =>](chapter03.md)

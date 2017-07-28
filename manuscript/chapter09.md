@@ -368,3 +368,7 @@ Let's build upon a previous account object exercise. A bank account is still def
 Write a program that creates three accounts: one belonging to Sean, another to Brad and the third one to Georges. These accounts are stored in an array. Next, the program credits 1000 to each account and shows its description.
 
 ![Execution result](images/chapter09-05.png)
+
+[<= Previous (Part I: Work with strings)](chapter08.md)
+
+[(Part I: Discover functional programming) Next =>](chapter10.md)
