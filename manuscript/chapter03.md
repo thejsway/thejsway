@@ -14,7 +14,7 @@ if (condition) {
 
 * The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve visibility, its statements are generally **indented** (shifted to the right).
 
-* The **comparison operators** `===`, `!==`, `<`, `<=`, `>` et `>=` are used to compare numbers inside a condition. All of them return a boolean result.
+* The **comparison operators** `===`, `!==`, `<`, `<=`, `>` and `>=` are used to compare numbers inside a condition. All of them return a boolean result.
 
 * An `else` statement can be associated to an `if` to express an **alternative**. Depending on the condition value, either the code block associated to the `if` or the one associated to the `else` will be run, but never both. There is no limit to the depth of condition nesting.
 
@@ -27,7 +27,7 @@ else {
 }
 ```
 
-* Complex conditions can be created using the **logical operators** `&&` ("and"), `||` ("or") et `!` ("not").
+* Complex conditions can be created using the **logical operators** `&&` ("and"), `||` ("or") and `!` ("not").
 
 * The `switch` statement is used to kick off the execution of one code block among many, depending on the value of an expression.
 
