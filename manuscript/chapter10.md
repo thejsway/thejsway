@@ -103,7 +103,7 @@ let averageRating = 0;
 for (const movie of nolanMovieList) {
   ratingSum += movie.imdbRating;
 }
-averageRating = ratingSum / movieList.length;
+averageRating = ratingSum / nolanMovieList.length;
 console.log(averageRating);
 ```
 
