@@ -427,7 +427,7 @@ A function body must be kept simple, or otherwise split into several sub-functio
 
 ### Naming functions and parameters well
 
-Function naming is just as important as variable naming. You should choose names that express clearly the function purpose and follow a naming convention. Refer to the [appendix](#style-guide) for some useful advice.
+Function naming is just as important as variable naming. You should choose names that express clearly the function purpose and follow a naming convention. Refer to the appendix for some useful advice.
 
 T> If you have difficulties coming up with a right name for a function, then maybe its purpose is not that clear and you should ask yourself if this function deserves to exist.
 

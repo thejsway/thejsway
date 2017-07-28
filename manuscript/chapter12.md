@@ -135,7 +135,7 @@ A JavaScript file, usually stored in a `.js` file, is loaded by a web page with 
 
 To create interactive web pages, you need to write HTML, CSS and JavaScript code. If you're just starting out, the easiest way to do so is by using an online JavaScript playground. However, you will likely want to develop in a more professional fashion at some point, or need to work offline.
 
-Refer to the [appendix](appendix01.md) for details on setting up your environment.
+Refer to the appendix for details on setting up your environment.
 
 ## Coding time!
 
