@@ -143,7 +143,7 @@ let e = 3 + 2 * 4; // e contains 11 (3 + 8)
 e = (3 + 2) * 4;   // e contains 20 (5 * 4)
 ```
 
-It is possible to include expressions in a string by using **backticks** (\`) to delimitate the string. Such a string is called a **template literal**. Inside a template literal, expressions are identified by the `${expression}` syntax.
+It is possible to include expressions in a string by using **backticks** (\`) to delimit the string. Such a string is called a **template literal**. Inside a template literal, expressions are identified by the `${expression}` syntax.
 
 This is often used to create strings containing the values of some variables.
 
