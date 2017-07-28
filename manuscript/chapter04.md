@@ -4,7 +4,7 @@ In this chapter, we'll look at how to execute code on a repeating basis.
 
 ## TL;DR
 
-* **Loops** are used to repeat a series of statements. Each repetition is called an **iteration**. The code block associated to a loop is called its **body**.
+* **Loops** are used to repeat a series of statements. Each repetition is called an **iteration**. The code block associated with a loop is called its **body**.
 
 * The `while` loop repeats statements *while* a certain condition is true. The `for` loop gives the ability to manage what happens just before the loop starts and after each loop iteration has run.
 
@@ -20,7 +20,7 @@ for (initialization; condition; final expression) {
 }
 ```
 
-* The variable associated to the loop condition is called the loop **counter** and often named `i`.
+* The variable associated with the loop condition is called the loop **counter** and often named `i`.
 
 * Beware! The condition of a `while` loop must eventually become false, to avoid the risk of an **infinite loop**. Also, updating the counter of a `for` loop inside its body is a bad idea.
 
@@ -60,13 +60,13 @@ while (number <= 5) {
 }
 ```
 
-Just like the previous one, it shows all integer numbers between 1 and 5.
+Just like the previous code block, this block shows all integer numbers between 1 and 5.
 
 ![Execution result](images/chapter04-02.png)
 
 ### How it works
 
-You'll use the following syntax to write a `while` loop.
+You'll use the following syntax used to write a `while` loop.
 
 ```js
 while (condition) {
@@ -115,11 +115,11 @@ This is a little more complicated than the `while` loop syntax:
 
 * The **condition** is evaluated once before the loop runs each time. If it's true, the code runs. If not, the code doesn't run.
 
-* The **final expression** is evaluated after the loop runs each time. It's often used to update the value of the variable associated to the loop condition, as we saw in the previous example.
+* The **final expression** is evaluated after the loop runs each time. It's often used to update the value of the variable associated with the loop condition, as we saw in the previous example.
 
 ### The loop counter
 
-The variable used during initialization, condition, and the final expression of a loop is called a **counter** and often named `i`. It can be declared in the loop initialization to limit its scope to the loop body.
+The variable used during initialization, condition, and the final expression of a loop is called a **counter** and is often named `i`. This **counter** can be declared in the loop initialization to limit its scope to the loop body.
 
 ```js
 for (let i = 1; i <= 5; i++) {
@@ -178,7 +178,7 @@ Ultimately, choosing which loop to use depends on context. All loops can be writ
 
 ## Coding time!
 
-Yry to code each exercise twice, once with a `while` loop and the other with a `for`, to see for yourself which one is the most appropriate.
+Try to code each exercise twice, once with a `while` loop and the other with a `for`, to see for yourself which one is the most appropriate.
 
 ### Carousel
 
@@ -188,7 +188,7 @@ When it's done, improve it so that the number of turns is given by the user.
 
 ### Parity
 
-Check the following program that shows even number (divisible by 2) between 1 and 10.
+Check the following program that shows even numbers (divisible by 2) between 1 and 10.
 
 ```js
 for (let i = 1; i <= 10; i++) {
@@ -210,23 +210,23 @@ console.log(20 % 3); // 2 because 20 = 3 * 6 + 2
 
 Improve the program so that it also shows odd numbers. Improve it again so that the initial number is given by the user.
 
-> This program must show exactly 10 numbers including the first one, not 11!
+> This program must show exactly 10 numbers including the first one, not 11 numbers!
 
 ### Input validation
 
-Write a program that asks the user for a number until it's less than or equal to 100.
+Write a program that continues to ask the user for a number until the entered number is less than or equal to 100.
 
-When it's done, improve it so that the number is between 50 and 100.
+When you are done with the above, improve the program so that the terminating number is between 50 and 100.
 
 ### Multiplication table
 
 Write a program that asks the user for a number, then shows the multiplication table for this number.
 
-When it's done, improve it to only accept numbers between 2 and 9 (use the previous exercise as a blueprint).
+When you are done, improve the program so it to only accepts numbers between 2 and 9 (use the previous exercise as a blueprint).
 
 ### Neither yes nor no
 
-Write a program that plays "neither yes, nor no" with the user: he enters a text until he types either "yes" or "no", ending the game.
+Write a program that plays "neither yes, nor no" with the user; specifically, the user enters text until the user types "yes" or "no", ending the game.
 
 ### FizzBuzz
 
@@ -236,6 +236,6 @@ Write a program that shows all numbers between 1 and 100 with the following exce
 
 * It shows `"Buzz"` instead if the number is divisible by 5 and not by 3.
 
-When it's done, improve it so that it shows `"FizzBuzz"` instead of numbers divisible both by 3 and by 5.
+When it's done, improve it so that the program shows `"FizzBuzz"` instead for numbers divisible both by 3 and by 5.
 
 > This exercise has [many, many solutions](http://www.tomdalling.com/blog/software-design/fizzbuzz-in-too-much-detail/). It's a [job interview classic](http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/) that a significant number of candidates fail. Try your best!
