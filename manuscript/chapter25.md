@@ -6,7 +6,7 @@ It's time to put your Node.js knowledge into practice and create a real-world we
 
 ## TL;DR
 
-* The Node.js platform is well suited for creating **web servers** in JavaScript, with or with the help of a framework.
+* The Node.js platform is well suited for creating **web servers** in JavaScript, with or without the help of a framework.
 
 * A **framework** provides a standard way to design and structure an application. **Express** is a common choice for building a web server with Node.
 
@@ -20,7 +20,7 @@ It's time to put your Node.js knowledge into practice and create a real-world we
 
 ## Using a framework
 
-We saw in the previous chapter that Node.js was a platform for building JavaScript applications outside the browser. as such, Node is well suited for creating **web servers** in JavaScript.
+We saw in the previous chapter that Node.js is a platform for building JavaScript applications outside the browser. as such, Node is well suited for creating **web servers** in JavaScript.
 
 > As a reminder, a web server is a machine built specially to publish resources on the Web.
 
