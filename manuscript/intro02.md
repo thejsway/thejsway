@@ -18,7 +18,7 @@ Since their invention in the 1950s, **computers** have revolutionized our daily 
 
 I> Let's take the term "computer" in its broadest sense, meaning a machine that can perform arithmetic and logical operations. It could mean either a desktop or laptop computer (PC, Mac), a computing server, or a mobile device like a tablet or smartphone.
 
-Nonetheless, a computer can only perform a series of simple operations when instructed to do so. They normally have no ability to learn, judge, or improvise. They simple do what they're told to do! Their value comes from how they can quickly handle and process huge amounts of information.
+Nonetheless, a computer can only perform a series of simple operations when instructed to do so. They normally have no ability to learn, judge, or improvise. They simply do what they're told to do! Their value comes from how they can quickly handle and process huge amounts of information.
 
 A computer often requires human intervention. That's where programmers and developers come in! They write programs that result in instructions to a computer.
 
