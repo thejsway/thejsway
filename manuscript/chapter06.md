@@ -6,7 +6,7 @@ This chapter will introduce objects and the way they are created and used in Jav
 
 * A JavaScript **object** is an entity that has properties. Each property is a key/value pair. The key is the property name.
 
-* The value of a property can be an information (number, string, etc) or a function. In that case, the property is called a **method**.
+* The value of a property can be some information (number, string, etc) or a function. In that case, the property is called a **method**.
 
 * A JavaScript **object literal** is created by simply setting its properties within a pair of curly braces.
 
@@ -39,7 +39,7 @@ myObject.method1(...);           // Call method1 on myObject
 
 Think about objects in the non-programming sense, like a pen. A pen can have different ink colors, be manufactured by different people, have a different tip, and many other properties.
 
-Similarly, an **object** in programming is an **entity that has properties****. Each property defines a characteristic of the object. A property can be a information associated with the object (the color of the pen) or an action (the pen's ability to write).
+Similarly, an **object** in programming is an **entity that has properties****. Each property defines a characteristic of the object. A property can be a piece of information associated with the object (the color of the pen) or an action (the pen's ability to write).
 
 ### What does this have to do with code?
 
@@ -143,9 +143,9 @@ In a role-playing game, each character is defined by many attributes like streng
 
 In our simpler example, a character will have three attributes:
 
-* his name,
-* his health (number of life points),
-* his strength.
+* her name,
+* her health (number of life points),
+* her strength.
 
 ### A naive example
 
@@ -234,7 +234,7 @@ console.log(aurora.describe());
 
 Now our object has a new property available to it: `describe()`. The value of this property is a function that returns a textual description of the object. The execution result is exactly the same as before.
 
-An object property whose value is a function is called a **method**. Methods are used to define **actions** for an object. A method add some **behavior** to an object.
+An object property whose value is a function is called a **method**. Methods are used to define **actions** for an object. A method adds some **behavior** to an object.
 
 #### Calling a method on an object
 
