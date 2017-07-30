@@ -39,7 +39,7 @@ myObject.method1(...);           // Call method1 on myObject
 
 Think about objects in the non-programming sense, like a pen. A pen can have different ink colors, be manufactured by different people, have a different tip, and many other properties.
 
-Similarly, an **object** in programming is an **entity that has properties****. Each property defines a characteristic of the object. A property can be data associated with the object (the color of the pen) or an action (the pen's ability to write).
+Similarly, an **object** in programming is an **entity that has properties**. Each property defines a characteristic of the object. A property can be a piece of information associated with the object (the color of the pen) or an action (the pen's ability to write).
 
 ### What does this have to do with code?
 
@@ -143,9 +143,9 @@ In a role-playing game, each character is defined by many attributes like streng
 
 In our simpler example, a character will have three attributes:
 
-* his name,
-* his health (number of life points),
-* his strength.
+* her name,
+* her health (number of life points),
+* her strength.
 
 ### A naive example
 
