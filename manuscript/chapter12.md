@@ -8,7 +8,7 @@ This short chapter summarizes what you need to known about the Web and web pages
 
 * A **web page** is a document suitable for the Web. Creating web pages usually involves three technologies: [HTML](https://en.wikipedia.org/wiki/HTML) to structure the content, [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) to define its presentation and JavaScript to add interactivity.
 
-* An HTML document is made of text and structural elements called **tags** that describe the page content: paragraphs, headings, hyperlinks, images, etc.
+* An HTML document is made of text and structural elements called **tags** that describe the page content, such as: paragraphs, headings, hyperlinks, images, etc.
 
 * CSS uses **selectors** to declare which HTML elements a style applies to. Elements can be selected by tag name (`h1`), by class (`.done`) or by identifier (`#rude`).
 

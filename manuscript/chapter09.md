@@ -36,7 +36,7 @@ const myObject = new MyClass(arg1, arg2, ...);
 
 * JavaScript's OOP model is based on **prototypes**. Any JavaScript object has an internal property which is a link (a **reference**) to another object: its prototype. Prototypes are used to share properties and delegate behavior between objects.
 
-* When trying to access a property that does not exist in an object, JavaScript tries to find this property in the **prototype chain** of this object: its prototype, then its prototype's own prototype, and so on.
+* When trying to access a property that does not exist in an object, JavaScript tries to find this property in the **prototype chain** of this object by first searching its prototype, then its prototype's own prototype, and so on.
 
 * There are several ways to create and link JavaScript objects through prototypes. One is to use the `Object.create()` method.
 
@@ -68,10 +68,10 @@ const aurora = {
 // Aurora is harmed by an arrow
 aurora.health = aurora.health - 20;
 
-// Aurora equips a strength necklace
+// Aurora gains a strength necklace
 aurora.strength = aurora.strength + 10;
 
-// Aurora learn a new skill
+// Aurora learns a new skill
 aurora.xp = aurora.xp + 15;
 
 console.log(aurora.describe());
@@ -143,10 +143,10 @@ const glacius = new Character("Glacius", 130, 30);
 // Aurora is harmed by an arrow
 aurora.health = aurora.health - 20;
 
-// Aurora equips a strength necklace
+// Aurora gains a strength necklace
 aurora.strength = aurora.strength + 10;
 
-// Aurora learn a new skill
+// Aurora learns a new skill
 aurora.xp = aurora.xp + 15;
 
 console.log(aurora.describe());
@@ -212,7 +212,7 @@ const myObject = Object.create(myPrototypeObject);
 
 When the statement `anotherObject.myProp` is run, the `myProp` property of `anObject` is used since `myProp` doesn't exist in `anotherObject`.
 
-If the prototype of an object does not have a desired property, then research continues in its own prototype until we get to the end of the **prototype chain**. If the end of this chain is reached without having found the property, access to it returns the value `undefined`.
+If the prototype of an object does not have a desired property, then the search continues in the object's own prototype until we get to the end of the **prototype chain**. If the end of this chain is reached without having found the property, an attempted access to the property returns the value `undefined`.
 
 ```js
 const anObject = {
@@ -248,9 +248,9 @@ The JavaScript `class` syntax is merely a more convenient way to create relation
 
 Now back to our RPG, which is still pretty boring. What does it lack? Monsters and fights, of course!
 
-Here's how a fight will be handled: if attacked, a character sees their life points decrease from the strength of the attacker. If its health value fall below zero, the character is considered dead and cannot attack anymore. Its vanquisher receives a fixed number of 10 experience points.
+Following is how a fight will be handled. If attacked, a character sees their life points decrease from the strength of the attacker. If its health value falls below zero, the character is considered dead and cannot attack anymore. Its vanquisher receives a fixed number of 10 experience points.
 
-First, let's add the possibility for our characters to fight one another. Since it's a shared ability, we define it as a method named `attack()` in the `Character` class.
+First, let's add the capability for our characters to fight one another. Since it's a shared ability, we define it as a method named `attack()` in the `Character` class.
 
 ```js
 class Character {
@@ -324,7 +324,7 @@ The previous program is a short example of **Object-Oriented Programming** (in s
 
 Complete the following program to add the definition of the `Dog` class.
 
-> Dogs taller than 60 make `"Grrr! Grrr!"` when they bark, other ones make `"Woof! Woof!"`.
+> Dogs taller than 60 emote `"Grrr! Grrr!"` when they bark, other ones yip `"Woof! Woof!"`.
 
 ```js
 // TODO: define the Dog class here
@@ -350,7 +350,7 @@ Improve the example RPG to add character inventory management according to the f
 
 * The character description must show the inventory state.
 
-* When a character slays another one, the victim's inventory goes to its vanquisher.
+* When a character slays another character, the victim's inventory goes to its vanquisher.
 
 Here's the expected execution result.
 

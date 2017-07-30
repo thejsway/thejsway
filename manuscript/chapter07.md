@@ -60,7 +60,7 @@ This time, the data is centralized in the object `movies`. The names of its prop
 
 You need a solution to store items together without naming them individually!
 
-Luckily, there is one: use an array. An **array** is a data type that can store a set of elements.
+Luckily, there is indeed a solution: use an array. An **array** is a data type that can store a set of elements.
 
 ## Manipulating arrays in JavaScript
 
@@ -139,7 +139,7 @@ for (let i = 0; i < movies.length; i++) {
 }
 ```
 
-The `for` loop runs through each element in the array starting with index 0 all the way up to the length of the array minus 1, which will be its last element.
+The `for` loop runs through each element in the array starting with index 0 all the way up to the length of the array minus 1, which is its last element.
 
 Another way is to call the `forEach()` method on the array. It takes as a parameter a **function** that will be applied to each array element.
 
@@ -160,7 +160,7 @@ movies.forEach(movie => {
 
 During execution, each array element is passed as a parameter (named `movie` in this example) to the anonymous function associated to `forEach()`.
 
-Lastly, you can use the `for-of` loop, a special kind of loop dealing with [iterable objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#iterable) like arrays. Here's its syntax.
+Lastly, you can use the `for-of` loop, a special kind of loop dealing with [iterable objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#iterable) like arrays. Here is its syntax.
 
 ```js
 for (const myElement of myArray) {
@@ -191,7 +191,7 @@ console.log(movies[3]); // "Ghostbusters"
 
 You add a new item to an array with the `push()` method. The new element to be added is passed as a parameter to the method. It is inserted at the end of the array.
 
-To add an element at the beginning of an array, use the `unshift()` method of `push()`.
+To add an element at the beginning of an array, use the `unshift()` method instead of `push()`.
 
 ```js
 const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];
@@ -245,7 +245,7 @@ const values = [3, 11, 7, 2, 9, 10];
 
 ### Array maximum
 
-Write a program that creates the following array, then calculates and shows its maximum value.
+Write a program that creates the following array, then calculates and shows the array's maximum value.
 
 ```js
 const values = [3, 11, 7, 2, 9, 10];
@@ -253,4 +253,4 @@ const values = [3, 11, 7, 2, 9, 10];
 
 ### List of words
 
-Write a program that asks the user for a word until he types `"stop"`. The program then shows each of these words, except `"stop"`.
+Write a program that asks the user for a word until the user types `"stop"`. The program then shows each of these words, except `"stop"`.

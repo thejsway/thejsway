@@ -47,7 +47,7 @@ Numbers are mainly used for counting. The main operations you'll see are summari
 |Operator|Role|
 |---------|----|
 |`+`|Addition|
-|`-`|Substraction|
+|`-`|Subtraction|
 |`*`|Multiplication|
 |`/`|Division|
 
@@ -135,7 +135,7 @@ Write a program that displays your name and age. Here's the result for mine.
 
 ### Minimalistic calculator
 
-Write a program that displays the results of adding, substracting, multiplicating and dividing 6 by 3.
+Write a program that displays the results of adding, subtracting, multiplicating and dividing 6 by 3.
 
 ### Values prediction
 

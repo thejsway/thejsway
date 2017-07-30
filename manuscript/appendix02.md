@@ -38,7 +38,7 @@ W> Like many other languages, JavaScript is **case sensitive**. For example, `my
 
 This is a subject of many debates in the JavaScript community: using spaces or tabulations for indenting, omitting semicolons, simple vs double quotes for strings, and so on.
 
-A simple and efficient solution is to rely on a tool au automate the low-level task of formatting code, so that you can concentrate on more high-level work. This book uses [Prettier](https://github.com/prettier/prettier) with default configuration (double quotes and semicolons).
+A simple and efficient solution is to rely on a tool to automate the low-level task of formatting code, so that you can concentrate on more high-level work. This book uses [Prettier](https://github.com/prettier/prettier) with default configuration (double quotes and semicolons).
 
 ## Code quality
 

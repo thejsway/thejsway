@@ -6,21 +6,21 @@ Object-oriented programming, albeit quite popular, is not the only way to create
 
 * **Functional programming** is about writing programs by combining functions expressing *what* the program should do, rather than *how* to do it (which is the imperative way).
 
-* The **state** of a program is the value of its **global variables** at a given time. A goal of functional programming is to minimize state **mutations** (changes) that make the code harder to understand. Some possible solutions are declaring variables with `const` instead of `let`, splitting the code into functions and favor local variables over global ones.
+* The **state** of a program is the value of its **global variables** at a given time. A goal of functional programming is to minimize state **mutations** (changes) that make the code harder to understand. Some possible solutions are declaring variables with `const` instead of `let`, splitting the code into functions, and favoring local over global variables.
 
 * A **pure function** depends solely on its inputs for computing its outputs and has no **side effect**. Pure functions are easier to understand, combine together, and debug. Functional programming favors the use of pure functions whenever possible.
 
 * The `map()`, `filter()` and `reduce()` methods can replace loops for array traversal and let you program with arrays in a functional way.
 
-* JavaScript functions can be passed around just like any other value: they are **first-class citizens**, enabling functional programming. A function that operates on another function (taking it as an parameter or returning it) is called an **higher-order function**.
+* JavaScript functions can be passed around just like any other value: they are **first-class citizens**, enabling functional programming. A function that operates on another function (taking it as an parameter or returning it) is called a **higher-order function**.
 
 * JavaScript is a **multi-paradigm** language: you can write programs using an imperative, object-oriented or functional programming style.
 
 ## Context: a movie list
 
-In this chapter, we'll start with an example program and improve it little by little, without adding any new functionality. This important programmer task is called **refactoring**.
+In this chapter, we'll start with an example program and improve it little by little, without adding any new functionality. This important programming task is called **refactoring**.
 
-Our initial program is about recent Batman movies. The data comes under the form of an array of objects, each object describing a movie.
+Our initial program is about recent Batman movies. The data comes under the form of an array of objects, with each object describing a movie.
 
 ```js
 const movieList = [
@@ -115,7 +115,7 @@ The previous program is an example of what is called **imperative programming**.
 
 The concept of state is an important one. The **state** of a program is the value of its **global variables** (variables accessible everywhere in the code) at a given time. In our example, the values of `movieList`, `titles`, `nolanMovieCount`, `bestTitles`, `ratingSum` and `averageRating` form the state of the program. Any assignment to one of these variables is a state change, often called a **mutation**.
 
-In imperative programming, the state can be modified anywhere in the source code. This is convenient, but can also lead to nasty bugs and maintenance headaches. As the program grows in size and complexity, it's becoming easier for the programmer to mutate a part of the state by mistake, and harder to monitor state modifications.
+In imperative programming, the state can be modified anywhere in the source code. This is convenient, but can also lead to nasty bugs and maintenance headaches. As a program grows in size and complexity, it becomes easier for the programmer to mutate a part of the state by mistake and harder to monitor state modifications.
 
 ### Limiting mutations with `const` variables
 
@@ -264,7 +264,7 @@ console.log(averageRating(nolanMovieList));
 
 Since we only do refactoring, the program output is still the same.
 
-The program state (`movieList` and `nolanMovieList`) hasn't changed. However, all our functions are now pure: instead of accessing the state, they use parameters to achieve their desired behavior. As an added benefit, the function `averageRating()` can now compute the average rating of any movie list: it has become more **generic**.
+The program state (`movieList` and `nolanMovieList`) hasn't changed. However, all our functions are now pure; instead of accessing the state, they use parameters to achieve their desired behavior. As an added benefit, the function `averageRating()` can now compute the average rating of any movie list; it has become more **generic**.
 
 ## Array operations
 
@@ -305,13 +305,13 @@ const titles = movies => {
 
 ### The `filter()` method
 
-The `filter()` method offers a way to test every element of an array against a provided function. Only elements that pass this test are added in the returned array.
+The `filter()` method offers a way to test every element of an array against a provided function. Only elements that pass this test are added to the returned array.
 
 Here's an example of using `filter()`.
 
 ```js
 const numbers = [1, 5, 10, 15];
-// Keep only the number greater or equal to 10
+// Keep only the number greater than or equal to 10
 const bigOnes = numbers.filter(x => x >= 10);
 
 console.log(numbers); // [1, 5, 10, 15] (no change)
@@ -411,7 +411,7 @@ const ratingSum = movies.map(movie => movie.imdbRating).reduce((acc, value) => a
 
 Throughout this chapter, we have leveraged the fact that JavaScript functions can be passed around just like any other value. We say that functions are **first-class citizens** in JavaScript, which means that they are treated equal to other types.
 
-Thanks to their first-class citizenry, functions can be combined together, rendering programs even more expressive and enabling a truly functional programming style. A function that takes another function as a parameter or returns another function is called an **higher-order function**.
+Thanks to their first-class citizenry, functions can be combined together, rendering programs even more expressive and enabling a truly functional programming style. A function that takes another function as a parameter or returns another function is called a **higher-order function**.
 
 Check out this final version of our example program.
 

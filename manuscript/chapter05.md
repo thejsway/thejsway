@@ -50,7 +50,7 @@ const myFunc = (param1, param2, ...)  => {
 myFunc(arg1, arg2, ...);
 ```
 
-* No matter how it's created, each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lots a **predefined functions** covering various needs.
+* No matter how it's created, each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lot of **predefined functions** covering various needs.
 
 ## Introduction: the role of functions
 
@@ -72,8 +72,8 @@ Begin
     If the veggies aren't cooked enough
       Keep stir-frying the veggies
   Heat the tortilla
-  Add rice to tortilla
-  Add vegetables to tortilla
+  Add rice to the tortilla
+  Add vegetables to the tortilla
   Roll tortilla
 End
 ```
@@ -162,9 +162,9 @@ Calling a function triggers the execution of actions listed therein (the code in
 
 ### Usefulness of functions
 
-A complex problem is generally more manageable when broken down in simpler subproblems. Computer programs are no exception to this rule. Written as a combination of several short and focused functions, a program will be easier to understand and to update than a monolithic one. As an added bonus, some functions could be reused in other programs!
+A complex problem is generally more manageable when broken down into simpler subproblems. Computer programs are no exception to this rule. Written as a combination of several short and focused functions, a program will be easier to understand and to update than a monolithic one. As an added bonus, some functions could be reused in other programs!
 
-Creating functions can also be a solution to the problem of [code duplication](https://en.wikipedia.org/wiki/Duplicate_code): instead of being duplicated at several places, a piece of code is centralized in a function and called from anywhere when needed.
+Creating functions can also be a solution to the problem of [code duplication](https://en.wikipedia.org/wiki/Duplicate_code); instead of being duplicated in several places, a piece of code can be centralized in a function and called from anywhere when needed.
 
 ## Function contents
 
@@ -219,7 +219,7 @@ const result = myFunction();
 console.log(result); // undefined
 ```
 
-W> A function stops running immediately after the `return` statement is executed. Any further statements would never be run.
+W> A function stops running immediately after the `return` statement is executed. Any further statements are never run.
 
 Let's simplify our example a bit by getting rid of the variable that stores the function's return value.
 
@@ -248,7 +248,7 @@ console.log(sayHello()); // "Hello!"
 
 The function `sayHello()` declares a variable named `message` and returns its value.
 
-The variables declared in the body of a function are called **local variables**. Their **scope** is limited to the function body (hence their name). If you try to use it outside the function, you won't be able to!
+The variables declared in the body of a function are called **local variables**. Their **scope** is limited to the function body (hence their name). If you try to use these **local variables** outside the function, you won't be able to!
 
 ```js
 function sayHello() {
@@ -262,11 +262,11 @@ console.log(message);    // Error: the message variable is not visible here
 
 Each function call will redeclare the function's local variables, making the calls perfectly independent from one another.
 
-Not being able to use local variables outside the functions in which they are declared may seem like a limitation. Actually, it's a good thing! This means functions can be designed as autonomous and reusable. Moreover, this prevents **naming conflicts**: variables declared in different functions may have the same name.
+Not being able to use local variables outside the functions in which they are declared may seem like a limitation. Actually, it's a good thing! This means functions can be designed as autonomous and reusable. Moreover, this prevents **naming conflicts**: allowing variables declared in different functions to have the same name.
 
 ### Parameter passing
 
-A **parameter** is an information that the function needs in order to work. The function parameters are defined in parentheses immediately following the name of the function. You can then use the parameter value in the body of the function.
+A **parameter** is information that the function needs in order to work. The function parameters are defined in parentheses immediately following the name of the function. You can then use the parameter value in the body of the function.
 
 You supply the parameter value when calling the function. This value is called an **argument**.
 
@@ -394,7 +394,7 @@ const hello = name => `Hello, ${name}!`;
 console.log(hello("Kate")); // "Hello, Kate!"
 ```
 
-Functions are a core part of the JavaScript toolset. You'll use them non-stop in your programs.
+Functions are a core part of the JavaScript toolset. You'll use them constantly in your programs.
 
 ## Guidelines for programming with functions
 
@@ -406,7 +406,7 @@ However, not everything deserves to be in its own function. it's better to write
 
 ### Leveraging JavaScript predefined functions
 
-We have already used several predefined JavaScript functions like `prompt()` and `alert()`. They are many others in the language specification. Get to know them instead of reinventing the wheel!
+We have already used several predefined JavaScript functions like `prompt()` and `alert()`. There are many others in the language specification. Get to know them instead of reinventing the wheel!
 
 Here' an example demonstrating two of the JavaScript mathematical functions.
 
@@ -423,13 +423,13 @@ This book will introduce many other JavaScript functions.
 
 ### Limiting function complexity
 
-A function body must be kept simple, or otherwise split into several sub-functions. A a rule of thumb, 30 lines of code should be a max for non-specific cases.
+A function body must be kept simple, or otherwise split into several sub-functions. As a rule of thumb, 30 lines of code should be a max for non-specific cases.
 
 ### Naming functions and parameters well
 
 Function naming is just as important as variable naming. You should choose names that express clearly the function purpose and follow a naming convention. Refer to the appendix for some useful advice.
 
-T> If you have difficulties coming up with a right name for a function, then maybe its purpose is not that clear and you should ask yourself if this function deserves to exist.
+T> If you have difficulties coming up with a good name for a function, then maybe its purpose is not that clear and you should ask yourself if this function deserves to exist.
 
 ## Coding time!
 
@@ -470,7 +470,7 @@ console.log(square2(2)); // Must show 4
 console.log(square2(5)); // Must show 25
 ```
 
-When it's done, update the program so that it shows the square of every number between 0 en 10.
+When it's done, update the program so that it shows the square of every number between 0 and 10.
 
 > Writing 10 dumb calls to `square()` is forbidden! You know how to repeat statements, don't you ? ;)
 
@@ -501,11 +501,11 @@ console.log(calculate(12, "/", 0)); // Must show Infinity
 
 ### Circumference and area of a circle
 
-Write a program containing two functions to calculate the circumference and area of a square defined by its radius. Test it using user input.
+Write a program containing two functions to calculate the circumference and area of a circle defined by its radius. Test it using user input.
 
 Here are some tips for solving this exercise:
 
-* Circumference and area calculation formulas should be part of your school years memories... Or a Google click away :)
+* Circumference and area calculation formulas should be part of your secondary school memories... Or a Google click away :)
 * The value of number π (Pi) is obtained with `Math.PI` in JavaScript.
 * You might want to use the [exponentiation operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators) `**` to perform computations.
 
