@@ -62,10 +62,10 @@ To setup Node on your local machine, download the latest version [here](https://
 
 > Some examples in this book need Node 8 or higher.
 
-The easiest way to test that node is installed is to run the `node version` command in your terminal/command prompt, and check that a version string is returned.
+The easiest way to test that node is installed is to run the `node --version` command in your terminal/command prompt, and check that a version string is returned.
 
 ```console
-node version
+node --version
 ```
 
 ### Install a code formatter and a linter
