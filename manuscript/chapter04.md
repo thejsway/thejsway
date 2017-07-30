@@ -60,13 +60,13 @@ while (number <= 5) {
 }
 ```
 
-Just like the previous code block, this block shows all integer numbers between 1 and 5.
+Just like the previous one, this code block shows all integer numbers between 1 and 5.
 
 ![Execution result](images/chapter04-02.png)
 
 ### How it works
 
-You'll use the following syntax used to write a `while` loop.
+You'll use the following syntax to write a `while` loop.
 
 ```js
 while (condition) {
@@ -119,7 +119,7 @@ This is a little more complicated than the `while` loop syntax:
 
 ### The loop counter
 
-The variable used during initialization, condition, and the final expression of a loop is called a **counter** and is often named `i`. This **counter** can be declared in the loop initialization to limit its scope to the loop body.
+The variable used during initialization, condition, and the final expression of a loop is called a **counter** and is often named `i`. This counter can be declared in the loop initialization to limit its scope to the loop body.
 
 ```js
 for (let i = 1; i <= 5; i++) {
@@ -222,11 +222,11 @@ When you are done with the above, improve the program so that the terminating nu
 
 Write a program that asks the user for a number, then shows the multiplication table for this number.
 
-When you are done, improve the program so it to only accepts numbers between 2 and 9 (use the previous exercise as a blueprint).
+When you are done, improve the program so it only accepts numbers between 2 and 9 (use the previous exercise as a blueprint).
 
 ### Neither yes nor no
 
-Write a program that plays "neither yes, nor no" with the user; specifically, the user enters text until the user types "yes" or "no", ending the game.
+Write a program that plays "neither yes, nor no" with the user; specifically, the user enters text until she types "yes" or "no", ending the game.
 
 ### FizzBuzz
 

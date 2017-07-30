@@ -248,7 +248,7 @@ console.log(sayHello()); // "Hello!"
 
 The function `sayHello()` declares a variable named `message` and returns its value.
 
-The variables declared in the body of a function are called **local variables**. Their **scope** is limited to the function body (hence their name). If you try to use these **local variables** outside the function, you won't be able to!
+The variables declared in the body of a function are called **local variables**. Their **scope** is limited to the function body (hence their name). If you try to use these local variables outside the function, you won't be able to!
 
 ```js
 function sayHello() {
@@ -257,7 +257,7 @@ function sayHello() {
 }
 
 console.log(sayHello()); // "Hello!"
-console.log(message);    // Error: the message variable is not visible here
+console.log(message); // Error: the message variable is not visible here
 ```
 
 Each function call will redeclare the function's local variables, making the calls perfectly independent from one another.

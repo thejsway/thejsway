@@ -177,7 +177,7 @@ console.log(song.indexOf("onk")); // 1
 console.log(song.indexOf("Onk")); // -1 because of case mismatch
 ```
 
-When searching for a value at the beginning or end of a string, you may also use the `startsWith()` and `endsWith()` methods. Both return either `true` or `false`, depending on whether the value is found or not.
+When searching for a value at the beginning or end of a string, you may also use the `startsWith()` and `endsWith()` methods. Both return either `true` or `false`, depending on whether the value is found or not. Beware: these methods are case-sensitive.
 
 ```js
 const song = "Honky Tonk Women";
