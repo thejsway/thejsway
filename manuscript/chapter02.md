@@ -192,7 +192,7 @@ const name = prompt("Enter your first name:");
 alert(`Hello, ${name}`);
 ```
 
-During execution, an dialog box pops up, asking for your name.
+During execution, a dialog box pops up, asking for your name.
 
 ![Execution result](images/chapter02-04.png)
 
