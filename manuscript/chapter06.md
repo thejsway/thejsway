@@ -6,7 +6,7 @@ This chapter will introduce objects and the way they are created and used in Jav
 
 * A JavaScript **object** is an entity that has properties. Each property is a key/value pair. The key is the property name.
 
-* The value of a property can be an information (number, string, etc) or a function. In that case, the property is called a **method**.
+* The value of a property can be a piece of information (number, string, etc) or a function. In the latter case, the property is called a **method**.
 
 * A JavaScript **object literal** is created by simply setting its properties within a pair of curly braces.
 
@@ -39,7 +39,7 @@ myObject.method1(...);           // Call method1 on myObject
 
 Think about objects in the non-programming sense, like a pen. A pen can have different ink colors, be manufactured by different people, have a different tip, and many other properties.
 
-Similarly, an **object** in programming is an **entity that has properties****. Each property defines a characteristic of the object. A property can be a information associated with the object (the color of the pen) or an action (the pen's ability to write).
+Similarly, an **object** in programming is an **entity that has properties****. Each property defines a characteristic of the object. A property can be data associated with the object (the color of the pen) or an action (the pen's ability to write).
 
 ### What does this have to do with code?
 
@@ -63,7 +63,7 @@ const pen = {
 };
 ```
 
-A JavaScript object can be created by simply setting its properties within a pair of curly braces: `{...}`. Each property is a key/value pair. This is called an **object literal**.
+As stated earlier, a JavaScript object can be created by simply setting its properties within a pair of curly braces: `{...}`. Each property is a key/value pair. This is called an **object literal**.
 
 W> The semicolon `;` after the closing brace is optional, but it's safer to add it anyway.
 
@@ -212,7 +212,7 @@ console.log(describe(aurora));
 
 The `describe()` function takes an object as a parameter. It accesses that object's properties to create a description string.
 
-Now for an alternative approach: creating a `describe()` property *inside* the object.
+Below is an alternative approach, using a `describe()` property *inside* the object.
 
 ```js
 const aurora = {
@@ -234,7 +234,7 @@ console.log(aurora.describe());
 
 Now our object has a new property available to it: `describe()`. The value of this property is a function that returns a textual description of the object. The execution result is exactly the same as before.
 
-An object property whose value is a function is called a **method**. Methods are used to define **actions** for an object. A method add some **behavior** to an object.
+An object property whose value is a function is called a **method**. Methods are used to define **actions** for an object. A method adds some **behavior** to an object.
 
 #### Calling a method on an object
 
@@ -244,7 +244,7 @@ Let's look at the last line of our previous example.
 console.log(aurora.describe());
 ```
 
-To show the character description, we use the `aurora.describe()` expression instead of `describe(aurora)`. It makes an *essential* difference:
+To show the character description, we use the `aurora.describe()` expression instead of `describe(aurora)`. It makes a *crucial* difference:
 
 * `describe(aurora)` calls the `describe()` function with the `aurora` object as an argument. The function is external to the object. This is an example of procedural programming.
 
