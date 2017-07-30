@@ -28,3 +28,7 @@ First option is the easiest and quickest; Second one is more powerful and will p
 Whichever solution you may choose, be sure to test *every* code sample and search *every* exercise and project. Reading along is not enough: coding along is mandatory to get a real grasp of how things work and become a capable programmer.
 
 I wish you a great journey in the wonderful world of JavaScript!
+
+[<= Previous (Table of Contents)](/README.md)
+
+[(Introduction: Welcome to Programming) Next =>](intro02.md)

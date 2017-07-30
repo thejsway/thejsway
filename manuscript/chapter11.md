@@ -35,3 +35,7 @@ Here are a few screenshots of the expected result.
 ![Showing a link](images/chapter11-02.png)
 
 ![Selecting a link index](images/chapter11-03.png)
+
+[<= Previous (Part I: Discover functional programming)](chapter10.md)
+
+[(Part II: What's a web page?) Next =>](chapter12.md)

@@ -513,3 +513,7 @@ Here are some tips for solving this exercise:
 console.log(2 ** 3); // 8: 2 * 2 * 2
 console.log(3 ** 2); // 9: 3 * 3
 ```
+
+[<= Previous (Part I: Repeat statements)](chapter04.md)
+
+[(Part I: Create your first objects) Next =>](chapter06.md)

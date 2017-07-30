@@ -148,3 +148,7 @@ console.log("4" + "5");
 ```
 
 Check your prediction by executing it.
+
+[<= Previous (Introduction: Introducing Javascript)](intro01.md)
+
+[(Part I: Play with variables) Next =>](chapter02.md)
