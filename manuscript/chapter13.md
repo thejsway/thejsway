@@ -174,7 +174,7 @@ console.log(document.parentNode); // Will show null, since body has no parent no
 
 ### Showing a node's child
 
-Your mission here is to create a `showChild()` function that shows one a of children of an DOM element node. This function takes as parameter the parent node and the child node index. Error cases like non-element node or out-of-limits index must be taken into account.
+Your mission here is to create a `showChild()` function that shows one of the children of a DOM element node. This function takes as parameter the parent node and the child node index. Error cases like non-element node or out-of-limits index must be taken into account.
 
 Here's the associated HTML code.
 

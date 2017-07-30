@@ -47,7 +47,7 @@ default:
 
 ## What's a condition?
 
-Suppose we want to write a program that makes enter a number to the user, who then displays a message if the number is positive. Here the corresponding algorithm.
+Suppose we want to write a program that asks the user to enter a number and then displays a message if the number is positive. Here is the corresponding algorithm.
 
 ```text
 Enter a number
@@ -164,7 +164,7 @@ You can translate an `if`/`else` statement like this: "If the condition is true,
 
 ### Nesting conditions
 
-Let's go next level and display a specific message if the entered number is zero. See this example, which has a positive test case, negative test case, and a last resort of the number being zero.
+Let's go to the next level and display a specific message if the entered number is zero. See this example, which has a positive test case, negative test case, and a last resort of the number being zero.
 
 ```js
 const number = Number(prompt("Enter a number:"));
