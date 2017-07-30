@@ -50,7 +50,7 @@ movl $0, %ebx
 int $0x80
 ```
 
-Pretty scary, isn't it? Fortunately, other programming languages are much more simpler and convenient to use than assembly language.
+Pretty scary, isn't it? Fortunately, other programming languages are much simpler and convenient to use than assembly language.
 
 ### The family of programming languages
 
