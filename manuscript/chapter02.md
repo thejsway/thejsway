@@ -256,7 +256,7 @@ console.log(perimeter);
 
 They function in the same way, but the second version is much easier to understand.
 
-Naming things is an important part of the programmer's job. Refer to the [appendix](#style-guide) for some useful advice.
+Naming things is an important part of the programmer's job. Refer to the appendix for some useful advice.
 
 ## Coding time!
 
