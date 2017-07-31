@@ -91,7 +91,7 @@ T> Suffixing JavaScript variables associated to DOM element nodes with `Element`
 
 DOM elements also feature a method called `getElementsByClassName()`. This method returns a `NodeList` object of elements with the class name as a parameter. Again, the search covers all sub-elements of the node on which the method is called.
 
-It's important to note that `NodeList` objects are *not* real JavaScript arrays. For example, you cannot use the `forEach()` method to iterate on a `NodeList`. To turn a `NodeList` object into an array, use the `Array.from()` method.
+It's important to note that `NodeList` objects are *not* real JavaScript arrays, so not all array operations are applicable to them. To turn a `NodeList` object into an array, use the `Array.from()` method.
 
 To select and display all document elements with a class `"wonders"`, you can write the following code.
 
