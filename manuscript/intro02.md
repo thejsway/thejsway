@@ -30,7 +30,7 @@ A **programming language** is a way to give orders to a computer. It's a bit lik
 
 ### Closest to the hardware: assembly language
 
-The only programming language directly understandable by a computer is machine language, also known as **assembly language**. It is a set of very primitive operations linked to a specific family of processors (the computer's "brain") and manipulating its memory.
+The only programming language directly understandable by a computer is machine language. A more human-readable representation of machine language is **assembly language**. It is a set of very primitive operations linked to a specific family of processors (the computer's "brain") and manipulating its memory.
 
 Here's an example of a basic program written in assembly language. It displays `"Hello"` to the user.
 
