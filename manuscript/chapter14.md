@@ -89,7 +89,7 @@ T> Suffixing JavaScript variables associated to DOM element nodes with `Element`
 
 ### Selecting items according to class
 
-DOM elements also feature a method called `getElementsByClassName()`. It returns a `NodeList` object of elements with the class name as a parameter. Again, the search covers all sub-elements of the node on which the method is called.
+DOM elements also feature a method called `getElementsByClassName()`. This method returns a `NodeList` object of elements with the class name as a parameter. Again, the search covers all sub-elements of the node on which the method is called.
 
 It's important to note that `NodeList` objects are *not* real JavaScript arrays. For example, you cannot use the `forEach()` method to iterate on a `NodeList`. To turn a `NodeList` object into an array, use the `Array.from()` method.
 
@@ -118,7 +118,7 @@ console.log(document.getElementById("new"));
 
 ![Execution result](images/chapter14-09.png)
 
-E> Beware: contrary to others, the `getElementById()` method does not contain any `'s'` after the `"Element"` word.
+E> Beware: contrary to others, the `getElementById()` method does not contain any `'s'` after the word `"Element"`.
 
 ### Selecting elements via CSS selectors
 
@@ -162,7 +162,7 @@ console.log(document.querySelector("p"));
 
 ### Choosing a selection method
 
-You just discovered several ways of selecting DOM elements. How to choose the right one?
+You just discovered several ways of selecting DOM elements. How do you choose the right one?
 
 Since they use CSS selectors, `querySelectorAll()` and `querySelector()` could cover all your needs, but they might perform [slower](https://jsperf.com/getelementsbyclassname-vs-queryselectorall/195) than the others.
 
@@ -313,7 +313,7 @@ Write a JavaScript program containing a `linkInfo()` function that shows:
 * The total number of links.
 * The target of the first and last links.
 
-This function shuld work even if no links are present.
+This function should work even if no links are present.
 
 ![Expected result](images/chapter14-03.png)
 
@@ -329,7 +329,7 @@ Add the following new instrument at the end of the HTML list, then check your pr
 
 ### Handling classes
 
-Improve the previous program to add a `has()` function that test if an element designated by its ID has a class. The function shows `true`, `false` or an error message if the element can't be found.
+Improve the previous program to add a `has()` function that tests if an element designated by its ID has a class. The function shows `true`, `false` or an error message if the element can't be found.
 
 ```js
 // Show if an element has a class
