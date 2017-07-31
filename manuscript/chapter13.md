@@ -42,15 +42,15 @@ Let's take this simple web page as an example. Feel free to add your own informa
 
 To create this result, the browser first takes the HTML code and builds a representation of its structure. It then displays this structure in the browser.
 
-The browser also offers a *programmatical* access to its structured representation of a displayed web page. Using this interface, you can dynamically update the page: adding or removing elements, changing styles, etc. This is how you create **interactive** web pages.
+The browser also offers *programmatic* access to its structured representation of a displayed web page. Using this interface, you can dynamically update the page by adding or removing elements, changing styles, etc. This is how you create **interactive** web pages.
 
 The structured representation of a web page is called **DOM**, short for *Document Object Model*. The DOM defines the structure of a page and a way to interact with it. This means it's a programming interface, or **API** (*Application Programming Interface*). JavaScript is the language of choice for interacting with the DOM.
 
-> At the dawn of the Web, each browser was using its own DOM, giving headaches to JavaScript developers trying to code web pages. These hard times are over: through a [World Wide Web Consortium](https://w3c.org) (W3C) effort, the first version of a unified DOM was created in 1998. Nowadays, all recent browsers use a standardized DOM.
+> At the dawn of the Web, each browser was using its own DOM, giving headaches to JavaScript developers trying to code web pages. These hard times are over. Through a [World Wide Web Consortium](https://w3c.org) (W3C) effort, the first version of a unified DOM was created in 1998. Nowadays, all recent browsers use a standardized DOM.
 
 ## Web page structure
 
-A web page is a set of nested tags. You can represent it in a hierarchical form called a **tree**. The `<html>` element sets up your document as HTML and contains two sub-elements, `<head>` and `<body>`, which themselves contain several sub-elements.
+A web page is a set of nested tags. You can represent a web page in a hierarchical form called a **tree**. The `<html>` element sets up your document as HTML and contains two sub-elements, `<head>` and `<body>`, which themselves contain several sub-elements.
 
 Here is the tree corresponding to our example HTML page.
 
@@ -174,7 +174,7 @@ console.log(document.parentNode); // Will show null, since body has no parent no
 
 ### Showing a node's child
 
-Your mission here is to create a `showChild()` function that shows one of the children of a DOM element node. This function takes as parameter the parent node and the child node index. Error cases like non-element node or out-of-limits index must be taken into account.
+Your mission here is to create a `showChild()` function that shows one of the children of a DOM element node. This function takes as parameter the parent node and the child node index. Error cases like a non-element node or an out-of-limits index must be taken into account.
 
 Here's the associated HTML code.
 
