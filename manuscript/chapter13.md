@@ -97,7 +97,7 @@ As expected, the DOM object `body` is an element node because it's an HTML tag.
 
 Each element-typed object in the DOM has a property called `childNodes`. This is an ordered collection containing all its child nodes as DOM objects. You can use this collection a bit like an array to access the different children of a node.
 
-W> The `childNodes` property of an element node is not a real JavaScript array, but rather a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) object. Not all of the standard array methods are applicable to it.
+The `childNodes` property of an element node is not a real JavaScript array, but rather a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) object. Not all of the standard array methods are applicable to it.
 
 The following code would display the first child of the `body` node.
 
