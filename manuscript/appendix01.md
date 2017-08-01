@@ -16,7 +16,7 @@ Coding online requires a **JavaScript playground**, an online service where you 
 
 ### For chapters 1 to 23: CodePen
 
-To follow along this chapters, you'll need a **front-end** coding playground able to run HTML, CSS and JavaScript code. There is a handful of front-end playgrounds online. My personal favorite is [CodePen](http://codepen.io), but there are alternatives like [JSFiddle](https://jsfiddle.net/) and [JS Bin](http://jsbin.com/).
+To follow along these chapters, you'll need a **front-end** coding playground able to run HTML, CSS and JavaScript code. There is a handful of front-end playgrounds online. My personal favorite is [CodePen](http://codepen.io), but there are alternatives like [JSFiddle](https://jsfiddle.net/) and [JS Bin](http://jsbin.com/).
 
 ![The JSFiddle, CodePen and JS Bin logos](images/appendix01-01.png)
 
@@ -94,7 +94,7 @@ You can either download a [predefined folder structure](https://raw.githubuserco
 
 #### For chapters 1 to 23
 
-In these chapters, you'll execute your JavaScript code in the browser. Your files will be stored according to their type: HTML files (the ones with a `.html` extension) in a `html` subfolder, CSS files (`.css`) in a `css` subfolder and JavaScript files (`.js`) in a `js` subfolder. Each chapter is set up in a series of folders as follows.
+In these chapters, you'll execute your JavaScript code in the browser. Your files will be stored according to their type: HTML files (the ones with an `.html` extension) in an `html` subfolder, CSS files (`.css`) in a `css` subfolder and JavaScript files (`.js`) in a `js` subfolder. Each chapter is set up in a series of folders as follows.
 
 ![Folder structure for chapter 1](images/appendix01-03.png)
 
@@ -133,7 +133,7 @@ In these chapters, you'll create Node.js applications to execute your JavaScript
 
 ### Use the browser's development tools
 
-Modern browser include **developer tools** to help with web development. Each browser differs in exactly which tools they provide, but there are more similarities than differences among them.
+Modern browser includes **developer tools** to help with web development. Each browser differs in exactly which tools they provide, but there are more similarities than differences among them.
 
 These tools usually include a **JavaScript console** (to show JS output and type commands), a **page inspector** (to browse the page structure) and many more!
 

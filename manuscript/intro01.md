@@ -23,7 +23,7 @@ You have two options for following along, depending on how eager you are to get 
 * Coding online, using feature-packed JavaScript playgrounds like [CodePen](https://codepen.io) and [Glitch](https://glitch.com).
 * Building a local development environment.
 
-First option is the easiest and quickest; Second one is more powerful and will probably become necessary as you tackle bigger programming challenges in a not-so-distant future. Refer to the appendix for details on both.
+First option is the easiest and quickest; second one is more powerful and will probably become necessary as you tackle bigger programming challenges in a not-so-distant future. Refer to the appendix for details on both.
 
 Whichever solution you may choose, be sure to test *every* code sample and search *every* exercise and project. Reading along is not enough: coding along is mandatory to get a real grasp of how things work and become a capable programmer.
 
