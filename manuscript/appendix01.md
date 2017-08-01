@@ -133,7 +133,7 @@ In these chapters, you'll create Node.js applications to execute your JavaScript
 
 ### Use the browser's development tools
 
-Modern browser includes **developer tools** to help with web development. Each browser differs in exactly which tools they provide, but there are more similarities than differences among them.
+Modern browsers include **developer tools** to help with web development. Each browser differs in exactly which tools they provide, but there are more similarities than differences among them.
 
 These tools usually include a **JavaScript console** (to show JS output and type commands), a **page inspector** (to browse the page structure) and many more!
 
