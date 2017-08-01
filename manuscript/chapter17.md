@@ -237,7 +237,7 @@ document.getElementById("nationality").addEventListener("change", e => {
 });
 ```
 
-![Execution result](images/chapter17-04.png)
+![Execution result](images/chapter17-05.png)
 
 Like with radio buttons, the `target.value` property of the `change` event matches the `value` attribute of the `<option>` tag associated with the new choice -- not the text shown in the dropdown list!
 
