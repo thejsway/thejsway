@@ -32,7 +32,7 @@ A computer program stores data using variables. A **variable** is an information
 
 A variable has three main properties:
 
-* Its **name**, which identifies it. A variable name may contain upper and lower case letters, numbers (not in the first position) and characters like the dollar (`$`) or underscore (`_`).
+* Its **name**, which identifies it. A variable name may contain upper and lower case letters, numbers (not in the first position) and characters like the dollar sign (`$`) or underscore (`_`).
 * Its **value**, which is the data stored in the variable.
 * Its **type**, which determines the role and actions available to the variable.
 
