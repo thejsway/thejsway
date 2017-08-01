@@ -75,7 +75,7 @@ Use the `textContent` property to modify the text content of a DOM element. Here
 document.querySelector("h3").textContent += " for programming";
 ```
 
-![Execution result](images/chapter15-01.png)
+![Execution result](images/chapter15-02.png)
 
 ### Attributes
 
