@@ -203,7 +203,7 @@ const result = myFunction();
 // ...
 ```
 
-This return value can be any type (number, string, etc). However, a function can return only one value.
+This return value can be of any type (number, string, etc). However, a function can return only one value.
 
 W> Retrieving a function's return value is not mandatory, but in that case the return value is "lost".
 
@@ -402,7 +402,7 @@ Functions are a core part of the JavaScript toolset. You'll use them constantly 
 
 Functions can include everything you can use in a regular program: variables, conditionals, loops, etc. Functions can call one another, giving the programmer an enormous amount of freedom for building programs.
 
-However, not everything deserves to be in its own function. it's better to write short and focused ones, in order to limit dependencies and improve program understanding.
+However, not everything deserves to be in its own function. It's better to write short and focused ones, in order to limit dependencies and improve program understanding.
 
 ### Leveraging JavaScript predefined functions
 

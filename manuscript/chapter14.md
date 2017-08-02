@@ -182,7 +182,7 @@ The DOM also provides information on the items you've just selected.
 
 ### HTML content
 
-The `innerHTML` property will retrieve the HTML contents of your DOM element.
+The `innerHTML` property will retrieve the HTML content of your DOM element.
 
 ```js
 // The HTML content of the DOM element with ID "content"

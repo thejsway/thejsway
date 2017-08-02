@@ -66,7 +66,7 @@ document.getElementById("myButton").addEventListener("click", () => {
 
 ### Removing an event listener
 
-In some particular cases, you might want to stop reacting to an event on a DOM element. To achieve this, call the `removeEventListener()` on the element, massing as a parameter the function which used to handle the event.
+In some particular cases, you might want to stop reacting to an event on a DOM element. To achieve this, call the `removeEventListener()` on the element, passing as a parameter the function which used to handle the event.
 
 > This can only work if the handler function is not anonymous.
 
@@ -77,7 +77,7 @@ buttonElement.removeEventListener("click", showMessage);
 
 ## The event family
 
-Manay types of events can be triggered by DOM elements. Here are the main event categories.
+Many types of events can be triggered by DOM elements. Here are the main event categories.
 
 | Category | Examples |
 |---|---|
@@ -99,7 +99,7 @@ document.getElementById("myButton").addEventListener("click", e => {
 });
 ```
 
-> The parameter name chosen for the `Event` object is generaly `e` or `event`.
+> The parameter name chosen for the `Event` object is generally `e` or `event`.
 
 ![Execution result](images/chapter16-02.png)
 
@@ -196,7 +196,7 @@ The appearance order for mouse-related events is: `mousedown` -> `mouseup` -> `c
 
 ### Page loading
 
-Depending on how complex it is, a web page can take time to be entirely loaded by the browser. You can add an event listener on the `load` event produced by the `window` object (which represent the brower window) to know when this happens. This avoids messy situations where JavaScript interacts with pages that aren't fully loaded.
+Depending on how complex it is, a web page can take time to be entirely loaded by the browser. You can add an event listener on the `load` event produced by the `window` object (which represents the browser window) to know when this happens. This avoids messy situations where JavaScript interacts with pages that aren't fully loaded.
 
 The following code displays a message in the console once the page is fully loaded.
 
@@ -365,7 +365,7 @@ const questions = [
     answer: "2+2 = 4"
   },
   {
-    statement: "In what year did Christopher Columbus discover America?",
+    statement: "In which year did Christopher Columbus discover America?",
     answer: "1492"
   },
   {
