@@ -146,7 +146,7 @@ Another web development model aims to avoid transmitting a whole new page for ea
 * HTTP requests are sent to the server without interrupting the navigation on the page.
 * Only the needed portions of the page are updated with the requests' results.
 
-Albeit more challenging, this web development model can lead to limited resource loads, improved interactivity and user experience close to that of native applications.
+Albeit more challenging, this web development model can lead to limited resource loads, improved interactivity and a user experience nearly on par with native applications.
 
 The set of technologies enabling the creation of web applications is codenamed **AJAX** (*Asynchronous JavaScript and XML*). An AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.
 

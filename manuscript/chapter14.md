@@ -107,7 +107,7 @@ existingElements.forEach(element => {
 
 ### Selecting an item according to its ID
 
-Lastly, the document variable provides a method called `getElementById ()` that returns the element with the passed ID as a parameter, among all sub-elements of the document. It returns `null` if no associated element can be found.
+Lastly, the `document` variable provides a method called `getElementById()` that returns the element with the specified ID among all elements of the document. It returns `null` if no associated element can be found.
 
 The following code selects and displays the list with ID `"new"`.
 

@@ -185,7 +185,7 @@ Radio buttons allow users to make a choice out of multiple possibilities. You cr
 Here's the extract from the example form that lets a user select between three radio buttons, each representing a subscription option.
 
 ```html
-<input type="radio" name="subscription" id="newspromo" value="newspromo">
+<input type="radio" name="subscription" id="newsroom" value="newspromo">
 <label for="newsroom">Subscribe me to newsletters and promotions</label>
 <br>
 <input type="radio" name="subscription" id="news" value="news">
