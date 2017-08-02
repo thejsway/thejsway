@@ -183,10 +183,12 @@ When searching for a value at the beginning or end of a string, you may also use
 const song = "Honky Tonk Women";
 
 console.log(song.startsWith("Honk")); // true
+console.log(song.startsWith("honk")); // false
 console.log(song.startsWith("Tonk")); // false
 
 console.log(song.endsWith("men")); // true
 console.log(song.endsWith("Men")); // false
+console.log(song.endsWith("Tonk")); // false
 ```
 
 ## Breaking a string into parts
