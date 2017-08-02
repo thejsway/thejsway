@@ -40,7 +40,7 @@ You can learn more about Glitch [here](https://glitch.com/about/) and start by r
 
 ## Solution B: building a local development environment
 
-Setting up your local machine takes a bit of work, but will give you a tailored and powerful environment. This is also your only choice if you need to work online.
+Setting up your local machine takes a bit of work, but will give you a tailored and powerful environment. This is also your only choice if you need to work offline.
 
 The following steps will help you code effectively on your machine.
 
