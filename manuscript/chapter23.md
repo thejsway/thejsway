@@ -52,7 +52,7 @@ fetch("https://https://my-server-url", {
 
 ## Sending data: the basics
 
-Sending data to a server is usually done with via an HTTP `POST` method. In that case, the request body contains the data to be sent.
+Sending data to a server is usually done via an HTTP `POST` method. In that case, the request body contains the data to be sent.
 
 The data format depends on what the server expects. It can either be:
 

@@ -39,7 +39,7 @@ To be able to use a web API, you have to know its address and its usage mode. Mo
 
 ### Checking out an API
 
-The first web API you'll use here simulates a blog and exposes a series of articles, Its URL is <https://thejsway-server.herokuapp.com/api/articles>. Opening it in a browser shows the JSON data returned by the API.
+The first web API you'll use here simulates a blog and exposes a series of articles. Its URL is <https://thejsway-server.herokuapp.com/api/articles>. Opening it in a browser shows the JSON data returned by the API.
 
 ![API result in a browser](images/chapter22-01.png)
 
@@ -55,7 +55,7 @@ Real-world APIs are almost always accompanied by an online **documentation** sho
 
 ### Calling an API with JavaScript
 
-Now that we know the address and data format of our example API, let's try to show its result on a web page. To do so, we'll leverage our AJAX knowledge from the previous chapter. Check out the following example, which show how to access the article list from the API.
+Now that we know the address and data format of our example API, let's try to show its result on a web page. To do so, we'll leverage our AJAX knowledge from the previous chapter. Check out the following example, which shows how to access the article list from the API.
 
 Here's the HTML code for the page.
 
@@ -161,7 +161,7 @@ A prerequisite for using any key-based web API is to generate oneself an access 
 
 Let's put this into practice for obtaining about the current weather in your area. To do so, you could simply look outside the window, but it's way cooler to use the [Weather Underground](https://www.wunderground.com/weather/api) web service instead.
 
-This service has an key-based API for retrieving the weather in any place. To obtain it, you'll have to sign up as a user (it's free) and generate a new API key by registering your application.
+This service has a key-based API for retrieving the weather in any place. To obtain it, you'll have to sign up as a user (it's free) and generate a new API key by registering your application.
 
 Once you've done this, weather data is available through an URL of the form <http://api.wunderground.com/api/ACCESS_KEY/conditions/q/COUNTRY/TOWN.json>. Replace `ACCESS_KEY`, `COUNTRY` and `TOWN` with your own settings, and you should obtain the weather in your surroundings.
 
@@ -253,7 +253,7 @@ Improve the previous Punk API example to display additional information about th
 
 The ubiquitous code sharing platform [GitHub](https://github.com) has a public API. The goal of this exercise is to display some information about a GitHub user, identified by his login. The API documentation is available [here](https://developer.github.com/v3/users/).
 
-Use this API to show the profile picture,name and website address of a GitHub user whose login is entered in a text box.
+Use this API to show the profile picture, name and website address of a GitHub user whose login is entered in a text box.
 
 ![Expected result](images/chapter22-07.png)
 

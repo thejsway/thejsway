@@ -90,7 +90,7 @@ Let's start with a simple form that allows users to sign up for a service.
 
 ![Display result](images/chapter17-01.png)
 
-This example contains multiple input zones: text, checkboxes, radio buttons, a dropdown menu, as well as send and cancel buttons. We'll learn how to deal with each of these elements with JavaScript.
+This example contains multiple input zones: text, checkboxes, radio buttons, a dropdown menu, as well as submit and cancel buttons. We'll learn how to deal with each of these elements with JavaScript.
 
 > You might have noticed that the `<form>` tag doesn't have the usual `action` and `method` attributes. These attributes allow you to define the requested server resource when the form is submitted by the user. Since our form will only be handled by JavaScript in the browser, they're not necessary.
 
@@ -108,9 +108,9 @@ Here's the extract from the above code that lets users input a username.
 <span id="usernameHelp"></span>
 ```
 
-In JavaScript, you can access the value of a text field by using the `value` property of the corresponding DOM element. By defined a new value for this property, you'll modify the value shown in the text field.
+In JavaScript, you can access the value of a text field by using the `value` property of the corresponding DOM element. By setting a new value for this property, you'll modify the value shown in the text field.
 
-The following example adds the value "MyCoolUsername" to the the text field.
+The following example adds the value "MyCoolUsername" to the text field.
 
 ```js
 // Define the value of the "username" input field
@@ -185,7 +185,7 @@ Radio buttons allow users to make a choice out of multiple possibilities. You cr
 Here's the extract from the example form that lets a user select between three radio buttons, each representing a subscription option.
 
 ```html
-<input type="radio" name="subscription" id="newsroom" value="newspromo">
+<input type="radio" name="subscription" id="newspromo" value="newspromo">
 <label for="newsroom">Subscribe me to newsletters and promotions</label>
 <br>
 <input type="radio" name="subscription" id="news" value="news">
@@ -270,10 +270,10 @@ Here are the two buttons from the sample form.
 
 When a user submits a form, the default behavior of the browser is to contact a web server and request the resource identified by the `action` attribute of the `<form>` tag, sending form data along the way. Prior to this, a `submit` event is triggered on the DOM element corresponding to the form. By adding a handler for this type of event, you can access form data before it gets sent. You can event cancel the request to the server by calling the `preventDefault()` method on the `Event` object associated to the event.
 
-The following code show in the console all user input in the form, then cancels the request to the server.
+The following code shows in the console all user input in the form, then cancels the request to the server.
 
 ```js
-// Show all user input and cancels form data sending
+// Shows all user input and cancels form data sending
 formElement.addEventListener("submit", e => {
   const username = e.target.elements.username.value;
   const password = e.target.elements.password.value;

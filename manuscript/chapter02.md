@@ -16,7 +16,7 @@ You know how to use JavaScript to display values. However, for a program to be t
 
 * Expressions may be included in strings delimited by a pair of backticks (\`). Such a string is called a **template literal**.
 
-* **Type conversions** may happen implicitly during the evaluation of an expression, or explicitly when using the `Number()` and `String()` commands, to obtain a respectively a number or a string.
+* **Type conversions** may happen implicitly during the evaluation of an expression, or explicitly when using the `Number()` and `String()` commands, to obtain respectively a number or a string.
 
 * The `prompt()` and `alert()` commands deal with information input and display under the form of dialog boxes.
 

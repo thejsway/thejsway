@@ -49,7 +49,7 @@ const myObject = Object.create(myPrototypeObject);
 
 ## Context: a multiplayer RPG
 
-As a reminder, here's the code for our minimalist RPG taken from a previous chapter. it creates an object literal named `aurora` with three properties (`name`, `health` and `strength`) and a `describe()` method.
+As a reminder, here's the code for our minimalist RPG taken from a previous chapter. it creates an object literal named `aurora` with four properties (`name`, `health`, `strength` and `xp`) and a `describe()` method.
 
 ```js
 const aurora = {
@@ -236,7 +236,7 @@ This type of relationship between JavaScript objects is called **delegation**: a
 
 ### The true nature of JavaScript classes
 
-In *class-based* object-oriented languages like C++, Java and C#, classes are static **blueprints** (templates). When a object is created, the methods and properties of the class are copied into a new entity, called an **instance**. After instantiation, the newly created object has no relation whatsoever with its class.
+In *class-based* object-oriented languages like C++, Java and C#, classes are static **blueprints** (templates). When an object is created, the methods and properties of the class are copied into a new entity, called an **instance**. After instantiation, the newly created object has no relation whatsoever with its class.
 
 JavaScript's object-oriented model is based on prototypes, *not* classes, to share properties and delegate behavior between objects. In JavaScript, a class is itself an object, not a static blueprint. "Instantiating" a class creates a new object linked to a prototype object. Regarding classes behavior, the JavaScript language is quite different from C++, Java or C#, but close to other object-oriented languages like Python, Ruby and Smalltalk.
 
