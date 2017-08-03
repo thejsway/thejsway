@@ -12,11 +12,11 @@ To make a web page interactive, you have to respond to user actions. Let's disco
 
 * `click`, `mousedown` and `mouseup` events let you react to mouse-related events.
 
-* Page loading and closing are associated with the events `load` and `beforeunload` respectively.
+* Page loading and closing are associated with the events `load` and `beforeunload`, respectively.
 
-* An event propagates within the DOM tree from its node of origin until the document root. This propagation can be interrupted with the `stopPropagation()` method.
+* An event propagates within the DOM tree from its node of origin up to the document root. This propagation can be interrupted with the `stopPropagation()` method.
 
-* Calling the `preventDefault()` method on an `Event` object cancels the default behavior associated to the action that triggered the event.
+* Calling the `preventDefault()` method on an `Event` object cancels the default behavior associated with the action that triggered the event.
 
 ## Introduction to events
 
@@ -24,7 +24,7 @@ Up until now, your JavaScript code was executed right from the start. The execut
 
 To add more interactivity, the page should react to the user's actions: clicking on a button, filling a form, etc. In that case, the execution order of statements is not determined in advance anymore, but depends on the user behavior. His actions trigger **events** that can be handled by writing JavaScript code.
 
-This way of writing programs is called **event-driven programming**. It is often used by user interfaces, and more generally anytime a program needs to interact with an user.
+This way of writing programs is called **event-driven programming**. It is often used by user interfaces, and more generally anytime a program needs to interact with a user.
 
 ### A first example
 
@@ -90,7 +90,7 @@ Every event is associated to an `Event` object which has both **properties** (in
 
 Many properties of the `Event` object associated to an event depend on the event type. Some properties are always present, like `type` that returns the event type and `target` that return the event target (the DOM element that is the event source).
 
-The `Event` object is passed as a parameter to the handler function. The following code uses it to show the event type and target in the console.
+The `Event` object is passed as a parameter to the handler function. The following code uses this object to show the event type and target in the console.
 
 ```js
 // Show event type and target when the user clicks on the button
@@ -305,7 +305,7 @@ Start with the following HTML content.
 <button id="deactivate">Désactivate counting</button>
 ```
 
-Write the JavaScript code that counts the number of clicks on the `myButton` button by updating the `clickCount` element. The `deactivate` button stop the counting.
+Write the JavaScript code that counts the number of clicks on the `myButton` button by updating the `clickCount` element. The `deactivate` button stops the counting.
 
 ### Changing colors
 
@@ -324,7 +324,7 @@ Here is some HTML content to start with.
 <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet pharetra massa. Nulla blandit erat nulla, et scelerisque libero varius ut. Praesent bibendum eu magna ullamcorper venenatis. Sed ut pellentesque leo. Sed ultrices sapien consequat odio posuere gravida.</div>
 ```
 
-Write the associated JavaScript code that update background color of all `div` tags according to the key (R, Y, G or B) pressed by the user.
+Write the associated JavaScript code that updates the background color of all `div` tags according to the key (R, Y, G or B) pressed by the user.
 
 ![Execution result](images/chapter16-11.png)
 
