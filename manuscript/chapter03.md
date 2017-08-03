@@ -191,7 +191,7 @@ The execution flow for the previous program can be expressed graphically using a
 
 This example shows how essential indentation is for understanding a program's flow. There is no limit to the possible depth of condition nesting, but too many will affect program visibility.
 
-A particular case happens when the only statement in a `else` block is an `if`. In that case, you can write this `else` on the same line as the `if` and without braces. Here's a more concise way to write our example program.
+A particular case happens when the only statement in an `else` block is an `if`. In that case, you can write this `else` on the same line as the `if` and without braces. Here's a more concise way to write our example program.
 
 ```js
 const number = Number(prompt("Enter a number:"));
@@ -210,7 +210,7 @@ if (number > 0) {
 
 Suppose you want to check if a number is between 0 and 100. You're essentially checking if it's "greater than or equal to 0" and "less than or equal to 100". Both sub-conditions must be satisfied at the same time.
 
-I> The expression `0 <= nombre <= 100` is correct from a mathematical point of view but cannot be written in JavaScript (neither in most other programming languages).
+I> The expression `0 <= number <= 100` is correct from a mathematical point of view but cannot be written in JavaScript (neither in most other programming languages).
 
 Here's how you'd translate that same check into JS.
 
@@ -364,7 +364,7 @@ Write a program that accepts a day name from the user, then shows the name of th
 
 ### Number comparison
 
-Write a program that accepts two numbers, then compare their values and displays an appropriate message in all cases.
+Write a program that accepts two numbers, then compares their values and displays an appropriate message in all cases.
 
 ### Final values
 
