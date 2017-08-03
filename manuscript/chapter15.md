@@ -18,7 +18,7 @@ Let's see how to use JavaScript to modify a web page once it's been loaded by th
 
 * CSS properties that involve multiple words are written in **camelCase** when dealing with JavaScript. For example, `font-family` becomes `fontFamily`.
 
-* The `style` property isn't enough to access an element's style. You should use the `getComputedStyle()` function instead.
+* The `style` property is not intended to access an element's style. You should use the `getComputedStyle()` function instead.
 
 * Manipulating the DOM with JavaScript should be done sparingly so that page performance doesn't suffer.
 
@@ -64,7 +64,7 @@ document.getElementById("languages").innerHTML = "";
 
 > Before moving on, remove the above line from your JavaScript program. Otherwise, you'll have no content!
 
-T> When using `innerHTML`, you put some HTML content into strings. To keep your code readable and avoid mistakes, you should only use `innerHTML` to make small content changes. You'll discover more versatile solutions below.
+T> When using `innerHTML`, you put HTML content into strings. To keep your code readable and avoid mistakes, you should only use `innerHTML` to make small content changes. You'll discover more versatile solutions below.
 
 ### Text content
 
@@ -129,7 +129,7 @@ Let's study each of these steps.
 
 ### Creating the element
 
-You'd create an element using the `createElement()` method (surprising, isn't it?). This method is used on the document object and takes the tag of the new element as a parameter. It returns the element created as an object (here stored in a variable called `pythonElement`).
+You'd create an element using the `createElement()` method (surprising, isn't it?). This method is used on the document object and takes the tag of the new element as a parameter. This method also returns the element created as an object (here stored in a variable called `pythonElement`).
 
 ```js
 const pythonElement = document.createElement("li"); // Create an li element
@@ -137,7 +137,7 @@ const pythonElement = document.createElement("li"); // Create an li element
 
 ### Setting element properties
 
-Once the element's created and stored in a variable, you can add some detail to it (ID, class, text content, etc) by using the aforementioned DOM properties.
+Once the element is created and stored in a variable, you can add some detail to it (ID, class, text content, etc.) by using the aforementioned DOM properties.
 
 In the example, the element ID becomes `"python"` and its text content becomes `"Python"`.
 
@@ -227,7 +227,7 @@ document.getElementById('languages').insertAdjacentHTML("afterBegin", '<li id="j
 
 A DOM element can be replaced with the `replaceChild()` method. This replaces a child node of the current element with another node. The new node and node-to-be-replaced are passed as parameters (in that order).
 
-The example shows replacing the Perl language with Lisp instead.
+The example shows replacing the Perl language with Lisp.
 
 ```js
 const lispElement = document.createElement("li"); // Create an li element
@@ -262,7 +262,7 @@ Here is the example HTML content used in the next paragraphs.
 <p id="para">Third</p>
 ```
 
-And here is the associated CSS **stylesheet**. The rules in a stylesheet determine the appearance of elements on a page. Here, the one element we're adjusting via CSS here is the element with the `para` ID. Its text will be blue and in italics.
+And here is the associated CSS **stylesheet**. The rules in a stylesheet determine the appearance of elements on a page. Here, the one element we're adjusting via CSS is the element with the `para` ID. Its text will be blue and in italics.
 
 ```css
 #para {
@@ -322,7 +322,7 @@ Because the `style` property used in this code only represents the `style` attri
 
 ### Access element styles
 
-A better solution for accessing element styles is to use a function called `getComputedStyle()`. Its takes a DOM node as a parameter and returns an object that represents its style. You can then see the different CSS properties of the object.
+A better solution for accessing element styles is to use a function called `getComputedStyle()`. This function takes a DOM node as a parameter and returns an object that represents the element's style. You can then see the different CSS properties of the object.
 
 The following example will show the style properties of the third paragraph:
 
@@ -338,7 +338,7 @@ console.log(paragraphStyle.color);     // color blue in RGB values
 
 ## DOM manipulations and performance
 
-Updating the DOM through JavaScript code causes the browser to compute the new page display. Frequent manipulations can lead to slowdowns and sub-par performance. As such, you should limit DOM access and update operations to a minimum.
+Updating the DOM through JavaScript code causes the browser to compute the new page display. Frequent manipulations can lead to slowdowns and sub-par performance. As such, you should keep DOM access and update operations to a minimum.
 
 Creating and setting element properties *before* they're inserted into the DOM is a good way to preserve performance.
 
@@ -375,7 +375,7 @@ Here is the HTML code of a web page.
 <div id="content"></div>
 ```
 
-Write a program that show on this page a list of newspapers defined in a JavaScript array. Each link must be clickable.
+Write a program that shows on the page a list of newspapers defined in a JavaScript array. Each link must be clickable.
 
 ```js
 // Newspaper list
@@ -393,7 +393,7 @@ Here is the HTML code of a web page.
 <div id="content"></div>
 ```
 
-Write a program that show on this page a list of terms and definitions defined in a JavaScript array.
+Write a program that shows on the page a list of terms and definitions defined in a JavaScript array.
 
 ```js
 const words = [{
@@ -427,7 +427,7 @@ The following HTML content defines three paragraphs.
 <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet pharetra massa. Nulla blandit erat nulla, et scelerisque libero varius ut. Praesent bibendum eu magna ullamcorper venenatis. Sed ut pellentesque leo. Sed ultrices sapien consequat odio posuere gravida.</div>
 ```
 
-Write a program that asks the user for the new text color, then for the new background color. The page is then updated accordingly.
+Write a program that asks the user for the new text color, and then asks for the new background color. The page is then updated accordingly.
 
 ![Execution result with red text on white background](images/chapter15-17.png)
 
@@ -453,6 +453,6 @@ And the associated CSS stylesheet.
 }
 ```
 
-Write a program that adds to the page a list showing the height and witdh of the element identified by "content".
+Write a program that adds to the page a list showing the height and width of the element identified by "content".
 
 ![Execution result](images/chapter15-18.png)
