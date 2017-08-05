@@ -17,7 +17,7 @@ This chapter will get you started with JavaScript for animations! We'll see how 
 Let's get started with animations by learning how to repeatedly modify an element's content. Here is the associated HTML code.
 
 ```html
-<h1 id="title">This page will self-destruct in <span`id="counter">10</span> second(s)...</h1>
+<h1 id="title">This page will self-destruct in <span id="counter">10</span> second(s)...</h1>
 ```
 
 And now for the corresponding JavaScript code.
@@ -45,7 +45,7 @@ How did the previous example work? The JavaScript code defines a function called
 
 > Calling `Number()` in the function code is mandatory: it converts the counter string into a number, which endows it with subtraction functionality.
 
-The call to `setInterval()` triggers a repeated action. This function lets you call a function at regular intervals. Its parameters are the function to call and the time in milliseconds between each call. The returned value is an ID for the repeated action, which can bu used to further modify it.
+The call to `setInterval()` triggers a repeated action. This function lets you call a function at regular intervals. Its parameters are the function to call and the time in milliseconds between each call. The returned value is an ID for the repeated action, which can be used to further modify it.
 
 ```js
 // Set up a repeated action
@@ -167,9 +167,9 @@ And here is the JavaScript code that lets you move the red block.
 // Move the block to the left
 const moveBlock = () => {
   // Convert the left position of the block (value of the form "XXpx") to a number
-  const xBlock = parseFloat(getComputedStyle(block).left);
+  const xBlock = parseFloat(getComputedStyle(blockElement).left);
   // Move the block to the right
-  block.style.left = (xBlock + movement) + "px";
+  blockElement.style.left = (xBlock + movement) + "px";
   // Have the browser call moveBlock as soon as possible
   requestAnimationFrame(moveBlock);
 };
@@ -222,13 +222,13 @@ Here's the updated JavaScript code.
 // Move the block to the right, all the way to the end of the frame
 const moveBlock = () => {
   // Convert the left position of the block (value of the form "XXpx") to a number
-  const xBlock = parseFloat(getComputedStyle(block).left);
+  const xBlock = parseFloat(getComputedStyle(blockElement).left);
   // Convert the width of the frame (value of the form "XXpx") to a number
   const xMax = parseFloat(getComputedStyle(frame).width);
   // If the block isn't already to the end of the frame
   if (xBlock + blockWidth <= xMax) {
     // Block movement
-    block.style.left = (xBlock + movement) + "px";
+    blockElement.style.left = (xBlock + movement) + "px";
     animationId = requestAnimationFrame(moveBlock);
   }
   else {
@@ -314,7 +314,7 @@ Here's how you might want to approach your decision:
 
 ### Chronometer
 
-Write a interactive web page with a button to start and stop a chronometer counting the number of elapsed seconds.
+Write an interactive web page with a button to start and stop a chronometer counting the number of elapsed seconds.
 
 ### Bouncing ball
 
