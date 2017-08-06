@@ -14,7 +14,7 @@ Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
 This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. Numerous brain cycles were spent to make it:
 
 * **Beginner-friendly yet comprehensive**. From the very basics of programming up to front-end and back-end web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!
-* **Standards-aligned**. The book is entirely written using the recent **ES2015** syntax, avoiding awkwardness from the past. From start to finish, it enforces good programming habits, embraces the ubiquitous JavaScript tools [ESLint](http://eslint.org) and [Prettier](https://github.com/prettier/prettier) and closely follows the popular [AirBnb Style Guide](https://github.com/airbnb/javascript).
+* **Standards-aligned**. The book is entirely written using the recent **ES2015** syntax, giving you future-proof knowledge. From start to finish, it enforces good programming habits, embraces the ubiquitous JavaScript tools [ESLint](http://eslint.org) and [Prettier](https://github.com/prettier/prettier) and closely follows the popular [AirBnb Style Guide](https://github.com/airbnb/javascript).
 * **Hands-on**. No real learning happens without practicing! Each chapter is accompanied by a series of exercises to put your newly acquired skills into action. A three-part project will guide you in the creation of a social news web application ([see it in action](https://thejsway-publink.herokuapp.com)).
 * **Easy to follow**. Code along directly in your browser or build an efficient JavaScript development environment on your local machine.
 
