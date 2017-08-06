@@ -392,7 +392,7 @@ console.log(regex.test("sophie&mail.fr")); // false
 console.log(regex.test("sophie@mail.fr")); // true
 ```
 
-A JavaScript regular expression is defined by placing its pattern between a pair of `/` characters. It's an object whose `test()` method checks matches between the pattern and the string passed à as parameter. If a match is detected, this method returns `true`, and `false` otherwise.
+A JavaScript regular expression is defined by placing its pattern between a pair of `/` characters. It's an object whose `test()` method checks matches between the pattern and the string passed as a parameter. If a match is detected, this method returns `true`, and `false` otherwise.
 
 The following table presents some of the numerous possibilities offered by regular expressions.
 
