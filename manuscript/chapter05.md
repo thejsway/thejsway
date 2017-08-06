@@ -32,7 +32,7 @@ myFunction(arg1, arg2, ...);
 // Anonymous function created with a function expression and assigned to a variable
 const myFunc = function(param1, param2, ...) {
   // Function code using param1, param2, ...
-}
+};
 
 // Function call
 myFunc(arg1, arg2, ...);
@@ -42,9 +42,9 @@ myFunc(arg1, arg2, ...);
 
 ```js
 // Fat arrow anonymous function assigned to a variable
-const myFunc = (param1, param2, ...)  => {
+const myFunc = (param1, param2, ...) => {
   // Function code using param1, param2, ...
-}
+};
 
 // Function call
 myFunc(arg1, arg2, ...);
@@ -336,7 +336,7 @@ Declaration is not the only way to create functions in JavaScript. Check out thi
 const hello = function(name) {
   const message = `Hello, ${name}!`;
   return message;
-}
+};
 
 console.log(hello("Richard")); // "Hello, Richard!"
 ```
@@ -351,7 +351,7 @@ Here's how to create an anonymous function and assign it to a variable.
 // Assignment of an anonymous function to the myFunc variable
 const myFunc = function(param1, param2, ...) {
   // Statements using param1, param2, ...
-}
+};
 
 // Anonymous function call
 // param1 value is set to arg1, param2 to arg2, ...
@@ -364,7 +364,7 @@ Recent language evolutions have introduced a more concise way to create anonymou
 const hello = (name) => {
   const message = `Hello, ${name}!`;
   return message;
-}
+};
 
 console.log(hello("William")); // "Hello, William!"
 ```
@@ -373,9 +373,9 @@ Functions created this way are called **fat arrow functions**.
 
 ```js
 // Assignment of an anonymous function to the myFunc variable
-const myFunc = (param1, param2, ...)  => {
+const myFunc = (param1, param2, ...) => {
   // Statements using param1, param2, ...
-}
+};
 
 // Anonymous function call
 // param1 value is set to arg1, param2 to arg2, ...
@@ -417,7 +417,7 @@ console.log(Math.min(1, 1));   // 1
 console.log(Math.random());    // A random number between 0 and 1
 ```
 
-The function `Math.min()` return the minimum number among its arguments. The function `Math.random()` generates a random number between 0 and 1.
+The function `Math.min()` returns the minimum number among its arguments. The function `Math.random()` generates a random number between 0 and 1.
 
 This book will introduce many other JavaScript functions.
 
@@ -472,7 +472,7 @@ console.log(square2(5)); // Must show 25
 
 When it's done, update the program so that it shows the square of every number between 0 and 10.
 
-> Writing 10 dumb calls to `square()` is forbidden! You know how to repeat statements, don't you ? ;)
+> Writing 10 dumb calls to `square()` is forbidden! You know how to repeat statements, don't you? ;)
 
 ### Minimum of two numbers
 
