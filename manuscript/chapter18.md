@@ -108,11 +108,11 @@ const decreaseCounter = () => {
     // Cancel the repeated execution
     clearInterval(intervalId);
     // Modify the page title
-    const title = document.getElementById("title");
-    title.textContent = "BOOM!!";
+    const titleElement = document.getElementById("title");
+    titleElement.textContent = "BOOM!!";
     // Modify the title after 2 seconds
     setTimeout(() => {
-      title.textContent = "Everything's broken now :(";
+      titleElement.textContent = "Everything's broken now :(";
     }, 2000);
   }
 };
