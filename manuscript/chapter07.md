@@ -99,7 +99,7 @@ Of course, this `length` property returns 0 in case of an empty array.
 
 ```js
 const emptyArray = []; // Create an empty array
-console.log(emptyArray).length); // 0
+console.log(emptyArray.length); // 0
 ```
 
 ### Access an element in an array
