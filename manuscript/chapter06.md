@@ -67,7 +67,7 @@ As stated earlier, a JavaScript object can be created by simply setting its prop
 
 W> The semicolon `;` after the closing brace is optional, but it's safer to add it anyway.
 
-The above code defines a variable named `pen` whose value is an object: you can therefore say `pen` is an object. This object has three properties: `type`, `color` and `brand`. Each property has a name and a value and is separated by a comma `,` (except the last one).
+The above code defines a variable named `pen` whose value is an object: you can therefore say `pen` is an object. This object has three properties: `type`, `color` and `brand`. Each property has a name and a value and is followed by a comma `,` (except the last one).
 
 ### Accessing an object's properties
 
@@ -300,7 +300,7 @@ aurora.health -= 20;
 aurora.strength += 10;
 
 // Aurora learn a new skill
-aurora.xp = aurora.xp + 15;
+aurora.xp += 15;
 
 console.log(aurora.describe());
 ```
