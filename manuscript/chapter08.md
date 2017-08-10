@@ -32,7 +32,7 @@ Let's recapitulate what we already know about strings:
 
 * In JavaScript, a string is defined by placing text within single quotes (`'I am a string'`) or double quotes (`"I am a string"`).
 
-* You may use special characters within a string by prefacing them with  `\` ("backslash") followed by another character. For example, use `\n`  to add a linebreak.
+* You may use special characters within a string by prefacing them with  `\` ("backslash") followed by another character. For example, use `\n`  to add a line break.
 
 * The `+` operator concatenates (combines or adds) two or more strings.
 
@@ -44,9 +44,9 @@ To obtain the **length** of a string (the number of characters it contains), add
 
 ```js
 console.log("ABC".length); // 3
-const m = "I am a string";
-const l = m.length;
-console.log(l); // 13
+const str = "I am a string";
+const len = str.length;
+console.log(len); // 13
 ```
 
 Although string values are primitive JavaScript types, some properties and methods can be applied to them just as if they were objects by using the **dot notation**. `length` is one of those properties.
@@ -133,7 +133,7 @@ for (let i = 0; i < myString.length; i++) {
 
 The loop counter `i` ranges from 0 (the index of the string's first character) to string length - 1 (index of the last character). When the counter value equals the string length, the expression becomes false and the loop ends.
 
-So, the previous example may also be written with a `for` for an identical result.
+So, the previous example may also be written with a `for` loop for an identical result.
 
 ```js
 const name = "Sarah";
@@ -142,7 +142,7 @@ for (let i = 0; i < name.length; i++) {
 }
 ```
 
-As for arrays covered earlier, a recent JavaScript evolution has introduced yet another option to iterate over a string: the `for-of` loop. The previous example may also be written:.
+As for arrays covered earlier, a recent JavaScript evolution has introduced yet another option to iterate over a string: the `for-of` loop. The previous example may also be written:
 
 ```js
 const name = "Sarah";
@@ -155,7 +155,7 @@ If the index is not needed inside the loop, this syntax is arguably simpler than
 
 ## Turning a string into an array
 
-The JavaScript method `Array.from()` can be used to turn a string into an array. This array can further be traversed with the `forEach()` method. Just like the previous ones, this example show the string letters one-by-one.
+The JavaScript method `Array.from()` can be used to turn a string into an array. This array can further be traversed with the `forEach()` method. Just like the previous ones, this example shows the string letters one-by-one.
 
 ```js
 const name = "Sarah";
@@ -218,6 +218,6 @@ Improve the previous program so that it shows the word written backwards.
 
 ### Palindrome
 
-Improve the previous program to check if the word is a palindrome. A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing. 
+Improve the previous program to check if the word is a palindrome. A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
 
 > `"radar"` should be detected as a palindrome, `"Radar"` too.
