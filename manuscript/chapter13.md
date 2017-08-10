@@ -6,7 +6,7 @@ This chapter will help you discover how a web page is shown by a browser.
 
 * A **web page** is a structured document containing both text and HTML tags. The **DOM**, or *Document Object Model*, is a standardized way to define a web page's structure.
 
-* Tho DOM is also an **API** allowing programmatical interactions with the web page. With JavaScript, you can access the structure of a page displayed in a browser and modify it.
+* The DOM is also an **API** allowing programmatical interactions with the web page. With JavaScript, you can access the structure of a page displayed in a browser and modify it.
 
 * The DOM represents a web page as a hierarchy of **objects**, where each object corresponds to a node in the nested HTML element tree.
 
@@ -95,7 +95,7 @@ As expected, the DOM object `body` is an element node because it's an HTML tag.
 
 ### Access a node's children
 
-Each element-typed object in the DOM has a property called `childNodes`. This is an ordered collection containing all its child nodes as DOM objects. You can use this collection a bit like an array to access the different children of a node.
+Each element-typed object in the DOM has a property called `childNodes`. This is an ordered collection containing all its child nodes as DOM objects. You can use this collection similar to an array to access the different children of a node.
 
 W> The `childNodes` property of an element node is not a real JavaScript array, but rather a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) object. Not all of the standard array methods are applicable to it.
 
