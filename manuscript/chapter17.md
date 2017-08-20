@@ -165,7 +165,7 @@ Here's the code from the example form that offers a user the choice to receive a
 <label for="confirmation">Send me a confirmation email</label>
 ```
 
-Whenever the box is checked or unchecked by the user, a `change` event is kicked off. The `Event` object associated to this event has a `checked` boolean property that gives the new state of the field is (checked or not checked).
+Whenever the box is checked or unchecked by the user, a `change` event is kicked off. The `Event` object associated to this event has a `checked` boolean property that gives the new state of the field (checked or not checked).
 
 The below code handles the `change` event on the checkbox to show a message in the console.
 
@@ -268,7 +268,7 @@ Here are the two buttons from the sample form.
 <input type="reset" value="Cancel">
 ```
 
-When a user submits a form, the default behavior of the browser is to contact a web server and request the resource identified by the `action` attribute of the `<form>` tag, sending form data along the way. Prior to this, a `submit` event is triggered on the DOM element corresponding to the form. By adding a handler for this type of event, you can access form data before it gets sent. You can event cancel the request to the server by calling the `preventDefault()` method on the `Event` object associated to the event.
+When a user submits a form, the default behavior of the browser is to contact a web server and request the resource identified by the `action` attribute of the `<form>` tag, sending form data along the way. Prior to this, a `submit` event is triggered on the DOM element corresponding to the form. By adding a handler for this type of event, you can access form data before it gets sent. You can cancel the request to the server by calling the `preventDefault()` method on the `Event` object associated to the event.
 
 The following code shows in the console all user input in the form, then cancels the request to the server.
 
@@ -327,7 +327,7 @@ Validation can happen in several ways:
 * after input is entered;
 * when the user submits the form.
 
-This last technique only involves adding validation in the `submit` event handler for the form: you already know how to do that.  We'll look the other two techniques one at a time, using the same example form as before.
+This last technique only involves adding validation in the `submit` event handler for the form: you already know how to do that.  We'll look at the other two techniques one at a time, using the same example form as before.
 
 ### Instant validation
 
@@ -378,7 +378,7 @@ document.getElementById("emailAddress").addEventListener("blur", e => {
 
 ### Regular expressions
 
-The previous validations were quite primitive: many string containing a `@` character are not valid email addresses. To perform more advanced checks, you can use a powerful tool: **regular expressions**.
+The previous validations were quite primitive: many strings containing a `@` character are not valid email addresses. To perform more advanced checks, you can use a powerful tool: **regular expressions**.
 
 A regular expression defines a **pattern** to which strings are compared, searching for matches. Many programming languages support them. A powerful addition to a programmer's toolbelt, they can nonetheless take quite a bit of time to be comfortable with. What follows is just an introduction to the vast domain of regular expression.
 
@@ -419,9 +419,9 @@ Observing these examples leads us to the following rules:
 
 * The `\` (*backslash*) character indicates that the following character should be searched as-if. . For example, `\.` is used to match the `.` character itself.
 
-* The `+` character matches one of several instances of the preceding expression.
+* The `+` character matches one or several instances of the preceding expression.
 
-* The `*` character matches zero, one of several instances of the preceding expression.
+* The `*` character matches zero, one, or several instances of the preceding expression.
 
 T> The site <https://regex101.com> is useful to understand, test and debug regular expressions.
 
