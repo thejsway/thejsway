@@ -19,3 +19,15 @@ Instead, start by searching the web and ask your questions on programming forums
 Leanpub uses a specific flavor of Markdown. As much as possible, this book is written using GitHub-Flavored Markdown to improve rendering on GitHub and elsewhere, while staying compatible with Leanpub.
 
 The only exceptions are info, tip, warning and error text boxes defined with `I>`, `T>`, `W>` and `E>` instead of the classic `>` syntax. Read the [Leanpub documentation](https://leanpub.com/help/manual#leanpub-auto-more-text-block-types) for more details.
+
+## Translation guidelines
+
+Not everyone speaks English. You are very welcome to translate this book into your own language. All translations are published under a common [GitHub organization](https://github.com/thejsway). Please note that the original copyright and [license](LICENSE) still apply, so commercial use of any translated material is prohibited.
+
+### Contributing to an existing language
+
+Ask to join a translation team in the organization or create an issue in the translated repository, mentioning @bpesquet in the issue's body. I will add you to the team.
+
+### Starting a new translation
+
+Create an issue in this repository to define your target language, mentioning @bpesquet in the issue's body. I will create the corresponding repo and a new translation team, then add you to it. You might rename the repository and edit its description to your liking, but please keep the original copyright and license.
