@@ -350,7 +350,7 @@ The previous example show `"x = abc"` (the correct result) but also `"x = def"`.
 
 ## Coding time!
 
-Here are a few advice about these exercises:
+Here are a few pieces of advice about these exercises:
 
 * Keep on choosing your variable names wisely, and respect indentation when creating code blocks associated to `if`, `else` and `switch` statements.
 
