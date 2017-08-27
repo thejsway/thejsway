@@ -1,6 +1,6 @@
 # What's a web page?
 
-This short chapter summarizes what you need to known about the Web and web pages.
+This short chapter summarizes what you need to know about the Web and web pages.
 
 ## TL;DR
 
