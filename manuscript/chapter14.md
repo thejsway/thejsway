@@ -80,7 +80,7 @@ With the `getElementsByTagName()` method, selecting the first `h2` element becom
 const titleElements = document.getElementsByTagName("h2");
 
 console.log(titleElements[0]);     // Show the first h2
-console.log(titleElements.length); // 2 (total number of h2 elements in the page)
+console.log(titleElements.length); // 3 (total number of h2 elements in the page)
 ```
 
 ![Execution result](images/chapter14-07.png)
