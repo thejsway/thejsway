@@ -12,7 +12,7 @@ Object-oriented programming, albeit quite popular, is not the only way to create
 
 * The `map()`, `filter()` and `reduce()` methods can replace loops for array traversal and let you program with arrays in a functional way.
 
-* JavaScript functions can be passed around just like any other value: they are **first-class citizens**, enabling functional programming. A function that operates on another function (taking it as an parameter or returning it) is called a **higher-order function**.
+* JavaScript functions can be passed around just like any other value: they are **first-class citizens**, enabling functional programming. A function that operates on another function (taking it as a parameter or returning it) is called a **higher-order function**.
 
 * JavaScript is a **multi-paradigm** language: you can write programs using an imperative, object-oriented or functional programming style.
 
@@ -193,7 +193,7 @@ console.log(bestTitles());
 console.log(averageNolanRating());
 ```
 
-The state of our program is now limited to two variables: `movieList` and `nolanMovieList` (the latter being necessary in functions `nolanMovies()` and `averageNolanRating()`). The other variables are now local to the functions they are used into, which limit the possibility of an accidental state mutation.
+The state of our program is now limited to two variables: `movieList` and `nolanMovieList` (the latter being necessary in functions `nolanMovies()` and `averageNolanRating()`). The other variables are now local to the functions they are used into, which limits the possibility of an accidental state mutation.
 
 Also, this version of the program is easier to understand than the previous one. Functions with appropriate names help describe a program's behavior. Comments are now less necessary than before.
 
@@ -201,7 +201,7 @@ Also, this version of the program is easier to understand than the previous one.
 
 Merely introducing some functions in a program is not enough to follow the functional programming paradigm. Whenever possible, we also need to use pure functions.
 
-A **pure function** is a function has the following characteristics:
+A **pure function** is a function that has the following characteristics:
 
 * Its outputs depend solely on its inputs.
 * It has no side effect.
@@ -418,7 +418,7 @@ Check out this final version of our example program.
 ```js
 const titles = movies => movies.map(movie => movie.title);
 const byNolan = movie => movie.director === "Christopher Nolan";
-const filter = (movies, fct) => movies.filter(fct);
+const filter = (movies, func) => movies.filter(func);
 const goodRating = movie => movie.imdbRating >= 7.5;
 const ratings = movies => movies.map(movie => movie.imdbRating);
 const average = array => array.reduce((sum, value) => sum + value, 0) / array.length;
