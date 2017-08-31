@@ -260,7 +260,7 @@ Naming things is an important part of the programmer's job. Refer to the appendi
 
 ## Coding time!
 
-Build a habit of choosing good variables name in all exercises, starting with these ones.
+Build a habit of choosing good variable names in all exercises, starting with these ones.
 
 ### Improved hello
 
