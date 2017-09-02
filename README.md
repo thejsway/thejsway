@@ -1,5 +1,7 @@
 # The JavaScript Way
 
+[![Join the chat at https://gitter.im/the-javascript-way/Lobby](https://badges.gitter.im/the-javascript-way/Lobby.svg)](https://gitter.im/the-javascript-way/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A modern introduction to an essential language.
 
 Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
