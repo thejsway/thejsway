@@ -99,6 +99,38 @@ console.log(`I write with a ${pen.color} ${pen.brand} ${pen.type} pen`);
 
 ![Execution result](images/chapter06-01.png)
 
+Another way to access an object's properties is using **bracket notation** such as `myObject["myProperty"]`. NOTE: Single quotation marks `'` or double quotation marks `"` are valid, be consistent with your code.
+
+```js
+const pen = {
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
+};
+
+console.log(pen["type"]);  // "ballpoint"
+console.log(pen["color"]); // "blue"
+console.log(pen["brand"]); // "Bic"
+```
+You can show your pen properties in one statement too, just like **dot notation**.
+
+```js
+const pen = {
+  type: "ballpoint",
+  color: "blue",
+  brand: "Bic"
+};
+
+console.log(`I write with a ${pen["color"]} ${pen["brand"]} ${pen["type"]} pen`);
+```
+![Execution result](images/chapter06-01.png)
+
+T> ## In summary:  
+T>  
+T> Dot notation is faster to write and clearer to read.  
+T> Square bracket notation allows access to properties containing special characters and selection of properties using variables.  
+T> David Dorward, _http://www.dev-archive.net/articles/js-dot-notation/_, 6th of October 2008.
+
 ### Modifying an object
 
 Once an object is created, you can change the value of its properties with the syntax `myObject.myProperty = newValue`.
@@ -340,6 +372,7 @@ Write a program that creates an `account` object with the following characterist
 * A `name` property set to "Alex".
 * A `balance` property set to 0.
 * A `credit` method adding the value passed as an argument to the account balance.
+* A `debit` method subtracting the value passed as an argument to the account balance.
 * A `describe` method returning the account description.
 
 Use this object to show its description, crediting 250, debiting 80, then show its description again.
