@@ -135,7 +135,7 @@ Write a program that displays your name and age. Here's the result for mine.
 
 ### Minimalistic calculator
 
-Write a program that displays the results of adding, subtracting, multiplicating and dividing 6 by 3.
+Write a program that displays the results of adding, subtracting, multiplying and dividing 6 by 3.
 
 ### Values prediction
 
