@@ -55,7 +55,7 @@ If the number is positive
     Display a message
 ```
 
-The message should display only if the number is positive: this means it's "subject" to a **condition**.
+The message should display only if the number is positive; this means it's "subject" to a **condition**.
 
 ### The `if` statement
 
