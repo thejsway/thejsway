@@ -329,8 +329,8 @@ const r = Number(prompt("Enter the circle radius:"));
 
 // TODO: create the circle object here
 
-console.log(`Its circumference is ${circle.circumference()}`);
-console.log(`Its area is ${circle.area()}`);
+console.log(`Its circumference is ${circle.circumference(r)}`);
+console.log(`Its area is ${circle.area(r)}`);
 ```
 
 ### Modeling a bank account
