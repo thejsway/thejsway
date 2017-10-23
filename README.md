@@ -19,7 +19,7 @@ This book aims to be a useful companion for anyone wishing to (re)discover the m
 * **Hands-on**. No real learning happens without practicing! Each chapter is accompanied by a series of exercises to put your newly acquired skills into action. A three-part project will guide you in the creation of a social news web application ([see it in action](https://thejsway-publink.herokuapp.com)).
 * **Easy to follow**. Code along directly in your browser or build an efficient JavaScript development environment on your local machine.
 
-Read a bit more about this project [here](https://medium.com/@bpesquet/walk-this-javascript-way-e9c45ab5b696#.fmmywlb2e).
+> Read a bit more about the [goals of this project](https://medium.com/@bpesquet/walk-this-javascript-way-e9c45ab5b696#.fmmywlb2e) and its [successful launch](https://medium.freecodecamp.org/taking-off-the-successful-launch-of-an-open-source-book-7553a2262898).
 
 ## Publishing
 
