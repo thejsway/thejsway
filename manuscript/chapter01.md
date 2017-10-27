@@ -28,7 +28,7 @@ console.log("Hello from JavaScript!");
 
 This program displays the text `"Hello from JavaScript!"` in the **console**, a zone displaying textual information available in most JavaScript environments, such as browsers.
 
-To achieve this, it uses a JavaScript command named `console.log()`, which role is to display a piece of information. The text to be displayed is placed between parentheses and followed by a semicolon, which marks the end of the line.
+To achieve this, it uses a JavaScript command named `console.log()`, whose role is to display a piece of information. The text to be displayed is placed between parentheses and followed by a semicolon, which marks the end of the line.
 
 Displaying a text on the screen (the famous [Hello World](https://en.wikipedia.org/wiki/Hello_world) all programmers know) is often the first thing you'll do when you learn a new programming language. It's the classic example. You've already taken that first step!
 
@@ -61,7 +61,7 @@ W> Always remember to close a string with the same type of quotation marks you s
 
 To include special characters in a string, use the `\` character (*backslash*) before the character. For example, type `\n` to add a new line within a string: `"This is\na multiline string"`.
 
-You can not add or subtract string values like you'd do with numbers. However, the `+` operator has a special meaning when applied to two string values. It will join the two chains together, and this operation is called a **concatenation**. For example, `"Hel" + "lo"` produces the result `"Hello"`.
+You cannot add or subtract string values like you'd do with numbers. However, the `+` operator has a special meaning when applied to two string values. It will join the two chains together, and this operation is called a **concatenation**. For example, `"Hel" + "lo"` produces the result `"Hello"`.
 
 ## Program structure
 
