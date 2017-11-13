@@ -174,7 +174,6 @@ const moveBlock = () => {
   requestAnimationFrame(moveBlock);
 };
 
-const frameElement = document.getElementById("frame");
 const blockElement = document.getElementById("block");
 
 // Movement value in pixels
@@ -237,7 +236,6 @@ const moveBlock = () => {
   }
 };
 
-const frameElement = document.getElementById("frame");
 const blockElement = document.getElementById("block");
 // Convert the block width (value of the form "XXpx") to a number
 const blockWidth = parseFloat(getComputedStyle(block).width);
