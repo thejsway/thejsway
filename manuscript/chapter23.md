@@ -132,23 +132,25 @@ The `FormData` object can also be used independently of any form, to send custom
 When the user clicks on the button, custom data is added to a `FormData` object and sent to the server through an asynchronous `POST` request.
 
 ```js
-// Create a new, empty FormData object
-const formData = new FormData();
-// Fill the object with key/value pairs
-formData.append("size", "L");
-formData.append("color", "blue");
-// Send data to the server
-fetch("https://thejsway-server.herokuapp.com/tshirt", {
-  method: "POST",
-  body: formData
-})
-  .then(response => response.text())
+document.getElementById("buyButton").addEventListener("click", () => {
+    // Create a new, empty FormData object
+    const formData = new FormData();
+    // Fill the object with key/value pairs
+    formData.append("size", "L");
+    formData.append("color", "blue");
+    // Send data to the server
+    fetch("https://thejsway-server.herokuapp.com/tshirt", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => response.text())
     .then(result => {
       document.getElementById("result").textContent = result;
     })
     .catch(err => {
       console.error(err.message);
     });
+});
 ```
 
 ![Submission result](images/chapter23-03.png)
