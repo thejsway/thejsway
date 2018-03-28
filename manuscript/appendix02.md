@@ -10,7 +10,7 @@ Naming things right goes a long way into making code cleaner and easier to under
 
 ### Choose meaningful names
 
-The most important rule is to give each element (variable, function, class, etc) a specific name that reflects its role. A variable holding the value of a circle radius should be named `radius` rather than `nb` or `myVal`.
+The most important rule is to give each element (variable, function, class, etc) a specific name that reflects its role. A variable holding the value of a circle radius should be named `radius` rather than `num` or `myVal`.
 
 Brevity should be limited to short-lived elements, like loop counters.
 

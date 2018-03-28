@@ -8,7 +8,7 @@ You know how to use JavaScript to display values. However, for a program to be t
 
 * A variable is declared using the `let` keyword followed by the variable name. To declare a **constant** (a variable whose initial value will never change), it's better to use the `const` keyword instead.
 
-* To give a value to a variable, we use the **assignment operator** `=`. For number variables, the operators `+=` and `++` can **increment** (increase by 1) their value.
+* To give a value to a variable, we use the **assignment operator** `=`. For number variables, the operator `+=` can increase and the operator `++` can **increment** their value.
 
 * The **scope** of a variable is the part of the program where the variable is visible. Variables declared with `let` or `const` are **block-scoped**. A **code block** is a portion of a program delimited by a pair of opening and closing curly braces `{ ... }`.
 
@@ -97,7 +97,7 @@ a = 6.28;       // Impossible!
 
 ### Increment a number variable
 
-You can also increase or decrease a value of a number with `+=`  and `++`. The latter is called an **increment operator**, as it allows incrementation (increase by 1) of a variable's value.
+You can also increase the value of a number with `+=` and `++`. The latter is called the **increment operator**, as it allows incrementation (increase by 1) of a variable's value.
 
 In the following example, lines 2 and 3 each increase the value of variable b  by 1.
 
@@ -113,13 +113,13 @@ console.log(b); // Shows 2
 The **scope** of a variable is the part of the program where the variable is visible and usable. Variables declared with `let` or `const` are **block-scoped**: their visibility is limited to the block where they are declared (and every sub-block, if any). In JavaScript and many other programming languages, a **code block** is a portion of a program delimited by a pair of opening and closing braces. By default, a JavaScript program forms one block of code.
 
 ```js
-let nb1 = 0;
+let num1 = 0;
 {
-  nb1 = 1; // OK : nb1 is declared in the parent block
-  const nb2 = 0;
+  num1 = 1; // OK : num1 is declared in the parent block
+  const num2 = 0;
 }
-console.log(nb1); // OK : nb1 is declared in the current block
-console.log(nb2); // Error! nb2 is not visible here
+console.log(num1); // OK : num1 is declared in the current block
+console.log(num2); // Error! num2 is not visible here
 ```
 
 ## Expressions
@@ -165,7 +165,7 @@ const f = 100;
 console.log("Variable f contains the value " + f);
 ```
 
-JavaScript is extremely tolerant in terms of type conversion. However, sometimes conversion isn't possible. If a number fails to convert, you'll get the result `NaN` (*Not a Number*).
+JavaScript is extremely tolerant in terms of type conversion. However, sometimes conversion isn't possible. If a value fails to convert into a number, you'll get the result `NaN` (*Not a Number*).
 
 ```js
 const g = "five" * 2;
