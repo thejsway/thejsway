@@ -79,7 +79,7 @@ I> You usually write only one statement per line.
 
 When a program is executed, the statements in it are "read" one after another. It's the combination of these individual results that produces the final result of the program.
 
-Here's an example of a JavaScript program including several statements.
+Here's an example of a JavaScript program including several statements, followed by the result of its execution.
 
 ```js
 console.log("Hello from JavaScript!");
@@ -89,7 +89,11 @@ console.log(12 / 0);
 console.log("Goodbye!");
 ```
 
-![Execution result](images/chapter01-01.png)
+![Execution result on CodePen](images/chapter01-01.png)
+
+Depending on your work environment, the execution result may not include quotes around text.
+
+![Execution result in browser console](images/chapter01-04.png)
 
 I> As expected, a division by zero (`12/0`) results in an `Infinity` value.
 
