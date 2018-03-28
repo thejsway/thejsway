@@ -155,6 +155,8 @@ const titles = () => {
   return titles;
 };
 
+const nolanMovieList = [];
+
 // Get movies by Christopher Nolan
 const nolanMovies = () => {
   for (const movie of movieList) {
@@ -183,8 +185,6 @@ const averageNolanRating = () => {
   }
   return ratingSum / nolanMovieList.length;
 };
-
-const nolanMovieList = [];
 
 console.log(titles());
 nolanMovies();
