@@ -2,13 +2,11 @@
 
 A modern introduction to an essential language.
 
-Copyright © 2017 [Baptiste Pesquet](http://bpesquet.com).
+Copyright © 2017, 2018 [Baptiste Pesquet](http://bpesquet.com).
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Buy on Leanpub](https://img.shields.io/badge/Buy-Leanpub-yellow.svg)](https://leanpub.com/thejsway)
-
-> **New!** Use the [community forum](http://forum.thejsway.com) to discuss this project.
 
 ## Overview
 
@@ -35,6 +33,7 @@ If you like what you find here and want to support this effort, your financial c
   * [About this book](manuscript/intro01.md)
   * [Welcome to programming](manuscript/intro02.md)
   * [Introducing JavaScript](manuscript/intro03.md)
+  * [Environment setup](manuscript/intro04.md)
 * Part I: Learn to code programs
   * [3, 2, 1... Code!](manuscript/chapter01.md)
   * [Play with variables](manuscript/chapter02.md)
@@ -68,5 +67,4 @@ If you like what you find here and want to support this effort, your financial c
   * [Summary and perspectives](manuscript/concl01.md)
   * [Acknowledgements](manuscript/concl02.md)
 * Appendices
-  * [Environment setup](manuscript/appendix01.md)
   * [Style guide](manuscript/appendix02.md)
