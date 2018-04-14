@@ -7,6 +7,7 @@ Copyright © 2017, 2018 [Baptiste Pesquet](http://bpesquet.com).
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Buy on Leanpub](https://img.shields.io/badge/Buy-Leanpub-yellow.svg)](https://leanpub.com/thejsway)
+[![Buy on Amazon](https://img.shields.io/badge/Buy-Amazon-yellow.svg)](https://www.amazon.com/dp/B07C6CTV6S)
 
 ## Overview
 
@@ -23,9 +24,20 @@ This book aims to be a useful companion for anyone wishing to (re)discover the m
 
 This repository contains the book manuscript files, free to read for everyone. Your [contributions](CONTRIBUTING.md) are most welcome.
 
-For a better reading experience, this content is also sold as a **multi-format, DRM-free ebook** on [Leanpub](https://leanpub.com/thejsway), with an option to get the commented source code for all exercises and projects. An interactive online course is under way.
+For a better reading experience, this content is also available:
 
-If you like what you find here and want to support this effort, your financial contribution would be much appreciated. Thanks in advance!
+* As a multi-format, DRM-free ebook on [Leanpub](https://leanpub.com/thejsway), with an option to get the commented source code for all exercises and projects.
+* As a DRM-free ebook on [Amazon](https://www.amazon.com/dp/B07C6CTV6S).
+
+## Supporting this work
+
+A lot of time and energy went into this content. If you find it useful and want to support this effort, here's what you can do:
+
+* Buy the ebook version (see above paragraph). Any financial contribution would be much appreciated.
+* Rate it or leave a review on [Goodreads](https://www.goodreads.com/book/show/35875290-the-javascript-way-a-modern-introduction-to-an-essential-language?from_search=true) or [Amazon](https://www.amazon.com/dp/B07C6CTV6S).
+* Spread the word about it.
+
+Thanks in advance for your support!
 
 ## Table of contents
 
