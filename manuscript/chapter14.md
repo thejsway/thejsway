@@ -93,7 +93,7 @@ DOM elements also feature a method called `getElementsByClassName()`. This metho
 
 It's important to note that `NodeList` objects are *not* real JavaScript arrays, so not all array operations are applicable to them. To turn a `NodeList` object into an array, use the `Array.from()` method.
 
-To select and display all document elements with a class `"wonders"`, you can write the following code.
+To select and display all document elements with a class `"exists"`, you can write the following code.
 
 ```js
 // Show all elements that have the class "exists"
