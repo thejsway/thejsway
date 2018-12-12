@@ -169,7 +169,7 @@ nameArray.forEach(letter => {
 
 Looking for particular values inside a string is a common task.
 
-The `indexOf()` takes as a parameter the searched-for value. If that value is found inside the string, it returns the index of the first occurrence of the value. Otherwise, it returns -1.
+The `indexOf()` method takes as a parameter the searched-for value. If that value is found inside the string, it returns the index of the first occurrence of the value. Otherwise, it returns -1.
 
 ```js
 const song = "Honky Tonk Women";
