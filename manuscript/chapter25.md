@@ -12,7 +12,7 @@ It's time to put your Node.js knowledge into practice and create a real-world we
 
 * In order to respond to requests, an Express app defines **routes** (entry points associated to URLs) and listens to incoming HTTP requests.
 
-* The main Express method are `get()` to handle a `GET` request, `post()` to handle a `POST request` and `use()` to define a **middleware** (code that runs during the request/response cycle).
+* The main Express method are `get()` to handle a `GET` request, `post()` to handle a `POST` request and `use()` to define a **middleware** (code that runs during the request/response cycle).
 
 * Incoming form or JSON data can be managed through specialized packages like **multer** and **body-parser**.
 
