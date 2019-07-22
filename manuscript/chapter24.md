@@ -130,7 +130,7 @@ const createCalc = () => {
     add(x, y) {
       return x + y;
     },
-    substract(x, y) {
+    subtract(x, y) {
       return x - y;
     },
     multiply(x, y) {
