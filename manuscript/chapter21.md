@@ -68,7 +68,7 @@ getData()
 
 ### Example: retrieving a text file
 
-Let's start with a very basic example: displaying the content of a text file located on a web server. The file URL is `https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/languages.txt` and it has the following content.
+Let's start with a very basic example: displaying the content of a text file located on a web server. The file is [hosted on GitHub](https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/languages.txt) and it has the following content.
 
 ```text
 C++;Java;C#;PHP
@@ -222,7 +222,11 @@ Write the JavaScript code that fetches the file from the web server and fills th
 
 ### Famous paintings
 
-In this exercise, you'll show information about some famous paintings on a web page table. Information about the paintings is located at URL `https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/paintings.json` and has the following content.
+In this exercise, you'll show information about some famous paintings on a web page table. Information about the paintings is located at URL:
+
+<https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/paintings.json>
+
+ It has the following content.
 
 ```json
 [

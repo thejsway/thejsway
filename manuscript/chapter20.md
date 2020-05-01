@@ -126,11 +126,15 @@ Family | Meaning | Examples
 
 ### Addressing a resource with a URL
 
-Web sites are usually accessed using their address, a piece of text of the form `http://www.mywebsite.com/myresourcepath/myresource`. This address can be split into several subparts
+Web sites are usually accessed using their address, a piece of text of the form:
+
+<http://www.sitename.com/path/to/resource>
+
+This address can be split into several subparts
 
 * `http://` means an access through the HTTP protocol.
-* `www.mywebsite.com` is the **domain name** of the web site.
-* `/myresourcepath/myresource` is the **path** of the requested resource.
+* `www.sitename.com` is the **domain name** of the web site.
+* `/path/to/resource` is the **path** of the requested resource.
 
 An address like this one is called a URL, or **Uniform Resource Locator**. A URL uniquely describes a web resource and the way to request it.
 
