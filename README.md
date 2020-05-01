@@ -1,13 +1,12 @@
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
+[![Buy on Leanpub](https://img.shields.io/badge/Buy-Leanpub-yellow.svg)](https://leanpub.com/thejsway)
+[![Take the online course on Educative](https://img.shields.io/badge/Buy-Educative-red.svg)](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch)
+
 # The JavaScript Way
 
 A modern introduction to an essential language.
 
-Copyright © 2017-2019 [Baptiste Pesquet](http://bpesquet.fr).
-
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Buy on Leanpub](https://img.shields.io/badge/Buy-Leanpub-yellow.svg)](https://leanpub.com/thejsway)
-[![Take the online course on Educative](https://img.shields.io/badge/Buy-Educative-red.svg)](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch)
+Copyright © 2017-2020 [Baptiste Pesquet](http://bpesquet.fr).
 
 ## Overview
 
@@ -31,7 +30,7 @@ For a better reading experience, this content is also available:
 
 A lot of time and energy went into this content. If you find it useful and want to support this effort, here's what you can do:
 
-* Buy the ebook version (see above paragraph). Any financial contribution would be much appreciated.
+* Buy the ebook version or the online course (see above). Any financial contribution would be much appreciated.
 * Rate it or leave a review on [Goodreads](https://www.goodreads.com/book/show/35875290-the-javascript-way-a-modern-introduction-to-an-essential-language?from_search=true).
 * Spread the word about it.
 
