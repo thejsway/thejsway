@@ -254,6 +254,47 @@ console.log(false || true);  // true
 console.log(false || false); // false
 ```
 
+### Short-circuit evaluation
+
+As logical expressions are evaluated left to right, they are tested for possible "short-circuit" evaluation using the following rules:
+
+* `false && expr` returns `false`.
+* `true || expr` returns `true`.
+
+In both cases, the `expr` expression is not evaluated.
+
+### Usage with non-boolean values
+
+The `&&` and `||` operators can also be applied to non-boolean values. In these cases, they may not return a boolean value.
+
+* `expr1 && expr2` returns `expr1` if this expression can be converted to `false`. Otherwise, it returns `expr2`.
+* `expr1 || expr2` renvoie `expr1` if this expression can be converted to `true`. Otherwise, it returns `expr2`.
+
+In JavaScript, a value or an expression that can be converted to `false` is said to be *falsy*. If, on the contrary, it can be converted to `true`, it is so-called *truthy*. All values are considered *truthy* except for the following *falsy* ones:
+
+* `false` (obviously!)
+* `undefined`
+* `null`
+* `NaN` (*Not A Number*)
+* `0`
+* `""` or `''`
+
+Here are a few examples illustrating this JS-specific behaviour.
+
+```js
+console.log(true && "Hello");      // "Hello"
+console.log(false && "Hello");     // false
+console.log(undefined && "Hello"); // undefined
+console.log("" && "Hello");        // ""
+console.log("Hello" && "Goodbye")  // "Goodbye"
+
+console.log(true || "Hello");      // true
+console.log(false || "Hello");     // "Hello"
+console.log(undefined || "Hello"); // "Hello"
+console.log("" || "Hello");        // "Hello"
+console.log("Hello" || "Goodbye")  // "Hello"
+```
+
 ### "Not" operator
 
 There's another operator for when you know what you don't want: the not operator! You'll use a `!` for this.
