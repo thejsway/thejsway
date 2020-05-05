@@ -51,7 +51,7 @@ console.log(a);
 
 In JavaScript, you declare a variable with the `let`  keyword followed by the variable name. In this example, the variable created is called `a`.
 
-I> In previous versions of the language, variables were declared using the `var` keyword.
+I> Previously, JavaScript variables were declared using the `var` keyword. It's still possible, but in most cases it's simpler to use `let` and `const` instead.
 
 Here's the execution result for this program.
 
