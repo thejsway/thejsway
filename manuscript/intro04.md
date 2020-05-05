@@ -4,7 +4,7 @@
 
 This book targets a recent version of the JavaScript language. More specifically, you'll need a browser able to run code written in the ES2015 (ES6) language specification.
 
-A **browser** is the software you use to visit webpages and use web applications. Check [whatbrowser.org](http://whatbrowser.org) for more info and advice about upgrading your browser, and this [compatibility table](https://kangax.github.io/compat-table/es6/) for more detail about ES2015 support among browsers.
+A **browser** is the software you use to visit webpages and use web applications. Check this [compatibility table](https://kangax.github.io/compat-table/es6/) for more detail about ES2015 support among browsers.
 
 The safest bet is to choose either Google Chrome or Mozilla Firefox, two "evergreen" (self-updated) browsers with excellent ES2015 support in their recent versions. Other capable browsers include Opera and Microsoft Edge (Windows 10's default browser). On the contrary, all versions of Internet Explorer will have issues with ES2015 code: stay away from them.
 
