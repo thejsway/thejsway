@@ -4,7 +4,7 @@
 
 # The JavaScript Way
 
-A modern introduction to an essential language.
+A gentle introduction to an essential language.
 
 Copyright © 2017-2020 [Baptiste Pesquet](http://bpesquet.fr).
 
