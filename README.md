@@ -1,12 +1,15 @@
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](LICENSE)
-[![Buy on Leanpub](https://img.shields.io/badge/Buy-Leanpub-yellow.svg)](https://leanpub.com/thejsway)
-[![Take the online course on Educative](https://img.shields.io/badge/Buy-Educative-red.svg)](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch)
+[![Buy eBook on Leanpub](https://img.shields.io/badge/Buy-eBook-yellow.svg)](https://leanpub.com/thejsway)
+[![Buy paperback book on Amazon](https://img.shields.io/badge/Buy-Paperback-green.svg)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
+[![Take the online course on Educative](https://img.shields.io/badge/Buy-Course-red.svg)](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch)
 
 # The JavaScript Way
 
 A gentle introduction to an essential language.
 
 Copyright © 2017-2020 [Baptiste Pesquet](http://bpesquet.fr).
+
+[![Book cover](cover.jpg)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
 
 ## Overview
 
@@ -23,15 +26,16 @@ This repository contains the book manuscript files, free to read for everyone. Y
 
 For a better reading experience, this content is also available:
 
-* As a multi-format, DRM-free ebook on [Leanpub](https://leanpub.com/thejsway), with an option to get the commented source code for all exercises and projects.
+* As a multi-format, DRM-free eBook on [Leanpub](https://leanpub.com/thejsway), with an option to get the commented source code for all exercises and projects.
+* As a paperback book on [Amazon](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860).
 * As an interactive online course, including solutions to all exercises, on [Educative](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch).
 
 ## Supporting this work
 
 A lot of time and energy went into this content. If you find it useful and want to support this effort, here's what you can do:
 
-* Buy the ebook version or the online course (see above). Any financial contribution would be much appreciated.
-* Rate it or leave a review on [Goodreads](https://www.goodreads.com/book/show/35875290-the-javascript-way-a-modern-introduction-to-an-essential-language?from_search=true).
+* Buy the eBook or paperback version, or take the online course (see above). Any financial contribution would be much appreciated.
+* Rate it or leave a review on [Goodreads](https://www.goodreads.com/book/show/35875290-the-javascript-way-a-modern-introduction-to-an-essential-language?from_search=true) or Amazon.
 * Spread the word about it.
 
 Thanks in advance for your support!
