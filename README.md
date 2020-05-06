@@ -42,6 +42,8 @@ Thanks in advance for your support!
 
 ## Table of contents
 
+> Exercises solutions can be found [here](https://github.com/thejsway/thejsway-code).
+
 * Introduction
   * [About this book](manuscript/intro01.md)
   * [Welcome to programming](manuscript/intro02.md)
