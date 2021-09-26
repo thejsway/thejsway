@@ -329,6 +329,22 @@ Complete the following program to add the definition of the `Dog` class.
 ```js
 // TODO: define the Dog class here
 
+class Dog {
+  constructor(name, species, size, bark) {
+    this.name = name;
+    this.sound = sound;
+    this.species = species;
+    this.size = size;
+    this.bark = bark;
+  }
+
+  describe() {
+    return '${this.name} has ${this.sound}' sound ;
+  }
+}
+
+
+
 const fang = new Dog("Fang", "boarhound", 75);
 console.log(`${fang.name} is a ${fang.species} dog measuring ${fang.size}`);
 console.log(`Look, a cat! ${fang.name} barks: ${fang.bark()}`);
@@ -336,7 +352,17 @@ console.log(`Look, a cat! ${fang.name} barks: ${fang.bark()}`);
 const snowy = new Dog("Snowy", "terrier", 22);
 console.log(`${snowy.name} is a ${snowy.species} dog measuring ${snowy.size}`);
 console.log(`Look, a cat! ${snowy.name} barks: ${snowy.bark()}`);
-```
+
+bark(target) {
+  if (this.size > 60) {
+    const 
+   console.log(
+     '${this.name} and causes ${this.bark}'
+   )
+  
+}
+
+
 
 ![Execution result](images/chapter09-03.png)
 
