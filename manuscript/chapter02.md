@@ -127,9 +127,9 @@ console.log(num2); // Error! num2 is not visible here
 An **expression** is a piece of code that produces a value. An expression is created by combining variables, values and operators. Every expression has a value and thus a type. Calculating an expression's value is called **evaluation**. During evaluation, variables are replaced by their values.
 
 ```js
-// 3 is an expression whose value is 3
+// c is an expression whose value is 3
 const c = 3;
-// c is an expression whose value is the value of c (3 here)
+// d is an expression whose value is the value of c (3 here)
 let d = c;
 // (d + 1) is an expression whose value is d's + 1 (4 here)
 d = d + 1; // d now contains the value 4
