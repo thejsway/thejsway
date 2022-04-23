@@ -248,7 +248,7 @@ console.log(classes.length); // 1 (since the element only has one class)
 console.log(classes[0]);     // "wonders"
 ```
 
-You also have the opportunity to test the presence of a class on an element by calling the `contains()` on the class list, passing the class to test as a parameter.
+You also have the opportunity to test the presence of a class on an element by calling the `contains()` method on the class list, passing the class to test as a parameter.
 
 ```js
 if (document.getElementById("ancient").classList.contains("wonders")) {
