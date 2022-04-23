@@ -164,7 +164,7 @@ console.log(document.querySelector("p"));
 
 You just discovered several ways of selecting DOM elements. How do you choose the right one?
 
-Since they use CSS selectors, `querySelectorAll()` and `querySelector()` could cover all your needs, but they might perform [slower](https://jsperf.com/getelementsbyclassname-vs-queryselectorall/195) than the others.
+Since they use CSS selectors, `querySelectorAll()` and `querySelector()` could cover all your needs, but they might perform [slower](https://stackoverflow.com/a/54819633) than the others.
 
 Here are the general rules of thumb that you should follow.
 
