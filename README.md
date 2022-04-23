@@ -7,7 +7,7 @@
 
 A gentle introduction to an essential language.
 
-Copyright © 2017-2020 [Baptiste Pesquet](http://bpesquet.fr).
+Copyright © 2017-present [Baptiste Pesquet](https://bpesquet.fr).
 
 [![Book cover](cover.jpg)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
 
