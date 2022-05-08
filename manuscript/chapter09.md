@@ -274,8 +274,7 @@ class Character {
         target.health = 0;
         const bonusXP = 10;
         console.log(
-          `${this
-            .name} eliminated ${target.name} and wins ${bonusXP} experience points`
+          `${this.name} eliminated ${target.name} and wins ${bonusXP} experience points`
         );
         this.xp += bonusXP;
       }
