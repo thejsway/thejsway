@@ -26,7 +26,7 @@ JavaScript lets you manage forms defined within your web page, in order to furth
 
 Forms enhance web pages by allowing users to input information through text fields, check boxes, dropdown menus, and more. Inside a web page, a form is defined with a `<form>` HTML tag, and within this tag, you have your different `<input>` tags, `<select>` tags, or `<textarea>` tags.
 
-> If forms are totally new to you, the Mozilla Developer Network has a great intro aptly named [Your first HTML form](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form). For a more general recap on forms, check out this [course chapter]( https://openclassrooms.com/courses/build-your-website-with-html5-and-css3/forms) on OpenClassrooms.
+> If forms are totally new to you, the Mozilla Developer Network has a great intro aptly named [Your first HTML form](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form). For a more general recap on forms, check out the [MDN overview](https://developer.mozilla.org/en-US/docs/Learn/Forms).
 
 ### Handling forms with JavaScript
 
