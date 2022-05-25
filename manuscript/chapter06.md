@@ -161,7 +161,7 @@ const aurora = {
 
 The `aurora` object has three properties: `name`, `health` and `strength`.
 
-I> As you can see, you can assign numbers, strings, and even other objects to properties!
+As you can see, you can assign numbers, strings, and even other objects to properties!
 
 Aurora is about to start a series of great adventures, some of which will update her attributes. Check out the following example.
 
