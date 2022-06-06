@@ -159,87 +159,89 @@ There is no universal standard regarding access keys. Each service is free to us
 
 A prerequisite for using any key-based web API is to generate oneself an access key for this particular service.
 
-Let's put this into practice for obtaining about the current weather in your area. To do so, you could simply look outside the window, but it's way cooler to use the [Weather Underground](https://www.wunderground.com/weather/api) web service instead.
+Let's put this into practice for obtaining about the current weather in your area. To do so, you could simply look outside the window, but it's way cooler to use a web-based service like [OpenWeather](https://openweathermap.org) instead ;).
 
-This service has a key-based API for retrieving the weather in any place. To obtain it, you'll have to sign up as a user (it's free) and generate a new API key by registering your application.
+This service has a key-based API for retrieving the weather in any place. To obtain it, you'll have to sign up as a user (it's free) and a new API key will be generated and associated to your account.
 
-Once you've done this, weather data is available through an URL of the form <http://api.wunderground.com/api/ACCESS_KEY/conditions/q/COUNTRY/TOWN.json>. Replace `ACCESS_KEY`, `COUNTRY` and `TOWN` with your own settings, and you should obtain the weather in your surroundings.
+Once you've done this, weather data is available through an URL of the form <http://api.openweathermap.org/data/2.5/weather?q=LOCATION&appid=API_KEY>. Replace `LOCATION` and `API_KEY` with your own settings, and you should obtain the weather in your surroundings.
 
-The necessary first step is to check out and understand the API data format. The result of an API call looks like this when getting weather for Bordeaux, France.
+Before using any API in our code, a necessary first step is to check out and understand its data format. The result looks like this when getting weather info for Bordeaux, France.
 
 ```json
 {
-  "response": {
-    "version": "0.1",
-    "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
-    "features": {
-      "conditions": 1
-    }
+  "coord": {
+    "lon": -0.5805,
+    "lat": 44.8404
   },
-  "current_observation": {
-    "image": {
-      "url": "http://icons.wxug.com/graphics/wu2/logo_130x80.png",
-      "title": "Weather Underground",
-      "link": "http://www.wunderground.com"
-    },
-    "display_location": {
-      "full": "Bordeaux, France",
-      "city": "Bordeaux",
-      "state": "33",
-      ...
-    },
-    "observation_location": {
-      "full": "Bordeaux, ",
-      "city": "Bordeaux",
-      "state": "",
-      "country": "FR",
-      ...
-    },
-    "estimated": {},
-    "station_id": "LFBD",
-    "observation_time": "Last Updated on June 28, 9:30 PM CEST",
-    ...
-  }
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "broken clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 20.15,
+    "feels_like": 19.89,
+    "temp_min": 19.08,
+    "temp_max": 20.15,
+    "pressure": 1020,
+    "humidity": 64
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 2.57,
+    "deg": 120
+  },
+  "clouds": {
+    "all": 75
+  },
+  "dt": 1654506765,
+  "sys": {
+    "type": 1,
+    "id": 6450,
+    "country": "FR",
+    "sunrise": 1654489047,
+    "sunset": 1654544687
+  },
+  "timezone": 7200,
+  "id": 3031582,
+  "name": "Bordeaux",
+  "cod": 200
 }
-
 ```
 
-Now we just have to call the API from our JavaScript code and displays the main result on a web page.
-
-```html
-<h2>The weather in</h2>
-<div id="weather"></div>
-```
+Now we just have to call the API from our JavaScript code and display the weather information on a web page.
 
 ```js
+// Replace YOUR_API_KEY with your own OpenWeather API key 
 fetch(
-  "http://api.wunderground.com/api/YOUR_OWN_KEY/conditions/q/france/bordeaux.json"
+  "http://api.openweathermap.org/data/2.5/weather?q=Bordeaux,fr&appid=YOUR_API_KEY&units=metric"
 )
-  .then(response => response.json())
-  .then(weather => {
-    // Access some weather properties
-    const location = weather.current_observation.display_location.full;
-    const temperature = weather.current_observation.temp_c;
-    const humidity = weather.current_observation.relative_humidity;
-    const imageUrl = weather.current_observation.icon_url;
-    // Create DOM elements for properties
+  .then((response) => response.json())
+  .then((weatherData) => {
+    // Extract some weather properties from API call result
+    const location = weatherData.name;
+    const temperature = weatherData.main.temp;
+    const humidity = weatherData.main.humidity;
+
+    // Create DOM elements for these properties
     const summaryElement = document.createElement("div");
-    summaryElement.textContent = `Temperature is ${temperature} °C with ${humidity} humidity.`;
-    const imageElement = document.createElement("img");
-    imageElement.src = imageUrl;
+    summaryElement.textContent = `Temperature is ${temperature} °C with ${humidity}% humidity.`;
     // Add location to title
     document.querySelector("h2").textContent += ` ${location}`;
     // Add elements to the page
     const weatherElement = document.getElementById("weather");
     weatherElement.appendChild(summaryElement);
-    weatherElement.appendChild(imageElement);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error(err.message);
   });
 ```
 
-![Weather is usually much nicer around here...](images/chapter22-05.png)
+![Typical Bordeaux Weather :)](images/chapter22-05.png)
 
 ## Coding time!
 
