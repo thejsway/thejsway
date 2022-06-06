@@ -107,20 +107,20 @@ document.getElementById("myButton").addEventListener("click", e => {
 
 ### Key presses
 
-The most common solution for reacting to key presses on a keyboard involves handling `keypress` events that happen on a web page (the DOM `body` element, which corresponds to the global variable called `document` in JavaScript).
+The most common solution for reacting to key presses on a keyboard involves handling `keydown` and `keyup` events that happen on a web page (the DOM `body` element, which corresponds to the global variable called `document` in JavaScript).
 
-The following example shows in the console the character associated to a pressed key. The character info is given by the `charCode` property of the `Event` object associated to the event. This property returns a numerical value (called **Unicode value**) that can be translated to a string value by the `String.FromCharCode()` method.
+The following example shows in the console the character associated to a pressed key. The string value of the key is given by the `key` property of the `Event` object associated to the event.
 
 ```js
-// Show the pressed character
-document.addEventListener("keypress", e => {
-  console.log(`You pressed the ${String.fromCharCode(e.charCode)} key`);
+// Show the pressed key
+document.addEventListener("keyup", e => {
+  console.log(`You pressed the ${e.key} key`);
 });
 ```
 
 ![Execution result](images/chapter16-03.png)
 
-To manage the press and release of any key (not only the ones producing characters), you'll use the `keydown` and `keyup` events. This example uses the same function to manage two events. This time, the key's code is accessible in the `keyCode` property of the `Event` object.
+To manage the press and release of any key, you'll use both `keydown` and `keyup` events. In the following example, we output the event type and the key's code, using the `type` and `keyCode` properties of the `Event` object.
 
 ```js
 // Show information on a keyboard event
@@ -135,9 +135,9 @@ document.addEventListener("keyup", keyboardInfo);
 
 ![Execution result](images/chapter16-04.png)
 
-This results demonstrates that the launch order of keyboard-related events is as follows: `keydown` -> `keypress` -> `keyup`.
+This result demonstrates that the launch order of keyboard-related events is as expected: `keydown` -> `keyup`.
 
-> The `keydown` is fired several times when a key is kept pressed.
+> The `keydown` event is fired several times when a key is kept pressed.
 
 ### Mouse clicks
 
