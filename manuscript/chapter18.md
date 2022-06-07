@@ -189,7 +189,7 @@ Upon page load, the red block moves (indefinitely) from left to right.
 
 ### Start an animation
 
-The example code defines a function called `moveBlock()` which moves the block horizontally to the right. It grabs the current position of the block's left border than adds the value contained in the `movement` variable. Next, the code calls the `requestAnimationFrame()` method to keep the animation going.
+The example code defines a function called `moveBlock()` which moves the block horizontally to the right. It grabs the current position of the block's left border then adds the value contained in the `movement` variable. Next, the code calls the `requestAnimationFrame()` method to keep the animation going.
 
 Position values are written in pixels. These are the strings you saw that resemble "XXpx," which requires the use of the JavaScript `parseFloat()` function to convert numeric values before making calculations.
 
