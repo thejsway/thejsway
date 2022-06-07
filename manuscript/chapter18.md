@@ -251,7 +251,7 @@ let animationId = requestAnimationFrame(moveBlock);
 
 The new `moveBlock()` function checks that the block has arrived at the end of the frame before moving. If that's the case, the animation stops via a call to `cancelAnimationFrame()`.
 
-The `cancelAnimationFrame()` functions stops the animation and takes the ID of the animation set by a prior call to `requestAnimationFrame()`.
+The `cancelAnimationFrame()` function stops the animation and takes the ID of the animation set by a prior call to `requestAnimationFrame()`.
 
 ```js
 // Stop an animation
