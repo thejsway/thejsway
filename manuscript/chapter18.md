@@ -279,7 +279,7 @@ Let's check out how to get a similar effect as the previous example by using CSS
   margin-left: -20px; /* Negative margin to simplify position calculations */
   animation-name: moveBlock; /* Name of animation */
   animation-duration: 6s; /* Length of animation */
-  animation-fill-mode: forwards; /* Let the block in its final position */
+  animation-fill-mode: forwards; /* Leave the block in its final position */
 }
 
 @keyframes moveBlock {
