@@ -36,7 +36,7 @@ More precisely, a web server machine runs a particular software program (also ca
 
 ### Web clients
 
-The machine asking a server for a resource is called a **web client**. Actually, the real client is a software program running on the machine. a well-known type of web client is the **browser**, a program specialized in displaying web pages. Famous web browsers include [Mozilla Firefox](https://www.mozilla.org/firefox), [Chrome](https://www.google.com/chrome/browser/), [Safari](https://www.apple.com/safari/) and [Opera](http://www.opera.com/fr).
+The machine asking a server for a resource is called a **web client**. Actually, the real client is a software program running on the machine. A well-known type of web client is the **browser**, a program specialized in displaying web pages. Famous web browsers include [Mozilla Firefox](https://www.mozilla.org/firefox), [Chrome](https://www.google.com/chrome/browser/), [Safari](https://www.apple.com/safari/) and [Opera](http://www.opera.com/fr).
 
 Not all web clients are browsers, through. For example, search engines robots and mobile applications also contact servers and ask them for content.
 
@@ -66,7 +66,7 @@ Let's study the first part of the web exchange described previously: the request
 
 ![A web request example](images/chapter20-02.png)
 
-This HTTP request comes under the form as a multi-line piece of text similar to the following one.
+This HTTP request comes under the form of a multi-line piece of text similar to the following one:
 
 ```http
 GET / HTTP/1.1
@@ -82,7 +82,7 @@ The most important line is the first one. It contains:
 * The requested **resource**. Here, `/` (root symbol) indicates a request for the default document.
 * The HTTP protocol **version**, here 1.1.
 
-The other lines of text are called **header fields**. They give more information about the client request: server name (`Host`), accepted content types (`Accept`), client software details (`User-Agent`). They are many other possible header fields.
+The other lines of text are called **header fields**. They give more information about the client request: server name (`Host`), accepted content types (`Accept`), client software details (`User-Agent`). There are many other possible header fields.
 
 The main HTTP methods are `GET` to access a resource and `POST` to push some information on the server. Other ones exist, such as `HEAD`, `PUT` or `DELETE`.
 
@@ -130,7 +130,7 @@ Web sites are usually accessed using their address, a piece of text of the form:
 
 <http://www.sitename.com/path/to/resource>
 
-This address can be split into several subparts
+This address can be split into several subparts:
 
 * `http://` means an access through the HTTP protocol.
 * `www.sitename.com` is the **domain name** of the web site.
@@ -195,6 +195,6 @@ JSON, or **JavaScript Object Notation**, is a textual syntax for describing stru
 }
 ```
 
-A JSON document is a set of name/value pairs. Name are always within double quotes `""`. Values can be numbers, strings, booleans, arrays or objects.
+A JSON document is a set of name/value pairs. Names are always within double quotes `""`. Values can be numbers, strings, booleans, arrays or objects.
 
 Many programming languages have native support for the JSON format... Including JavaScript, of course!
