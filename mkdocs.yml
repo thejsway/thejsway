@@ -1,0 +1,92 @@
+site_name: The JavaScript Way
+site_description: A gentle introduction to an essential language
+site_author: Baptiste Pesquet
+repo_url: https://github.com/thejsway/thejsway
+docs_dir: manuscript
+
+nav:
+  - Home: index.md
+  - Introduction:
+      - intro01.md
+      - intro02.md
+      - intro03.md
+      - intro04.md
+  - Learn to code programs:
+      - chapter01.md
+      - chapter02.md
+      - chapter03.md
+      - chapter04.md
+      - chapter05.md
+      - chapter06.md
+      - chapter07.md
+      - chapter08.md
+      - chapter09.md
+      - chapter10.md
+      - chapter11.md
+  - Create interactive web pages:
+      - chapter12.md
+      - chapter13.md
+      - chapter14.md
+      - chapter15.md
+      - chapter16.md
+      - chapter17.md
+      - chapter18.md
+      - chapter19.md
+  - Build web applications:
+      - chapter20.md
+      - chapter21.md
+      - chapter22.md
+      - chapter23.md
+      - chapter24.md
+      - chapter25.md
+      - chapter26.md
+  - Conclusion:
+      - concl01.md
+      - concl02.md
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: yellowjs
+      primary: yellow
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - navigation.instant
+#    - navigation.sections
+
+extra:
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: French
+      link: https://github.com/thejsway/thejsway_fr
+      lang: fr
+    - name: Spanish
+      link: https://github.com/thejsway/thejsway_es
+      lang: es
+    - name: Indonesian
+      link: https://github.com/thejsway/thejsway_id
+      lang: id
+    - name: Persian
+      link: https://github.com/thejsway/thejsway_per
+      lang: per
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences

@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "thejsway"
+version = "0.1.0"
+description = "The JavaScript Way book"
+authors = ["Baptiste Pesquet <bpesquet@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+mkdocs-material = "^8.5.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

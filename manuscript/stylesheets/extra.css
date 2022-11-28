@@ -1,0 +1,9 @@
+[data-md-color-scheme="yellowjs"] {
+    --md-primary-fg-color: #F3DF4A;
+    --md-primary-fg-color--light: #F3DF4A;
+    --md-primary-fg-color--dark: #F3DF4A;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-hue: 210;
+}
