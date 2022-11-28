@@ -1,15 +1,12 @@
 # Acknowledgments
 
-This book was built upon two online courses I wrote for the French EdTech startup [OpenClassrooms](https://openclassrooms.com):
+This book was built upon two online courses I wrote for the french EdTech company [OpenClassrooms](https://openclassrooms.com). Thanks to [Jessica Mautref](https://www.linkedin.com/in/jessicamautref) for her watchful eye during the writing process, and to [Emily Reese](https://www.linkedin.com/in/eclairereese) for the initial English translation. Both also contributed many good ideas.
 
-* [Learn to code with JavaScript](https://openclassrooms.com/courses/learn-the-basics-of-javascript) ([Apprenez à coder avec JavaScript](https://openclassrooms.com/courses/apprenez-a-coder-avec-javascript))
-* [Use JavaScript in your web projects](https://openclassrooms.com/courses/use-javascript-on-the-web) ([Créez des pages web interactives avec JavaScript](https://openclassrooms.com/courses/creez-des-pages-web-interactives-avec-javascript))
+I've been inspired by JavaScript experts who decided to publish their books in an open way: [Kyle Simpson](https://github.com/getify), [Nicholas C. Zakas](https://humanwhocodes.com/writing/), [Axel Rauschmayer](http://dr-axel.de/) and [Marijn Haverbeke](http://marijnhaverbeke.nl/).
 
-Thanks to [Jessica Mautref](https://www.linkedin.com/in/jessicamautref) for her watchful eye during the writing process, and to [Emily Reese](https://www.linkedin.com/in/eclairereese) for the initial English translation. Both also contributed many good ideas.
+Thanks to everyone who contributed to this content. I am especially grateful to the wonderful translation team: [roxerto](https://github.com/roxerto) (Spanish), [Adi Setiawan](https://github.com/adisetiawan) (Indonesian) and [najmiehsa](https://github.com/najmiehsa) (Persian).
 
-I've been inspired by other authors who decided to publish their books in an open way: [Kyle Simpson](https://github.com/getify), [Nicholas C. Zakas](https://www.nczonline.net/), [Axel Rauschmayer](http://dr-axel.de/) and [Marijn Haverbeke](http://marijnhaverbeke.nl/).
-
-Thanks to everyone who improved the book content through contributions. In chronological order: Gilad Penn, NewMountain, Emre Akbudak, opheron, Theo Armour, Filip Białek, KeelyBird, Juhani Niinimaa, Louis Rainier, Chandan Rai, ScottyRotten, SrZorro, Frank Paulo Filho, Ryan Lindsey, Michael Dilger, Ramil Muratov, Ganesh Kumar Kattamuri, Samuel Fuller Thomas, Florian Loch, Daniel Sorichetti, Jake Ingman, John Hassell, Conrad Knapp, Ahmed Shamim, Vse Mozhet Byt, AGCB, William Friesen, Robert Morrison, Derek Houck, Zac Walberer, Tom Paoletti, Lukáš Bacigál, Annie Baraban, alee156, Ahmed Zeeshan, Matthew Loseke, M Afiq, Justin Crabtree, Marco Dahms, Miguel T Rivera, Alfonso Millan, Josue Daniel Guerrero Ballestero, dantelyon, harubi, SuchirAgarwal, barbaralaw, kriskoeh, resourcefulmind, roxerto, FoleyDom, abgutmann.
+The following individuals helped improve the book quality: Gilad Penn, NewMountain, Emre Akbudak, opheron, Theo Armour, Filip Białek, KeelyBird, Juhani Niinimaa, Louis Rainier, Chandan Rai, ScottyRotten, SrZorro, Frank Paulo Filho, Ryan Lindsey, Michael Dilger, Ramil Muratov, Ganesh Kumar Kattamuri, Samuel Fuller Thomas, Florian Loch, Daniel Sorichetti, Jake Ingman, John Hassell, Conrad Knapp, Ahmed Shamim, Vse Mozhet Byt, AGCB, William Friesen, Robert Morrison, Derek Houck, Zac Walberer, Tom Paoletti, Lukáš Bacigál, Annie Baraban, alee156, Ahmed Zeeshan, Matthew Loseke, M Afiq, Justin Crabtree, Marco Dahms, Miguel T Rivera, Alfonso Millan, Josue Daniel Guerrero Ballestero, dantelyon, harubi, SuchirAgarwal, barbaralaw, kriskoeh, resourcefulmind, roxerto, FoleyDom, abgutmann.
 
 Illustration credits:
 
