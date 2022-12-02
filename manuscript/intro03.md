@@ -1,24 +1,20 @@
 # Introducing JavaScript
 
-## TL;DR
+It's time to get acquainted with the main topic of this whole book: JavaScript!
 
-* Originally created to animate web pages, the JavaScript language can now be used almost everywhere, from servers to mobile apps and connected devices.
+## A brief history of JavaScript
 
-* JavaScript is becoming essential for many software developers. It's an excellent choice as a first language for learning programming.
+JavaScript is first and foremost the programming language of the web. It was invented in 1995 by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich), who at the time worked for [Netscape Communications](https://en.wikipedia.org/wiki/Netscape_Communications), the company which created the first popular web browser by the same name.
 
-* It's been standardized under the name **ECMAScript** and is continuously improved ever since.
+!!! info
 
-* The JavaScript version used in this book is **ES2015**, otherwise known as **ES6**. Albeit recent, it is now well supported by most environments.
+    A [web browser](https://en.wikipedia.org/wiki/Web_browser) is the software you use to visit webpages and use web applications.
 
-## History of JavaScript
+!!! warning
 
-JavaScript is first and foremost the programming language of the web. It was invented in 1995 by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich), who at the time worked for [Netscape](https://en.wikipedia.org/wiki/Netscape_Communications), which created the first popular web browser (Firefox's ancestor).
+    JavaScript should not be confused with [Java](https://en.wikipedia.org/wiki/Java_(programming_language)), another programming language invented at the same time. Both share a similar syntax, but their use cases and design principles are very different.
 
-I> A **browser** is the software you use to visit webpages and use web applications.
-
-W> JavaScript should not be confused with Java, another language invented at the same time! Both share a similar syntax, but their use cases and "philosophies" are very different.
-
-The idea behind JavaScript was to create a simple language to make web pages dynamic and interactive, since back then, pages were very simple.
+The idea behind JavaScript was to create a simple language to make web pages dynamic and interactive. Back then, pages were very simple.
 
 ![Yahoo's home page circa 1994](images/intro03-01.jpg)
 
@@ -26,15 +22,15 @@ Web builders started gradually enriching their pages by adding JavaScript code. 
 
 Because of the explosion of the Web and the advent of the web 2.0 (based on rich, interactive pages), JavaScript has become increasingly popular. Web browser designers have optimized the execution speed of JavaScript, which means it's now a very fast language.
 
-This led to the emergence of the [Node.js](https://nodejs.org) platform, which allows you to create JavaScript applications outside the browser. Thanks to a software called [MongoDB](https://www.mongodb.com), JavaScript has even entered the database world (software whose role is to store information).
+This led to the emergence of the [Node.js](https://nodejs.org) platform, which allows you to create JavaScript applications outside the browser. Thanks to a software called [MongoDB](https://www.mongodb.com/home), JavaScript has even entered the database world (software whose role is to store information).
 
 Finally, the popularity of smartphones and tablets with different systems (iOS, Android, Windows Phone) has led to the emergence of so-called cross-platform development tools. They allow you to write a single mobile application that's compatible with these systems. These tools are almost always based on... JavaScript!
 
 ## JavaScript: an essential language
 
-In short, JavaScript is everywhere. It sits on top of a rich ecosystem of **components** (small software *bricks* that you can easily plug into your project) and a vibrant developer community. Knowing it will open the doors of the web browser-side programming (known as front-end development), server side development (backend), and mobile development. A growing number of people see JavaScript as the most important technology in software development nowadays.
+In short, JavaScript is everywhere. It sits on top of a rich ecosystem of **components** (small software bricks that you can easily plug into your project) and a vibrant developer community. Knowing it will open the doors of the web browser-side programming (known as front-end development), server side development (back-end), and mobile development. A number of people see JavaScript as the most important technology in software development nowadays.
 
-Both ubiquitous and still relatively easy to learn, JavaScript is also a [great choice](https://medium.freecodecamp.com/what-programming-language-should-i-learn-first-%CA%87d%C4%B1%C9%B9%C9%94s%C9%90%CA%8C%C9%90%C9%BE-%C9%B9%C7%9D%CA%8Dsu%C9%90-19a33b0a467d#.3yu73z1px) as a first language for learning programming.
+Both ubiquitous and still relatively easy to learn, JavaScript is also a good choice as a first language for learning programming.
 
 ## Version used in this book
 
@@ -42,4 +38,18 @@ JavaScript was standardized in 1997 under the name [ECMAScript](https://en.wikip
 
 ![ECMAScript/JavaScript versions timeline](images/intro03-02.png)
 
-This book uses the most recently standardized version of JavaScript, called **ES2015** or sometimes **ES6**. This version brings a lot of interesting novelties to the table. It is now well supported by most environments and platforms, starting with web browsers (more details in this [compatibility table](http://kangax.github.io/compat-table/es6/)).
+In 2015, JavaScript versions began to be named by year. That year's release (**ES2015**, initially named **ES6**), introduced a lot of interesting novelties, many of them quickly adopted by the JavaScript developer community.
+
+Moving away from big, infrequent releases, the JavaScript language since receives incremental updates on a yearly basis. New language features are gradually baked in JavaScript platforms through subsequent software updates. This is one of the reasons your web browser keeps updating itself!
+
+This book targets the **ES2016** language version. It is now [well supported](https://kangax.github.io/compat-table/es2016plus/) by most environments and platforms.
+
+## TL;DR
+
+* Originally created to animate web pages, the JavaScript language can now be used almost everywhere, from servers to mobile apps and connected devices.
+
+* JavaScript is becoming essential for many software developers. It is a good choice as a first language for learning programming.
+
+* It's been standardized under the name **ECMAScript** and is continuously improved ever since.
+
+* The JavaScript version used in this book is **ES2016**. It is well supported by most environments.

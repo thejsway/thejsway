@@ -1,22 +1,16 @@
 # Welcome to programming
 
-## TL;DR
+You're about to begin a great journey! Let's start it by talking about programming and the programmer's role.
 
-* A **computer** is a machine whose role is to execute quickly and flawlessly a series of actions given to it.
+## What's in a program?
 
-* A **program** is a list of actions given to a computer. These actions take the form of textual commands. All these commands form the program's **source code**.
-
-* The **programmer**'s task is to create programs. To accomplish this goal, he can use different programming languages.
-
-* Before writing code, one must think ahead and decompose the problem to be addressed in a series of elementary operations forming an **algorithm**.
-
-## What's a program?
-
-![Evolution (?)](images/intro02-01.jpg)
+![Evolution (or is it?)](images/intro02-01.jpg)
 
 Since their invention in the 1950s, **computers** have revolutionized our daily lives. Calculating a route from a website or a GPS, booking a train or plane ticket, or seeing and chatting with friends on the other side of the world: all these actions are possible thanks to computers.
 
-I> Let's take the term "computer" in its broadest sense, meaning a machine that can perform arithmetic and logical operations. It could mean either a desktop or laptop computer (PC, Mac), a computing server, or a mobile device like a tablet or smartphone.
+!!! note "What is a computer?"
+
+    Let's take the term "computer" in its broadest sense, meaning a machine that can perform arithmetic and logical operations. It could mean either a desktop or laptop computer (PC, Mac), a computing server, or a mobile device like a tablet or smartphone.
 
 Nonetheless, a computer can only perform a series of simple operations when instructed to do so. They normally have no ability to learn, judge, or improvise. They simply do what they're told to do! Their value comes from how they can quickly handle and process huge amounts of information.
 
@@ -34,7 +28,7 @@ The only programming language directly understandable by a computer is machine l
 
 Here's an example of a basic program written in assembly language. It displays `"Hello"` to the user.
 
-```assembly
+```nasm
 str:
     .ascii "Hello\n"
     .global _start
@@ -52,7 +46,7 @@ int $0x80
 
 Pretty scary, isn't it? Fortunately, other programming languages are much simpler and convenient to use than assembly language.
 
-### The family of programming languages
+### The large family of programming languages
 
 There are a large number of programming languages, each adapted to different uses and with its own syntax. However, there are similarities between the most popular programming languages. For example, here's a simple program written in Python:
 
@@ -63,29 +57,19 @@ print("Hello")
 You can also write the same thing in PHP:
 
 ```php
-<?php
-    echo("Hello\n");
-?>
+<?php echo("Hello\n"); ?>
 ```
 
-Or even C#!
+Or even C#:
 
 ```csharp
-class Program {
-    static void Main(string[] args) {
-        Console.WriteLine("Hello");
-    }
-}
+Console.WriteLine("Hello");
 ```
 
 What about Java?
 
 ```java
-public class Program {
-    public static void main(String[] args) {
-        System.out.println("Hello");
-    }
-}
+System.out.println("Hello");
 ```
 
 All these programs display `"Hello"` through a different set of instructions.
@@ -144,4 +128,16 @@ We used a simple writing style, not a specific programming language. In fact, we
 
 Writing programs that can reliably perform expected tasks is a programmer's goal. A beginner can learn to quickly create simple programs. Things get more complicated when the program evolves and becomes more complex. It takes experience and a lot of practice before you feel like you'll control this complexity! Once you have the foundation, the only limit is your imagination!
 
-> "The computer programmer is a creator of universes for which he alone is the lawgiver. No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or field of battle and to command such unswervingly dutiful actors or troops." (Joseph Weizenbaum)
+!!! quote
+
+    "The computer programmer is a creator of universes for which he alone is the lawgiver. No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage or field of battle and to command such unswervingly dutiful actors or troops." (Joseph Weizenbaum)
+
+## TL;DR
+
+* A **computer** is a machine whose role is to execute quickly and flawlessly a series of actions given to it.
+
+* A **program** is a list of actions given to a computer. These actions take the form of textual commands. All these commands form the program's **source code**.
+
+* The **programmer**'s task is to create programs. To accomplish this goal, he can use different programming languages.
+
+* Before writing code, one must think ahead and decompose the problem to be addressed in a series of elementary operations forming an **algorithm**.
