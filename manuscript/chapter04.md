@@ -2,30 +2,6 @@
 
 In this chapter, we'll look at how to execute code on a repeating basis.
 
-## TL;DR
-
-* **Loops** are used to repeat a series of statements. Each repetition is called an **iteration**. The code block associated with a loop is called its **body**.
-
-* The `while` loop repeats statements *while* a certain condition is true. The `for` loop gives the ability to manage what happens just before the loop starts and after each loop iteration has run.
-
-```js
-// While loop
-while (condition) {
-  // Code to run while the condition is true
-}
-
-// For loop
-for (initialization; condition; final expression) {
-  // code to run while the condition is true
-}
-```
-
-* The variable associated with the loop condition is called the loop **counter** and often named `i`.
-
-* Beware! The condition of a `while` loop must eventually become false, to avoid the risk of an **infinite loop**. Also, updating the counter of a `for` loop inside its body is a bad idea.
-
-* All loops can be written with `while`, but if you know in advance how many times you want the loop to run, `for` is the best choice.
-
 ## Introduction
 
 If you wanted to write code that displayed numbers between 1 and 5, you could do it with what you've already learned:
@@ -42,7 +18,7 @@ This is pretty tiresome though and would be much more complex for lists of numbe
 
 JavaScript lets you write code inside a **loop** that executes repeatedly until it's told to stop. Each time the code runs, it's called an **iteration**.
 
-![](images/chapter04-01.png)
+![Bart should have read this book...](images/chapter04-01.png)
 
 ## The `while` loop
 
@@ -80,7 +56,9 @@ Before each loop iteration, the condition in parentheses is evaluated to determi
 
 * If the condition's value is `false`, the code in the loop stops running or doesn't run.
 
-I> The loop body must be placed within curly braces, except if it's only one statement. For now, always use curly braces for your loops.
+!!! tip
+
+    The loop body must be placed within curly braces, except if it's only one statement. For now, always use curly braces for your loops.
 
 ## The `for` loop
 
@@ -161,7 +139,7 @@ This program produces the following result.
 
 Each time the loop runs, the counter variable is incremented *twice*: once in the body and once in the final expression after the loop runs. When you're using a `for` loop, you'll almost always want to omit anything to do with the counter inside the body of your loop. Just leave it in that first line!
 
-## Which loop should I use?
+## Which loop structure should I use?
 
 `For` loops are great because they include the notion of counting by default, avoiding the problem of infinite loops. However, it means you have to know how many times you want the loop to run as soon as you write your code. For situations where you don't already know how many times the code should run, `while` loops make sense. Here's a `while` loop use case in which a user is asked to type letters over and over until entering X:
 
@@ -175,6 +153,30 @@ while (letter !== "X") {
 You can't know how many times it'll take for the user to enter `X`, so `while` is generally good for loops that depend on user interaction.
 
 Ultimately, choosing which loop to use depends on context. All loops can be written with `while`, but if you know in advance how many times you want the loop to run, `for` is the best choice.
+
+## TL;DR
+
+* **Loops** are used to repeat a series of statements. Each repetition is called an **iteration**. The code block associated with a loop is called its **body**.
+
+* The `while` loop repeats statements *while* a certain condition is true. The `for` loop gives the ability to manage what happens just before the loop starts and after each loop iteration has run.
+
+```js
+// While loop
+while (condition) {
+  // Code to run while the condition is true
+}
+
+// For loop
+for (initialization; condition; final expression) {
+  // code to run while the condition is true
+}
+```
+
+* The variable associated with the loop condition is called the loop **counter** and often named `i`.
+
+* Beware! The condition of a `while` loop must eventually become false, to avoid the risk of an **infinite loop**. Also, updating the counter of a `for` loop inside its body is a bad idea.
+
+* All loops can be written with `while`, but if you know in advance how many times you want the loop to run, `for` is the best choice.
 
 ## Coding time!
 
@@ -210,7 +212,9 @@ console.log(20 % 3); // 2 because 20 = 3 * 6 + 2
 
 Improve the program so that it also shows odd numbers. Improve it again to replace the initial number `1` by a number given by the user.
 
-> This program must show exactly 10 numbers including the first one, not 11 numbers!
+!!! info
+
+    This program must show exactly 10 numbers including the first one, not 11 numbers!
 
 ### Input validation
 
@@ -238,4 +242,6 @@ Write a program that shows all numbers between 1 and 100 with the following exce
 
 When it's done, improve it so that the program shows `"FizzBuzz"` instead for numbers divisible both by 3 and by 5.
 
-> This exercise has [many, many solutions](http://www.tomdalling.com/blog/software-design/fizzbuzz-in-too-much-detail/). It's a [job interview classic](http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/) that a significant number of candidates fail. Try your best!
+!!! quote
+
+    This exercise has [many, many solutions](http://www.tomdalling.com/blog/software-design/fizzbuzz-in-too-much-detail/). It's a [job interview classic](http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/) that a significant number of candidates fail. Try your best!

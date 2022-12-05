@@ -2,49 +2,6 @@
 
 Up until now, all the code in our programs has been executed chronologically. Let's enrich our code by adding conditional execution!
 
-## TL;DR
-
-* The `if` keyword defines a **conditional statement**, also called a **test**. The associated code block is only run if the **condition** is satisfied (its value is `true`). Thus, a condition is an expression whose evaluation always produces a boolean result (`true` or `false`).
-
-```js
-if (condition) {
-  // Code to run when the condition is true
-}
-```
-
-* The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve visibility, its statements are generally **indented** (shifted to the right).
-
-* The **comparison operators** `===`, `!==`, `<`, `<=`, `>` and `>=` are used to compare numbers inside a condition. All of them return a boolean result.
-
-* An `else` statement can be associated to an `if` to express an **alternative**. Depending on the condition value, either the code block associated to the `if` or the one associated to the `else` will be run, but never both. There is no limit to the depth of condition nesting.
-
-```js
-if (condition) {
-  // Code to run when the condition is true
-}
-else {
-  // Code to run when the condition is false
-}
-```
-
-* Complex conditions can be created using the **logical operators** `&&` ("and"), `||` ("or") and `!` ("not").
-
-* The `switch` statement is used to kick off the execution of one code block among many, depending on the value of an expression.
-
-```js
-switch (expression) {
-case value1:
-  // Code to run when the expression matches value1
-  break;
-case value2:
-  // Code to run when the expression matches value2
-  break;
-...
-default:
-  // Code to run when neither case matches
-}
-```
-
 ## What's a condition?
 
 Suppose we want to write a program that asks the user to enter a number and then displays a message if the number is positive. Here is the corresponding algorithm.
@@ -82,7 +39,9 @@ The pair of opening and closing braces defines the block of code associated with
 
 The condition is always placed in parentheses after the `if`. The statements within the associated code block are shifted to the right. This practice is called **indentation** and helps make your code more readable. As your programs grow in size and complexity, it will become more and more important. The indentation value is often 2 or 4 spaces.
 
-I> When the code block has only one statement, braces may be omitted. As a beginner, you should nonetheless always use braces when writing your first conditions.
+!!! info
+
+    When the code block has only one statement, braces may be omitted. As a beginner, you should nonetheless always use braces when writing your first conditional statements.
 
 ### Conditions
 
@@ -116,7 +75,9 @@ Boolean expressions can be created using the comparison operators shown in the f
 
 In some other programming languages, equality and inequality operators are `==` and `!=`. They also exist in JavaScript, but it's safer to use `===` and `!==` ([more details](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)).
 
-E> It's easy to confuse comparison operators like `===` (or `==`) with the assignment operator `=`. They're very, very different. Be warned!
+!!! warning
+
+    It's easy to confuse comparison operators like `===` (or `==`) with the assignment operator `=`. They're very, very different. Be warned!
 
 Now let's modify the example code to replace `>` with `>=` and change the message, then test it with the number 0.
 
@@ -183,7 +144,9 @@ if (number > 0) {
 
 Let's wrap our heads around it. If the code block associated to the first `else` is run, then the number has to be either strictly negative or zero. Inside this block, a second `if` statement checks if the number is negative. If it's not, we know for sure that it's zero.
 
-I> When learning to write nested conditions, you should add descriptive comments to each condition, just like in the previous example.
+!!! tip
+
+    When learning to write nested conditions, you should add descriptive comments to each condition, just like in the previous example.
 
 The execution flow for the previous program can be expressed graphically using a **flow diagram**.
 
@@ -210,7 +173,9 @@ if (number > 0) {
 
 Suppose you want to check if a number is between 0 and 100. You're essentially checking if it's "greater than or equal to 0" and "less than or equal to 100". Both sub-conditions must be satisfied at the same time.
 
-I> The expression `0 <= number <= 100` is correct from a mathematical point of view but cannot be written in JavaScript (neither in most other programming languages).
+!!! info
+
+    The expression `0 <= number <= 100` is correct from a mathematical point of view but cannot be written in JavaScript (neither in most other programming languages).
 
 Here's how you'd translate that same check into JS.
 
@@ -220,7 +185,9 @@ if ((number >= 0) && (number <= 100)) {
 }
 ```
 
-I> Parentheses between sub-conditions are not mandatory but I advise you to add them anyway, to avoid nasty bugs in some special cases.
+!!! tip
+
+    Parentheses between sub-conditions are not mandatory but I advise you to add them anyway, to avoid nasty bugs in some special cases.
 
 The `&&` operator ("logical and") can apply to both types of boolean values. `true` will only be the result of the statement if both conditions are true.
 
@@ -389,6 +356,49 @@ switch (x) {
 
 The previous example show `"x = abc"` (the correct result) but also `"x = def"`.
 
+## TL;DR
+
+* The `if` keyword defines a **conditional statement**, also called a **test**. The associated code block is only run if the **condition** is satisfied (its value is `true`). Thus, a condition is an expression whose evaluation always produces a boolean result (`true` or `false`).
+
+```js
+if (condition) {
+  // Code to run when the condition is true
+}
+```
+
+* The code block associated to an `if` is delimited by a pair of opening and closing braces. To improve visibility, its statements are generally **indented** (shifted to the right).
+
+* The **comparison operators** `===`, `!==`, `<`, `<=`, `>` and `>=` are used to compare numbers inside a condition. All of them return a boolean result.
+
+* An `else` statement can be associated to an `if` to express an **alternative**. Depending on the condition value, either the code block associated to the `if` or the one associated to the `else` will be run, but never both. There is no limit to the depth of condition nesting.
+
+```js
+if (condition) {
+  // Code to run when the condition is true
+}
+else {
+  // Code to run when the condition is false
+}
+```
+
+* Complex conditions can be created using the **logical operators** `&&` ("and"), `||` ("or") and `!` ("not").
+
+* The `switch` statement is used to kick off the execution of one code block among many, depending on the value of an expression.
+
+```js
+switch (expression) {
+case value1:
+  // Code to run when the expression matches value1
+  break;
+case value2:
+  // Code to run when the expression matches value2
+  break;
+...
+default:
+  // Code to run when neither case matches
+}
+```
+
 ## Coding time!
 
 Here are a few pieces of advice about these exercises:
@@ -448,8 +458,8 @@ Write a program that accepts a month number (between 1 and 12), then shows the n
 
 Write a program that asks for a time under the form of three information (hours, minutes, seconds). The program calculates and shows the time one second after. Incorrect inputs must be taken into account.
 
-> This is not as simple as it seems... Look at the following results to see for yourself:
->
-> * 14h17m59s => 14h18m0s
-> * 6h59m59s => 7h0m0s
-> * 23h59m59s => 0h0m0s (midnight)
+This is not as simple as it seems... Look at the following results to see for yourself:
+
+* 14h17m59s should give 14h18m0s
+* 6h59m59s should give 7h0m0s
+* 23h59m59s should give 0h0m0s (midnight)

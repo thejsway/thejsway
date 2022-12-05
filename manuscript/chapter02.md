@@ -2,26 +2,6 @@
 
 You know how to use JavaScript to display values. However, for a program to be truly useful, it must be able to store data, like information entered by a user. Let's check that out.
 
-## TL;DR
-
-* A **variable** is an information storage area. Every variable has a **name**, a **value** and a **type**. In JavaScript, the type of a variable is deduced from the value stored in it: JavaScript is a **dynamically typed** language.
-
-* A variable is declared using the `let` keyword followed by the variable name. To declare a **constant** (a variable whose initial value will never change), it's better to use the `const` keyword instead.
-
-* To give a value to a variable, we use the **assignment operator** `=`. For number variables, the operator `+=` can increase and the operator `++` can **increment** their value.
-
-* The **scope** of a variable is the part of the program where the variable is visible. Variables declared with `let` or `const` are **block-scoped**. A **code block** is a portion of a program delimited by a pair of opening and closing curly braces `{ ... }`.
-
-* An **expression** is a piece of code that combines variables, values and operators. Evaluating an expression produces a value, which has a type.
-
-* Expressions may be included in strings delimited by a pair of backticks (\`). Such a string is called a **template literal**.
-
-* **Type conversions** may happen implicitly during the evaluation of an expression, or explicitly when using the `Number()` and `String()` commands, to obtain respectively a number or a string.
-
-* The `prompt()` and `alert()` commands deal with information input and display under the form of dialog boxes.
-
-* Variable naming is essential to program visibility. Following a naming convention like [camelCase](https://en.wikipedia.org/wiki/Camel_case) is good practice.
-
 ## Variables
 
 ### Role of a variable
@@ -36,7 +16,9 @@ A variable has three main properties:
 * Its **value**, which is the data stored in the variable.
 * Its **type**, which determines the role and actions available to the variable.
 
-I> You don't have to define a variable type explicitly in JavaScript. Its type is deduced from the value stored in the variable and may change while the program runs. That's why we say that JavaScript is a **dynamically typed** language. Other languages, like C or Java, require variable types to always be defined. This is called **static typing**.
+!!! info
+
+    You don't have to define a variable type explicitly in JavaScript. Its type is deduced from the value stored in the variable and may change while the program runs. That's why we say that JavaScript is a **dynamically typed** language. Other languages, like C or Java, require variable types to always be defined. This is called **static typing**.
 
 ### Declaring a variable
 
@@ -51,7 +33,9 @@ console.log(a);
 
 In JavaScript, you declare a variable with the `let`  keyword followed by the variable name. In this example, the variable created is called `a`.
 
-I> Previously, JavaScript variables were declared using the `var` keyword. It's still possible, but in most cases it's simpler to use `let` and `const` instead.
+!!! note
+
+    Previously, JavaScript variables were declared using the `var` keyword. It's still possible, but in most cases it's simpler to use `let` and `const` instead.
 
 Here's the execution result for this program.
 
@@ -75,7 +59,9 @@ console.log(a);
 
 We modified the variable by assigning it a value. `a = 3.14` reads as "a receives the value 3.14".
 
-E> Be careful not to confuse the assignment operator `=` with mathematical equality! You'll soon see how to express equality in JavaScript.
+!!! warning
+
+    Be careful not to confuse the assignment operator `=` with mathematical equality! You'll soon see how to express equality in JavaScript.
 
 You can also combine declaring a variable and assigning it a value in one line. Just know that, within this line, you're doing two different things at once:
 
@@ -258,6 +244,26 @@ They function in the same way, but the second version is much easier to understa
 
 Naming things is an important part of the programmer's job. Refer to the appendix for some useful advice.
 
+## TL;DR
+
+* A **variable** is an information storage area. Every variable has a **name**, a **value** and a **type**. In JavaScript, the type of a variable is deduced from the value stored in it: JavaScript is a **dynamically typed** language.
+
+* A variable is declared using the `let` keyword followed by the variable name. To declare a **constant** (a variable whose initial value will never change), it's better to use the `const` keyword instead.
+
+* To give a value to a variable, we use the **assignment operator** `=`. For number variables, the operator `+=` can increase and the operator `++` can **increment** their value.
+
+* The **scope** of a variable is the part of the program where the variable is visible. Variables declared with `let` or `const` are **block-scoped**. A **code block** is a portion of a program delimited by a pair of opening and closing curly braces `{ ... }`.
+
+* An **expression** is a piece of code that combines variables, values and operators. Evaluating an expression produces a value, which has a type.
+
+* Expressions may be included in strings delimited by a pair of backticks (\`). Such a string is called a **template literal**.
+
+* **Type conversions** may happen implicitly during the evaluation of an expression, or explicitly when using the `Number()` and `String()` commands, to obtain respectively a number or a string.
+
+* The `prompt()` and `alert()` commands deal with information input and display under the form of dialog boxes.
+
+* Variable naming is essential to program visibility. Following a naming convention like [camelCase](https://en.wikipedia.org/wiki/Camel_case) is good practice.
+
 ## Coding time!
 
 Build a habit of choosing good variable names in all exercises, starting with these ones.
@@ -294,7 +300,9 @@ Write a program that asks the user for a raw price. After that, it calculates th
 
 Write a program that asks for a temperature in Celsius degrees, then displays it in Fahrenheit degrees.
 
-> The conversion between scales is given by the formula: [°F] = [°C] x 9/5 + 32.
+!!! quote
+
+    The conversion between scales is given by the formula: [°F] = [°C] x 9/5 + 32.
 
 ### Variable swapping
 
@@ -312,4 +320,6 @@ console.log(number2); // Should show 5
 
 Add the necessary code to swap the values of variables `number1` and `number2`.
 
-T> This exercise has several valid solutions. You may use more than two variables to solve it.
+!!! tip
+
+    This exercise has several valid solutions. You may use more than two variables to solve it.

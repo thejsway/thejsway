@@ -1,22 +1,6 @@
-# 3, 2, 1... Code!
+# 3, 2, 1... Code
 
 Let's get started! This chapter will introduce you to the fundamentals of programming including values, types, and program structure.
-
-## TL;DR
-
-* The JavaScript command `console.log()` shows a message in the **console**, an information zone available in most JavaScript environments.
-
-* A **value** is a piece of information. The **type** of a value defines its role and the operations applicable to it.
-
-* The JavaScript language uses the **number** type to represent a numerical value (with or without decimals) and the **string** type to represent text.
-
-* A string value is surrounded by a pair of single quotes (`'...'`) or a pair of quotation marks (`"..."`).
-
-* Arithmetic operations between numbers are provided by the `+`, `-`, `*` and `/` operators. Applied to two strings, the `+` operator joins them together. This operation is called **concatenation**.
-
-* A computer program is made of several **lines of code** read sequentially during execution.
-
-* **Comments** (`// ...` or `/* ... */`) are non-executed parts of code. They form a useful program documentation.
 
 ## Your first program
 
@@ -57,7 +41,9 @@ A **string** in JavaScript is text surrounded by quotation marks, such as `"This
 
 You can also define strings with a pair of single quotes: `'This is another string'`. The best practice for single or double quotes is a whole political thing. Use whichever you like, but don't mix the two in the same program!
 
-W> Always remember to close a string with the same type of quotation marks you started it with.
+!!! warning
+
+    Always remember to close a string with the same type of quotation marks you started it with.
 
 To include special characters in a string, use the `\` character (*backslash*) before the character. For example, type `\n` to add a new line within a string: `"This is\na multiline string"`.
 
@@ -73,7 +59,9 @@ The source code may include empty lines: these will be ignored when the program 
 
 Each instruction inside a program is called a **statement**. A statement in JavaScript usually ends with a **semicolon** (albeit it's not strictly mandatory). Your program will be made up of a series of these statements.
 
-I> You usually write only one statement per line.
+!!! tip
+
+    You usually write only one statement per line.
 
 ### Execution flow
 
@@ -95,7 +83,9 @@ Depending on your work environment, the execution result may not include quotes 
 
 ![Execution result in browser console](images/chapter01-04.png)
 
-I> As expected, a division by zero (`12/0`) results in an `Infinity` value.
+!!! note
+
+    As expected, a division by zero (`12/0`) results in an `Infinity` value.
 
 ### Comments
 
@@ -127,6 +117,22 @@ several lines */
 
 Comments are a great source of info about a program's purpose or structure. Adding comments to complicated or critical parts is a good habit you should build right now!
 
+## TL;DR
+
+* The JavaScript command `console.log()` shows a message in the **console**, an information zone available in most JavaScript environments.
+
+* A **value** is a piece of information. The **type** of a value defines its role and the operations applicable to it.
+
+* The JavaScript language uses the **number** type to represent a numerical value (with or without decimals) and the **string** type to represent text.
+
+* A string value is surrounded by a pair of single quotes (`'...'`) or a pair of quotation marks (`"..."`).
+
+* Arithmetic operations between numbers are provided by the `+`, `-`, `*` and `/` operators. Applied to two strings, the `+` operator joins them together. This operation is called **concatenation**.
+
+* A computer program is made of several **lines of code** read sequentially during execution.
+
+* **Comments** (`// ...` or `/* ... */`) are non-executed parts of code. They form a useful program documentation.
+
 ## Coding time!
 
 Let's put your brand new coding skills into practice.
@@ -135,7 +141,7 @@ Let's put your brand new coding skills into practice.
 
 Write a program that displays your name and age. Here's the result for mine.
 
-![](images/chapter01-03.png)
+![Expected execution result](images/chapter01-03.png)
 
 ### Minimalistic calculator
 

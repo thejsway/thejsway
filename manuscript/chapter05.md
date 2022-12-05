@@ -2,56 +2,6 @@
 
 In this chapter, you'll learn how to break down a program into subparts called functions.
 
-## TL;DR
-
-* A **function** is a group of statements that performs a particular task. JavaScript functions are created using the `function` keyword.
-
-* Written as a combination of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolithic one.
-
-* A **function call** triggers the execution of the function code. After it's done, execution resumes at the place where the call was made.
-
-* Variables declared inside a function are limited in scope to the function body. They are called **local variables**.
-
-* A `return` statement inside the function body defines the **return value** of the function. A function can accept zero, one or several **parameters** in order to work. For a particular call, supplied parameter values are called **arguments**.
-
-* There are several ways to create a function in JavaScript. A first one is to use a **function declaration**.
-
-```js
-// Function declaration
-function myFunction(param1, param2, ...) {
-  // Function code using param1, param2, ...
-}
-
-// Function call
-myFunction(arg1, arg2, ...);
-```
-
-* Another way to create a function is to use a **function expression**. A function expression can be assigned to a variable because in JavaScript, a variable's value can be a function. Function expressions are often used to create **anonymous functions** (functions without a name).
-
-```js
-// Anonymous function created with a function expression and assigned to a variable
-const myFunc = function(param1, param2, ...) {
-  // Function code using param1, param2, ...
-};
-
-// Function call
-myFunc(arg1, arg2, ...);
-```
-
-* A third way to create an anonymous function is the more recent **fat arrow syntax**.
-
-```js
-// Fat arrow anonymous function assigned to a variable
-const myFunc = (param1, param2, ...) => {
-  // Function code using param1, param2, ...
-};
-
-// Function call
-myFunc(arg1, arg2, ...);
-```
-
-* No matter how it's created, each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lot of **predefined functions** covering various needs.
-
 ## Introduction: the role of functions
 
 To understand why functions are important, check out our example from a previous chapter: the burrito algorithm :)
@@ -205,7 +155,9 @@ const result = myFunction();
 
 This return value can be of any type (number, string, etc). However, a function can return only one value.
 
-W> Retrieving a function's return value is not mandatory, but in that case the return value is "lost".
+!!! warning
+
+    Retrieving a function's return value is not mandatory, but in that case the return value is "lost".
 
 If you try to retrieve the return value of a function that does not actually have one, we get the JavaScript value `undefined`.
 
@@ -219,7 +171,9 @@ const result = myFunction();
 console.log(result); // undefined
 ```
 
-W> A function stops running immediately after the `return` statement is executed. Any further statements are never run.
+!!! warning
+
+    A function stops running immediately after the `return` statement is executed. Any further statements are never run.
 
 Let's simplify our example a bit by getting rid of the variable that stores the function's return value.
 
@@ -429,7 +383,59 @@ A function body must be kept simple, or otherwise split into several sub-functio
 
 Function naming is just as important as variable naming. You should choose names that express clearly the function purpose and follow a naming convention. Refer to the appendix for some useful advice.
 
-T> If you have difficulties coming up with a good name for a function, then maybe its purpose is not that clear and you should ask yourself if this function deserves to exist.
+!!! tip
+
+    If you have difficulties coming up with a good name for a function, then maybe its purpose is not that clear and you should ask yourself if this function deserves to exist.
+
+## TL;DR
+
+* A **function** is a group of statements that performs a particular task. JavaScript functions are created using the `function` keyword.
+
+* Written as a combination of several short and focused functions, a program will generally be easier to understand and more **modular** than a monolithic one.
+
+* A **function call** triggers the execution of the function code. After it's done, execution resumes at the place where the call was made.
+
+* Variables declared inside a function are limited in scope to the function body. They are called **local variables**.
+
+* A `return` statement inside the function body defines the **return value** of the function. A function can accept zero, one or several **parameters** in order to work. For a particular call, supplied parameter values are called **arguments**.
+
+* There are several ways to create a function in JavaScript. A first one is to use a **function declaration**.
+
+```js
+// Function declaration
+function myFunction(param1, param2, ...) {
+  // Function code using param1, param2, ...
+}
+
+// Function call
+myFunction(arg1, arg2, ...);
+```
+
+* Another way to create a function is to use a **function expression**. A function expression can be assigned to a variable because in JavaScript, a variable's value can be a function. Function expressions are often used to create **anonymous functions** (functions without a name).
+
+```js
+// Anonymous function created with a function expression and assigned to a variable
+const myFunc = function(param1, param2, ...) {
+  // Function code using param1, param2, ...
+};
+
+// Function call
+myFunc(arg1, arg2, ...);
+```
+
+* A third way to create an anonymous function is the more recent **fat arrow syntax**.
+
+```js
+// Fat arrow anonymous function assigned to a variable
+const myFunc = (param1, param2, ...) => {
+  // Function code using param1, param2, ...
+};
+
+// Function call
+myFunc(arg1, arg2, ...);
+```
+
+* No matter how it's created, each function should have a precise **purpose** and a well chosen **name** (often including an action verb). JavaScript offers a lot of **predefined functions** covering various needs.
 
 ## Coding time!
 
@@ -472,7 +478,9 @@ console.log(square2(5)); // Must show 25
 
 When it's done, update the program so that it shows the square of every number between 0 and 10.
 
-> Writing 10 dumb calls to `square()` is forbidden! You know how to repeat statements, don't you? ;)
+!!! info
+
+    Writing 10 dumb calls to `square()` is forbidden! You know how to repeat statements, don't you? ;)
 
 ### Minimum of two numbers
 
