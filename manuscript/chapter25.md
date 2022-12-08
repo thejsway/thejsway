@@ -2,27 +2,15 @@
 
 It's time to put your Node.js knowledge into practice and create a real-world web server in JavaScript. This is often called **back-end programming**.
 
-> You will build exactly the server that was used in the previous chapters dealing with client-side web development. To test your server code, you can go back to code examples from chapters 22 and 23, and only change the start of the server URL from `https://thejsway-server.herokuapp.com` to your own server URL (which would be `http://localhost:3000` if your server runs on your local machine).
+In this chapter, you will build exactly the server that was used in the previous chapters dealing with client-side web development.
 
-## TL;DR
+!!! tip
 
-* The Node.js platform is well suited for creating **web servers** in JavaScript, with or without the help of a framework.
-
-* A **framework** provides a standard way to design and structure an application. **Express** is a common choice for building a web server with Node.
-
-* In order to respond to requests, an Express app defines **routes** (entry points associated to URLs) and listens to incoming HTTP requests.
-
-* The main Express method are `get()` to handle a `GET` request, `post()` to handle a `POST` request and `use()` to define a **middleware** (code that runs during the request/response cycle).
-
-* Incoming form or JSON data can be managed through specialized packages like **multer** and **body-parser**.
-
-* JavaScript can be used on both the client side (browser) and the server side of a web application. This empowers you to create complete **web applications**.
+    To test your server code, you can go back to code examples from chapters 22 and 23, and only change the start of the server URL from `https://thejsway-server.herokuapp.com` to your own server URL (which would be `http://localhost:3000` if your server runs on your local machine).
 
 ## Using a framework
 
-We saw in the previous chapter that Node.js is a platform for building JavaScript applications outside the browser. as such, Node is well suited for creating **web servers** in JavaScript.
-
-> As a reminder, a web server is a machine built specially to publish resources on the Web.
+We saw in the [previous chapter](chapter24.md) that Node.js is a platform for building JavaScript applications outside the browser. as such, Node is well suited for creating **web servers** in JavaScript. As a reminder, a web server is a machine dedicated to publishing resources on the Web.
 
 ### About frameworks
 
@@ -32,7 +20,7 @@ In computer programming, a **framework** provides a standard way to design and s
 
 ### Choosing a framework
 
-Among the many possible frameworks for creating a web server in JavaScript, we'll use one of the most well-known: **Express**. To paraphrase its [web site](http://expressjs.com/), Express is "a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications".
+Among the many possible frameworks for creating a web server in JavaScript, we'll use one of the most well-known: **Express**. To paraphrase its [website](http://expressjs.com/), Express is "a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications".
 
 In other words, Express provides a foundation on which you can easily and quickly build a web server.
 
@@ -48,7 +36,7 @@ As an alternative, you can directly add Express as a dependency in your `package
 
 ```json
 "dependencies": {
-  "express": "^4.15.3"
+  "express": "^4.18.2"
 },
 ```
 
@@ -75,7 +63,7 @@ const listener = app.listen(process.env.PORT || 3000, () => {
 });
 ```
 
-You can launch your server with either `node index.js` or `npm start`, then type its root URL (<http://localhost:3000> if your server runs on your local machine) in a browser. You should see the string `"Hello from Express!"` appear.
+You can launch your server with either `node index.js` or `npm start`, then type its root URL (<http://localhost:3000> if your server runs on your local machine) in a browser. You should see the message `"Hello from Express!"` appear.
 
 ![Execution result](images/chapter25-01.png)
 
@@ -191,7 +179,7 @@ Form data comes encapsulated into the HTTP `POST` request sent by the client to 
 ```json
 "dependencies": {
   ...
-  "multer": "^1.3.0"
+  "multer": "^1.4.5-lts.1"
 },
 ```
 
@@ -227,7 +215,7 @@ Managing incoming JSON data requires parsing it from the received `POST` request
 ```json
 "dependencies": {
   ...
-  "body-parser": "^1.17.2"
+  "body-parser": "^1.20.1"
 },
 ```
 
@@ -340,19 +328,33 @@ Accessing the `"/hello"` URL shows you a slightly different result. The `hello.j
 
 ![Execution result](images/chapter25-05.png)
 
-In this example, JavaScript was used both for back-end (server side) and front-end (client side) programming. This is one of its core strengths: knowing only one programming language empowers you to create complete **web applications**. How great is that?
+In this example, JavaScript was used both for **back-end** (server side) and **front-end** (client side) programming. This is one of its core strengths: knowing only one programming language empowers you to create complete **web applications**. How great is that?
+
+## TL;DR
+
+* The Node.js platform is well suited for creating **web servers** in JavaScript, with or without the help of a framework.
+
+* A **framework** provides a standard way to design and structure an application. **Express** is a common choice for building a web server with Node.
+
+* In order to respond to requests, an Express app defines **routes** (entry points associated to URLs) and listens to incoming HTTP requests.
+
+* The main Express method are `get()` to handle a `GET` request, `post()` to handle a `POST` request and `use()` to define a **middleware** (code that runs during the request/response cycle).
+
+* Incoming form or JSON data can be managed through specialized packages like **multer** and **body-parser**.
+
+* JavaScript can be used on both the client side (browser) and the server side of a web application. This empowers you to create complete **web applications**.
 
 ## Coding time!
 
 ### T-shirt color
 
-Add a `"/tshirt"` route to your server for handling the submission of form data containing a `size` and a `color` field, like in the chapter 23 example. In the route callback, send back a confirmation message to the client.
+Add a `"/tshirt"` route to your server for handling the submission of form data containing a `size` and a `color` field, like in a [previous example](chapter23.md#sending-form-data). In the route callback, send back a confirmation message to the client.
 
 ![Execution result](images/chapter23-03.png)
 
 ### Visited countries
 
-Add a `"/api/countries"` route to your server to manager traveler information received as JSON data, like in the chapter 23 exercise. In the route callback, send back a confirmation message to the client.
+Add a `"/api/countries"` route to your server to manager traveler information received as JSON data, like in a [previous exercise](chapter23.md#visited-countries). In the route callback, send back a confirmation message to the client.
 
 ![Execution result](images/chapter23-06.png)
 
@@ -360,4 +362,4 @@ Add a `"/api/countries"` route to your server to manager traveler information re
 
 Add a `"/articles"` route to your server. This route should accept a new blog article as form data and add it to the server's article list, like in the chapter 23 exercise. The new article ID must be equal to the maximum ID among existing articles plus one.
 
-![Execution result](images/chapter23-05.png)
+![Execution result](images/chapter23-05.gif)

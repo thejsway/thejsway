@@ -2,37 +2,6 @@
 
 This chapter will introduce objects and the way they are created and used in JavaScript.
 
-## TL;DR
-
-* A JavaScript **object** is an entity that has properties. Each property is a key/value pair. The key is the property name.
-
-* The value of a property can be a piece of information (number, string, etc) or a function. In the latter case, the property is called a **method**.
-
-* A JavaScript **object literal** is created by simply setting its properties within a pair of curly braces.
-
-```js
-const myObject = {
-  property1: value1,
-  property2: value2,
-  // ... ,
-  method1(/* ... */) {
-    // ...
-  },
-  method2(/* ... */) {
-    // ...
-  }
-  // ...
-};
-
-myObject.property1 = newValue; // Set the new value of property1 for myObject
-console.log(myObject.property1); // Show the value of property1 for myObject
-myObject.method1(...);           // Call method1 on myObject
-```
-
-* Inside a method, the `this` keyword represents the object on which the method is called.
-
-* The JavaScript language predefines many useful objects like `console` or `Math`.
-
 ## Introduction
 
 ### What's an object?
@@ -65,7 +34,9 @@ const pen = {
 
 As stated earlier, a JavaScript object can be created by simply setting its properties within a pair of curly braces: `{...}`. Each property is a key/value pair. This is called an **object literal**.
 
-W> The semicolon `;` after the closing brace is optional, but it's safer to add it anyway.
+!!! warning
+
+    The semicolon `;` after the closing brace is optional, but it's safer to add it anyway.
 
 The above code defines a variable named `pen` whose value is an object: you can therefore say `pen` is an object. This object has three properties: `type`, `color` and `brand`. Each property has a name and a value and is followed by a comma `,` (except the last one).
 
@@ -161,7 +132,9 @@ const aurora = {
 
 The `aurora` object has three properties: `name`, `health` and `strength`.
 
-I> As you can see, you can assign numbers, strings, and even other objects to properties!
+!!! note
+
+    As you can see, you can assign numbers, strings, and even other objects to properties!
 
 Aurora is about to start a series of great adventures, some of which will update her attributes. Check out the following example.
 
@@ -252,7 +225,9 @@ To show the character description, we use the `aurora.describe()` expression ins
 
 To call a method named `myMethod()` on an object `myObject`, the syntax is `myObject.myMethod()`.
 
-W> Remember the parentheses, even if empty, when calling a method!
+!!! warning
+
+    Remember to add parentheses, even if empty, when calling an object's method!
 
 ### The `this` keyword
 
@@ -283,6 +258,37 @@ The JavaScript language has many predefined objects serving various purposes. We
 * The `console` object gives access to the environment console. `console.log()` is actually a method call.
 
 * The `Math` object contains many mathematical properties. For example, `Math.PI` returns an approximate value of the number π (Pi) and the `Math.random()` function returns a random number between 0 and 1.
+
+## TL;DR
+
+* A JavaScript **object** is an entity that has properties. Each property is a key/value pair. The key is the property name.
+
+* The value of a property can be a piece of information (number, string, etc) or a function. In the latter case, the property is called a **method**.
+
+* A JavaScript **object literal** is created by simply setting its properties within a pair of curly braces.
+
+```js
+const myObject = {
+  property1: value1,
+  property2: value2,
+  // ... ,
+  method1(/* ... */) {
+    // ...
+  },
+  method2(/* ... */) {
+    // ...
+  }
+  // ...
+};
+
+myObject.property1 = newValue; // Set the new value of property1 for myObject
+console.log(myObject.property1); // Show the value of property1 for myObject
+myObject.method1(...);           // Call method1 on myObject
+```
+
+* Inside a method, the `this` keyword represents the object on which the method is called.
+
+* The JavaScript language predefines many useful objects like `console` or `Math`.
 
 ## Coding time!
 

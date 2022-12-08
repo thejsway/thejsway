@@ -2,22 +2,6 @@
 
 To make a web page interactive, you have to respond to user actions. Let's discover how to do so.
 
-## TL;DR
-
-* You can make a web page interactive by writing JavaScript code tied to **events** within the browser.
-
-* Numerous types of events can be handled. Each event type is associated with an `Event` object that contains properties giving information about the event.
-
-* `keypress`, `keydown` and `keyup` events let you react to keyboard-related events.
-
-* `click`, `mousedown` and `mouseup` events let you react to mouse-related events.
-
-* Page loading and closing are associated with the events `load` and `beforeunload`, respectively.
-
-* An event propagates within the DOM tree from its node of origin up to the document root. This propagation can be interrupted with the `stopPropagation()` method.
-
-* Calling the `preventDefault()` method on an `Event` object cancels the default behavior associated with the action that triggered the event.
-
 ## Introduction to events
 
 Up until now, your JavaScript code was executed right from the start. The execution order of statements was determined in advance and the only user interactions were data input through `prompt()` calls.
@@ -68,12 +52,14 @@ document.getElementById("myButton").addEventListener("click", () => {
 
 In some particular cases, you might want to stop reacting to an event on a DOM element. To achieve this, call the `removeEventListener()` on the element, passing as a parameter the function which used to handle the event.
 
-> This can only work if the handler function is not anonymous.
-
 ```js
 // Remove the handler for the click event
 buttonElement.removeEventListener("click", showMessage);
 ```
+
+!!! note
+
+    This can only work if the handler function is not anonymous.
 
 ## The event family
 
@@ -99,9 +85,11 @@ document.getElementById("myButton").addEventListener("click", e => {
 });
 ```
 
-> The parameter name chosen for the `Event` object is generally `e` or `event`.
-
 ![Execution result](images/chapter16-02.png)
+
+!!! note
+
+    The parameter name chosen for the `Event` object is generally `e` or `event`.
 
 ## Reacting to common events
 
@@ -137,7 +125,9 @@ document.addEventListener("keyup", keyboardInfo);
 
 This result demonstrates that the launch order of keyboard-related events is as expected: `keydown` -> `keyup`.
 
-> The `keydown` event is fired several times when a key is kept pressed.
+!!! note
+
+    The `keydown` event is fired several times when a key is kept pressed.
 
 ### Mouse clicks
 
@@ -293,6 +283,22 @@ Now clicking on the links shows a dialog instead of navigating to its target.
 
 ![Execution result](images/chapter16-10.png)
 
+## TL;DR
+
+* You can make a web page interactive by writing JavaScript code tied to **events** within the browser.
+
+* Numerous types of events can be handled. Each event type is associated with an `Event` object that contains properties giving information about the event.
+
+* `keypress`, `keydown` and `keyup` events let you react to keyboard-related events.
+
+* `click`, `mousedown` and `mouseup` events let you react to mouse-related events.
+
+* Page loading and closing are associated with the events `load` and `beforeunload`, respectively.
+
+* An event propagates within the DOM tree from its node of origin up to the document root. This propagation can be interrupted with the `stopPropagation()` method.
+
+* Calling the `preventDefault()` method on an `Event` object cancels the default behavior associated with the action that triggered the event.
+
 ## Coding time!
 
 ### Counting clicks
@@ -306,6 +312,8 @@ Start with the following HTML content.
 ```
 
 Write the JavaScript code that counts the number of clicks on the `myButton` button by updating the `clickCount` element. The `deactivate` button stops the counting.
+
+![Execution result](images/chapter16-14.gif)
 
 ### Changing colors
 

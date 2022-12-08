@@ -1,28 +1,6 @@
 # Work with strings
 
-A lot of code you write will involve modifying chains of text characters - or [strings]( https://en.wikipedia.org/wiki/String_(computer_science) ). Let's look at how!
-
-## TL;DR
-
-* Although string values are primitive JavaScript types, some **properties** and **methods** may be applied to them just as if they were objects.
-
-* The `length` property returns the number of characters of the string.
-
-* JavaScript strings are **[immutable]( https://en.wikipedia.org/wiki/Immutable_object )**: once created, a string value never changes. String methods never affect the initial value and always return a new string.
-
-* The `toLowerCase()` and `toUpperCase()` methods respectively return new converted strings to lower and upper case.
-
-* String values may be compared using the `===` operator, which is case sensitive.
-
-* A string may be seen as an **array of characters** identified by their **index**. The index of the first character is 0 (not 1).
-
-* You may iterate over a string using either a `for` or the newer `for-of` loop.
-
-* The `Array.from()` method can be used to turn a string into an array that can be traversed letter by letter with the `forEach()` method.
-
-* Searching for values inside a string is possible with the `indexOf()`, `startsWith()` and `endsWith()` methods.
-
-* The `split()` method breaks a string into subparts delimited by a separator.
+A lot of code you write will involve dealing with chains of text characters - or [strings]( https://en.wikipedia.org/wiki/String_(computer_science) ). Let's look at how!
 
 ## String recap
 
@@ -67,7 +45,9 @@ console.log(uppercaseWord); // "BORA-BORA"
 
 `toLowerCase()` and `toUpperCase()` are two string methods. Like every string method, both have no affect on the initial value and return a new string.
 
-T> It's important to understand that once created, a string value never changes: strings are **immutable** in JavaScript.
+!!! tip
+
+    It's important to understand that once created, a string value never changes: strings are **immutable** in JavaScript.
 
 ## Comparing two strings
 
@@ -79,7 +59,9 @@ console.log(word === "koala");    // true
 console.log(word === "kangaroo"); // false
 ```
 
-W> String comparison is case sensitive. Do indeed pay attention to your lower and uppercase letters!
+!!! warning
+
+    String comparison is case sensitive. Do indeed pay attention to your lower and uppercase letters!
 
 ```js
 console.log("Qwerty" === "qwerty");               // false
@@ -99,7 +81,9 @@ You may think of a string as an array of characters. Each character is identifie
 
 You know how to identify a character by its index. To access it, you use the **brackets notation** `[]` with the character index placed between the brackets.
 
-W> Trying to access a string character beyond the string length produces an `undefined` result.
+!!! warning
+
+    Trying to access a string character beyond the string length produces an `undefined` result.
 
 ```js
 const sport = "basketball";
@@ -202,6 +186,28 @@ console.log(months[0]);  // "Jan"
 console.log(months[11]); // "Dec"
 ```
 
+## TL;DR
+
+* Although string values are primitive JavaScript types, some **properties** and **methods** may be applied to them just as if they were objects.
+
+* The `length` property returns the number of characters of the string.
+
+* JavaScript strings are **[immutable]( https://en.wikipedia.org/wiki/Immutable_object )**: once created, a string value never changes. String methods never affect the initial value and always return a new string.
+
+* The `toLowerCase()` and `toUpperCase()` methods respectively return new converted strings to lower and upper case.
+
+* String values may be compared using the `===` operator, which is case sensitive.
+
+* A string may be seen as an **array of characters** identified by their **index**. The index of the first character is 0 (not 1).
+
+* You may iterate over a string using either a `for` or the newer `for-of` loop.
+
+* The `Array.from()` method can be used to turn a string into an array that can be traversed letter by letter with the `forEach()` method.
+
+* Searching for values inside a string is possible with the `indexOf()`, `startsWith()` and `endsWith()` methods.
+
+* The `split()` method breaks a string into subparts delimited by a separator.
+
 ## Coding time!
 
 ### Word info
@@ -220,4 +226,4 @@ Improve the previous program so that it shows the word written backwards.
 
 Improve the previous program to check if the word is a palindrome. A palindrome is a word or sentence that's spelled the same way both forward and backward, ignoring punctuation, case, and spacing.
 
-> `"radar"` should be detected as a palindrome, `"Radar"` too.
+For example, `"radar"` should be detected as a palindrome, `"Radar"` too.

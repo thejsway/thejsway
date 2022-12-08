@@ -2,25 +2,9 @@
 
 Understanding the fundamentals of web development is crucial for every JavaScript developer. Let's dive into this topic.
 
-> Some of this chapter is inspired by the [Symfony PHP framework documentation](http://symfony.com/doc/current/introduction/http_fundamentals.html).
+!!! note
 
-## TL;DR
-
-* Data exchanges on the Web follow a **request/response** paradigm. A **client** issues a request to a **server**, which process it and sends back its result to the client.
-
-* **HTTP** (HyperText Transfer Protocol), is the protocol that allows two machines to communicate with each other on the web. Its secured version is **HTTPS**.
-
-* HTTP is based on textual commands. The HTTP **method** defines the type of the request. The main HTTP methods are `GET` to access a resource and `POST` to push some information on the server.
-
-* An HTTP response contains a **status code** indicating the result of the request: 200 for success, 404 for a resource not found, etc.
-
-* Web resources are uniquely addressed by their **URL** (Uniform resource locator). A URL is a text of the form `http://www.mywebsite.com/myresourcepath/myresource`.
-
-* In a traditional web development scenario, user actions on a page trigger a full reload after a synchronous request to a server. Another web development model, nicknamed **AJAX** (Asynchronous JavaScript and XML), uses JavaScript and **asynchronous** HTTP requests to fetch data when needed and update only the desired portions of the page. This enables the creation of **web applications**, aiming to offer the user experience of a native app.
-
-* Cross-domain AJAX requests are only possible if the server has been configured to accept them by setting on **cross-origin resource sharing** (CORS).
-
-* **JSON** (JavaScript Object Notation), a textual syntax for describing structured information, has replaced XML as the data format of the web. A JSON document is a set of name/value pairs.
+    Some of this chapter is inspired by the [Symfony PHP framework documentation](http://symfony.com/doc/current/introduction/http_fundamentals.html).
 
 ## How the Web works
 
@@ -54,9 +38,7 @@ To understand each other, web clients and servers use a common protocol: HTTP.
 
 ## HTTP, the web protocol
 
-HTTP, which stands for **HyperText Transfer Protocol**, is the technical foundation of the World Wide Web. It is a **protocol**, a language that allows two machines to communicate with each other.
-
-> HTTPS is the secured version of HTTP.
+[HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol), which stands for **HyperText Transfer Protocol**, is the technical foundation of the World Wide Web. It is a **protocol**, a language that allows two machines to communicate with each other. [HTTPS](https://en.wikipedia.org/wiki/HTTPS) is the secured version of HTTP where exchanged data is encrypted.
 
 Technically speaking, HTTP is a pretty simple protocol based on **textual commands**.
 
@@ -122,13 +104,13 @@ Family | Meaning | Examples
 **4xx** | Client error | 404: resource not found
 **5xx** | Server error | 500: internal server error
 
-> For a more in-depth presentation of the HTTP protocol, head over to the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview).
+!!! note
+
+    For a more in-depth presentation of the HTTP protocol, head over to the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview).
 
 ### Addressing a resource with a URL
 
-Web sites are usually accessed using their address, a piece of text of the form:
-
-<http://www.sitename.com/path/to/resource>
+Web sites are usually accessed using their address, a piece of text of the form: <http://www.sitename.com/path/to/resource>
 
 This address can be split into several subparts:
 
@@ -168,7 +150,9 @@ For security reasons, many websites have a conservative policy regarding AJAX re
 
 Enabling cross-domain requests is done by setting on **cross-origin resource sharing** (CORS) in the server configuration.
 
-> For more information about this topic, check out this [MDN article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
+!!! note
+
+    For more information about this topic, check out this [article](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS).
 
 ## JSON, a data format for the web
 
@@ -198,3 +182,21 @@ JSON, or **JavaScript Object Notation**, is a textual syntax for describing stru
 A JSON document is a set of name/value pairs. Names are always within double quotes `""`. Values can be numbers, strings, booleans, arrays or objects.
 
 Many programming languages have native support for the JSON format... Including JavaScript, of course!
+
+## TL;DR
+
+* Data exchanges on the Web follow a **request/response** paradigm. A **client** issues a request to a **server**, which process it and sends back its result to the client.
+
+* **HTTP** (HyperText Transfer Protocol), is the protocol that allows two machines to communicate with each other on the web. Its secured version is **HTTPS**.
+
+* HTTP is based on textual commands. The HTTP **method** defines the type of the request. The main HTTP methods are `GET` to access a resource and `POST` to push some information on the server.
+
+* An HTTP response contains a **status code** indicating the result of the request: 200 for success, 404 for a resource not found, etc.
+
+* Web resources are uniquely addressed by their **URL** (Uniform resource locator). A URL is a text of the form `http://www.mywebsite.com/myresourcepath/myresource`.
+
+* In a traditional web development scenario, user actions on a page trigger a full reload after a synchronous request to a server. Another web development model, nicknamed **AJAX** (Asynchronous JavaScript and XML), uses JavaScript and **asynchronous** HTTP requests to fetch data when needed and update only the desired portions of the page. This enables the creation of **web applications**, aiming to offer the user experience of a native app.
+
+* Cross-domain AJAX requests are only possible if the server has been configured to accept them by setting on **cross-origin resource sharing** (CORS).
+
+* **JSON** (JavaScript Object Notation), a textual syntax for describing structured information, has replaced XML as the data format of the web. A JSON document is a set of name/value pairs.

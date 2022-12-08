@@ -2,36 +2,13 @@
 
 This chapter will teach you how to retrieve data from a web server through HTTP requests.
 
-## TL;DR
-
-* HTTP requests sent to a web server need to be **asynchronous** to prevent blocking the client application while waiting for the server's response.
-
-* The JavaScript `fetch()` method is replacing `XMLHttpRequest` as the go-to way of creating an asynchronous request. Its `then()` and `catch()` methods respectively handle the success and failure of the request.
-
-```js
-// Sends an asynchronous HTTP request to the target url
-fetch(url)
-  .then(() => {
-    // Code called in the future when the request ends successfully
-  })
-  .catch(() => {
-    // Code called in the future when an errors occurs during the request
-  });
-```
-
-* The `fetch()` method demonstrates the use of **promises** to write asynchronous code in JavaScript. A promise is a wrapper for an operation whose result might be available in the future. It is either *pending* (initial state),  *fulfilled* (operation completed successfully) or *rejected* (operation failed).
-
-* JavaScript deals with JSON content with the `JSON.parse()` (to transform a JSON text into an object) and `JSON.stringify()` method (to do the opposite).
-
-* The result of a call to `fetch()` is an HTTP `Response` object. Its `text()` and `json()` methods are used to read content as plain text or JSON data. These two methods return a promise that resolves either as a string or as JSON.
-
 ## Creating asynchronous HTTP requests in JavaScript
 
-In the previous chapter, we discussed synchronous vs asynchronous requests. Since synchronous requests block the calling process until their result is received, only asynchronous HTTP requests should be used when building a web application. However, asynchronous code can be tricky to write and to understand, since statements won't be executed in a linear and sequential fashion like with synchronous operations.
+In the [previous chapter](chapter20.md), we discussed synchronous vs asynchronous requests. Since synchronous requests block the calling process until their result is received, only asynchronous HTTP requests should be used when building a web application. However, asynchronous code can be tricky to write and to understand, since statements won't be executed in a linear and sequential fashion like with synchronous operations.
 
 ### The `fetch()` method
 
-The best way to send asynchronous HTTP requests in JavaScript is to use the `fetch()` method. Here is its general usage form.
+The standard way to send asynchronous HTTP requests in JavaScript is to use the `fetch()` method. Here is its general usage form.
 
 ```js
 // Sends an asynchronous HTTP request to the target url
@@ -44,7 +21,9 @@ fetch(url)
   });
 ```
 
-> You might encounter JavaScript code that uses an object called `XMLHttpRequest` to perform HTTP operations. This is a more ancient technique now replaced by `fetch()`.
+!!! info
+
+    You might encounter JavaScript code that uses an object called `XMLHttpRequest` to perform HTTP operations. This is a more ancient technique now replaced by `fetch()`.
 
 ### Under the hood: promises
 
@@ -91,7 +70,9 @@ fetch(
 
 The result of the asynchronous HTTP request created by `fetch()` comes under the the form of a `Response` object. This object has several methods to deal with the response of the HTTP call. The `text()` method used in this example reads the response's text content and returns another promise. Its result is managed by the second `then()` method, which simply displays the file's textual content in the console.
 
-To learn more about the `Response` object, consult, as usual, the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Response).
+!!! note
+
+    To learn more about the `Response` object, consult, as usual, the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Response).
 
 ### Dealing with errors
 
@@ -204,11 +185,34 @@ fetch(
 
 The `json()` method of the HTTP `Response` object returns a promise that resolves with the result of parsing the response text as JSON. As such, the `movies` parameter of the second `then()` is a plain JavaScript array that can be iterated upon.
 
+## TL;DR
+
+* HTTP requests sent to a web server need to be **asynchronous** to prevent blocking the client application while waiting for the server's response.
+
+* The JavaScript `fetch()` method is replacing `XMLHttpRequest` as the go-to way of creating an asynchronous request. Its `then()` and `catch()` methods respectively handle the success and failure of the request.
+
+```js
+// Sends an asynchronous HTTP request to the target url
+fetch(url)
+  .then(() => {
+    // Code called in the future when the request ends successfully
+  })
+  .catch(() => {
+    // Code called in the future when an errors occurs during the request
+  });
+```
+
+* The `fetch()` method demonstrates the use of **promises** to write asynchronous code in JavaScript. A promise is a wrapper for an operation whose result might be available in the future. It is either *pending* (initial state),  *fulfilled* (operation completed successfully) or *rejected* (operation failed).
+
+* JavaScript deals with JSON content with the `JSON.parse()` (to transform a JSON text into an object) and `JSON.stringify()` method (to do the opposite).
+
+* The result of a call to `fetch()` is an HTTP `Response` object. Its `text()` and `json()` methods are used to read content as plain text or JSON data. These two methods return a promise that resolves either as a string or as JSON.
+
 ## Coding time!
 
 ### Language list
 
-The objective of this exercise is to display the languages of the previous file `languages.txt` on a web page. Here is the starter HTML code.
+The objective of this exercise is to display the languages of the previous file [languages.txt](https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/languages.txt) on a web page. Here is the starter HTML code.
 
 ```html
 <h2>A few programming languages</h2>
@@ -222,9 +226,7 @@ Write the JavaScript code that fetches the file from the web server and fills th
 
 ### Famous paintings
 
-In this exercise, you'll show information about some famous paintings on a web page table. Information about the paintings is located at URL:
-
-<https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/paintings.json>
+In this exercise, you'll show information about some famous paintings on a web page table. JSON data is available [here](https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/paintings.json).
 
  It has the following content.
 

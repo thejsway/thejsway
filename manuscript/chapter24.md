@@ -2,28 +2,6 @@
 
 In this chapter, you'll discover how to create JavaScript applications outside the browser thanks to a technology called Node.js.
 
-## TL;DR
-
-* **Node.js** (or simply Node) is a platform built on Chrome's JavaScript engine (V8) to create JavaScript applications outside the browser.
-
-* Node emphasizes modularity: instead of being monolithic, applications are designed as a set of small, focused **modules** working together to achieve the desired behavior.
-
-* Node adheres to the [CommonJS](http://requirejs.org/docs/commonjs.html) module format. It provides a `require()` for loading a module.
-
-* Inside a module, the `module.exports` object is used to export pieces of code. You can **add properties** to it to export element. You can also **reassign** `module.exports` to export only a specific element.
-
-* Node provides a way to structure an application under the form of a **package**. A package is a folder containing an application described by a `package.json` file. The default entry point of a package is the `index.js` file.
-
-* Package versions are defined using the **semantic versioning** format: a three-digit string of the form `MAJOR.MINOR.PATCH`. This format facilitates the management of **dependencies** between packages.
-
-* [npm](https://www.npmjs.com) (Node Package Manager) is the standard package manager for the Node ecosystem. It consists of a command line client and an online registry of public packages accessed by the client. This registry is the largest ecosystem of open source libraries in the world.
-
-* The main npm commands are `npm install` (to install all the dependencies of a package or adding a new one) and `npm update` (to update all the packages and install missing ones according to `package.json`).
-
-* Once installed through npm, packages defined as dependencies are stored in the `node_modules/` subfolder and can be loaded as modules using `require()`.
-
-* Some packages (containing only executable files or no entry point) cannot be loaded as modules. Some modules (single JavaScript files) are not packages.
-
 ## Introducing Node.js
 
 ### A bit of history
@@ -40,7 +18,9 @@ Node also made it easier for developers to publish, share and reuse code. Today,
 
 ### A first example
 
-> The rest of this chapter assumes a working Node environnement. Refer to the appendix for setting one up.
+!!! note
+
+    This chapter assumes a working Node environnement. Refer to the [introduction](intro04.md) for setting one up.
 
 The simplest possible Node program is as follows.
 
@@ -114,7 +94,9 @@ The parameter passed to `require()` identifies the module to load. Here, the `".
 
 The result of the call to `require()` is an object, named `greetings` here. This object references the value of the `module.exports` object defined inside the module. Thus, the `greetings` object has two functions `sayHello` and `flatter` as properties. Trying to access its non-existent `sayGoodbye` property triggers an error during execution.
 
-> Giving the object resulting from a call to `require()` the same name as the loaded module's name, through not mandatory, is a common practice.
+!!! tip
+
+    Giving the object resulting from a call to `require()` the same name as the loaded module's name, through not mandatory, is a common practice.
 
 ### Exporting only a specific object
 
@@ -227,8 +209,8 @@ Below is an example of a typical `package.json` file.
     "start": "node index.js"
   },
   "dependencies": {
-    "moment": "^2.18.1",
-    "semver": "^5.3.0"
+    "semver": "^7.3.8",
+    "moment": "^2.29.4"
   },
   "keywords": [
     "javascript",
@@ -241,7 +223,7 @@ Below is an example of a typical `package.json` file.
 
 ### Semantic versioning
 
-Node packages are versioned using a format called **semantic versioning**. A version number is a three-digit string of the form `MAJOR.MINOR.PATCH` (example : `2.18.1`).
+Node packages are versioned using a format called **semantic versioning**. A version number is a three-digit string of the form `MAJOR.MINOR.PATCH` (example : `2.29.4`).
 
 Here are the rules for defining a version number:
 
@@ -266,7 +248,7 @@ There are many ways to define a version range. The most commonly used ones are:
 
 Fine-tuning the targeted versions of external packages though version ranges helps limiting the risk of breaking the application apart when updating its dependencies.
 
-## Package management with **npm**
+## Package management with **npm** or **yarn**
 
 Soon after the creation of Node.js, it became apparent that something was missing to orchestrate code sharing and reuse through modules. So [npm](https://www.npmjs.com) (Node Package Manager) was born in 2010. It is still the standard package manager for the Node ecosystem, even if it is being challenged by [yarn](https://yarnpkg.com), a more recent alternative. It consists of a command line client, also called **npm**, and an online database of public packages, called the **npm registry** and accessed by the client.
 
@@ -331,7 +313,33 @@ A package used in another Node application is loaded with `require()`, making it
 
 Some packages only contain an executable command and thus cannot be loaded as modules. On the other hand, a single JavaScript file loaded with `require()` is a module but not a package, since it doesn't have a `package.json` file.
 
-Check out the [npm documentation](https://docs.npmjs.com/how-npm-works/packages) for more details on this aspect.
+Check out the [npm documentation](https://docs.npmjs.com/packages-and-modules) for more details on this aspect.
+
+!!! note
+
+    [ES modules](https://flaviocopes.com/es-modules/) is a newer syntax for defining and loading modules, avalaible in recent (v15.3+) versions of Node.js. It should eventually replace CommonJS as the standard way.
+
+## TL;DR
+
+* **Node.js** (or simply Node) is a platform built on Chrome's JavaScript engine (V8) to create JavaScript applications outside the browser.
+
+* Node emphasizes modularity: instead of being monolithic, applications are designed as a set of small, focused **modules** working together to achieve the desired behavior.
+
+* Node adheres to the [CommonJS](http://requirejs.org/docs/commonjs.html) module format. It provides a `require()` for loading a module.
+
+* Inside a module, the `module.exports` object is used to export pieces of code. You can **add properties** to it to export element. You can also **reassign** `module.exports` to export only a specific element.
+
+* Node provides a way to structure an application under the form of a **package**. A package is a folder containing an application described by a `package.json` file. The default entry point of a package is the `index.js` file.
+
+* Package versions are defined using the **semantic versioning** format: a three-digit string of the form `MAJOR.MINOR.PATCH`. This format facilitates the management of **dependencies** between packages.
+
+* [npm](https://www.npmjs.com) (Node Package Manager) is the standard package manager for the Node ecosystem. It consists of a command line client and an online registry of public packages accessed by the client. This registry is the largest ecosystem of open source libraries in the world.
+
+* The main npm commands are `npm install` (to install all the dependencies of a package or adding a new one) and `npm update` (to update all the packages and install missing ones according to `package.json`).
+
+* Once installed through npm, packages defined as dependencies are stored in the `node_modules/` subfolder and can be loaded as modules using `require()`.
+
+* Some packages (containing only executable files or no entry point) cannot be loaded as modules. Some modules (single JavaScript files) are not packages.
 
 ## Coding time!
 
@@ -345,9 +353,13 @@ Load this module in a `index.js` file and test the two functions.
 
 ### Accounting
 
-Create a `accounting.js` module exporting.
+Create a `accounting.js` module exporting an `Account` class containing:
 
-Load this module in a `index.js` file and test the two functions.
+* a constructor accepting an `owner`parameter;
+* a `credit()` method for crediting a sum of money on the account;
+* a `describe()` method for describing the account.
+
+Load this module in a `index.js` file and test the class.
 
 ```js
 // TODO: load the "accounting.js" module
@@ -371,4 +383,6 @@ Create a Node package and install the current `moment` version as a dependency. 
 
 ![Execution result](images/chapter24-07.png)
 
-T> Use the [moment documentation](https://momentjs.com/docs/) to discover how to use this package.
+!!! tip
+
+    Use the [moment documentation](https://momentjs.com/docs/) to discover how to use this package.

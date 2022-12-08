@@ -226,14 +226,14 @@ To close this chapter, let's discuss variable naming. The computer doesn't care 
 
 Nonetheless, naming variables well can make your code much easier to read. Check out these two examples:
 
-```js
+```js title="Bad naming"
 const a = 5.5;
 const b = 3.14;
 const c = 2 * a * b;
 console.log(c);
 ```
 
-```js
+```js title="Better naming"
 const radius = 5.5;
 const pi = 3.14;
 const perimeter = 2 * pi * radius;
@@ -242,7 +242,11 @@ console.log(perimeter);
 
 They function in the same way, but the second version is much easier to understand.
 
-Naming things is an important part of the programmer's job. Refer to the appendix for some useful advice.
+When the variable represents something complex (for example, the maximum expected score in a game), it should be named using more than just a single word. In that case, you should capitalize all starting letters, except the first one (example: `maxExpectedScore`). This popular naming convention called [camelCase](https://en.wikipedia.org/wiki/Camel_case) will be used throughout this book.
+
+!!! info
+
+    Naming things well is an important part of the programmer's job. Refer to the [style guide](appendix02.md) for some useful advice.
 
 ## TL;DR
 

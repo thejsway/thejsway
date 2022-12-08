@@ -1,12 +1,14 @@
 # Project: a social news web page
 
-You know now enough JavaScript and DOM to go ahead and create interactive web pages for real!
+You know enough JavaScript and DOM to go ahead and create interactive web pages for real!
 
 ## Objective
 
 This project builds upon the social news program you created previously. This time, the objective is to make a social news web page.
 
-> The general idea and page layout for this project are inspired by the [Discover Meteor book](http://www.discovermeteor.com/)'s example application.
+!!! note
+
+    The general idea and page layout for this project are inspired by the example application for the book [Discover Meteor](https://www.goodreads.com/en/book/show/17901517-discover-meteor).
 
 ## Functional requirements
 
@@ -28,7 +30,9 @@ This project builds upon the social news program you created previously. This ti
 
 Because this is first and foremost a JavaScript project, here is the complete HTML/CSS code of the web page. It is also online as a [CodePen](https://codepen.io/bpesquet/pen/pPyxLG/).
 
-> This web page uses the [Bootstrap](http://getbootstrap.com/) framework to improve presentation and make it responsive. However, Bootstrap knowledge is not mandatory to achieve the desired result. You can pretty much ignore it and code ahead.
+!!! info
+
+    This web page uses the [Bootstrap](http://getbootstrap.com/) framework to improve presentation and make it responsive. However, no prior Bootstrap knowledge is necessary to achieve the desired result. You can pretty much ignore it and code ahead.
 
 ```html
 <!doctype html>

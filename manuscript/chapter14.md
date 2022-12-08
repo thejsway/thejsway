@@ -2,18 +2,6 @@
 
 In this chapter, you'll see how to use JavaScript to traverse the DOM.
 
-## TL;DR
-
-* Rather than go through the DOM node by node, you can quickly access one or more elements using **selection methods**.
-
-* The `getElementsByTagName()`, `getElementsByClassName()` and `getElementById()` methods respectively search items by **tag name**, **class**, and **ID**. The first two methods return a list, which can further be converted to an array with `Array.from()`. The latter method returns a single item.
-
-* The `querySelectorAll()` and `querySelector()` methods make it possible to search for items using a **CSS selector**. The first method returns all matching items, and the second returns only the first.
-
-* The `innerHTML` property returns the **HTML content** of an element. The `textContent` property returns its **textual content** without any HTML markup.
-
-* The `getAttribute()` and `hasAttribute()` methods allow access to element **attributes**. The `classList` property and its method `contains()` provides access to an element's **classes**.
-
 ## Sample web page
 
 Here's the example web page used throughout this chapter.
@@ -85,7 +73,9 @@ console.log(titleElements.length); // 3 (total number of h2 elements in the page
 
 ![Execution result](images/chapter14-07.png)
 
-T> Suffixing JavaScript variables associated to DOM element nodes with `Element` (or `Elements` when the variable contains several nodes) is a popular naming convention. We'll stick to it throughout this book.
+!!! tip
+
+    Suffixing JavaScript variables associated to DOM element nodes with `Element` (or `Elements` when the variable contains several nodes) is a popular naming convention. We'll stick to it throughout this book.
 
 ### Selecting items according to class
 
@@ -118,7 +108,9 @@ console.log(document.getElementById("new"));
 
 ![Execution result](images/chapter14-09.png)
 
-E> Beware: contrary to others, the `getElementById()` method does not contain any `'s'` after the word `"Element"`.
+!!! warning
+
+    Beware: contrary to others, the `getElementById()` method does not contain any `'s'` after the word `"Element"`.
 
 ### Selecting elements via CSS selectors
 
@@ -259,6 +251,18 @@ if (document.getElementById("ancient").classList.contains("wonders")) {
 ```
 
 > This is only a part of the DOM traversal API. For more details, check the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Element).
+
+## TL;DR
+
+* Rather than go through the DOM node by node, you can quickly access one or more elements using **selection methods**.
+
+* The `getElementsByTagName()`, `getElementsByClassName()` and `getElementById()` methods respectively search items by **tag name**, **class**, and **ID**. The first two methods return a list, which can further be converted to an array with `Array.from()`. The latter method returns a single item.
+
+* The `querySelectorAll()` and `querySelector()` methods make it possible to search for items using a **CSS selector**. The first method returns all matching items, and the second returns only the first.
+
+* The `innerHTML` property returns the **HTML content** of an element. The `textContent` property returns its **textual content** without any HTML markup.
+
+* The `getAttribute()` and `hasAttribute()` methods allow access to element **attributes**. The `classList` property and its method `contains()` provides access to an element's **classes**.
 
 ## Coding time!
 

@@ -2,51 +2,6 @@
 
 A few chapters ago, you learned how to create your first objects in JavaScript. Now it's time to better understand how to work with them.
 
-## TL;DR
-
-* **Object-Oriented Programming**, or OOP, is a [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) that uses objects containing both **data** and **behavior** to create programs.
-
-* A **class** is an object-oriented abstraction for an idea or a concept manipulated by a program. It offers a convenient syntax to create objects representing this concept.
-
-* A JavaScript class is defined with the `class` keyword. It can only contain **methods**. The `constructor()` method, called during object creation, is used to initialize the object, often by giving it some data properties. Inside methods, the `this` keyword represents **the object on which the method was called**.
-
-```js
-class MyClass {
-  constructor(param1, param2, ...) {
-    this.property1 = param1;
-    this.property2 = param2;
-    // ...
-  }
-  method1(/* ... */) {
-    // ...
-  }
-  method2(/* ... */) {
-    // ...
-  }
-  // ...
-}
-```
-
-* Objects are created from a class with the `new` operator. It calls the class constructor to initialize the newly created object.
-
-```js
-const myObject = new MyClass(arg1, arg2, ...);
-// ...
-```
-
-* JavaScript's OOP model is based on **prototypes**. Any JavaScript object has an internal property which is a link (a **reference**) to another object: its prototype. Prototypes are used to share properties and delegate behavior between objects.
-
-* When trying to access a property that does not exist in an object, JavaScript tries to find this property in the **prototype chain** of this object by first searching its prototype, then its prototype's own prototype, and so on.
-
-* There are several ways to create and link JavaScript objects through prototypes. One is to use the `Object.create()` method.
-
-```js
-// Create an object linked to myPrototypeObject
-const myObject = Object.create(myPrototypeObject);
-```
-
-* The JavaScript `class` syntax is another, arguably more convenient way to create relationships between objects. It emulates the class-based OOP model found in languages like C++, Java or C#. It is, however, just **syntactic sugar** on top of JavaScript's own prototype-based OOP model.
-
 ## Context: a multiplayer RPG
 
 As a reminder, here's the code for our minimalist RPG taken from a previous chapter. It creates an object literal named `aurora` with four properties (`name`, `health`, `strength` and `xp`) and a `describe()` method.
@@ -242,7 +197,9 @@ JavaScript's object-oriented model is based on prototypes, *not* classes, to sha
 
 The JavaScript `class` syntax is merely a more convenient way to create relationships between objects through prototypes. Classes were introduced to emulate the class-based OOP model on top of JavaScript's own prototype-based model. It's an example of what programmers call [syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar).
 
-> The usefulness of the `class` syntax is a pretty heated debate in the JavaScript community.
+!!! note
+
+    The real usefulness of the `class` syntax is a pretty heated debate in the JavaScript community.
 
 ## Object-oriented programming
 
@@ -316,6 +273,51 @@ console.log(glacius.describe());
 
 The previous program is a short example of **Object-Oriented Programming** (in short: OOP), a programming
 [paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) (a programming style) based on objects containing both data and behavior.
+
+## TL;DR
+
+* **Object-Oriented Programming**, or OOP, is a [programming paradigm](https://en.wikipedia.org/wiki/Programming_paradigm) that uses objects containing both **data** and **behavior** to create programs.
+
+* A **class** is an object-oriented abstraction for an idea or a concept manipulated by a program. It offers a convenient syntax to create objects representing this concept.
+
+* A JavaScript class is defined with the `class` keyword. It can only contain **methods**. The `constructor()` method, called during object creation, is used to initialize the object, often by giving it some data properties. Inside methods, the `this` keyword represents **the object on which the method was called**.
+
+```js
+class MyClass {
+  constructor(param1, param2, ...) {
+    this.property1 = param1;
+    this.property2 = param2;
+    // ...
+  }
+  method1(/* ... */) {
+    // ...
+  }
+  method2(/* ... */) {
+    // ...
+  }
+  // ...
+}
+```
+
+* Objects are created from a class with the `new` operator. It calls the class constructor to initialize the newly created object.
+
+```js
+const myObject = new MyClass(arg1, arg2, ...);
+// ...
+```
+
+* JavaScript's OOP model is based on **prototypes**. Any JavaScript object has an internal property which is a link (a **reference**) to another object: its prototype. Prototypes are used to share properties and delegate behavior between objects.
+
+* When trying to access a property that does not exist in an object, JavaScript tries to find this property in the **prototype chain** of this object by first searching its prototype, then its prototype's own prototype, and so on.
+
+* There are several ways to create and link JavaScript objects through prototypes. One is to use the `Object.create()` method.
+
+```js
+// Create an object linked to myPrototypeObject
+const myObject = Object.create(myPrototypeObject);
+```
+
+* The JavaScript `class` syntax is another, arguably more convenient way to create relationships between objects. It emulates the class-based OOP model found in languages like C++, Java or C#. It is, however, just **syntactic sugar** on top of JavaScript's own prototype-based OOP model.
 
 ## Coding time!
 

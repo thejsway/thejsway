@@ -2,37 +2,9 @@
 
 This chapter will introduce you to [arrays]( https://en.wikipedia.org/wiki/Array_data_type ), a type of variable used in many computer programs to store data.
 
-## TL;DR
-
-* An **array** represents a list of elements. A JavaScript array is an object that has special properties, like `length` to access its size (number of elements).
-
-* You can think of an array as a set of boxes, each storing a specific value and associated with a number called its **index**. The first element of an array will be index number 0 - not 1.
-
-* You can access a particular element by passing its index within **square brackets** `[]`.
-
-* To iterate over an array (browsing it element by element), you can use the `for` loop, the `forEach()` method or the newer `for-of` loop.
-
-```js
-for (let i = 0; i < myArray.length; i++) {
-  // Use myArray[i] to access each array element one by one
-}
-
-myArray.forEach(myElement => {
-  // Use myElement to access each array element one by one
-});
-
-for (const myElement of myArray) {
-  // Use myElement to access each array element one by one
-}
-```
-
-* The `push()` method adds an element at the end of an array. The `unshift()` method adds it at the beginning.
-
-* The `pop()` and `splice()` are used to remove elements from the array.
-
 ## Introduction to arrays
 
-Imagine you want to create a list of all the movies you've seen this year.
+Imagine you want to create a list of movies you've liked in the past few years.
 
 One solution would be to create several variables:
 
@@ -82,7 +54,9 @@ You can store different types of elements within an array, including strings, nu
 const elements = ["Hello", 7, { message: "Hi mom" }, true];
 ```
 
-T> Since an array may contain multiple elements, it's good to name the array plurally (for example, `movies`).
+!!! tip
+
+    Since an array may contain multiple elements, it's good to name the array plurally (for example, `movies`).
 
 ### Obtaining an array's size
 
@@ -219,6 +193,34 @@ console.log(movies.length); // 2
 console.log(movies[0]); // "Zootopia"
 console.log(movies[1]); // "Babysitting"
 ```
+
+## TL;DR
+
+* An **array** represents a list of elements. A JavaScript array is an object that has special properties, like `length` to access its size (number of elements).
+
+* You can think of an array as a set of boxes, each storing a specific value and associated with a number called its **index**. The first element of an array will be index number 0 - not 1.
+
+* You can access a particular element by passing its index within **square brackets** `[]`.
+
+* To iterate over an array (browsing it element by element), you can use the `for` loop, the `forEach()` method or the newer `for-of` loop.
+
+```js
+for (let i = 0; i < myArray.length; i++) {
+  // Use myArray[i] to access each array element one by one
+}
+
+myArray.forEach(myElement => {
+  // Use myElement to access each array element one by one
+});
+
+for (const myElement of myArray) {
+  // Use myElement to access each array element one by one
+}
+```
+
+* The `push()` method adds an element at the end of an array. The `unshift()` method adds it at the beginning.
+
+* The `pop()` and `splice()` are used to remove elements from the array.
 
 ## Coding time!
 

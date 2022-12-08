@@ -2,34 +2,13 @@
 
 In this chapter, you'll learn how to leverage real-world web services in your applications.
 
-## TL;DR
-
-* An **API** or **Application Programming Interface** is a set of well-defined services offered by a software program or service to others. Developers use them to integrate external technologies or services into their applications.
-
-* A **web API** is an API accessible through web technologies (HTTP or HTTPS). They often use JSON as their data format.
-
-* A web API can be consumed programmatically using an **AJAX call**. Before that, the API must be checked out and its documentation studied in order to understand how it works and what it returns.
-
-```js
-// Fetch data from the API
-fetch("http://my-api-url")
-  .then(response => response.json()) // Translate JSON into JavaScript
-  .then(content => {
-    // Use returned content
-    // ...
-  })
-  .catch(err => {
-    console.error(err.message);
-  });
-```
-
-* A ever growing number of services are exposed through web APIs. Some are open, others require the **authentication** of the client, for example with an **access key**.
-
 ## Introducing web APIs
 
-The **API** acronym stands for **Application Programming Interface**. An API is an entry point offered by a software program or service to other programs. It is a set of well-defined methods of communication. Through APIs, developers can easily integrate external technologies or services into their applications.
+The **API** acronym stands for [Application Programming Interface](https://www.ibm.com/cloud/learn/api). An API is an entry point offered by a software program or service to other programs. It defines a set of well-defined methods of communication. Through APIs, developers can easily integrate external technologies or services into their applications.
 
-APIs exist under a wide variety of forms. As an example, the Document Object Model is itself an API for interacting programmatically with a web page: it defines methods for navigating and updating the page structure.
+!!! note
+
+    APIs exist under a wide variety of forms. As an example, the Document Object Model is itself an API for interacting programmatically with a web page: it defines methods for navigating and updating the page structure.
 
 A **web API** is an API available on the Web and accessible through web technologies, namely the HTTP protocol or its secured counterpart HTTPS. Web APIs are a key technology for software interactions: whenever you authenticate into a website using your Google account, or click a button to post something on your favorite social network, you're using them. A ever growing number of services are exposed through web APIs, forming a thriving ecosystem for building digital products.
 
@@ -41,15 +20,17 @@ To be able to use a web API, you have to know its address and its usage mode. Mo
 
 The first web API you'll use here simulates a blog and exposes a series of articles. Its URL is <https://thejsway-server.herokuapp.com/api/articles>. Opening it in a browser shows the JSON data returned by the API.
 
-![API result in a browser](images/chapter22-01.png)
+![API call result in the Firefox browser](images/chapter22-01.png)
 
-This raw result is not easy to read. For an easier interaction with web API, using a specialized tool like [Postman](https://www.getpostman.com) or [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) is strongly recommended. Here's how the result looks like on Postman.
+!!! tip
 
-![API result in Postman](images/chapter22-02.png)
+    For an easier interaction with web API, using a specialized tool like [Postman](https://www.getpostman.com) or [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) is recommended.
 
 This web API returns an array containing some articles. Each article corresponds to a JavaScript object with `id`, `title` and `content` properties.
 
-> Curious about creating such an API? You'll learn how to build this very service (and others) in an upcoming chapter.
+!!! info
+
+    Curious about creating such an API? You'll learn how to build this very service (and others) in an upcoming chapter.
 
 Real-world APIs are almost always accompanied by an online **documentation** showing how to use it. Studying this documentation is essential for using the API flawlessly.
 
@@ -153,17 +134,15 @@ Each time the `"Grab a beer"` button is clicked on the web page, an anonymous fu
 
 Another class of APIs requires the client to authenticate himself when accessing the service. Authentication can be done via several techniques. In this paragraph, we'll use the simplest one: access key. An **access key** is a generated string containing characters and digits and associated to a user.
 
-> Of course, authentication-based APIs often also have rate limits.
+!!! note
 
-There is no universal standard regarding access keys. Each service is free to use its own custom format. The client must provide its access key when accessing the API, generally by adding it at the end of the API URL.
+    Of course, authentication-based APIs often also have rate limits.
 
-A prerequisite for using any key-based web API is to generate oneself an access key for this particular service.
+There is no universal standard regarding access keys. Each service is free to use its own custom format. The client must provide its access key when accessing the API, generally by adding it at the end of the API URL. A prerequisite for using any key-based web API is thus to generate oneself an access key for this particular service.
 
 Let's put this into practice for obtaining about the current weather in your area. To do so, you could simply look outside the window, but it's way cooler to use a web-based service like [OpenWeather](https://openweathermap.org) instead ;).
 
-This service has a key-based API for retrieving the weather in any place. To obtain it, you'll have to sign up as a user (it's free) and a new API key will be generated and associated to your account.
-
-Once you've done this, weather data is available through an URL of the form <http://api.openweathermap.org/data/2.5/weather?q=LOCATION&appid=API_KEY>. Replace `LOCATION` and `API_KEY` with your own settings, and you should obtain the weather in your surroundings.
+This service has a key-based API for retrieving the weather in any place. To obtain it, you'll have to sign up as a user (it's free) and a new API key will be generated and associated to your account. Once you've done this, weather data is available through an URL of the form <http://api.openweathermap.org/data/2.5/weather?q=LOCATION&appid=API_KEY>. Replace `LOCATION` and `API_KEY` with your own settings, and you should obtain the weather in your surroundings.
 
 Before using any API in our code, a necessary first step is to check out and understand its data format. The result looks like this when getting weather info for Bordeaux, France.
 
@@ -216,7 +195,8 @@ Before using any API in our code, a necessary first step is to check out and und
 Now we just have to call the API from our JavaScript code and display the weather information on a web page.
 
 ```js
-// Replace YOUR_API_KEY with your own OpenWeather API key 
+// Replace YOUR_API_KEY with your own OpenWeather API key. 
+// You may also change the location (here: Bordeaux, France) to your liking.
 fetch(
   "http://api.openweathermap.org/data/2.5/weather?q=Bordeaux,fr&appid=YOUR_API_KEY&units=metric"
 )
@@ -243,6 +223,29 @@ fetch(
 
 ![Typical Bordeaux Weather :)](images/chapter22-05.png)
 
+## TL;DR
+
+* An **API** or **Application Programming Interface** is a set of well-defined services offered by a software program or service to others. Developers use them to integrate external technologies or services into their applications.
+
+* A **web API** is an API accessible through web technologies (HTTP or HTTPS). They often use JSON as their data format.
+
+* A web API can be consumed programmatically using an **AJAX call**. Before that, the API must be checked out and its documentation studied in order to understand how it works and what it returns.
+
+```js
+// Fetch data from the API
+fetch("http://my-api-url")
+  .then(response => response.json()) // Translate JSON into JavaScript
+  .then(content => {
+    // Use returned content
+    // ...
+  })
+  .catch(err => {
+    console.error(err.message);
+  });
+```
+
+* A ever growing number of services are exposed through web APIs. Some are open, others require the **authentication** of the client, for example with an **access key**.
+
 ## Coding time!
 
 ### More beer please
@@ -259,11 +262,13 @@ Use this API to show the profile picture, name and website address of a GitHub u
 
 ![Expected result](images/chapter22-07.png)
 
-> You can test your code by using the GitHub logins of prominent JS community members like `brendaneich` (JavaScript's father), `douglascrockford` or `vjeux`.
+!!! note
 
-### Star Wars universe
+    You can test your code by using the GitHub logins of prominent JS community members like `brendaneich` (JavaScript's father), `douglascrockford` or `vjeux`.
 
-The open [Star Wars API](https://swapi.co/) has all the Star Wars data you've ever wanted. In this exercise, you'll show information about some of the planets in the  universe.
+### Star Wars planets
+
+The open [Star Wars API](https://swapi.dev/) has all the Star Wars data you've ever wanted. In this exercise, you'll show information about some of the planets in the  universe.
 
 Here is the starting HTML code.
 
@@ -275,4 +280,4 @@ Here is the starting HTML code.
 
 Write the associated JavaScript code so that a list of links for the first ten planets identifiers (from 1 to 10) is generated automatically. Clicking on a planet link shows information about it.
 
-![Expected result](images/chapter22-08.png)
+![Expected result](images/chapter22-08.gif)

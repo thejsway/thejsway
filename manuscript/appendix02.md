@@ -1,8 +1,10 @@
-# Style guide {#style-guide}
+# Style guide
 
 Here are the coding rules and principles used throughout the book.
 
-> This chapter is by nature subjective and opinionated. Feel free to make your own choices.
+!!! note
+
+    This chapter is by nature a bit subjective and opinionated. Feel free to make your own choices.
 
 ## Naming
 
@@ -32,7 +34,9 @@ In addition, this book uses the following naming rules:
 * Since they may contain multiple elements, arrays are named **plurally** or suffixed with `List`: `movies` or `movieList`, but not `movie`.
 * To distinguish them from other variables, DOM elements are suffixed with `Element` (or `Elements` for array-like variables): `divElement` rather than simply `div`.
 
-W> Like many other languages, JavaScript is **case sensitive**. For example, `myVariable` and `myvariable` are two different variable names. Be careful!
+!!! warning
+
+    Like many other languages, JavaScript is **case sensitive**. For example, `myVariable` and `myvariable` are two different variable names. Be careful!
 
 ## Code formatting
 
@@ -46,45 +50,31 @@ Since JavaScript is a dynamically typed language, a number of errors don't show 
 
 Fortunately, specialized tools called **linters** can check your code against rules during edition and warn about potential defects. By allowing to fix many bugs before they happen, linters greatly enhance developer productivity.
 
-This book uses [ESLint](http://eslint.org) for linting code. ESLint is a very flexible tool and you can tailor it to your specific needs. Different set of ESLint rules have emerged, notably one based on the popular [AirBnb Style Guide](https://github.com/airbnb/javascript).
+This book uses [ESLint](http://eslint.org) for linting code. ESLint is a very flexible tool and you can tailor it to your specific needs, and different set of ESLint rules have emerged.
 
-> This opinionated style guide is well worth a read.
-
-This book's ESLint configuration extends the AirBnb and Prettier rules (Prettier getting the precedence), with a few minor deviations.
-
-Here is the content of the book's `.eslintrc` configuration file.
+This book's ESLint configuration extends the recommanded settings, with a few necessary deviations. Here is the content of the book's `.eslintrc` configuration file.
 
 ```json
 {
-  "extends": ["airbnb", "prettier"],
-  "env": {
-    "browser": true
-  },
-  "plugins": ["prettier"],
-  "rules": {
-    "no-console": "off",
-    "no-alert": "off",
-    "no-plusplus": "off",
-    "default-case": "off",
-    "no-param-reassign": [
-      "error",
-      {
-        "props": false
-      }
-    ],
-    "arrow-body-style": [
-      "error",
-      "as-needed",
-      { "requireReturnForObjectLiteral": true }
-    ]
+ "root": true,
+ "env": {
+  "node": true,
+  "es2016": true,
+  "browser": true
+ },
+ "rules": {
+  "no-console": 0,
+  "eqeqeq":"warn",
+  "no-cond-assign": 0,
+  "no-unused-vars": 1,
+  "no-extra-semi": "warn",
+  "semi": "warn"
+ },
+ "extends": "eslint:recommended",
+ "parserOptions": {
+  "ecmaFeatures": {
+   "experimentalObjectRestSpread": true
   }
+ }
 }
 ```
-
-The deviations from predefined rules are explained below.
-
-* `"no-console"` and `"no-alert"`: to enable `console.XXX()` and `alert()` calls.
-* `"no-plusplus"`: to enable unary operators like `++`, commonly used and generally harmless.
-* `"default-case"`: to enable `switch` statements without a `default` case, which are common.
-* `"no-param-reassign"`: to enable updating properties of an object passed as a parameter.
-* `"arrow-body-style"`: to use the more explicit `return` syntax for arrow functions that return an object literal.

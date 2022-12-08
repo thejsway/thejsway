@@ -77,13 +77,17 @@ Over the years, a lot of tools have been created to ease a JavaScript developer'
 
 The easiest way to set up these tools is to add them as **extensions** (sometimes named add-ons) to your code editor. For Visual Studio Code, use the following links for [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). Follow the instructions provided in their documentation to setup them.
 
+!!! info
+
+    Refer to the [style guide](appendix02.md#code-quality) for more information about configuring ESLint.
+
 #### Organize your code
 
 It's important to set up your basic folder and file structure before actually starting to code. That way, your project will be organized, and you'll be starting off with some good programming habits.
 
 You should have a folder in your storage disk dedicated to coding along this book. The folder name doesn't matter, `thejsway-code` will do nicely. All local files you subsequently create will be stored in subfolders of this root folder. The most logical solution is to create a subfolder for each chapter of the book.
 
-You can either download a [predefined folder structure](https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/code-skeleton.zip) or follow the next few paragraphs to create this folder structure by hand.
+You can either use a [predefined folder structure](https://github.com/thejsway/thejsway-starter-code) or follow the next few paragraphs to create this folder structure by hand.
 
 ##### For chapters 1 to 23
 
@@ -140,7 +144,7 @@ Rather than installing and configuring every piece of software manually, you can
 
 Start by installing [Docker Desktop](https://docs.docker.com/desktop/) on your local machine. Depending on your operating system, a few post-install configuration steps may be necessary. Once it's done, start Docker Desktop.
 
-Next, simply follow [this link]() to kickstart a *containerized JavaScript development environment* using Visual Studio Code. Clicking it will cause VS Code to automatically install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension if needed, clone the environment source code into a container volume, and spin up a dev container for use.
+Next, simply follow [this link](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/thejsway/thejsway-starter-code) to kickstart a *containerized JavaScript development environment* using Visual Studio Code. Clicking it will cause VS Code to automatically install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension if needed, clone the environment source code into a container volume, and spin up a dev container for use.
 
 !!! tip
 

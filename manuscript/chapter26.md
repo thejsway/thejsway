@@ -4,7 +4,7 @@ This final project is the culmination of the book. You can check out the [expect
 
 ## Objective
 
-This project builds upon the social news program and web pages you created previously. This time, the objective is to make a social news *application* based on a Node.js server.
+This project builds upon the [social news program](chapter11.md) and [web page](chapter19.md) you created previously. This time, the objective is to make a social news *application* based on a Node.js server.
 
 ## Functional requirements
 

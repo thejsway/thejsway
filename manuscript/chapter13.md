@@ -1,18 +1,6 @@
 # Discover the DOM
 
-This chapter will help you discover how a web page is shown by a browser.
-
-## TL;DR
-
-* A **web page** is a structured document containing both text and HTML tags. The **DOM**, or *Document Object Model*, is a standardized way to define a web page's structure.
-
-* The DOM is also an **API** allowing programmatical interactions with the web page. With JavaScript, you can access the structure of a page displayed in a browser and modify it.
-
-* The DOM represents a web page as a hierarchy of **objects**, where each object corresponds to a node in the nested HTML element tree.
-
-* The `document` variable provides access to the root of the DOM tree and corresponds to the `<html>` element in the HTML itself.
-
-* DOM objects have **properties** and **methods** that you can manipulate with JavaScript. For example, `nodeType` returns the node type, `childNodes` contains a collection of child nodes, and `parentNode` returns the parent node.
+This chapter will help you discover how a web page is displayed by a browser.
 
 ## Introduction to the DOM
 
@@ -97,7 +85,9 @@ As expected, the DOM object `body` is an element node because it's an HTML tag.
 
 Each element-typed object in the DOM has a property called `childNodes`. This is an ordered collection containing all its child nodes as DOM objects. You can use this array-like collection to access the different children of a node.
 
-W> The `childNodes` property of an element node is not a real JavaScript array, but rather a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) object. Not all of the standard array methods are applicable to it.
+!!! warning
+
+    The `childNodes` property of an element node is not a real JavaScript array, but rather a [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) object. Not all of the standard array methods are applicable to it.
 
 The following code would display the first child of the `body` node.
 
@@ -108,7 +98,7 @@ console.log(document.body.childNodes[0]);
 
 ![Execution result](images/chapter13-04.png)
 
-Q> Wait... Why isn't the first child node `h1`, since that's the first element in the body's HTML?
+Wait... Why isn't the first child node `h1`, since that's the first element in the body's HTML?
 
 That's because spaces between tags and line returns in HTML code are considered text nodes by the browser. The node `h1` is therefore the *second* child node of the body. Let's double check that:
 
@@ -170,6 +160,18 @@ console.log(document.parentNode); // Will show null, since body has no parent no
 
 > There are other properties that we will not discuss here that let you navigate through the DOM, like `firstChild`, `lastChild` or `nextSibling`.
 
+## TL;DR
+
+* A **web page** is a structured document containing both text and HTML tags. The **DOM**, or *Document Object Model*, is a standardized way to define a web page's structure.
+
+* The DOM is also an **API** allowing programmatical interactions with the web page. With JavaScript, you can access the structure of a page displayed in a browser and modify it.
+
+* The DOM represents a web page as a hierarchy of **objects**, where each object corresponds to a node in the nested HTML element tree.
+
+* The `document` variable provides access to the root of the DOM tree and corresponds to the `<html>` element in the HTML itself.
+
+* DOM objects have **properties** and **methods** that you can manipulate with JavaScript. For example, `nodeType` returns the node type, `childNodes` contains a collection of child nodes, and `parentNode` returns the parent node.
+
 ## Coding time!
 
 ### Showing a node's child
@@ -206,4 +208,6 @@ showChild(document.body, 8);
 showChild(document.body.childNodes[0], 0);
 ```
 
-> Use `console.error()` rather than `console.log()` to display an error message in the console.
+!!! tip
+
+    Use `console.error()` rather than `console.log()` to display an error message in the console.

@@ -2,31 +2,15 @@
 
 JavaScript lets you manage forms defined within your web page, in order to further improve interactivity.
 
-## TL;DR
-
-* A **form** lets users input data through a web page. Inputted data is usually sent to a **web server**. Before data gets sent off, you can use JavaScript to interact with the form data and validate it.
-
-* Text zones (`input type="text">` or `<textarea>`) each have a `value` property to access the inputted value.
-
-* When a text field becomes the input target, this field has the **focus**. The `focus` and `blur` events are triggered when the field gets or loses the focus, respectively. The `focus()` and `blur()` methods can update the focus target programmatically.
-
-* Checkboxes, radio buttons, and dropdown lists generate `change` events whenever a user modifies their choice.
-
-* The DOM element that corresponds to the form has an `elements` property that lets you access its input fields programmatically.
-
-* Submitting a form triggers a `submit` event on the form DOM element. You can prevent the sending of form data to the server by using the `preventDefault()` method on the associated `Event` object.
-
-* Any modification of a text field triggers an `input` event, which can be used to validate its data as the user enters it.
-
-* A **regular expression** is a pattern to which strings can be compared. Regular expressions are often used to perform fine-grained validations of form data.
-
 ## JavaScript and forms
 
 ### Form recap
 
 Forms enhance web pages by allowing users to input information through text fields, check boxes, dropdown menus, and more. Inside a web page, a form is defined with a `<form>` HTML tag, and within this tag, you have your different `<input>` tags, `<select>` tags, or `<textarea>` tags.
 
-> If forms are totally new to you, the Mozilla Developer Network has a great intro aptly named [Your first HTML form](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form). For a more general recap on forms, check out the [MDN overview](https://developer.mozilla.org/en-US/docs/Learn/Forms).
+!!! tip
+
+    If forms are totally new to you, the Mozilla Developer Network has a great intro aptly named [Your first HTML form](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form). For a more general recap on forms, check out the [MDN overview](https://developer.mozilla.org/en-US/docs/Learn/Forms).
 
 ### Handling forms with JavaScript
 
@@ -92,7 +76,9 @@ Let's start with a simple form that allows users to sign up for a service.
 
 This example contains multiple input zones: text, checkboxes, radio buttons, a dropdown menu, as well as submit and cancel buttons. We'll learn how to deal with each of these elements with JavaScript.
 
-> You might have noticed that the `<form>` tag doesn't have the usual `action` and `method` attributes. These attributes allow you to define the requested server resource when the form is submitted by the user. Since our form will only be handled by JavaScript in the browser, they're not necessary.
+!!! note
+
+    You might have noticed that the `<form>` tag doesn't have the usual `action` and `method` attributes. These attributes allow you to define the requested server resource when the form is submitted by the user. Since our form will only be handled by JavaScript in the browser, they're not necessary here.
 
 ### Text zones
 
@@ -148,7 +134,9 @@ usernameElement.focus();
 
 Multi-line text fields (`<textarea>` tags) work similarly to `<input>` tags.
 
-> You'll learn how to validate text that a user inputs (to make sure it fits certain criteria) later in this chapter.
+!!! note
+
+    You'll learn how to validate text that a user inputs (to make sure it fits certain criteria) later in this chapter.
 
 ### Choice elements
 
@@ -423,11 +411,15 @@ Observing these examples leads us to the following rules:
 
 * The `*` character matches zero, one, or several instances of the preceding expression.
 
-T> The site <https://regex101.com> is useful to understand, test and debug regular expressions.
+!!! tip
+
+    The site <https://regex101.com> is useful to understand, test and debug regular expressions.
 
 Let's get back to our example and check the email address field. Here's a possible regular expression (among many others) to test it against: `/.+@.+\..+/`.
 
-Q> Before reading further, can you decode this pattern to understand what conditions a string must respect to match it?
+!!! question
+
+    Before reading further, can you decode this pattern to understand what conditions a string must respect to match it?
 
 OK, here is the answer. This pattern matches a string that:
 
@@ -455,6 +447,24 @@ document.getElementById("emailAddress").addEventListener("blur", e => {
 ```
 
 ![Execution result](images/chapter17-09.png)
+
+## TL;DR
+
+* A **form** lets users input data through a web page. Inputted data is usually sent to a **web server**. Before data gets sent off, you can use JavaScript to interact with the form data and validate it.
+
+* Text zones (`input type="text">` or `<textarea>`) each have a `value` property to access the inputted value.
+
+* When a text field becomes the input target, this field has the **focus**. The `focus` and `blur` events are triggered when the field gets or loses the focus, respectively. The `focus()` and `blur()` methods can update the focus target programmatically.
+
+* Checkboxes, radio buttons, and dropdown lists generate `change` events whenever a user modifies their choice.
+
+* The DOM element that corresponds to the form has an `elements` property that lets you access its input fields programmatically.
+
+* Submitting a form triggers a `submit` event on the form DOM element. You can prevent the sending of form data to the server by using the `preventDefault()` method on the associated `Event` object.
+
+* Any modification of a text field triggers an `input` event, which can be used to validate its data as the user enters it.
+
+* A **regular expression** is a pattern to which strings can be compared. Regular expressions are often used to perform fine-grained validations of form data.
 
 ## Coding time!
 
@@ -560,7 +570,9 @@ Complete this code so that:
 
 In this exercise, you'll have to assist the user in selecting a country. As he enters the country name in an input box, the page shows a list of corresponding countries. Clicking on a suggested country replaces the value in the input box.
 
-> To keep things simple, only countries starting with a `"A"` letter are taken into account.
+!!! note
+
+    To keep things simple, only countries starting with a `"A"` letter are taken into account.
 
 Here is the HTML code that creates the input box.
 

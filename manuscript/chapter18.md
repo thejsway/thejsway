@@ -1,16 +1,6 @@
 # Animate elements
 
-This chapter will get you started with JavaScript for animations! We'll see how to kick off animations that should run repeatedly or should stop at a certain point.
-
-## TL;DR
-
-* The `setInterval()` function kicks off a repeated action and is called at regular intervals. The `clearInterval()` function stops a repeated action that was launched with `setInterval()`.
-
-* The `setTimeout()` function executes an action once after a certain delay.
-
-* The `requestAnimationFrame()` function asks the browser to execute a function that updates the animation as soon as possible. This works well for real-time animations. The `cancelAnimationFrame()` function stops an in-progress animation that was launched with `requestAnimationFrame()`.
-
-* You can also create web animations via **CSS**.
+This chapter will get you started with JavaScript for animations! We'll see how to kick off animations that run repeatedly or stop at a certain point.
 
 ## Repeat an action at regular intervals
 
@@ -43,7 +33,9 @@ setInterval(decreaseCounter, 1000);
 
 How did the previous example work? The JavaScript code defines a function called `decreaseCounter()` that accesses and then decreases one by one the value of the HTML element named `counter`.
 
-> Calling `Number()` in the function code is mandatory: it converts the counter string into a number, which endows it with subtraction functionality.
+!!! note
+
+    Calling `Number()` in the function code is mandatory: it converts the counter string into a number, which endows it with subtraction functionality.
 
 The call to `setInterval()` triggers a repeated action. This function lets you call a function at regular intervals. Its parameters are the function to call and the time in milliseconds between each call. The returned value is an ID for the repeated action, which can be used to further modify it.
 
@@ -193,7 +185,9 @@ The example code defines a function called `moveBlock()` which moves the block h
 
 Position values are written in pixels. These are the strings you saw that resemble "XXpx," which requires the use of the JavaScript `parseFloat()` function to convert numeric values before making calculations.
 
-> Don't use `Number()` to convert a string with `"px"` into a numerical value. This won't work, and you'll get a `NaN` value (*Not a Number*) as a result!
+!!! warning
+
+    Don't use `Number()` to convert a string with `"px"` into a numerical value. This won't work, and you'll get a `NaN` value (*Not a Number*) as a result!
 
 The `requestAnimationFrame()` function lets you ask the browser to execute a function as soon as possible, which updates the animation. It's the browser's job to make the animation as smooth as possible. The returned value of `requestAnimationFrame()` is an ID for the animation, which can be used to further modify it.
 
@@ -260,59 +254,37 @@ cancelAnimationFrame(animationID);
 
 ### An alternative: CSS animations
 
-You just learned about the different possibilities that JavaScript offers for animating web pages. Just bear in mind there's another alternative: CSS.
+You just learned about the different possibilities that JavaScript offers for animating web pages. Just bear in mind there's an another, non-JS way to obtain similar results: using CSS.
 
-> This paragraph barely scratches the surface of CSS animations.
-
-Let's check out how to get a similar effect as the previous example by using CSS instead of JavaScript. Remove any JavaScript code from your example and modify your CSS code as follows.
-
-```css
-#frame {
-  border: 1px solid red;
-}
-
-#block {
-  width: 20px;
-  height: 40px;
-  background: red;
-  position: relative;
-  margin-left: -20px; /* Negative margin to simplify position calculations */
-  animation-name: moveBlock; /* Name of animation */
-  animation-duration: 6s; /* Length of animation */
-  animation-fill-mode: forwards; /* Leave the block in its final position */
-}
-
-@keyframes moveBlock {
-  from {
-    /* Initial position: to the left of the frame (taking negative margin into account) */
-    left: 20px;
-  }
-  to {
-    /* Final position: within the right side of the frame (taking negative margin into account) */
-    left: 100%;
-  }
-}
-```
-
-[Click here](https://codepen.io/bpesquet/pen/wdKyQb?editors=1100) to see it in action.
-
-This code defines a CSS animation named `moveBlock()`, which moves the block from the left to the right side of its containing frame. The result is virtually identical to the JavaScript version.
+This rich topic is outside the scope of thie book. Check out [this introductory page](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations) to get started with it.
 
 ## Choosing the right animation technique
 
-Now, decision time. How should you choose between `setInterval()`, `requestAnimationFrame()`, or CSS to animate your page? The answer depends on how complex your animation is. In theory, CSS animations are more efficient performance-wise, but you can't do everything with them.
+Now, decision time. How should you choose between `setInterval()`, `requestAnimationFrame()`, or CSS to animate your page? The answer depends on how complex your animation is. In theory, CSS animations are more efficient performance-wise, but you can't do everything with them. You can read a  comparison of JavaScript and CSS animations performance-wise [here](https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance).
 
 Here's how you might want to approach your decision:
 
 * Use `setInterval()` if the animation isn't in real-time and should just happen at regular intervals.
-* Favor CSS if the animation happens in real-time and can be managed with it.
+* Favor CSS if the animation happens in real-time and is simple enough to be managed with this technique.
 * Use `requestAnimationFrame()` for any other case.
+
+## TL;DR
+
+* The `setInterval()` function kicks off a repeated action and is called at regular intervals. The `clearInterval()` function stops a repeated action that was launched with `setInterval()`.
+
+* The `setTimeout()` function executes an action once after a certain delay.
+
+* The `requestAnimationFrame()` function asks the browser to execute a function that updates the animation as soon as possible. This works well for real-time animations. The `cancelAnimationFrame()` function stops an in-progress animation that was launched with `requestAnimationFrame()`.
+
+* You can also create web animations via **CSS**.
 
 ## Coding time!
 
 ### Chronometer
 
 Write an interactive web page with a button to start and stop a chronometer counting the number of elapsed seconds.
+
+![Execution result](images/chapter18-05.gif)
 
 ### Bouncing ball
 
@@ -341,6 +313,8 @@ Start with the following HTML and CSS content.
 
 Write the JavaScript code that makes the ball bounce horizontally.
 
-![Execution result](images/chapter18-04.png)
+![Execution result](images/chapter18-04.gif)
 
-With your solution, create a variable with values 1 or -1 that dictates the direction in which the ball should move.
+!!! tip
+
+    You may create a variable with values 1 or -1 that dictates the direction in which the ball should move.

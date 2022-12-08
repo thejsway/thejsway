@@ -2,26 +2,6 @@
 
 Let's see how to use JavaScript to modify a web page once it's been loaded by the browser! You can thus make your content more dynamic and interactive.
 
-## TL;DR
-
-* The `innerHTML`, `textContent` and `classList` properties, as well as the `setAttribute` method, let you modify a DOM element's information.
-
-* You create new DOM nodes via methods `createTextNode()` (for, well, text nodes) and `createElement()` (for elements themselves).
-
-* The `appendChild()` method lets you insert a new node as the last child of a DOM element.
-
-* The `insertBefore()` and `insertAdjacentHTML()` methods are alternative possibilities for adding content.
-
-* You can replace existing nodes with the `replaceChild()` method or remove them with `removeChild()`.
-
-* The JavaScript `style` property represents the `style` attribute of a DOM node. It lets you modify the element's style by defining values of its CSS properties.
-
-* CSS properties that involve multiple words are written in **camelCase** when dealing with JavaScript. For example, `font-family` becomes `fontFamily`.
-
-* The `style` property is not intended to access an element's style. You should use the `getComputedStyle()` function instead.
-
-* Manipulating the DOM with JavaScript should be done sparingly so that page performance doesn't suffer.
-
 ## Modify an existing element
 
 The DOM traversal properties studied in the previous chapter can also be used to update elements in the page.
@@ -64,7 +44,9 @@ document.getElementById("languages").innerHTML = "";
 
 > Before moving on, remove the above line from your JavaScript program. Otherwise, you'll have no content!
 
-T> When using `innerHTML`, you put HTML content into strings. To keep your code readable and avoid mistakes, you should only use `innerHTML` to make small content changes. You'll discover more versatile solutions below.
+!!! tip
+
+    When using `innerHTML`, you put HTML content into strings. To keep your code readable and avoid mistakes, you should only use `innerHTML` to make small content changes. You'll discover more versatile solutions below.
 
 ### Text content
 
@@ -358,6 +340,26 @@ newNode.textContent = "...";
 parentNode.appendChild(newNode); // Add it to the DOM
 ```
 
+## TL;DR
+
+* The `innerHTML`, `textContent` and `classList` properties, as well as the `setAttribute` method, let you modify a DOM element's information.
+
+* You create new DOM nodes via methods `createTextNode()` (for, well, text nodes) and `createElement()` (for elements themselves).
+
+* The `appendChild()` method lets you insert a new node as the last child of a DOM element.
+
+* The `insertBefore()` and `insertAdjacentHTML()` methods are alternative possibilities for adding content.
+
+* You can replace existing nodes with the `replaceChild()` method or remove them with `removeChild()`.
+
+* The JavaScript `style` property represents the `style` attribute of a DOM node. It lets you modify the element's style by defining values of its CSS properties.
+
+* CSS properties that involve multiple words are written in **camelCase** when dealing with JavaScript. For example, `font-family` becomes `fontFamily`.
+
+* The `style` property is not intended to access an element's style. You should use the `getComputedStyle()` function instead.
+
+* Manipulating the DOM with JavaScript should be done sparingly so that page performance doesn't suffer.
+
 ## Coding time!
 
 ### Adding a paragraph
@@ -393,7 +395,7 @@ Here is the HTML code of a web page.
 <div id="content"></div>
 ```
 
-Write a program that shows on the page a list of terms and definitions defined in a JavaScript array.
+Write a program that shows on the page a list of terms and definitions contained in a JavaScript array.
 
 ```js
 const words = [{

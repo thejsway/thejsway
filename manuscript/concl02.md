@@ -1,6 +1,6 @@
 # Acknowledgments
 
-This book was built upon two online courses I wrote for the french EdTech company [OpenClassrooms](https://openclassrooms.com). Thanks to [Jessica Mautref](https://www.linkedin.com/in/jessicamautref) for her watchful eye during the writing process, and to [Emily Reese](https://www.linkedin.com/in/eclairereese) for the initial English translation. Both also contributed many good ideas.
+This book was built upon two online courses I authored for the french EdTech company [OpenClassrooms](https://openclassrooms.com). Thanks to [Jessica Mautref](https://www.linkedin.com/in/jessicamautref) for her watchful eye during the writing process, and to [Emily Reese](https://www.linkedin.com/in/eclairereese) for the initial English translation. Both also contributed many good ideas.
 
 I've been inspired by JavaScript experts who decided to publish their books in an open way: [Kyle Simpson](https://github.com/getify), [Nicholas C. Zakas](https://humanwhocodes.com/writing/), [Axel Rauschmayer](http://dr-axel.de/) and [Marijn Haverbeke](http://marijnhaverbeke.nl/).
 
