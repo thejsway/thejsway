@@ -6,7 +6,7 @@ Published under a [Creative Commons](https://raw.githubusercontent.com/thejsway/
 
 Also available on [Leanpub](https://leanpub.com/thejsway) (PDF, EPUB), [Amazon](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860) (Kindle, paperback) and [Educative](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch) (interactive course).
 
-[![Book cover](../cover.jpg)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
+[![Book cover](images/cover.jpg)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
 
 ## Overview
 

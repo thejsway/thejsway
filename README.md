@@ -2,11 +2,11 @@
 
 This repository contains the English source files for **The JavaScript Way** book.
 
-You may browse its content here, but a nicer alternative is the [online version](https://thejsway.github.io/thejsway), free to read and powered by [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/).
+You may browse its content [here](manuscript/), but a nicer alternative is the [online version](https://thejsway.net), free to read and powered by [Material for Mkdocs](https://squidfunk.github.io/mkdocs-material/).
 
 This book is also available on [Leanpub](https://leanpub.com/thejsway) (PDF, EPUB), [Amazon](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860) (Kindle, paperback) and [Educative](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch) (interactive course).
 
-[![Book cover](cover.jpg)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
+[![Book cover](manuscript/images/cover.jpg)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
 
 ## License
 
