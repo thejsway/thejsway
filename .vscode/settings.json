@@ -1,0 +1,6 @@
+{
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "~/.local/bin/black",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
