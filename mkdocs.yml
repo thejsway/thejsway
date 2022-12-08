@@ -42,6 +42,8 @@ nav:
       - chapter26.md
   - Conclusion:
       - concl01.md
+  - Appendices:
+      - appendix02.md
       - concl02.md
 
 theme:
@@ -79,9 +81,6 @@ extra:
     - name: Indonesian
       link: https://github.com/thejsway/thejsway_id
       lang: id
-    - name: Persian
-      link: https://github.com/thejsway/thejsway_per
-      lang: per
 
 extra_css:
   - stylesheets/extra.css

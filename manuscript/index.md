@@ -1,6 +1,6 @@
 # The JavaScript Way
 
-An open source book written by [Baptiste Pesquet](https://www.bpesquet.fr) with the help of [many people](concl02.md). Translated to [French](https://github.com/thejsway/thejsway_fr), [Spanish](https://github.com/thejsway/thejsway_es), [Indonesian](https://github.com/thejsway/thejsway_id) and [Persian](https://github.com/thejsway/thejsway_per).
+An open source book written by [Baptiste Pesquet](https://www.bpesquet.fr) with the help of [many people](concl02.md). Translated to [French](https://github.com/thejsway/thejsway_fr), [Spanish](https://github.com/thejsway/thejsway_es) and [Indonesian](https://github.com/thejsway/thejsway_id).
 
 Published under a [Creative Commons](https://raw.githubusercontent.com/thejsway/thejsway/master/LICENSE) license and free to read online here. All code licensed under an [MIT](https://raw.githubusercontent.com/thejsway/thejsway/master/CODE_LICENSE) license. [Contributions](https://github.com/thejsway/thejsway/blob/master/CONTRIBUTING.md) are most welcome.
 
