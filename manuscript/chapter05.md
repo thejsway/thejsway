@@ -17,9 +17,9 @@ Begin
   Taste-test the vegetables
     If the veggies are good
       Remove them from the stove
-    If the veggies aren't good
+    If the veggies aren’t good
       Add more pepper and spices
-    If the veggies aren't cooked enough
+    If the veggies aren’t cooked enough
       Keep stir-frying the veggies
   Heat the tortilla
   Add rice to the tortilla
@@ -202,7 +202,7 @@ console.log(sayHello()); // "Hello!"
 
 The function `sayHello()` declares a variable named `message` and returns its value.
 
-The variables declared in the body of a function are called **local variables**. Their **scope** is limited to the function body (hence their name). If you try to use these local variables outside the function, you won't be able to!
+The variables declared in the body of a function are called **local variables**. Their **scope** is limited to the function body (hence their name). If you try to use these local variables outside the function, you won’t be able to!
 
 ```js
 function sayHello() {
@@ -480,11 +480,11 @@ When it's done, update the program so that it shows the square of every number b
 
 !!! info
 
-    Writing 10 dumb calls to `square()` is forbidden! You know how to repeat statements, don't you? ;)
+    Writing 10 dumb calls to `square()` is forbidden! You know how to repeat statements, don’t you? ;)
 
 ### Minimum of two numbers
 
-Let's pretend the JavaScript `Math.min()` function doesn't exist. Complete the following program so that the `min()` function returns the minimum of its two received numbers.
+Let's pretend the JavaScript `Math.min()` function doesn’t exist. Complete the following program so that the `min()` function returns the minimum of its two received numbers.
 
 ```js
 // TODO: write the min() function

@@ -249,7 +249,7 @@ const aurora = {
 
 You see a new keyword: `this`. This is automatically set by JavaScript inside a method and represents **the object on which the method was called**.
 
-The `describe()` method doesn't take any parameters. It uses `this` to access the properties of the object on which it is called.
+The `describe()` method doesn’t take any parameters. It uses `this` to access the properties of the object on which it is called.
 
 ## JavaScript predefined objects
 

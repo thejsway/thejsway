@@ -54,7 +54,7 @@ Before each loop iteration, the condition in parentheses is evaluated to determi
 
 * If the condition's value is `true`, the code in the `while` loop's body runs. Afterwards, the condition is re-evaluated to see if it's still true or not. The cycle continues!
 
-* If the condition's value is `false`, the code in the loop stops running or doesn't run.
+* If the condition's value is `false`, the code in the loop stops running or doesn’t run.
 
 !!! tip
 
@@ -91,7 +91,7 @@ This is a little more complicated than the `while` loop syntax:
 
 * **Initialization** only happens once, when the code first kicks off. It's often used to set the initial value of the variable associated to the loop condition.
 
-* The **condition** is evaluated once before the loop runs each time. If it's true, the code runs. If not, the code doesn't run.
+* The **condition** is evaluated once before the loop runs each time. If it's true, the code runs. If not, the code doesn’t run.
 
 * The **final expression** is evaluated after the loop runs each time. It's often used to update the value of the variable associated with the loop condition, as we saw in the previous example.
 
@@ -141,7 +141,7 @@ Each time the loop runs, the counter variable is incremented *twice*: once in th
 
 ## Which loop structure should I use?
 
-`For` loops are great because they include the notion of counting by default, avoiding the problem of infinite loops. However, it means you have to know how many times you want the loop to run as soon as you write your code. For situations where you don't already know how many times the code should run, `while` loops make sense. Here's a `while` loop use case in which a user is asked to type letters over and over until entering X:
+`For` loops are great because they include the notion of counting by default, avoiding the problem of infinite loops. However, it means you have to know how many times you want the loop to run as soon as you write your code. For situations where you don’t already know how many times the code should run, `while` loops make sense. Here's a `while` loop use case in which a user is asked to type letters over and over until entering X:
 
 ```js
 let letter = "";
@@ -150,7 +150,7 @@ while (letter !== "X") {
 }
 ```
 
-You can't know how many times it'll take for the user to enter `X`, so `while` is generally good for loops that depend on user interaction.
+You can’t know how many times it'll take for the user to enter `X`, so `while` is generally good for loops that depend on user interaction.
 
 Ultimately, choosing which loop to use depends on context. All loops can be written with `while`, but if you know in advance how many times you want the loop to run, `for` is the best choice.
 

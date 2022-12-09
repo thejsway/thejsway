@@ -98,7 +98,7 @@ console.log(document.body.childNodes[0]);
 
 ![Execution result](images/chapter13-04.png)
 
-Wait... Why isn't the first child node `h1`, since that's the first element in the body's HTML?
+Wait... Why isn’t the first child node `h1`, since that's the first element in the body's HTML?
 
 That's because spaces between tags and line returns in HTML code are considered text nodes by the browser. The node `h1` is therefore the *second* child node of the body. Let's double check that:
 

@@ -254,7 +254,7 @@ console.log(averageRating(nolanMovieList));
 
 Since we only do refactoring, the program output is still the same.
 
-The program state (`movieList` and `nolanMovieList`) hasn't changed. However, all our functions are now pure; instead of accessing the state, they use parameters to achieve their desired behavior. As an added benefit, the function `averageRating()` can now compute the average rating of any movie list; it has become more **generic**.
+The program state (`movieList` and `nolanMovieList`) hasn’t changed. However, all our functions are now pure; instead of accessing the state, they use parameters to achieve their desired behavior. As an added benefit, the function `averageRating()` can now compute the average rating of any movie list; it has become more **generic**.
 
 ## Array operations
 

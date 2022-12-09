@@ -48,7 +48,7 @@ These smaller parts are sometimes referred to as components in other environment
 
 ### Creating a module
 
-The simplest form of module is a single JavaScript file, containing special commands to **export** specific pieces of code. The rest of the code is **private** to the module and won't be visible outside of it.
+The simplest form of module is a single JavaScript file, containing special commands to **export** specific pieces of code. The rest of the code is **private** to the module and won’t be visible outside of it.
 
 For example, a `greetings.js` module could contain the following code.
 
@@ -87,7 +87,7 @@ const greetings = require("./greetings.js");
 // Use exported functions
 console.log(greetings.sayHello("Baptiste")); // "Hello, Baptiste"
 console.log(greetings.flatter()); // "Look how gorgeous you are today!"
-console.log(greetings.sayGoodbye("Baptiste")); // Error: sayGoodbye doesn't exist
+console.log(greetings.sayGoodbye("Baptiste")); // Error: sayGoodbye doesn’t exist
 ```
 
 The parameter passed to `require()` identifies the module to load. Here, the `"./"` substring at the beginning indicates a **relative path**: the module should be searched for in the same directory as the file that loads it.
@@ -311,7 +311,7 @@ Let's recap what you learned so far:
 
 A package used in another Node application is loaded with `require()`, making it a module. To be loaded as a module, a package must contain an `index.js` file or a `main` field in `package.json` defining a specific entry point.
 
-Some packages only contain an executable command and thus cannot be loaded as modules. On the other hand, a single JavaScript file loaded with `require()` is a module but not a package, since it doesn't have a `package.json` file.
+Some packages only contain an executable command and thus cannot be loaded as modules. On the other hand, a single JavaScript file loaded with `require()` is a module but not a package, since it doesn’t have a `package.json` file.
 
 Check out the [npm documentation](https://docs.npmjs.com/packages-and-modules) for more details on this aspect.
 

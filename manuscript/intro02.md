@@ -44,7 +44,7 @@ movl $0, %ebx
 int $0x80
 ```
 
-Pretty scary, isn't it? Fortunately, other programming languages are much simpler and convenient to use than assembly language.
+Pretty scary, isn’t it? Fortunately, other programming languages are much simpler and convenient to use than assembly language.
 
 ### The large family of programming languages
 
@@ -88,7 +88,7 @@ Lastly, some languages are pseudo-compiled in order to be executed on different 
 
 ### Introduction to algorithms
 
-Except in very simple cases, you don't create programs by writing source code directly. You'll first need to think about the instructions you'll want to convey.
+Except in very simple cases, you don’t create programs by writing source code directly. You'll first need to think about the instructions you'll want to convey.
 
 Take a concrete example from everyday life: I want to make a burrito. What are the steps that will enable me to achieve my goal?
 
@@ -103,9 +103,9 @@ Begin
     Taste-test the vegetables
         If the veggies are good
             Remove them from the stove
-        If the veggies aren't good
+        If the veggies aren’t good
             Add more pepper and spices
-        If the veggies aren't cooked enough
+        If the veggies aren’t cooked enough
             Keep stir-frying the veggies
     Heat the tortilla
     Add rice to tortilla

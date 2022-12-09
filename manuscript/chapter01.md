@@ -39,7 +39,7 @@ Numbers are mainly used for counting. The main operations you'll see are summari
 
 A **string** in JavaScript is text surrounded by quotation marks, such as `"This is a string"`.
 
-You can also define strings with a pair of single quotes: `'This is another string'`. The best practice for single or double quotes is a whole political thing. Use whichever you like, but don't mix the two in the same program!
+You can also define strings with a pair of single quotes: `'This is another string'`. The best practice for single or double quotes is a whole political thing. Use whichever you like, but don’t mix the two in the same program!
 
 !!! warning
 
@@ -99,7 +99,7 @@ console.log(4 + 7);
 console.log("Goodbye!");
 ```
 
-During execution, the commented-out lines no longer produce results. As we hoped, they weren't executed.
+During execution, the commented-out lines no longer produce results. As we hoped, they weren’t executed.
 
 ![Execution result](images/chapter01-02.png)
 

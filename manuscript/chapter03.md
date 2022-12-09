@@ -264,7 +264,7 @@ console.log("Hello" || "Goodbye")  // "Hello"
 
 ### "Not" operator
 
-There's another operator for when you know what you don't want: the not operator! You'll use a `!` for this.
+There's another operator for when you know what you don’t want: the not operator! You'll use a `!` for this.
 
 ```js
 if (!(number > 100)) {

@@ -128,7 +128,7 @@ setTimeout(callbackFunction, timeBeforeCall);
 
 ## Animate page elements
 
-The previous solutions were convenient for making our pages a bit more dynamic, but weren't enough for adding real-time animation. Let's look at a better-performing solution.
+The previous solutions were convenient for making our pages a bit more dynamic, but weren’t enough for adding real-time animation. Let's look at a better-performing solution.
 
 Take, for example, the movement of a `<div>` type element from left to right on the page. We start with the following HTML and CSS code that display a red block on the page.
 
@@ -187,7 +187,7 @@ Position values are written in pixels. These are the strings you saw that resemb
 
 !!! warning
 
-    Don't use `Number()` to convert a string with `"px"` into a numerical value. This won't work, and you'll get a `NaN` value (*Not a Number*) as a result!
+    Don’t use `Number()` to convert a string with `"px"` into a numerical value. This won’t work, and you'll get a `NaN` value (*Not a Number*) as a result!
 
 The `requestAnimationFrame()` function lets you ask the browser to execute a function as soon as possible, which updates the animation. It's the browser's job to make the animation as smooth as possible. The returned value of `requestAnimationFrame()` is an ID for the animation, which can be used to further modify it.
 
@@ -218,7 +218,7 @@ const moveBlock = () => {
   const xBlock = parseFloat(getComputedStyle(blockElement).left);
   // Convert the width of the frame (value of the form "XXpx") to a number
   const xMax = parseFloat(getComputedStyle(frame).width);
-  // If the block isn't already to the end of the frame
+  // If the block isn’t already to the end of the frame
   if (xBlock + blockWidth <= xMax) {
     // Block movement
     blockElement.style.left = (xBlock + movement) + "px";
@@ -260,11 +260,11 @@ This rich topic is outside the scope of thie book. Check out [this introductory 
 
 ## Choosing the right animation technique
 
-Now, decision time. How should you choose between `setInterval()`, `requestAnimationFrame()`, or CSS to animate your page? The answer depends on how complex your animation is. In theory, CSS animations are more efficient performance-wise, but you can't do everything with them. You can read a  comparison of JavaScript and CSS animations performance-wise [here](https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance).
+Now, decision time. How should you choose between `setInterval()`, `requestAnimationFrame()`, or CSS to animate your page? The answer depends on how complex your animation is. In theory, CSS animations are more efficient performance-wise, but you can’t do everything with them. You can read a  comparison of JavaScript and CSS animations performance-wise [here](https://developer.mozilla.org/en-US/docs/Web/Performance/CSS_JavaScript_animation_performance).
 
 Here's how you might want to approach your decision:
 
-* Use `setInterval()` if the animation isn't in real-time and should just happen at regular intervals.
+* Use `setInterval()` if the animation isn’t in real-time and should just happen at regular intervals.
 * Favor CSS if the animation happens in real-time and is simple enough to be managed with this technique.
 * Use `requestAnimationFrame()` for any other case.
 

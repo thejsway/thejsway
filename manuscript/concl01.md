@@ -28,7 +28,7 @@ This book covers a lot of ground. Here are the essential points you should under
 
 This book is designed to be the first step of a JavaScript-centered learning path. I hope it inspired you to go further. If so, you are only at the beginning of a long and exciting journey!
 
-If you feel overwhelmed for now, take heart: Rome wasn't built in a day. Grasping the concepts of programming takes time and practice. Don't get discouraged and be sure to follow the guidelines provided in the next few paragraphs.
+If you feel overwhelmed for now, take heart: Rome wasn’t built in a day. Grasping the concepts of programming takes time and practice. Don’t get discouraged and be sure to follow the guidelines provided in the next few paragraphs.
 
 !!! note
 
@@ -54,7 +54,7 @@ Still undecided or looking for more? Take Wes Bos' [JavaScript30](https://javasc
 
 You hopefully learnt a lot already, but JavaScript is a surprisingly deep language that still has a lot in store for you. Some prominent resources to strengthen your knowledge are:
 
-* Kyle Simpson's [You Don't Know JS Yet](https://github.com/getify/You-Dont-Know-JS), a book series diving deep into the core mechanisms of the language.
+* Kyle Simpson's [You Don’t Know JS Yet](https://github.com/getify/You-Dont-Know-JS), a book series diving deep into the core mechanisms of the language.
 * Axel Rauschmayer's authoritative [blog](http://2ality.com/) and [books](http://exploringjs.com).
 * Marijn Haverbeke's [Eloquent JavaScript](https://eloquentjavascript.net/), a reference book in the JS world.
 * Ilya Kantor's [javascript.info](http://javascript.info), an online tutorial with a lot of interesting content.

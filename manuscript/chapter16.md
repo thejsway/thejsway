@@ -186,7 +186,7 @@ The appearance order for mouse-related events is: `mousedown` -> `mouseup` -> `c
 
 ### Page loading
 
-Depending on how complex it is, a web page can take time to be entirely loaded by the browser. You can add an event listener on the `load` event produced by the `window` object (which represents the browser window) to know when this happens. This avoids messy situations where JavaScript interacts with pages that aren't fully loaded.
+Depending on how complex it is, a web page can take time to be entirely loaded by the browser. You can add an event listener on the `load` event produced by the `window` object (which represents the browser window) to know when this happens. This avoids messy situations where JavaScript interacts with pages that aren’t fully loaded.
 
 The following code displays a message in the console once the page is fully loaded.
 

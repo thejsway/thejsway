@@ -18,7 +18,7 @@ A variable has three main properties:
 
 !!! info
 
-    You don't have to define a variable type explicitly in JavaScript. Its type is deduced from the value stored in the variable and may change while the program runs. That's why we say that JavaScript is a **dynamically typed** language. Other languages, like C or Java, require variable types to always be defined. This is called **static typing**.
+    You don’t have to define a variable type explicitly in JavaScript. Its type is deduced from the value stored in the variable and may change while the program runs. That's why we say that JavaScript is a **dynamically typed** language. Other languages, like C or Java, require variable types to always be defined. This is called **static typing**.
 
 ### Declaring a variable
 
@@ -41,7 +41,7 @@ Here's the execution result for this program.
 
 ![Execution result](images/chapter02-01.png)
 
-Note that the result is `undefined`. This is a special JavaScript type indicating no value. I declared the variable, calling it `a`, but didn't give it a value!
+Note that the result is `undefined`. This is a special JavaScript type indicating no value. I declared the variable, calling it `a`, but didn’t give it a value!
 
 ### Assign values to variables
 
@@ -72,7 +72,7 @@ console.log(a);
 
 ### Declaring a constant variable
 
-If the initial value of a variable won't ever change during the rest of program execution, this variable is called a **constant**. This constantness can be enforced by using the keyword `const` instead of `let` to declare it. Thus, the program is more expressive and further attempts to modify the variable can be detected as errors.
+If the initial value of a variable won’t ever change during the rest of program execution, this variable is called a **constant**. This constantness can be enforced by using the keyword `const` instead of `let` to declare it. Thus, the program is more expressive and further attempts to modify the variable can be detected as errors.
 
 ```js
 const a = 3.14; // The value of a cannot be modified
@@ -151,7 +151,7 @@ const f = 100;
 console.log("Variable f contains the value " + f);
 ```
 
-JavaScript is extremely tolerant in terms of type conversion. However, sometimes conversion isn't possible. If a value fails to convert into a number, you'll get the result `NaN` (*Not a Number*).
+JavaScript is extremely tolerant in terms of type conversion. However, sometimes conversion isn’t possible. If a value fails to convert into a number, you'll get the result `NaN` (*Not a Number*).
 
 ```js
 const g = "five" * 2;
@@ -222,7 +222,7 @@ In this example, the user input is directly converted in a number value by the `
 
 ## Variable naming
 
-To close this chapter, let's discuss variable naming. The computer doesn't care about variable names. You could name your variables using the classic example of a single letter (`a`, `b`, `c`...) or choose absurd names like `burrito`  or `puppieskittens90210`.
+To close this chapter, let's discuss variable naming. The computer doesn’t care about variable names. You could name your variables using the classic example of a single letter (`a`, `b`, `c`...) or choose absurd names like `burrito`  or `puppieskittens90210`.
 
 Nonetheless, naming variables well can make your code much easier to read. Check out these two examples:
 

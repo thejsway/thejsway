@@ -155,7 +155,7 @@ for (const movie of movies) {
 
 ### Adding an element to an array
 
-Don't lie to me: you've just watched Ghostbusters *yet another time*. Let's add it to the list. Here's how you'd do so.
+Don’t lie to me: you've just watched Ghostbusters *yet another time*. Let's add it to the list. Here's how you'd do so.
 
 ```js
 const movies = ["The Wolf of Wall Street", "Zootopia", "Babysitting"];

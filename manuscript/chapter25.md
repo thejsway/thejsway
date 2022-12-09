@@ -168,7 +168,7 @@ When accessing the `"/api/articles"` route (<http://localhost:3000/api/articles>
 
 ## Accepting data
 
-So far, your web server offers a *read-only* service: it publishes some data but doesn't accept any... Until now!
+So far, your web server offers a *read-only* service: it publishes some data but doesn’t accept any... Until now!
 
 As you saw in a previous chapter, information submitted to a web server can be either form data or JSON data.
 

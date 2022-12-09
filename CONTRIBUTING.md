@@ -10,7 +10,7 @@ You may also open **issues** for pointing out mistakes or suggesting ideas.
 
 ## Support (or lack thereof)
 
-Please do *not* use issues to ask for help because you're stuck in an exercise or a project. Unfortunately, I don't have enough free time to answer individual requests, so these issues would be closed immediately.
+Please do *not* use issues to ask for help because you're stuck in an exercise or a project. Unfortunately, I don’t have enough free time to answer individual requests, so these issues would be closed immediately.
 
 Instead, start by searching the web and ask your questions on programming forums like [Stack Overflow](https://stackoverflow.com) or [Reddit](https://www.reddit.com/r/learnjavascript/). Knowing how to find answers online is a key skill for a developer!
 

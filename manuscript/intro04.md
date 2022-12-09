@@ -25,7 +25,7 @@ The safest bet is to choose either [Google Chrome](https://www.google.com/chrome
 
 ## Solution 1: coding online
 
-Maybe you're a little bit of the impatient type, or maybe you'd rather not (or haven't the right privileges to) set up your local machine right now. Fortunately, several online services, often called *playgrounds*, allow you to type and run JavaScript code directly from your browser. All you'll need in addition is an active Internet connection.
+Maybe you're a little bit of the impatient type, or maybe you'd rather not (or haven’t the right privileges to) set up your local machine right now. Fortunately, several online services, often called *playgrounds*, allow you to type and run JavaScript code directly from your browser. All you'll need in addition is an active Internet connection.
 
 For chapters 1 to 23, you'll need a **front-end** coding playground able to understand and combine HTML, CSS and JavaScript code. There is a handful of free front-end playgrounds online. Good examples are [CodePen](http://codepen.io), [JSFiddle](https://jsfiddle.net/) and [JS Bin](http://jsbin.com/).
 
@@ -85,7 +85,7 @@ The easiest way to set up these tools is to add them as **extensions** (sometime
 
 It's important to set up your basic folder and file structure before actually starting to code. That way, your project will be organized, and you'll be starting off with some good programming habits.
 
-You should have a folder in your storage disk dedicated to coding along this book. The folder name doesn't matter, `thejsway-code` will do nicely. All local files you subsequently create will be stored in subfolders of this root folder. The most logical solution is to create a subfolder for each chapter of the book.
+You should have a folder in your storage disk dedicated to coding along this book. The folder name doesn’t matter, `thejsway-code` will do nicely. All local files you subsequently create will be stored in subfolders of this root folder. The most logical solution is to create a subfolder for each chapter of the book.
 
 You can either use a [predefined folder structure](https://github.com/thejsway/thejsway-starter-code) or follow the next few paragraphs to create this folder structure by hand.
 
@@ -138,7 +138,7 @@ In these chapters, you'll create Node.js applications to execute your JavaScript
 
 Rather than installing and configuring every piece of software manually, you can obtain a ready to use, fine-tuned JavaScript environment in a few pretty easy steps. Black magic? No, Docker combined with VS Code.
 
-[Docker](https://www.docker.com/) is a tool for running applications and services in small, lightweight "containers" which do not interfere with your local machine's installed software or configuration. This means you don't have to worry about configuring or setting up complicated development tools on your local machine. The general idea is given by the following schema. See [here](https://docs.docker.com/get-started/overview) for a more detailed overview of Docker.
+[Docker](https://www.docker.com/) is a tool for running applications and services in small, lightweight "containers" which do not interfere with your local machine's installed software or configuration. This means you don’t have to worry about configuring or setting up complicated development tools on your local machine. The general idea is given by the following schema. See [here](https://docs.docker.com/get-started/overview) for a more detailed overview of Docker.
 
 [![Docker architecture](images/intro04-01.png)](https://code.visualstudio.com/blogs/2020/07/27/containers-edu)
 
@@ -156,7 +156,7 @@ The newly created container packs everything you need to code alongside this boo
 * The [Prettier]((https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) VS Code extensions, already configured in accordance with the language flavor used throughout the book;
 * The predefined folder structure described above, and the initial code for all book exercises.
 
-Pretty neat, isn't it?
+Pretty neat, isn’t it?
 
 ### Use the browser's development tools
 

@@ -145,7 +145,7 @@ To create relationships between objects, JavaScript uses **prototypes**.
 
 In addition to its own particular properties, any JavaScript object has an internal property which is a link (known as a **reference**) to another object called its **prototype**. When trying to access a property that does not exist in an object, JavaScript tries to find this property in the prototype of this object.
 
-Here's an example (borrowed from Kyle Simpson's great book series [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md)).
+Here's an example (borrowed from Kyle Simpson's great book series [You Don’t Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md)).
 
 ```js
 const anObject = {
@@ -165,7 +165,7 @@ In this example, the JavaScript statement `Object.create()` is used to create th
 const myObject = Object.create(myPrototypeObject);
 ```
 
-When the statement `anotherObject.myProp` is run, the `myProp` property of `anObject` is used since `myProp` doesn't exist in `anotherObject`.
+When the statement `anotherObject.myProp` is run, the `myProp` property of `anObject` is used since `myProp` doesn’t exist in `anotherObject`.
 
 If the prototype of an object does not have a desired property, then the search continues in the object's own prototype until we get to the end of the **prototype chain**. If the end of this chain is reached without having found the property, an attempted access to the property returns the value `undefined`.
 
@@ -183,7 +183,7 @@ const yetAnotherObject = Object.create(anotherObject);
 // myProp is found in yetAnotherObject's prototype chain (in anObject)
 console.log(yetAnotherObject.myProp); // 2
 
-// myOtherProp can't be found in yetAnotherObject's prototype chain
+// myOtherProp can’t be found in yetAnotherObject's prototype chain
 console.log(yetAnotherObject.myOtherProp); // undefined
 ```
 
@@ -236,7 +236,7 @@ class Character {
         this.xp += bonusXP;
       }
     } else {
-      console.log(`${this.name} can't attack (they've been eliminated)`);
+      console.log(`${this.name} can’t attack (they've been eliminated)`);
     }
   }
   // Return the character description

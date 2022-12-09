@@ -80,7 +80,7 @@ Here is the resulting web content.
 
 Web APIs can be classified into two categories:
 
-* Open APIs that don't need any authentication to be used.
+* Open APIs that don’t need any authentication to be used.
 * APIs requiring the consumer to authenticate himself through various methods.
 
 ### Open APIs

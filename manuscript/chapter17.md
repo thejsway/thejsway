@@ -78,7 +78,7 @@ This example contains multiple input zones: text, checkboxes, radio buttons, a d
 
 !!! note
 
-    You might have noticed that the `<form>` tag doesn't have the usual `action` and `method` attributes. These attributes allow you to define the requested server resource when the form is submitted by the user. Since our form will only be handled by JavaScript in the browser, they're not necessary here.
+    You might have noticed that the `<form>` tag doesn’t have the usual `action` and `method` attributes. These attributes allow you to define the requested server resource when the form is submitted by the user. Since our form will only be handled by JavaScript in the browser, they're not necessary here.
 
 ### Text zones
 
@@ -271,7 +271,7 @@ formElement.addEventListener("submit", e => {
   if (e.target.elements.confirmation.checked) {
     console.log("You asked for email confirmation");
   } else {
-    console.log("You didn't asked for email confirmation");
+    console.log("You didn’t asked for email confirmation");
   }
   switch (e.target.elements.subscription.value) {
     case "newspromo":
@@ -355,7 +355,7 @@ Let's imagine that you want to validate the presence of an `@` character in the 
 document.getElementById("emailAddress").addEventListener("blur", e => {
   let emailAddressValidity = "";
   if (e.target.value.indexOf("@") === -1) {
-    // the email address doesn't contain @
+    // the email address doesn’t contain @
     emailAddressValidity = "Invalid address";
   }
   document.getElementById("emailHelp").textContent = emailAddressValidity;

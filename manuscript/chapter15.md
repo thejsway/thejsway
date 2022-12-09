@@ -111,7 +111,7 @@ Let's study each of these steps.
 
 ### Creating the element
 
-You'd create an element using the `createElement()` method (surprising, isn't it?). This method is used on the document object and takes the tag of the new element as a parameter. This method also returns the element created as an object (here stored in a variable called `pythonElement`).
+You'd create an element using the `createElement()` method (surprising, isn’t it?). This method is used on the document object and takes the tag of the new element as a parameter. This method also returns the element created as an object (here stored in a variable called `pythonElement`).
 
 ```js
 const pythonElement = document.createElement("li"); // Create an li element
@@ -358,7 +358,7 @@ parentNode.appendChild(newNode); // Add it to the DOM
 
 * The `style` property is not intended to access an element's style. You should use the `getComputedStyle()` function instead.
 
-* Manipulating the DOM with JavaScript should be done sparingly so that page performance doesn't suffer.
+* Manipulating the DOM with JavaScript should be done sparingly so that page performance doesn’t suffer.
 
 ## Coding time!
 

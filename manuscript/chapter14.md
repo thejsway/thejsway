@@ -333,7 +333,7 @@ Add the following new instrument at the end of the HTML list, then check your pr
 
 ### Handling classes
 
-Improve the previous program to add a `has()` function that tests if an element designated by its ID has a class. The function shows `true`, `false` or an error message if the element can't be found.
+Improve the previous program to add a `has()` function that tests if an element designated by its ID has a class. The function shows `true`, `false` or an error message if the element can’t be found.
 
 ```js
 // Show if an element has a class
