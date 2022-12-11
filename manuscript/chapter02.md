@@ -304,7 +304,7 @@ Write a program that asks the user for a raw price. After that, it calculates th
 
 Write a program that asks for a temperature in Celsius degrees, then displays it in Fahrenheit degrees.
 
-!!! quote
+!!! info
 
     The conversion between scales is given by the formula: [°F] = [°C] x 9/5 + 32.
 
