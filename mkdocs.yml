@@ -81,6 +81,9 @@ extra:
     - name: Indonesian
       link: https://github.com/thejsway/thejsway_id
       lang: id
+  analytics:
+    provider: google
+    property: G-346019255
 
 extra_css:
   - stylesheets/extra.css
