@@ -83,7 +83,7 @@ extra:
       lang: id
   analytics:
     provider: google
-    property: G-346019255
+    property: G-PFVDW9Q796
 
 extra_css:
   - stylesheets/extra.css
