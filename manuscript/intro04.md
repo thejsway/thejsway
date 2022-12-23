@@ -142,21 +142,22 @@ Rather than installing and configuring every piece of software manually, you can
 
 [![Docker architecture](images/intro04-01.png)](https://code.visualstudio.com/blogs/2020/07/27/containers-edu)
 
-Start by installing [Docker Desktop](https://docs.docker.com/desktop/) on your local machine. Depending on your operating system, a few post-install configuration steps may be necessary. Once it's done, start Docker Desktop.
+To use this solution, you need to install and configure [Docker Desktop](https://docs.docker.com/desktop/) on your local machine.
 
-Next, simply follow [this link](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/thejsway/thejsway-starter-code) to kickstart a *containerized JavaScript development environment* using Visual Studio Code. Clicking it will cause VS Code to automatically install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension if needed, clone the environment source code into a container volume, and spin up a dev container for use.
-
-!!! tip
-
-    Feeling curious? Read [this article](https://code.visualstudio.com/docs/devcontainers/containers) and check out [this code repository](https://github.com/microsoft/vscode-remote-try-node) to gain a better understanding of how dev containers work and what's going on under the hood.
+Next, simply follow [this link](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/thejsway/thejsway-starter-code) to kickstart a *containerized JavaScript development environment* using Visual Studio Code. Clicking it will cause VS Code to automatically install the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension if needed, clone the environment source code into a container volume, and spin up a dev container for you to use.
 
 The newly created container packs everything you need to code alongside this book:
 
-* A recent version of Node.js;
+* A recent version of [Node.js](https://nodejs.org);
+
+* A lightweight [web server](https://www.lighttpd.net/) needed to expose the JavaScript code that lies inside the container;
+
 * The [Prettier]((https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)) and [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) VS Code extensions, already configured in accordance with the language flavor used throughout the book;
 * The predefined folder structure described above, and the initial code for all book exercises.
 
 Pretty neat, isn’t it?
+
+You'll find more information about this solution [here](https://github.com/thejsway/thejsway-starter-code/blob/main/README.md).
 
 ### Use the browser's development tools
 
