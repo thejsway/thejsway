@@ -10,5 +10,5 @@ The following individuals helped improve the book quality: Gilad Penn, NewMounta
 
 Illustration credits:
 
-* Cover logo: [Creative blue swirl](http://www.logoopenstock.com/logo/preview/64186/creative-blue-swirl-logo-design) by [Free Logo Design](http://www.free-logodesign.com/).
+* Cover photo by [Julian Hochgesang](https://unsplash.com/fr/@julianhochgesang).
 * ECMAScript Releases: [The Deep Roots of Javascript Fatigue](https://segment.com/blog/the-deep-roots-of-js-fatigue/).

@@ -6,7 +6,7 @@ You may browse its content [here](manuscript/), but a nicer alternative is the [
 
 This book is also available on [Leanpub](https://leanpub.com/thejsway) (PDF, EPUB), [Amazon](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860) (Kindle, paperback) and [Educative](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch) (interactive course).
 
-[![Book cover](manuscript/images/cover.jpg)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
+[![Book cover](manuscript/images/title_page_small.png)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
 
 ## Development notes
 
