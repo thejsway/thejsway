@@ -497,7 +497,7 @@ Write the JavaScript code that validates the password when the user submits the 
 
 The validation result must be shown on the page with an appropriate message in each case.
 
-![Execution rrsult](images/chapter17-10.png)
+![Execution result](images/chapter17-10.png)
 
 ### Character list
 

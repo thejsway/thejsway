@@ -317,7 +317,7 @@ Check out the [npm documentation](https://docs.npmjs.com/packages-and-modules) f
 
 !!! note
 
-    [ES modules](https://flaviocopes.com/es-modules/) is a newer syntax for defining and loading modules, avalaible in recent (v15.3+) versions of Node.js. It should eventually replace CommonJS as the standard way.
+    [ES modules](https://flaviocopes.com/es-modules/) is a newer syntax for defining and loading modules, available in recent (v15.3+) versions of Node.js. It should eventually replace CommonJS as the standard way.
 
 ## TL;DR
 

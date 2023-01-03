@@ -52,7 +52,7 @@ Fortunately, specialized tools called **linters** can check your code against ru
 
 This book uses [ESLint](http://eslint.org) for linting code. ESLint is a very flexible tool and you can tailor it to your specific needs, and different set of ESLint rules have emerged.
 
-This book's ESLint configuration extends the recommanded settings, with a few necessary deviations. Here is the content of the book's `.eslintrc` configuration file.
+This book's ESLint configuration extends the recommended settings, with a few necessary deviations. Here is the content of the book's `.eslintrc` configuration file.
 
 ```json
 {
