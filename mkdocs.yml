@@ -50,14 +50,16 @@ theme:
   name: material
   palette:
     # Palette toggle for light mode
-    - scheme: yellowjs
-      primary: yellow
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: red
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
 
     # Palette toggle for dark mode
-    - scheme: slate
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
       toggle:
         icon: material/brightness-4
