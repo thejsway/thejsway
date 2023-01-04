@@ -4,9 +4,9 @@ This repository contains the English source files for **The JavaScript Way** boo
 
 You may browse its content [here](manuscript/), but a nicer alternative is the [online version](https://thejsway.net) which is free to read.
 
-This book is also available on [Leanpub](https://leanpub.com/thejsway) (PDF, EPUB), [Amazon](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860) (Kindle, paperback) and [Educative](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch) (interactive course).
+This book is also available on [Leanpub](https://leanpub.com/thejsway) (PDF, EPUB), [Amazon](https://www.amazon.com/dp/295644462X) (Kindle, paperback) and [Educative](https://www.educative.io/courses/the-complete-javascript-course-build-a-real-world-app-from-scratch) (interactive course).
 
-[![Book cover](manuscript/images/title_page_small.png)](https://www.amazon.com/dp/2956444611?ref_=pe_3052080_397514860)
+[![Book cover](manuscript/images/title_page_small.png)](https://thejsway.net)
 
 ## Development notes
 
