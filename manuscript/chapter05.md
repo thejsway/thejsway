@@ -362,7 +362,7 @@ However, not everything deserves to be in its own function. It's better to write
 
 We have already used several predefined JavaScript functions like `prompt()` and `alert()`. There are many others in the language specification. Get to know them instead of reinventing the wheel!
 
-Here' an example demonstrating two of the JavaScript mathematical functions.
+Here's an example demonstrating two of the JavaScript mathematical functions.
 
 ```js
 console.log(Math.min(4.5, 5)); // 4.5
