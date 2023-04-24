@@ -230,7 +230,7 @@ When you are done, improve the program so it only accepts numbers between 2 and 
 
 ### Neither yes nor no
 
-Write a program that plays "neither yes, nor no" with the user. Specifically, the programs asks the user to enter text until either "yes" or "no" is typed, which ends the game.
+Write a program that plays "neither yes, nor no" with the user. Specifically, the program asks the user to enter text until either "yes" or "no" is typed, which ends the game.
 
 ### FizzBuzz
 
