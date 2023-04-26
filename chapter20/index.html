@@ -1,0 +1,1535 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A gentle introduction to an essential language">
+      
+      
+        <meta name="author" content="Baptiste Pesquet">
+      
+      
+      
+        <link rel="prev" href="../chapter19/">
+      
+      
+        <link rel="next" href="../chapter21/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Web development 101 - The JavaScript Way</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-PFVDW9Q796"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-PFVDW9Q796",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-PFVDW9Q796",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web-development-101" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="The JavaScript Way" class="md-header__button md-logo" aria-label="The JavaScript Way" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            The JavaScript Way
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web development 101
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="/" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="https://github.com/thejsway/thejsway_fr" hreflang="fr" class="md-select__link">
+                    French
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="https://github.com/thejsway/thejsway_es" hreflang="es" class="md-select__link">
+                    Spanish
+                  </a>
+                </li>
+              
+                <li class="md-select__item">
+                  <a href="https://github.com/thejsway/thejsway_id" hreflang="id" class="md-select__link">
+                    Indonesian
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/thejsway/thejsway" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="The JavaScript Way" class="md-nav__button md-logo" aria-label="The JavaScript Way" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    The JavaScript Way
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/thejsway/thejsway" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro01/" class="md-nav__link">
+        About this book
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro02/" class="md-nav__link">
+        Welcome to programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro03/" class="md-nav__link">
+        Introducing JavaScript
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro04/" class="md-nav__link">
+        Environment setup
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Learn to code programs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Learn to code programs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter01/" class="md-nav__link">
+        3, 2, 1... Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter02/" class="md-nav__link">
+        Play with variables
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter03/" class="md-nav__link">
+        Add conditions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter04/" class="md-nav__link">
+        Repeat statements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter05/" class="md-nav__link">
+        Write functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter06/" class="md-nav__link">
+        Create your first objects
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter07/" class="md-nav__link">
+        Store data in arrays
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter08/" class="md-nav__link">
+        Work with strings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter09/" class="md-nav__link">
+        Understand object-oriented programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10/" class="md-nav__link">
+        Discover functional programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11/" class="md-nav__link">
+        Project: a social news program
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Create interactive web pages
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Create interactive web pages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12/" class="md-nav__link">
+        What's a web page?
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13/" class="md-nav__link">
+        Discover the DOM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14/" class="md-nav__link">
+        Traverse the DOM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15/" class="md-nav__link">
+        Modify page structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16/" class="md-nav__link">
+        React to events
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17/" class="md-nav__link">
+        Manipulate forms
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18/" class="md-nav__link">
+        Animate elements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter19/" class="md-nav__link">
+        Project: a social news web page
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Build web applications
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Build web applications
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Web development 101
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Web development 101
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-web-works" class="md-nav__link">
+    How the Web works
+  </a>
+  
+    <nav class="md-nav" aria-label="How the Web works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-servers" class="md-nav__link">
+    Web servers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-clients" class="md-nav__link">
+    Web clients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communications-between-clients-and-servers" class="md-nav__link">
+    Communications between clients and servers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-the-web-protocol" class="md-nav__link">
+    HTTP, the web protocol
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP, the web protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-an-http-request" class="md-nav__link">
+    Anatomy of an HTTP request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-an-http-response" class="md-nav__link">
+    Anatomy of an HTTP response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-status-codes" class="md-nav__link">
+    HTTP status codes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addressing-a-resource-with-a-url" class="md-nav__link">
+    Addressing a resource with a URL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-web-sites-to-web-apps" class="md-nav__link">
+    From web sites to web apps
+  </a>
+  
+    <nav class="md-nav" aria-label="From web sites to web apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-web-development-models" class="md-nav__link">
+    The web development models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-vs-asynchronous-requests" class="md-nav__link">
+    Synchronous vs asynchronous requests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-domain-requests" class="md-nav__link">
+    Cross-domain requests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-a-data-format-for-the-web" class="md-nav__link">
+    JSON, a data format for the web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    TL;DR
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter21/" class="md-nav__link">
+        Query a web server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter22/" class="md-nav__link">
+        Use web APIs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter23/" class="md-nav__link">
+        Send data to a web server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter24/" class="md-nav__link">
+        Discover Node.js
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter25/" class="md-nav__link">
+        Create a web server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter26/" class="md-nav__link">
+        Project: a social news web app
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Conclusion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Conclusion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concl01/" class="md-nav__link">
+        Summary and perspectives
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Appendices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Appendices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix02/" class="md-nav__link">
+        Style guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concl02/" class="md-nav__link">
+        Acknowledgments
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-web-works" class="md-nav__link">
+    How the Web works
+  </a>
+  
+    <nav class="md-nav" aria-label="How the Web works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-servers" class="md-nav__link">
+    Web servers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-clients" class="md-nav__link">
+    Web clients
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communications-between-clients-and-servers" class="md-nav__link">
+    Communications between clients and servers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-the-web-protocol" class="md-nav__link">
+    HTTP, the web protocol
+  </a>
+  
+    <nav class="md-nav" aria-label="HTTP, the web protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-an-http-request" class="md-nav__link">
+    Anatomy of an HTTP request
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anatomy-of-an-http-response" class="md-nav__link">
+    Anatomy of an HTTP response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-status-codes" class="md-nav__link">
+    HTTP status codes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addressing-a-resource-with-a-url" class="md-nav__link">
+    Addressing a resource with a URL
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-web-sites-to-web-apps" class="md-nav__link">
+    From web sites to web apps
+  </a>
+  
+    <nav class="md-nav" aria-label="From web sites to web apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-web-development-models" class="md-nav__link">
+    The web development models
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synchronous-vs-asynchronous-requests" class="md-nav__link">
+    Synchronous vs asynchronous requests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-domain-requests" class="md-nav__link">
+    Cross-domain requests
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-a-data-format-for-the-web" class="md-nav__link">
+    JSON, a data format for the web
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tldr" class="md-nav__link">
+    TL;DR
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="web-development-101">Web development 101</h1>
+<p>Understanding the fundamentals of web development is crucial for every JavaScript developer. Let's dive into this topic.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some of this chapter is inspired by the <a href="http://symfony.com/doc/current/introduction/http_fundamentals.html">Symfony PHP framework documentation</a>.</p>
+</div>
+<h2 id="how-the-web-works">How the Web works</h2>
+<p>Surfing the web is easy as pie. Let's say you want to read today's comic from the popular web site <a href="https://xkcd.com">xkcd</a>. You type the text <code>"xkcd.com"</code> in your browser's address bar and voila, the comic appears (assuming no network issues).</p>
+<p>Let's try to understand what's going on behind the scene.</p>
+<h3 id="web-servers">Web servers</h3>
+<p>To be online, a web site has to be published on a <strong>server</strong>. This is a special kind of machine whose task is to listen and answer to the demands of clients. A server that publishes resources on the Web is logically called a <strong>web server</strong>.</p>
+<p>More precisely, a web server machine runs a particular software program (also called a web server) able to publish web sites. The most popular ones are <a href="http://httpd.apache.org/">Apache</a>, <a href="http://www.iis.net/">Microsoft IIS</a> and <a href="http://nginx.org">nginx</a>.</p>
+<h3 id="web-clients">Web clients</h3>
+<p>The machine asking a server for a resource is called a <strong>web client</strong>. Actually, the real client is a software program running on the machine. A well-known type of web client is the <strong>browser</strong>, a program specialized in displaying web pages. Famous web browsers include <a href="https://www.mozilla.org/firefox">Mozilla Firefox</a>, <a href="https://www.google.com/chrome/browser/">Chrome</a>, <a href="https://www.apple.com/safari/">Safari</a> and <a href="http://www.opera.com/fr">Opera</a>.</p>
+<p>Not all web clients are browsers, through. For example, search engines robots and mobile applications also contact servers and ask them for content.</p>
+<h3 id="communications-between-clients-and-servers">Communications between clients and servers</h3>
+<p>Data exchanges on the Web follow a <strong>request/response</strong> paradigm.</p>
+<p><img alt="A web exchange example" src="../images/chapter20-01.png" /></p>
+<ol>
+<li>The exchange is started by the client, which sends a <strong>request</strong> to the server to access a particular web resource.</li>
+<li>The server prepares a result for the request.</li>
+<li>The server send backs this result to the client.</li>
+</ol>
+<p>To understand each other, web clients and servers use a common protocol: HTTP.</p>
+<h2 id="http-the-web-protocol">HTTP, the web protocol</h2>
+<p><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a>, which stands for <strong>HyperText Transfer Protocol</strong>, is the technical foundation of the World Wide Web. It is a <strong>protocol</strong>, a language that allows two machines to communicate with each other. <a href="https://en.wikipedia.org/wiki/HTTPS">HTTPS</a> is the secured version of HTTP where exchanged data is encrypted.</p>
+<p>Technically speaking, HTTP is a pretty simple protocol based on <strong>textual commands</strong>.</p>
+<h3 id="anatomy-of-an-http-request">Anatomy of an HTTP request</h3>
+<p>Let's study the first part of the web exchange described previously: the request.</p>
+<p><img alt="A web request example" src="../images/chapter20-02.png" /></p>
+<p>This HTTP request comes under the form of a multi-line piece of text similar to the following one:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">GET</span> <span class="nn">/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">xkcd.com</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">Accept</span><span class="o">:</span> <span class="l">text/html</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="na">User-Agent</span><span class="o">:</span> <span class="l">Mozilla/5.0 (Macintosh)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="err">...</span>
+</code></pre></div>
+<p>The most important line is the first one. It contains:</p>
+<ul>
+<li>The HTTP <strong>method</strong> (the request type, also named <strong>command</strong>). Here, the <code>GET</code> method indicates a resource access request.</li>
+<li>The requested <strong>resource</strong>. Here, <code>/</code> (root symbol) indicates a request for the default document.</li>
+<li>The HTTP protocol <strong>version</strong>, here 1.1.</li>
+</ul>
+<p>The other lines of text are called <strong>header fields</strong>. They give more information about the client request: server name (<code>Host</code>), accepted content types (<code>Accept</code>), client software details (<code>User-Agent</code>). There are many other possible header fields.</p>
+<p>The main HTTP methods are <code>GET</code> to access a resource and <code>POST</code> to push some information on the server. Other ones exist, such as <code>HEAD</code>, <code>PUT</code> or <code>DELETE</code>.</p>
+<h3 id="anatomy-of-an-http-response">Anatomy of an HTTP response</h3>
+<p>When receiving an HTTP request, the server looks inside for information. It then builds an appropriate answer and sends it back.</p>
+<p><img alt="A web response example" src="../images/chapter20-01.png" /></p>
+<p>The HTTP response sent by the server looks something like this.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">Date</span><span class="o">:</span> <span class="l">Fri, 22 Apr 2017 18:05:05 GMT</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">Server</span><span class="o">:</span> <span class="l">Apache/2.2</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">text/html</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="cm">&lt;!-- HTML code of the page --&gt;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="cm">&lt;!-- ... --&gt;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>The first line contains the response <strong>status</strong>: a three-digit number indicating the request result. Other lines are <strong>header fields</strong> (<code>Date</code>, <code>Content-Type</code>, etc) giving additional info about the response.</p>
+<p>An HTTP response might also include data. In this example, it contains the HTML code of the web page corresponding to the requested resource.</p>
+<h3 id="http-status-codes">HTTP status codes</h3>
+<p>The HTTP status codes belong to different families, depending on their first digit.</p>
+<table>
+<thead>
+<tr>
+<th>Family</th>
+<th>Meaning</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1xx</strong></td>
+<td>Information</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>2xx</strong></td>
+<td>Success</td>
+<td>200: request handled successfully</td>
+</tr>
+<tr>
+<td><strong>3xx</strong></td>
+<td>Redirection</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>4xx</strong></td>
+<td>Client error</td>
+<td>404: resource not found</td>
+</tr>
+<tr>
+<td><strong>5xx</strong></td>
+<td>Server error</td>
+<td>500: internal server error</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a more in-depth presentation of the HTTP protocol, head over to the <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">Mozilla Developer Network</a>.</p>
+</div>
+<h3 id="addressing-a-resource-with-a-url">Addressing a resource with a URL</h3>
+<p>Web sites are usually accessed using their address, a piece of text of the form: <a href="http://www.sitename.com/path/to/resource">http://www.sitename.com/path/to/resource</a></p>
+<p>This address can be split into several subparts:</p>
+<ul>
+<li><code>http://</code> means an access through the HTTP protocol.</li>
+<li><code>www.sitename.com</code> is the <strong>domain name</strong> of the web site.</li>
+<li><code>/path/to/resource</code> is the <strong>path</strong> of the requested resource.</li>
+</ul>
+<p>An address like this one is called a URL, or <strong>Uniform Resource Locator</strong>. A URL uniquely describes a web resource and the way to request it.</p>
+<h2 id="from-web-sites-to-web-apps">From web sites to web apps</h2>
+<h3 id="the-web-development-models">The web development models</h3>
+<p>In a traditional web development scenario, when you click a link or submit a form, your browser sends to the server a request that returns a full new web page tailored to your request. This model is subject to longer load times and limited interactivity.</p>
+<p>Another web development model aims to avoid transmitting a whole new page for each user action. Here's how things works in that model:</p>
+<ul>
+<li>User actions on the page are intercepted through JavaScript event handlers.</li>
+<li>HTTP requests are sent to the server without interrupting the navigation on the page.</li>
+<li>Only the needed portions of the page are updated with the requests' results.</li>
+</ul>
+<p>Albeit more challenging, this web development model can lead to limited resource loads, improved interactivity and a user experience nearly on par with native applications.</p>
+<p>The set of technologies enabling the creation of web applications is codenamed <strong>AJAX</strong> (<em>Asynchronous JavaScript and XML</em>). An AJAX call is an asynchronous HTTP request made to retrieve or send data from/to a server.</p>
+<h3 id="synchronous-vs-asynchronous-requests">Synchronous vs asynchronous requests</h3>
+<p>In a <strong>synchronous</strong> exchange, the asker waits until he gets the needed info. A telephone call is an example of a synchronous exchange.</p>
+<p>On the contrary, the asker in an <strong>asynchronous</strong> exchange can do something else while waiting for the completion of his request. Email is an example of an asynchronous exchange.</p>
+<p>The traditional web development model uses synchronous requests: the web client is blocked while waiting for the server to complete its request. The AJAX model uses asynchronous requests: data is fetched when needed in the background.</p>
+<h3 id="cross-domain-requests">Cross-domain requests</h3>
+<p>For security reasons, many websites have a conservative policy regarding AJAX requests. This <em>same origin policy</em> states that requests are limited to their origin domain: <code>"http://mysite"</code> cannot send a request to <code>"http://anothersite"</code>. This prevents some servers to be accessible via AJAX calls.</p>
+<p>Enabling cross-domain requests is done by setting on <strong>cross-origin resource sharing</strong> (CORS) in the server configuration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For more information about this topic, check out this <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">article</a>.</p>
+</div>
+<h2 id="json-a-data-format-for-the-web">JSON, a data format for the web</h2>
+<p>The <code>"X"</code> letter in AJAX stands for XML, a generic markup language that used to be the standard for cross-platform data exchanges. While still in use, XML is quite verbose and tends to be replaced by JSON as the standard data format on the web.</p>
+<p>JSON, or <strong>JavaScript Object Notation</strong>, is a textual syntax for describing structured information. As you'll see in the following example, JSON borrows heavily from the JavaScript object syntax.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">&quot;cars&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Peugeot&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="nt">&quot;registration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2012</span><span class="p">,</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="nt">&quot;checkups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2015</span><span class="p">,</span><span class="w"> </span><span class="mi">2017</span><span class="p">]</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="p">{</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">      </span><span class="nt">&quot;model&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Citroën&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">      </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">      </span><span class="nt">&quot;registration&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1999</span><span class="p">,</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">      </span><span class="nt">&quot;checkups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2003</span><span class="p">,</span><span class="w"> </span><span class="mi">2005</span><span class="p">,</span><span class="w"> </span><span class="mi">2007</span><span class="p">,</span><span class="w"> </span><span class="mi">2009</span><span class="p">,</span><span class="w"> </span><span class="mi">2011</span><span class="p">,</span><span class="w"> </span><span class="mi">2013</span><span class="p">]</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">}</span>
+</code></pre></div>
+<p>A JSON document is a set of name/value pairs. Names are always within double quotes <code>""</code>. Values can be numbers, strings, booleans, arrays or objects.</p>
+<p>Many programming languages have native support for the JSON format... Including JavaScript, of course!</p>
+<h2 id="tldr">TL;DR</h2>
+<ul>
+<li>
+<p>Data exchanges on the Web follow a <strong>request/response</strong> paradigm. A <strong>client</strong> issues a request to a <strong>server</strong>, which process it and sends back its result to the client.</p>
+</li>
+<li>
+<p><strong>HTTP</strong> (HyperText Transfer Protocol), is the protocol that allows two machines to communicate with each other on the web. Its secured version is <strong>HTTPS</strong>.</p>
+</li>
+<li>
+<p>HTTP is based on textual commands. The HTTP <strong>method</strong> defines the type of the request. The main HTTP methods are <code>GET</code> to access a resource and <code>POST</code> to push some information on the server.</p>
+</li>
+<li>
+<p>An HTTP response contains a <strong>status code</strong> indicating the result of the request: 200 for success, 404 for a resource not found, etc.</p>
+</li>
+<li>
+<p>Web resources are uniquely addressed by their <strong>URL</strong> (Uniform resource locator). A URL is a text of the form <code>http://www.mywebsite.com/myresourcepath/myresource</code>.</p>
+</li>
+<li>
+<p>In a traditional web development scenario, user actions on a page trigger a full reload after a synchronous request to a server. Another web development model, nicknamed <strong>AJAX</strong> (Asynchronous JavaScript and XML), uses JavaScript and <strong>asynchronous</strong> HTTP requests to fetch data when needed and update only the desired portions of the page. This enables the creation of <strong>web applications</strong>, aiming to offer the user experience of a native app.</p>
+</li>
+<li>
+<p>Cross-domain AJAX requests are only possible if the server has been configured to accept them by setting on <strong>cross-origin resource sharing</strong> (CORS).</p>
+</li>
+<li>
+<p><strong>JSON</strong> (JavaScript Object Notation), a textual syntax for describing structured information, has replaced XML as the data format of the web. A JSON document is a set of name/value pairs.</p>
+</li>
+</ul>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>
