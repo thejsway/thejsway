@@ -145,7 +145,7 @@ To create relationships between objects, JavaScript uses **prototypes**.
 
 In addition to its own particular properties, any JavaScript object has an internal property which is a link (known as a **reference**) to another object called its **prototype**. When trying to access a property that does not exist in an object, JavaScript tries to find this property in the prototype of this object.
 
-Here's an example (borrowed from Kyle Simpson's great book series [You Don’t Know JS](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch5.md)).
+Here's an example (borrowed from Kyle Simpson's great book series [You Don’t Know JS](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/this%20%26%20object%20prototypes/ch5.md)).
 
 ```js
 const anObject = {
