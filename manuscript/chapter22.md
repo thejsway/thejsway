@@ -24,7 +24,7 @@ The first web API you'll use here simulates a blog and exposes a series of artic
 
 !!! tip
 
-    For an easier interaction with web API, using a specialized tool like [Postman](https://www.getpostman.com) or [RESTClient](https://addons.mozilla.org/fr/firefox/addon/restclient/) is recommended.
+    For an easier interaction with web API, using a specialized tool like [Postman](https://www.getpostman.com) or [RESTClient](https://addons.mozilla.org/fr/firefox/addon/rest-client-apishub/) is recommended.
 
 This web API returns an array containing some articles. Each article corresponds to a JavaScript object with `id`, `title` and `content` properties.
 
