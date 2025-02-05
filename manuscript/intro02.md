@@ -6,7 +6,7 @@ You're about to begin a great journey! Let's start it by talking about programmi
 
 ![Evolution (or is it?)](images/intro02-01.jpg)
 
-Since their invention in the 1950s, **computers** have revolutionized our daily lives. Calculating a route from a website or a GPS, booking a train or plane ticket, or seeing and chatting with friends on the other side of the world: all these actions are possible thanks to computers.
+Since their invention in the 1950s, **computers** have revolutionized our daily lives. Calculating a route from a website or your current geographic location, booking a train or plane ticket, or seeing and chatting with friends on the other side of the world: all these actions are possible thanks to computers.
 
 !!! note "What is a computer?"
 
